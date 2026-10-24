@@ -22,8 +22,8 @@ android {
         applicationId = "com.englishcoach"
         minSdk = 26          // 需要 java.time（LocalDate 等），API 26+ 原生可用
         targetSdk = 35
-        versionCode = 22
-        versionName = "11.24"
+        versionCode = 23
+        versionName = "11.25"
 
         buildConfigField("String", "DEEPSEEK_API_KEY", "\"${localKey("DEEPSEEK_API_KEY")}\"")
         buildConfigField("String", "SILICONFLOW_API_KEY", "\"${localKey("SILICONFLOW_API_KEY")}\"")

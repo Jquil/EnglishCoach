@@ -148,7 +148,7 @@ class SettingsViewModel(private val app: EnglishCoachApp) : ViewModel() {
 // ==================================================================
 
 /** 构建版本标识（用户多轮装机分不清版本；每次发包更新此处） */
-private const val APP_VERSION_LABEL = "英语教练 v11.24 · 2026-10-24"
+private const val APP_VERSION_LABEL = "英语教练 v11.25 · 2026-10-24"
 
 /** 设置一级页：常用开关 + 两个二级页入口（发音与语音 / API 密钥） */
 @Composable
