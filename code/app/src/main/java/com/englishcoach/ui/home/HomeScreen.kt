@@ -695,21 +695,28 @@ private fun HomeWordDeck(
     val currentWord by androidx.compose.runtime.rememberUpdatedState(words.getOrNull(index)?.word)
 
     // 当前卡手势链（仅 isCurrent 卡挂载；侧卡不可交互、不响应点击）。
-    // v11.20 手势仲裁沿用：pointerInput 必须位于 draggable / detectTapGestures 之前——
-    // up 事件先经本仲裁更新标志、同帧同序再被 tap 的 onTap 读到；判定口径与 draggable
-    // 一致（viewConfiguration.touchSlop）：一旦判拖拽，本次手势（含松手瞬间）不再触发
-    // 单击发音/双击释义
+    // v11.27 手势仲裁优化：增强拖拽检测，减少误触发点击
+    // - pointerInput 必须位于 draggable / detectTapGestures 之前
+    // - 判定口径与 draggable 一致（viewConfiguration.touchSlop）
+    // - 一旦判拖拽，本次手势（含松手瞬间）不再触发单击发音/双击释义
+    // - 增加垂直滑动检测，垂直滑动也会标记为拖拽（避免上下滑误触点击）
     val currentGestures: Modifier = Modifier
         .pointerInput(Unit) {
             awaitEachGesture {
                 awaitFirstDown(requireUnconsumed = false)
                 dragArbitration = false
                 var totalX = 0f
+                var totalY = 0f
                 while (true) {
                     val event = awaitPointerEvent()
                     val change = event.changes.firstOrNull() ?: break
-                    totalX += change.positionChange().x
-                    if (kotlin.math.abs(totalX) > viewConfiguration.touchSlop) {
+                    val deltaX = change.positionChange().x
+                    val deltaY = change.positionChange().y
+                    totalX += deltaX
+                    totalY += deltaY
+                    // 水平或垂直超过 slop 即判定为拖拽
+                    if (kotlin.math.abs(totalX) > viewConfiguration.touchSlop ||
+                        kotlin.math.abs(totalY) > viewConfiguration.touchSlop) {
                         dragArbitration = true
                     }
                     if (event.changes.none { it.pressed }) break
@@ -786,19 +793,21 @@ private fun HomeWordDeck(
                             }
                         }
                     } else if (commit && dir == -1) {
-                        // —— 右滑提交（v11.26 垂直堆叠）——
+                        // —— 右滑提交（v11.27 优化）——
                         // 上一词卡从左侧 spring 滑到居中，其他卡下沉一层
-                        // spring(320/ζ1.0)，初速 vx×0.5
+                        // 修复：确保动画状态正确清理，避免卡顿
                         val gen = ++commitGen
                         committing = true
                         commitDir = -1
                         onSelect(index - 1) // flip-first：翻层先行
                         swapAnim.snapTo(dragT)
                         dragX = 0f
+                        bounceX.snapTo(0f)
+                        bounceT.snapTo(0f)
                         try {
                             swapAnim.animateTo(
                                 1f,
-                                spring(dampingRatio = 1f, stiffness = 320f),
+                                spring(dampingRatio = 0.88f, stiffness = 320f),
                                 initialVelocity = velocity / (cardWidthPx * 0.5f)
                             )
                         } finally {

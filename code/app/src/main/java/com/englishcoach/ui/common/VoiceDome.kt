@@ -336,9 +336,9 @@ fun VoiceDomeOverlay(
     )
 
     val isCancel = state.phase == DomePhase.CANCEL
-    // v11.26 UI优化：圆顶高度保持恒定，不再根据状态变化（避免松开跟读后尺寸突变）
-    val domeHeight = (screenHeightDp * 0.46f).dp
-    // v11.26 UI优化：移除取消态的scale缩放，保持尺寸一致性
+    // v11.27 UI优化：降低圆顶高度，避免遮挡句子内容
+    // 录音时圆顶高度为屏幕35%，识别时保持不变
+    val domeHeight = (screenHeightDp * 0.35f).dp
     val domeScale = 1f
     // v11.6 P1-2：红/蓝渐变 180ms 过渡（替换原硬切）
     val gradTop by animateColorAsState(
@@ -387,11 +387,13 @@ fun VoiceDomeOverlay(
                     .background(Color.Black.copy(alpha = 0.45f))
             )
         }
-        // v11.26：录音/取消态时，在圆顶上方显示当前句子内容（用户可边看边跟读）
+        // v11.27：录音/取消态时，在圆顶上方显示当前句子内容（用户可边看边跟读）
+        // 优化：调整位置到屏幕上部1/3处，避免被手指遮挡
         if ((state.phase == DomePhase.RECORDING || state.phase == DomePhase.CANCEL) && !sentenceContent.isNullOrBlank()) {
             Box(
                 modifier = Modifier
-                    .align(Alignment.Center)
+                    .align(Alignment.TopCenter)
+                    .padding(top = (screenHeightDp * 0.25f).dp)
                     .padding(horizontal = 24.dp)
                     .fillMaxWidth()
             ) {
