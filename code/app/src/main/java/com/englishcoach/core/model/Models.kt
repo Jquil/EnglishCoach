@@ -193,5 +193,6 @@ data class WordItem(
     val word: String,     // 单词
     val phonetic: String, // 音标，如 /ˈsænwɪdʒ/
     val meaning: String,  // 词性 + 中文释义，如 "n. 三明治"
-    val chinese: String   // 常用例句（中英），跟读场景词提示
+    val chinese: String,  // 中文例句
+    val example: String = "" // 英语例句（v11.27新增，兼容旧数据默认空串）
 )

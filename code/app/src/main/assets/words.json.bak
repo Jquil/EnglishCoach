@@ -1,0 +1,5120 @@
+[
+ {
+  "word": "lesson",
+  "phonetic": "/ˈlesn/",
+  "meaning": "n. 课；教训",
+  "chinese": "我从那节课学到了很多。"
+ },
+ {
+  "word": "people",
+  "phonetic": "/ˈpiːpl/",
+  "meaning": "n. 人们",
+  "chinese": "这里的人很友好。"
+ },
+ {
+  "word": "more",
+  "phonetic": "/mɔːr/",
+  "meaning": "adj./adv. 更多",
+  "chinese": "我需要更多时间。"
+ },
+ {
+  "word": "man",
+  "phonetic": "/mæn/",
+  "meaning": "n. 男人",
+  "chinese": "那个男人是我叔叔。"
+ },
+ {
+  "word": "said",
+  "phonetic": "/sed/",
+  "meaning": "v. 说（say 的过去式）",
+  "chinese": "她打了招呼。"
+ },
+ {
+  "word": "must",
+  "phonetic": "/mʌst/",
+  "meaning": "mod. 必须",
+  "chinese": "你现在必须休息。"
+ },
+ {
+  "word": "before",
+  "phonetic": "/bɪˈfɔːr/",
+  "meaning": "prep. 在…之前",
+  "chinese": "晚饭前洗手。"
+ },
+ {
+  "word": "long",
+  "phonetic": "/lɔːŋ/",
+  "meaning": "adj. 长的",
+  "chinese": "课要多长时间？"
+ },
+ {
+  "word": "great",
+  "phonetic": "/ɡreɪt/",
+  "meaning": "adj. 极好的",
+  "chinese": "好主意！"
+ },
+ {
+  "word": "always",
+  "phonetic": "/ˈɔːlweɪz/",
+  "meaning": "adv. 总是",
+  "chinese": "她总是很友善。"
+ },
+ {
+  "word": "answer",
+  "phonetic": "/ˈænsər/",
+  "meaning": "n./v. 回答",
+  "chinese": "我知道答案。"
+ },
+ {
+  "word": "question",
+  "phonetic": "/ˈkwestʃən/",
+  "meaning": "n. 问题",
+  "chinese": "好问题！"
+ },
+ {
+  "word": "many",
+  "phonetic": "/ˈmeni/",
+  "meaning": "det. 许多",
+  "chinese": "很多人同意。"
+ },
+ {
+  "word": "too",
+  "phonetic": "/tuː/",
+  "meaning": "adv. 也；太",
+  "chinese": "我也是！"
+ },
+ {
+  "word": "first",
+  "phonetic": "/fɜːrst/",
+  "meaning": "adj./adv. 第一",
+  "chinese": "这是我第一次来。"
+ },
+ {
+  "word": "day",
+  "phonetic": "/deɪ/",
+  "meaning": "n. 天；白天",
+  "chinese": "祝你今天愉快！"
+ },
+ {
+  "word": "water",
+  "phonetic": "/ˈwɔːtər/",
+  "meaning": "n. 水",
+  "chinese": "请来杯水。"
+ },
+ {
+  "word": "life",
+  "phonetic": "/laɪf/",
+  "meaning": "n. 生活；生命",
+  "chinese": "生活充满了惊喜。"
+ },
+ {
+  "word": "listen",
+  "phonetic": "/ˈlɪsn/",
+  "meaning": "v. 听",
+  "chinese": "认真听我说。"
+ },
+ {
+  "word": "down",
+  "phonetic": "/daʊn/",
+  "meaning": "adv./prep. 向下",
+  "chinese": "请坐。"
+ },
+ {
+  "word": "small",
+  "phonetic": "/smɔːl/",
+  "meaning": "adj. 小的",
+  "chinese": "一个小错误。"
+ },
+ {
+  "word": "never",
+  "phonetic": "/ˈnevər/",
+  "meaning": "adv. 从不",
+  "chinese": "我从不放弃。"
+ },
+ {
+  "word": "old",
+  "phonetic": "/oʊld/",
+  "meaning": "adj. 老的；旧的",
+  "chinese": "你多大了？"
+ },
+ {
+  "word": "money",
+  "phonetic": "/ˈmʌni/",
+  "meaning": "n. 钱",
+  "chinese": "我需要一点钱。"
+ },
+ {
+  "word": "such",
+  "phonetic": "/sʌtʃ/",
+  "meaning": "det. 这样的",
+  "chinese": "天气真好！"
+ },
+ {
+  "word": "found",
+  "phonetic": "/faʊnd/",
+  "meaning": "v. 找到，发现（find的过去式）；创立",
+  "chinese": "我在厨房找到了你的钥匙。"
+ },
+ {
+  "word": "home",
+  "phonetic": "/hoʊm/",
+  "meaning": "n. 家",
+  "chinese": "欢迎来我家。"
+ },
+ {
+  "word": "large",
+  "phonetic": "/lɑːrdʒ/",
+  "meaning": "adj. 大的；大量的",
+  "chinese": "我要一大杯咖啡。"
+ },
+ {
+  "word": "find",
+  "phonetic": "/faɪnd/",
+  "meaning": "v. 找到",
+  "chinese": "我找不到钥匙了。"
+ },
+ {
+  "word": "last",
+  "phonetic": "/læst/",
+  "meaning": "adj. 最后的；v. 持续",
+  "chinese": "这是最后一个。"
+ },
+ {
+  "word": "soon",
+  "phonetic": "/suːn/",
+  "meaning": "adv. 很快",
+  "chinese": "回头见！"
+ },
+ {
+  "word": "still",
+  "phonetic": "/stɪl/",
+  "meaning": "adv. 仍然",
+  "chinese": "还早呢。"
+ },
+ {
+  "word": "however",
+  "phonetic": "/haʊˈevər/",
+  "meaning": "adv. 然而，可是",
+  "chinese": "我很累，然而我继续跑。"
+ },
+ {
+  "word": "work",
+  "phonetic": "/wɜːrk/",
+  "meaning": "v./n. 工作",
+  "chinese": "我在家办公。"
+ },
+ {
+  "word": "another",
+  "phonetic": "/əˈnʌðər/",
+  "meaning": "det.&pron. 另一个；再一个",
+  "chinese": "我能再来一杯咖啡吗？"
+ },
+ {
+  "word": "away",
+  "phonetic": "/əˈweɪ/",
+  "meaning": "adv. 离开；远离",
+  "chinese": "商店不远。"
+ },
+ {
+  "word": "often",
+  "phonetic": "/ˈɔːfn/",
+  "meaning": "adv. 经常",
+  "chinese": "我们常在周五见面。"
+ },
+ {
+  "word": "house",
+  "phonetic": "/haʊs/",
+  "meaning": "n. 房子",
+  "chinese": "他们的房子很漂亮。"
+ },
+ {
+  "word": "off",
+  "phonetic": "/ɔːf/",
+  "meaning": "adv. 离开；关掉",
+  "chinese": "把灯关掉。"
+ },
+ {
+  "word": "car",
+  "phonetic": "/kɑːr/",
+  "meaning": "n. 汽车",
+  "chinese": "我的车是新的。"
+ },
+ {
+  "word": "few",
+  "phonetic": "/fjuː/",
+  "meaning": "adj. 很少的 pron. 少数几个",
+  "chinese": "只有几个人来了。"
+ },
+ {
+  "word": "world",
+  "phonetic": "/wɜːrld/",
+  "meaning": "n. 世界",
+  "chinese": "世界很大。"
+ },
+ {
+  "word": "able",
+  "phonetic": "/ˈeɪbəl/",
+  "meaning": "adj. 能够的；有能力的",
+  "chinese": "我能帮你做这件事。"
+ },
+ {
+  "word": "please",
+  "phonetic": "/pliːz/",
+  "meaning": "adv. 请",
+  "chinese": "请坐。"
+ },
+ {
+  "word": "those",
+  "phonetic": "/ðoʊz/",
+  "meaning": "det. 那些",
+  "chinese": "那些书是新的。"
+ },
+ {
+  "word": "little",
+  "phonetic": "/ˈlɪtl/",
+  "meaning": "adj. 小的；一点",
+  "chinese": "只要一点水。"
+ },
+ {
+  "word": "morning",
+  "phonetic": "/ˈmɔːrnɪŋ/",
+  "meaning": "n. 早晨",
+  "chinese": "我每天早上跑步。"
+ },
+ {
+  "word": "own",
+  "phonetic": "/oʊn/",
+  "meaning": "adj. 自己的",
+  "chinese": "我有自己的房间。"
+ },
+ {
+  "word": "next",
+  "phonetic": "/nekst/",
+  "meaning": "adj. 下一个",
+  "chinese": "下周见。"
+ },
+ {
+  "word": "every",
+  "phonetic": "/ˈevri/",
+  "meaning": "det. 每一个",
+  "chinese": "每个学生都通过了。"
+ },
+ {
+  "word": "later",
+  "phonetic": "/ˈleɪtər/",
+  "meaning": "adv. 后来；稍后",
+  "chinese": "我稍后再给你回电话，好吗？"
+ },
+ {
+  "word": "country",
+  "phonetic": "/ˈkʌntri/",
+  "meaning": "n. 国家；乡村",
+  "chinese": "我希望有一天能去每个国家看看。"
+ },
+ {
+  "word": "during",
+  "phonetic": "/ˈdʊrɪŋ/",
+  "meaning": "prep. 在……期间",
+  "chinese": "暴风雨期间我们待在家里。"
+ },
+ {
+  "word": "three",
+  "phonetic": "/θriː/",
+  "meaning": "num. 三",
+  "chinese": "我三天后回来。"
+ },
+ {
+  "word": "ago",
+  "phonetic": "/əˈɡoʊ/",
+  "meaning": "adv. 以前",
+  "chinese": "我们两年前搬到这里。"
+ },
+ {
+  "word": "right",
+  "phonetic": "/raɪt/",
+  "meaning": "adj. 正确的；右边",
+  "chinese": "你是对的。"
+ },
+ {
+  "word": "think",
+  "phonetic": "/θɪŋk/",
+  "meaning": "v. 想；认为",
+  "chinese": "我想是的。"
+ },
+ {
+  "word": "again",
+  "phonetic": "/əˈɡen/",
+  "meaning": "adv. 再一次",
+  "chinese": "请再说一遍。"
+ },
+ {
+  "word": "young",
+  "phonetic": "/jʌŋ/",
+  "meaning": "adj. 年轻的",
+  "chinese": "她看起来很年轻。"
+ },
+ {
+  "word": "five",
+  "phonetic": "/faɪv/",
+  "meaning": "num. 五",
+  "chinese": "给我五分钟。"
+ },
+ {
+  "word": "night",
+  "phonetic": "/naɪt/",
+  "meaning": "n. 夜晚",
+  "chinese": "晚安！"
+ },
+ {
+  "word": "ever",
+  "phonetic": "/ˈevər/",
+  "meaning": "adv. 曾经，从来",
+  "chinese": "你去过日本吗？"
+ },
+ {
+  "word": "same",
+  "phonetic": "/seɪm/",
+  "meaning": "adj. 相同的",
+  "chinese": "我们有相同的爱好。"
+ },
+ {
+  "word": "early",
+  "phonetic": "/ˈɜːrli/",
+  "meaning": "adj./adv. 早的",
+  "chinese": "我起得早。"
+ },
+ {
+  "word": "near",
+  "phonetic": "/nɪr/",
+  "meaning": "prep./adj. 近的",
+  "chinese": "公园在我家附近。"
+ },
+ {
+  "word": "might",
+  "phonetic": "/maɪt/",
+  "meaning": "v. 可能；也许（may 的过去式）",
+  "chinese": "今天晚些时候可能会下雨。"
+ },
+ {
+  "word": "room",
+  "phonetic": "/ruːm/",
+  "meaning": "n. 房间",
+  "chinese": "这个房间很亮。"
+ },
+ {
+  "word": "yet",
+  "phonetic": "/jet/",
+  "meaning": "adv. 还；已经",
+  "chinese": "还没有。"
+ },
+ {
+  "word": "both",
+  "phonetic": "/boʊθ/",
+  "meaning": "det. 两者都",
+  "chinese": "两个答案都对。"
+ },
+ {
+  "word": "course",
+  "phonetic": "/kɔːrs/",
+  "meaning": "n. 课程；过程；一道菜",
+  "chinese": "我这学期在上一门英语课。"
+ },
+ {
+  "word": "left",
+  "phonetic": "/left/",
+  "meaning": "adj. 左边的",
+  "chinese": "在下一个路口向左转。"
+ },
+ {
+  "word": "under",
+  "phonetic": "/ˈʌndər/",
+  "meaning": "prep. 在…下面",
+  "chinese": "狗在桌子下面。"
+ },
+ {
+  "word": "become",
+  "phonetic": "/bɪˈkʌm/",
+  "meaning": "v. 成为；变成",
+  "chinese": "她想将来成为一名医生。"
+ },
+ {
+  "word": "garden",
+  "phonetic": "/ˈɡɑːrdn/",
+  "meaning": "n. 花园；菜园",
+  "chinese": "妈妈在园子里种西红柿。"
+ },
+ {
+  "word": "letter",
+  "phonetic": "/ˈlet̬ər/",
+  "meaning": "n. 信；字母",
+  "chinese": "我收到了奶奶的来信。"
+ },
+ {
+  "word": "give",
+  "phonetic": "/ɡɪv/",
+  "meaning": "v. 给",
+  "chinese": "给我打个电话。"
+ },
+ {
+  "word": "less",
+  "phonetic": "/les/",
+  "meaning": "adj. 更少的；adv. 更少地",
+  "chinese": "我的咖啡里要少放点糖。"
+ },
+ {
+  "word": "should",
+  "phonetic": "/ʃʊd/",
+  "meaning": "mod. 应该",
+  "chinese": "你应该再试一次。"
+ },
+ {
+  "word": "sure",
+  "phonetic": "/ʃʊr/",
+  "meaning": "adv. 当然；adj. 确定的",
+  "chinese": "当然，没问题。"
+ },
+ {
+  "word": "anything",
+  "phonetic": "/ˈeniθɪŋ/",
+  "meaning": "pron. 任何事物",
+  "chinese": "有什么我能帮忙的吗？"
+ },
+ {
+  "word": "hour",
+  "phonetic": "/ˈaʊər/",
+  "meaning": "n. 小时",
+  "chinese": "请等一小时。"
+ },
+ {
+  "word": "living",
+  "phonetic": "/ˈlɪvɪŋ/",
+  "meaning": "adj. 活着的 n. 生计",
+  "chinese": "他以画画为生。"
+ },
+ {
+  "word": "tell",
+  "phonetic": "/tel/",
+  "meaning": "v. 告诉",
+  "chinese": "告诉我真相。"
+ },
+ {
+  "word": "week",
+  "phonetic": "/wiːk/",
+  "meaning": "n. 周",
+  "chinese": "祝你这周顺利！"
+ },
+ {
+  "word": "air",
+  "phonetic": "/er/",
+  "meaning": "n. 空气；空中",
+  "chinese": "我们出去呼吸点新鲜空气吧。"
+ },
+ {
+  "word": "bank",
+  "phonetic": "/bæŋk/",
+  "meaning": "n. 银行；河岸",
+  "chinese": "我今天得顺路去趟银行。"
+ },
+ {
+  "word": "between",
+  "phonetic": "/bɪˈtwin/",
+  "meaning": "prep. 在…之间",
+  "chinese": "球在两把椅子之间。"
+ },
+ {
+  "word": "city",
+  "phonetic": "/ˈsɪti/",
+  "meaning": "n. 城市",
+  "chinese": "上海是个大城市。"
+ },
+ {
+  "word": "across",
+  "phonetic": "/əˈkrɔːs/",
+  "meaning": "prep. 横过；在……对面",
+  "chinese": "我们一起过马路吧。"
+ },
+ {
+  "word": "against",
+  "phonetic": "/əˈɡenst/",
+  "meaning": "prep. 反对；倚靠",
+  "chinese": "你反对这个新计划吗？"
+ },
+ {
+  "word": "difficult",
+  "phonetic": "/ˈdɪfɪkəlt/",
+  "meaning": "adj. 困难的；费力的",
+  "chinese": "这道数学题真的很难。"
+ },
+ {
+  "word": "door",
+  "phonetic": "/dɔːr/",
+  "meaning": "n. 门",
+  "chinese": "有人在门口。"
+ },
+ {
+  "word": "enough",
+  "phonetic": "/ɪˈnʌf/",
+  "meaning": "adj. 足够的；adv. 足够地",
+  "chinese": "我们有足够的食物给大家吃。"
+ },
+ {
+  "word": "far",
+  "phonetic": "/fɑːr/",
+  "meaning": "adj./adv. 远的",
+  "chinese": "车站离这儿很远。"
+ },
+ {
+  "word": "food",
+  "phonetic": "/fuːd/",
+  "meaning": "n. 食物",
+  "chinese": "食物很美味。"
+ },
+ {
+  "word": "half",
+  "phonetic": "/hæf/",
+  "meaning": "n. 一半",
+  "chinese": "我能吃你一半的三明治吗？"
+ },
+ {
+  "word": "hard",
+  "phonetic": "/hɑːrd/",
+  "meaning": "adj. 困难的；硬的",
+  "chinese": "这道数学题真的很难。"
+ },
+ {
+  "word": "human",
+  "phonetic": "/ˈhjuːmən/",
+  "meaning": "n. 人；adj. 人类的",
+  "chinese": "每个人都需要食物和水。"
+ },
+ {
+  "word": "let",
+  "phonetic": "/let/",
+  "meaning": "v. 让",
+  "chinese": "让我帮你。"
+ },
+ {
+  "word": "live",
+  "phonetic": "/lɪv/",
+  "meaning": "v. 住；生活",
+  "chinese": "你住在哪里？"
+ },
+ {
+  "word": "almost",
+  "phonetic": "/ˈɔːlmoʊst/",
+  "meaning": "adv. 几乎；差不多",
+  "chinese": "快到吃晚饭的时间了。"
+ },
+ {
+  "word": "fact",
+  "phonetic": "/fækt/",
+  "meaning": "n. 事实",
+  "chinese": "那是事实，不只是我的看法。"
+ },
+ {
+  "word": "high",
+  "phonetic": "/haɪ/",
+  "meaning": "adj. 高的；adv. 在高处",
+  "chinese": "飞机在云层上方高空飞行。"
+ },
+ {
+  "word": "matter",
+  "phonetic": "/ˈmætər/",
+  "meaning": "n. 事情；问题 v. 要紧",
+  "chinese": "怎么了？你看起来不太高兴。"
+ },
+ {
+  "word": "woman",
+  "phonetic": "/ˈwʊmən/",
+  "meaning": "n. 女人",
+  "chinese": "那位女士在微笑。"
+ },
+ {
+  "word": "bad",
+  "phonetic": "/bæd/",
+  "meaning": "adj. 坏的；糟糕的",
+  "chinese": "今天天气很糟。"
+ },
+ {
+  "word": "case",
+  "phonetic": "/keɪs/",
+  "meaning": "n. 情况；案件；箱子",
+  "chinese": "那样的话，我们打车吧。"
+ },
+ {
+  "word": "different",
+  "phonetic": "/ˈdɪfrənt/",
+  "meaning": "adj. 不同的",
+  "chinese": "我们的想法不同。"
+ },
+ {
+  "word": "dress",
+  "phonetic": "/dres/",
+  "meaning": "n. 连衣裙 v. 穿衣服",
+  "chinese": "她穿了一条红裙子去参加聚会。"
+ },
+ {
+  "word": "keep",
+  "phonetic": "/kiːp/",
+  "meaning": "v. 保持",
+  "chinese": "坚持尝试！"
+ },
+ {
+  "word": "place",
+  "phonetic": "/pleɪs/",
+  "meaning": "n. 地方",
+  "chinese": "这是我最喜欢的地方。"
+ },
+ {
+  "word": "school",
+  "phonetic": "/skuːl/",
+  "meaning": "n. 学校",
+  "chinese": "我儿子在这上学。"
+ },
+ {
+  "word": "thank",
+  "phonetic": "/θæŋk/",
+  "meaning": "v. 感谢",
+  "chinese": "非常感谢。"
+ },
+ {
+  "word": "bed",
+  "phonetic": "/bed/",
+  "meaning": "n. 床",
+  "chinese": "该睡觉了。"
+ },
+ {
+  "word": "big",
+  "phonetic": "/bɪɡ/",
+  "meaning": "adj. 大的",
+  "chinese": "那是个大城市。"
+ },
+ {
+  "word": "boat",
+  "phonetic": "/boʊt/",
+  "meaning": "n. 小船；船",
+  "chinese": "我们乘船去了那个岛。"
+ },
+ {
+  "word": "bottle",
+  "phonetic": "/ˈbɑːtl/",
+  "meaning": "n. 瓶子；一瓶（的量）",
+  "chinese": "请给我一瓶水好吗？"
+ },
+ {
+  "word": "doctor",
+  "phonetic": "/ˈdɑːktər/",
+  "meaning": "n. 医生",
+  "chinese": "你应该去看医生。"
+ },
+ {
+  "word": "evening",
+  "phonetic": "/ˈiːvnɪŋ/",
+  "meaning": "n. 晚上",
+  "chinese": "晚上好！"
+ },
+ {
+  "word": "four",
+  "phonetic": "/fɔːr/",
+  "meaning": "num. 四",
+  "chinese": "电影四点开始。"
+ },
+ {
+  "word": "idea",
+  "phonetic": "/aɪˈdiːə/",
+  "meaning": "n. 主意",
+  "chinese": "我有个主意。"
+ },
+ {
+  "word": "stay",
+  "phonetic": "/steɪ/",
+  "meaning": "v. 停留",
+  "chinese": "请待在这里。"
+ },
+ {
+  "word": "business",
+  "phonetic": "/ˈbɪznəs/",
+  "meaning": "n. 生意；商业；事务",
+  "chinese": "他在市中心经营一家小生意。"
+ },
+ {
+  "word": "need",
+  "phonetic": "/niːd/",
+  "meaning": "v. 需要",
+  "chinese": "我需要你的帮助。"
+ },
+ {
+  "word": "play",
+  "phonetic": "/pleɪ/",
+  "meaning": "v. 玩；播放",
+  "chinese": "我们玩个游戏吧。"
+ },
+ {
+  "word": "really",
+  "phonetic": "/ˈriːəli/",
+  "meaning": "adv. 真的",
+  "chinese": "真的吗？太棒了！"
+ },
+ {
+  "word": "thing",
+  "phonetic": "/θɪŋ/",
+  "meaning": "n. 东西；事情",
+  "chinese": "还有一件事。"
+ },
+ {
+  "word": "today",
+  "phonetic": "/təˈdeɪ/",
+  "meaning": "adv./n. 今天",
+  "chinese": "今天是星期一。"
+ },
+ {
+  "word": "behind",
+  "phonetic": "/bɪˈhaɪnd/",
+  "meaning": "prep. 在…后面",
+  "chinese": "猫在门后面。"
+ },
+ {
+  "word": "earth",
+  "phonetic": "/ɜːrθ/",
+  "meaning": "n. 地球；泥土",
+  "chinese": "地球绕着太阳转。"
+ },
+ {
+  "word": "floor",
+  "phonetic": "/flɔːr/",
+  "meaning": "n. 地板；楼层",
+  "chinese": "地板是湿的，小心点。"
+ },
+ {
+  "word": "girl",
+  "phonetic": "/ɡɜːrl/",
+  "meaning": "n. 女孩",
+  "chinese": "那个女孩在唱歌。"
+ },
+ {
+  "word": "light",
+  "phonetic": "/laɪt/",
+  "meaning": "n. 光，灯 adj. 明亮的；轻的",
+  "chinese": "请把灯打开。"
+ },
+ {
+  "word": "already",
+  "phonetic": "/ɔːlˈredi/",
+  "meaning": "adv. 已经；早已",
+  "chinese": "我已经做完作业了。"
+ },
+ {
+  "word": "buy",
+  "phonetic": "/baɪ/",
+  "meaning": "v. 买",
+  "chinese": "我想买份礼物。"
+ },
+ {
+  "word": "certain",
+  "phonetic": "/ˈsɜːrtn/",
+  "meaning": "adj. 确定的；肯定的",
+  "chinese": "我确定他会来参加聚会。"
+ },
+ {
+  "word": "family",
+  "phonetic": "/ˈfæməli/",
+  "meaning": "n. 家庭",
+  "chinese": "我爱我的家。"
+ },
+ {
+  "word": "fire",
+  "phonetic": "/ˈfaɪər/",
+  "meaning": "n. 火；火灾 v. 解雇",
+  "chinese": "火堆让我们整晚都很暖和。"
+ },
+ {
+  "word": "front",
+  "phonetic": "/frʌnt/",
+  "meaning": "n. 前面 adj. 前面的",
+  "chinese": "在前门口等我。"
+ },
+ {
+  "word": "full",
+  "phonetic": "/fʊl/",
+  "meaning": "adj. 满的；饱的",
+  "chinese": "我饱了，一口也吃不下了。"
+ },
+ {
+  "word": "ground",
+  "phonetic": "/ɡraʊnd/",
+  "meaning": "n. 地面；场地",
+  "chinese": "书掉到了地上。"
+ },
+ {
+  "word": "husband",
+  "phonetic": "/ˈhʌzbənd/",
+  "meaning": "n. 丈夫",
+  "chinese": "她丈夫每天晚上做饭。"
+ },
+ {
+  "word": "open",
+  "phonetic": "/ˈoʊpən/",
+  "meaning": "v./adj. 打开；开着的",
+  "chinese": "打开你们的书。"
+ },
+ {
+  "word": "wrong",
+  "phonetic": "/rɔːŋ/",
+  "meaning": "adj. 错误的",
+  "chinese": "我坐错车了。"
+ },
+ {
+  "word": "age",
+  "phonetic": "/eɪdʒ/",
+  "meaning": "n. 年龄；年纪",
+  "chinese": "她和我同龄。"
+ },
+ {
+  "word": "anyone",
+  "phonetic": "/ˈeniwʌn/",
+  "meaning": "pron. 任何人",
+  "chinese": "今天有人给我打电话吗？"
+ },
+ {
+  "word": "enjoy",
+  "phonetic": "/ɪnˈdʒɔɪ/",
+  "meaning": "v. 享受；喜欢",
+  "chinese": "我喜欢阅读。"
+ },
+ {
+  "word": "fish",
+  "phonetic": "/fɪʃ/",
+  "meaning": "n. 鱼 v. 钓鱼",
+  "chinese": "我们今天早上钓到了三条鱼。"
+ },
+ {
+  "word": "form",
+  "phonetic": "/fɔːrm/",
+  "meaning": "n. 表格；形式；v. 形成",
+  "chinese": "请填写这张表格。"
+ },
+ {
+  "word": "lady",
+  "phonetic": "/ˈleɪdi/",
+  "meaning": "n. 女士；夫人",
+  "chinese": "那边那位女士是我的老师。"
+ },
+ {
+  "word": "late",
+  "phonetic": "/leɪt/",
+  "meaning": "adj. 迟的",
+  "chinese": "对不起，我迟到了。"
+ },
+ {
+  "word": "try",
+  "phonetic": "/traɪ/",
+  "meaning": "v. 尝试",
+  "chinese": "再试一次。"
+ },
+ {
+  "word": "captain",
+  "phonetic": "/ˈkæptɪn/",
+  "meaning": "n. 船长；队长",
+  "chinese": "训练后我们的队长召集了会议。"
+ },
+ {
+  "word": "change",
+  "phonetic": "/tʃeɪndʒ/",
+  "meaning": "v./n. 改变",
+  "chinese": "我们改一下计划。"
+ },
+ {
+  "word": "dish",
+  "phonetic": "/dɪʃ/",
+  "meaning": "n. 盘子；菜肴",
+  "chinese": "我在这里最喜欢的菜是炒面。"
+ },
+ {
+  "word": "expensive",
+  "phonetic": "/ɪkˈspensɪv/",
+  "meaning": "adj. 昂贵的",
+  "chinese": "这部手机太贵了。"
+ },
+ {
+  "word": "famous",
+  "phonetic": "/ˈfeɪməs/",
+  "meaning": "adj. 著名的",
+  "chinese": "这家餐厅以面条闻名。"
+ },
+ {
+  "word": "hand",
+  "phonetic": "/hænd/",
+  "meaning": "n. 手",
+  "chinese": "把你的手给我。"
+ },
+ {
+  "word": "heavy",
+  "phonetic": "/ˈhevi/",
+  "meaning": "adj. 重的；大量的",
+  "chinese": "这个行李箱对我来说太重了。"
+ },
+ {
+  "word": "kind",
+  "phonetic": "/kaɪnd/",
+  "meaning": "adj. 友好的；n. 种类",
+  "chinese": "你能帮忙真是太好了。"
+ },
+ {
+  "word": "local",
+  "phonetic": "/ˈloʊkl/",
+  "meaning": "adj. 当地的，本地的 n. 本地人",
+  "chinese": "我们喜欢这里的本地食物。"
+ },
+ {
+  "word": "study",
+  "phonetic": "/ˈstʌdi/",
+  "meaning": "v./n. 学习",
+  "chinese": "我晚上学习。"
+ },
+ {
+  "word": "bag",
+  "phonetic": "/bæɡ/",
+  "meaning": "n. 包；袋子",
+  "chinese": "这是我的书包。"
+ },
+ {
+  "word": "child",
+  "phonetic": "/tʃaɪld/",
+  "meaning": "n. 孩子",
+  "chinese": "孩子在睡觉。"
+ },
+ {
+  "word": "dinner",
+  "phonetic": "/ˈdɪnər/",
+  "meaning": "n. 晚餐",
+  "chinese": "晚餐好了。"
+ },
+ {
+  "word": "everybody",
+  "phonetic": "/ˈevribɑːdi/",
+  "meaning": "pron. 每个人",
+  "chinese": "聚会上每个人都很开心。"
+ },
+ {
+  "word": "everything",
+  "phonetic": "/ˈevriθɪŋ/",
+  "meaning": "pron. 一切，所有事物",
+  "chinese": "旅行的准备都就绪了。"
+ },
+ {
+  "word": "father",
+  "phonetic": "/ˈfɑːðər/",
+  "meaning": "n. 父亲",
+  "chinese": "我父亲是老师。"
+ },
+ {
+  "word": "help",
+  "phonetic": "/help/",
+  "meaning": "v./n. 帮助",
+  "chinese": "需要帮忙吗？"
+ },
+ {
+  "word": "job",
+  "phonetic": "/dʒɑːb/",
+  "meaning": "n. 工作",
+  "chinese": "他找到了新工作。"
+ },
+ {
+  "word": "knowledge",
+  "phonetic": "/ˈnɑːlɪdʒ/",
+  "meaning": "n. 知识；了解",
+  "chinese": "她的英语知识很扎实。"
+ },
+ {
+  "word": "meet",
+  "phonetic": "/miːt/",
+  "meaning": "v. 见面",
+  "chinese": "很高兴见到你。"
+ },
+ {
+  "word": "name",
+  "phonetic": "/neɪm/",
+  "meaning": "n. 名字",
+  "chinese": "你叫什么名字？"
+ },
+ {
+  "word": "best",
+  "phonetic": "/best/",
+  "meaning": "adj. 最好的",
+  "chinese": "你是我最好的朋友。"
+ },
+ {
+  "word": "death",
+  "phonetic": "/deθ/",
+  "meaning": "n. 死亡",
+  "chinese": "她的去世是巨大的损失。"
+ },
+ {
+  "word": "deep",
+  "phonetic": "/diːp/",
+  "meaning": "adj. 深的；深刻的",
+  "chinese": "这条河这里真的很深。"
+ },
+ {
+  "word": "eight",
+  "phonetic": "/eɪt/",
+  "meaning": "num. 八",
+  "chinese": "八点开始上课。"
+ },
+ {
+  "word": "either",
+  "phonetic": "/ˈiːðər/",
+  "meaning": "adv. 也（不） conj. 或者",
+  "chinese": "我也不喜欢咖啡。"
+ },
+ {
+  "word": "experience",
+  "phonetic": "/ɪkˈspɪriəns/",
+  "meaning": "n. 经验；经历",
+  "chinese": "她有很多工作经验。"
+ },
+ {
+  "word": "free",
+  "phonetic": "/friː/",
+  "meaning": "adj. 自由的；免费的；有空的",
+  "chinese": "你这周六下午有空吗？"
+ },
+ {
+  "word": "friend",
+  "phonetic": "/frend/",
+  "meaning": "n. 朋友",
+  "chinese": "她是个好朋友。"
+ },
+ {
+  "word": "future",
+  "phonetic": "/ˈfjuːtʃər/",
+  "meaning": "n. 未来；adj. 未来的",
+  "chinese": "你对未来有什么计划？"
+ },
+ {
+  "word": "journey",
+  "phonetic": "/ˈdʒɜːrni/",
+  "meaning": "n. 旅行，旅程",
+  "chinese": "祝你回家旅途平安！"
+ },
+ {
+  "word": "least",
+  "phonetic": "/liːst/",
+  "meaning": "adj. 最少的",
+  "chinese": "这是这里最便宜的一个。"
+ },
+ {
+  "word": "leave",
+  "phonetic": "/liːv/",
+  "meaning": "v. 离开",
+  "chinese": "该走了。"
+ },
+ {
+  "word": "main",
+  "phonetic": "/meɪn/",
+  "meaning": "adj. 主要的",
+  "chinese": "这个故事的主旨是什么？"
+ },
+ {
+  "word": "nice",
+  "phonetic": "/naɪs/",
+  "meaning": "adj. 好的；友好的",
+  "chinese": "祝你旅途愉快！"
+ },
+ {
+  "word": "sorry",
+  "phonetic": "/ˈsɑːri/",
+  "meaning": "adj. 抱歉的",
+  "chinese": "抱歉，是我的错。"
+ },
+ {
+  "word": "ask",
+  "phonetic": "/æsk/",
+  "meaning": "v. 问；请求",
+  "chinese": "我能问个问题吗？"
+ },
+ {
+  "word": "aunt",
+  "phonetic": "/ænt/",
+  "meaning": "n. 姑姑；阿姨",
+  "chinese": "我姑姑住在纽约市。"
+ },
+ {
+  "word": "bird",
+  "phonetic": "/bɜrd/",
+  "meaning": "n. 鸟",
+  "chinese": "一只小鸟在外面唱歌。"
+ },
+ {
+  "word": "black",
+  "phonetic": "/blæk/",
+  "meaning": "adj. 黑色的；n. 黑色",
+  "chinese": "她穿了一条黑裙子去吃晚饭。"
+ },
+ {
+  "word": "blue",
+  "phonetic": "/bluː/",
+  "meaning": "adj. 蓝色的；忧郁的",
+  "chinese": "今天天空真蓝。"
+ },
+ {
+  "word": "boy",
+  "phonetic": "/bɔɪ/",
+  "meaning": "n. 男孩",
+  "chinese": "那个男孩是我弟弟。"
+ },
+ {
+  "word": "bus",
+  "phonetic": "/bʌs/",
+  "meaning": "n. 公共汽车",
+  "chinese": "我每天坐公交上班。"
+ },
+ {
+  "word": "century",
+  "phonetic": "/ˈsentʃəri/",
+  "meaning": "n. 世纪；百年",
+  "chinese": "我们生活在二十一世纪。"
+ },
+ {
+  "word": "cost",
+  "phonetic": "/kɔːst/",
+  "meaning": "n. 费用；成本 v. 花费",
+  "chinese": "这张票多少钱？"
+ },
+ {
+  "word": "likely",
+  "phonetic": "/ˈlaɪkli/",
+  "meaning": "adj. 可能的 adv. 很可能",
+  "chinese": "今天可能会下雨。"
+ },
+ {
+  "word": "understand",
+  "phonetic": "/ˌʌndərˈstænd/",
+  "meaning": "v. 理解",
+  "chinese": "我不明白。"
+ },
+ {
+  "word": "afraid",
+  "phonetic": "/əˈfreɪd/",
+  "meaning": "adj. 害怕的；担心的",
+  "chinese": "说实话，我害怕蜘蛛。"
+ },
+ {
+  "word": "along",
+  "phonetic": "/əˈlɔːŋ/",
+  "meaning": "prep. 沿着；adv. 一起",
+  "chinese": "我们沿着海滩散步。"
+ },
+ {
+  "word": "book",
+  "phonetic": "/bʊk/",
+  "meaning": "n. 书",
+  "chinese": "这本书很有趣。"
+ },
+ {
+  "word": "box",
+  "phonetic": "/bɑːks/",
+  "meaning": "n. 盒子；箱子",
+  "chinese": "把玩具放回盒子里。"
+ },
+ {
+  "word": "bridge",
+  "phonetic": "/brɪdʒ/",
+  "meaning": "n. 桥；桥梁",
+  "chinese": "我们走过了那座古老的石桥。"
+ },
+ {
+  "word": "clock",
+  "phonetic": "/klɑːk/",
+  "meaning": "n. 时钟；钟表",
+  "chinese": "墙上的钟停了。"
+ },
+ {
+  "word": "cold",
+  "phonetic": "/koʊld/",
+  "meaning": "adj. 冷的",
+  "chinese": "外面很冷。"
+ },
+ {
+  "word": "dead",
+  "phonetic": "/ded/",
+  "meaning": "adj. 死的；没电的",
+  "chinese": "电池又没电了。"
+ },
+ {
+  "word": "drive",
+  "phonetic": "/draɪv/",
+  "meaning": "v. 驾驶；驱使",
+  "chinese": "你能开车送我去机场吗？"
+ },
+ {
+  "word": "elephant",
+  "phonetic": "/ˈelɪfənt/",
+  "meaning": "n. 大象",
+  "chinese": "大象是最大的陆地动物。"
+ },
+ {
+  "word": "huge",
+  "phonetic": "/hjuːdʒ/",
+  "meaning": "adj. 巨大的，庞大的",
+  "chinese": "哇，你的新房子真大！"
+ },
+ {
+  "word": "important",
+  "phonetic": "/ɪmˈpɔːrtnt/",
+  "meaning": "adj. 重要的",
+  "chinese": "这非常重要。"
+ },
+ {
+  "word": "lunch",
+  "phonetic": "/lʌntʃ/",
+  "meaning": "n. 午餐",
+  "chinese": "我们中午一起吃午饭吧。"
+ },
+ {
+  "word": "together",
+  "phonetic": "/təˈɡeðər/",
+  "meaning": "adv. 一起",
+  "chinese": "我们一起干吧。"
+ },
+ {
+  "word": "warm",
+  "phonetic": "/wɔːrm/",
+  "meaning": "adj. 温暖的",
+  "chinese": "房间很暖和。"
+ },
+ {
+  "word": "afternoon",
+  "phonetic": "/ˌæftərˈnuːn/",
+  "meaning": "n. 下午",
+  "chinese": "明天下午三点见。"
+ },
+ {
+  "word": "around",
+  "phonetic": "/əˈraʊnd/",
+  "meaning": "prep. 在……周围；adv. 大约",
+  "chinese": "咱们绕着公园走走吧。"
+ },
+ {
+  "word": "coffee",
+  "phonetic": "/ˈkɔːfi/",
+  "meaning": "n. 咖啡",
+  "chinese": "你想喝点咖啡吗？"
+ },
+ {
+  "word": "deal",
+  "phonetic": "/diːl/",
+  "meaning": "n. 交易；协议 v. 处理",
+  "chinese": "我们昨晚达成了协议。"
+ },
+ {
+  "word": "done",
+  "phonetic": "/dʌn/",
+  "meaning": "adj. 完成了的；做好的",
+  "chinese": "你的作业做完了吗？"
+ },
+ {
+  "word": "fifty",
+  "phonetic": "/ˈfɪfti/",
+  "meaning": "num. 五十",
+  "chinese": "这件衬衫要五十美元。"
+ },
+ {
+  "word": "glass",
+  "phonetic": "/ɡlæs/",
+  "meaning": "n. 玻璃；玻璃杯",
+  "chinese": "能给我一杯水吗？"
+ },
+ {
+  "word": "hear",
+  "phonetic": "/hɪr/",
+  "meaning": "v. 听到",
+  "chinese": "我能听到你。"
+ },
+ {
+  "word": "hope",
+  "phonetic": "/hoʊp/",
+  "meaning": "v./n. 希望",
+  "chinese": "希望你一切都好。"
+ },
+ {
+  "word": "island",
+  "phonetic": "/ˈaɪlənd/",
+  "meaning": "n. 岛，岛屿",
+  "chinese": "我们在一个小岛上度过了假期。"
+ },
+ {
+  "word": "line",
+  "phonetic": "/laɪn/",
+  "meaning": "n. 线；排，队列；台词",
+  "chinese": "请在这里排队等候。"
+ },
+ {
+  "word": "lot",
+  "phonetic": "/lɑːt/",
+  "meaning": "n. 许多；大量",
+  "chinese": "非常感谢你的帮助。"
+ },
+ {
+  "word": "mind",
+  "phonetic": "/maɪnd/",
+  "meaning": "n. 头脑；v. 介意",
+  "chinese": "你介意把窗户打开吗？"
+ },
+ {
+  "word": "channel",
+  "phonetic": "/ˈtʃænl/",
+  "meaning": "n. 频道；渠道",
+  "chinese": "我在那个频道上看新闻。"
+ },
+ {
+  "word": "dear",
+  "phonetic": "/dɪr/",
+  "meaning": "adj. 亲爱的",
+  "chinese": "亲爱的朋友，你好！"
+ },
+ {
+  "word": "else",
+  "phonetic": "/els/",
+  "meaning": "adv. 别的；其他的",
+  "chinese": "你还需要别的什么吗？"
+ },
+ {
+  "word": "empty",
+  "phonetic": "/ˈempti/",
+  "meaning": "adj. 空的；v. 倒空",
+  "chinese": "冰箱又快空了。"
+ },
+ {
+  "word": "farm",
+  "phonetic": "/fɑːrm/",
+  "meaning": "n. 农场",
+  "chinese": "上周末我们参观了我叔叔的农场。"
+ },
+ {
+  "word": "film",
+  "phonetic": "/fɪlm/",
+  "meaning": "n. 电影；胶卷",
+  "chinese": "我们今晚看部电影吧。"
+ },
+ {
+  "word": "foot",
+  "phonetic": "/fʊt/",
+  "meaning": "n. 脚；英尺",
+  "chinese": "走路后我的脚很疼。"
+ },
+ {
+  "word": "government",
+  "phonetic": "/ˈɡʌvərnmənt/",
+  "meaning": "n. 政府",
+  "chinese": "政府新建了一家医院。"
+ },
+ {
+  "word": "holiday",
+  "phonetic": "/ˈhɑːlədeɪ/",
+  "meaning": "n. 假日，假期",
+  "chinese": "我们假期要去海滩。"
+ },
+ {
+  "word": "hospital",
+  "phonetic": "/ˈhɑːspɪtl/",
+  "meaning": "n. 医院",
+  "chinese": "爷爷现在在医院里。"
+ },
+ {
+  "word": "instance",
+  "phonetic": "/ˈɪnstəns/",
+  "meaning": "n. 例子；实例",
+  "chinese": "例如，先把它关掉试试。"
+ },
+ {
+  "word": "interest",
+  "phonetic": "/ˈɪntrəst/",
+  "meaning": "n. 兴趣；利息",
+  "chinese": "音乐是我的主要兴趣。"
+ },
+ {
+  "word": "land",
+  "phonetic": "/lænd/",
+  "meaning": "n. 陆地；土地；v. 着陆",
+  "chinese": "飞机十分钟后降落。"
+ },
+ {
+  "word": "learn",
+  "phonetic": "/lɜːrn/",
+  "meaning": "v. 学习",
+  "chinese": "我们每天学英语。"
+ },
+ {
+  "word": "meal",
+  "phonetic": "/miːl/",
+  "meaning": "n. 一餐；饭菜",
+  "chinese": "昨晚我们一起吃了一顿美餐。"
+ },
+ {
+  "word": "run",
+  "phonetic": "/rʌn/",
+  "meaning": "v. 跑",
+  "chinese": "他每天跑步。"
+ },
+ {
+  "word": "show",
+  "phonetic": "/ʃoʊ/",
+  "meaning": "v. 展示",
+  "chinese": "给我看下你的票。"
+ },
+ {
+  "word": "visit",
+  "phonetic": "/ˈvɪzɪt/",
+  "meaning": "v./n. 拜访",
+  "chinese": "来我们家坐坐。"
+ },
+ {
+  "word": "white",
+  "phonetic": "/waɪt/",
+  "meaning": "adj. 白色的",
+  "chinese": "墙是白色的。"
+ },
+ {
+  "word": "although",
+  "phonetic": "/ɔːlˈðoʊ/",
+  "meaning": "conj. 虽然；尽管",
+  "chinese": "虽然下雨了，我们还是玩得很开心。"
+ },
+ {
+  "word": "attention",
+  "phonetic": "/əˈtenʃn/",
+  "meaning": "n. 注意；关注",
+  "chinese": "请大家注意一下，好吗？"
+ },
+ {
+  "word": "beautiful",
+  "phonetic": "/ˈbjuːtɪfl/",
+  "meaning": "adj. 美丽的",
+  "chinese": "多美的花园啊！"
+ },
+ {
+  "word": "better",
+  "phonetic": "/ˈbetər/",
+  "meaning": "adj. 更好的",
+  "chinese": "今天我感觉好些了。"
+ },
+ {
+  "word": "bottom",
+  "phonetic": "/ˈbɑːtəm/",
+  "meaning": "n. 底部；最下面",
+  "chinese": "钥匙在我包的最底下。"
+ },
+ {
+  "word": "busy",
+  "phonetic": "/ˈbɪzi/",
+  "meaning": "adj. 忙碌的；热闹的",
+  "chinese": "我今晚忙着做作业。"
+ },
+ {
+  "word": "cause",
+  "phonetic": "/kɔːz/",
+  "meaning": "n. 原因；起因 v. 导致；引起",
+  "chinese": "吸烟会导致严重的健康问题。"
+ },
+ {
+  "word": "chance",
+  "phonetic": "/tʃæns/",
+  "meaning": "n. 机会；可能性",
+  "chinese": "请再给我一次机会。"
+ },
+ {
+  "word": "disease",
+  "phonetic": "/dɪˈziːz/",
+  "meaning": "n. 疾病",
+  "chinese": "洗手有助于预防疾病。"
+ },
+ {
+  "word": "especially",
+  "phonetic": "/ɪˈspeʃəli/",
+  "meaning": "adv. 尤其，特别",
+  "chinese": "我喜欢夏天，尤其是漫长的傍晚。"
+ },
+ {
+  "word": "flat",
+  "phonetic": "/flæt/",
+  "meaning": "adj. 平的；瘪了的",
+  "chinese": "我的自行车轮胎又瘪了。"
+ },
+ {
+  "word": "fly",
+  "phonetic": "/flaɪ/",
+  "meaning": "v. 飞；乘飞机；n. 苍蝇",
+  "chinese": "冬天鸟儿飞往南方。"
+ },
+ {
+  "word": "green",
+  "phonetic": "/ɡriːn/",
+  "meaning": "adj. 绿色的；环保的 n. 绿色",
+  "chinese": "夏天树叶是绿色的。"
+ },
+ {
+  "word": "hall",
+  "phonetic": "/hɔːl/",
+  "meaning": "n. 大厅，礼堂",
+  "chinese": "会议在大厅举行。"
+ },
+ {
+  "word": "hardly",
+  "phonetic": "/ˈhɑːrdli/",
+  "meaning": "adv. 几乎不；简直不",
+  "chinese": "我现在几乎不吃快餐了。"
+ },
+ {
+  "word": "joke",
+  "phonetic": "/dʒoʊk/",
+  "meaning": "n. 玩笑，笑话 v. 开玩笑",
+  "chinese": "那个笑话把大家都逗笑了。"
+ },
+ {
+  "word": "lucky",
+  "phonetic": "/ˈlʌki/",
+  "meaning": "adj. 幸运的；好运的",
+  "chinese": "你真幸运，有这么好的朋友。"
+ },
+ {
+  "word": "news",
+  "phonetic": "/nuːz/",
+  "meaning": "n. 新闻",
+  "chinese": "有什么好消息吗？"
+ },
+ {
+  "word": "stop",
+  "phonetic": "/stɑːp/",
+  "meaning": "v. 停止",
+  "chinese": "停下来歇一会儿。"
+ },
+ {
+  "word": "student",
+  "phonetic": "/ˈstuːdnt/",
+  "meaning": "n. 学生",
+  "chinese": "她是个好学生。"
+ },
+ {
+  "word": "actually",
+  "phonetic": "/ˈæktʃuəli/",
+  "meaning": "adv. 实际上；其实",
+  "chinese": "其实我一点也不喜欢咖啡。"
+ },
+ {
+  "word": "animal",
+  "phonetic": "/ˈænɪml/",
+  "meaning": "n. 动物",
+  "chinese": "你最喜欢什么动物？"
+ },
+ {
+  "word": "believe",
+  "phonetic": "/bɪˈliːv/",
+  "meaning": "v. 相信",
+  "chinese": "我相信你。"
+ },
+ {
+  "word": "beyond",
+  "phonetic": "/bɪˈjɑnd/",
+  "meaning": "prep. 在…那边；超出",
+  "chinese": "村庄在那些山的那边。"
+ },
+ {
+  "word": "call",
+  "phonetic": "/kɔːl/",
+  "meaning": "v./n. 打电话；称呼",
+  "chinese": "今晚给我打电话。"
+ },
+ {
+  "word": "carry",
+  "phonetic": "/ˈkæri/",
+  "meaning": "v. 携带；搬运",
+  "chinese": "你能帮我拿这个包吗？"
+ },
+ {
+  "word": "close",
+  "phonetic": "/kloʊz/",
+  "meaning": "v. 关上；adj. 近的",
+  "chinese": "请关上窗户。"
+ },
+ {
+  "word": "dangerous",
+  "phonetic": "/ˈdeɪndʒərəs/",
+  "meaning": "adj. 危险的",
+  "chinese": "在这里游泳很危险。"
+ },
+ {
+  "word": "drink",
+  "phonetic": "/drɪŋk/",
+  "meaning": "v. 喝",
+  "chinese": "要喝点什么吗？"
+ },
+ {
+  "word": "eat",
+  "phonetic": "/iːt/",
+  "meaning": "v. 吃",
+  "chinese": "我们一起吃午饭吧。"
+ },
+ {
+  "word": "education",
+  "phonetic": "/ˌedʒuˈkeɪʃn/",
+  "meaning": "n. 教育",
+  "chinese": "教育对孩子非常重要。"
+ },
+ {
+  "word": "feel",
+  "phonetic": "/fiːl/",
+  "meaning": "v. 感觉；触摸",
+  "chinese": "我今天感觉好多了。"
+ },
+ {
+  "word": "flight",
+  "phonetic": "/flaɪt/",
+  "meaning": "n. 航班；飞行",
+  "chinese": "我们的航班明天早上六点起飞。"
+ },
+ {
+  "word": "history",
+  "phonetic": "/ˈhɪstəri/",
+  "meaning": "n. 历史；历史学",
+  "chinese": "我喜欢学习古代历史。"
+ },
+ {
+  "word": "indeed",
+  "phonetic": "/ɪnˈdiːd/",
+  "meaning": "adv. 的确；确实",
+  "chinese": "那确实是一场很棒的演出。"
+ },
+ {
+  "word": "lamb",
+  "phonetic": "/læm/",
+  "meaning": "n. 羔羊；羊羔肉",
+  "chinese": "那只小羊羔好可爱，毛茸茸的。"
+ },
+ {
+  "word": "low",
+  "phonetic": "/loʊ/",
+  "meaning": "adj. 低的 adv. 低地",
+  "chinese": "今天气温很低。"
+ },
+ {
+  "word": "machine",
+  "phonetic": "/məˈʃiːn/",
+  "meaning": "n. 机器；机械",
+  "chinese": "这台机器能做新鲜的咖啡。"
+ },
+ {
+  "word": "miss",
+  "phonetic": "/mɪs/",
+  "meaning": "v. 想念；错过",
+  "chinese": "我想你。"
+ },
+ {
+  "word": "speak",
+  "phonetic": "/spiːk/",
+  "meaning": "v. 说话；讲（语言）",
+  "chinese": "你说英语吗？"
+ },
+ {
+  "word": "start",
+  "phonetic": "/stɑːrt/",
+  "meaning": "v. 开始",
+  "chinese": "我们现在开始。"
+ },
+ {
+  "word": "above",
+  "phonetic": "/əˈbʌv/",
+  "meaning": "prep. 在……上面；超过",
+  "chinese": "飞机飞在云层上方。"
+ },
+ {
+  "word": "alive",
+  "phonetic": "/əˈlaɪv/",
+  "meaning": "adj. 活着的；有活力的",
+  "chinese": "她为自己活着而高兴。"
+ },
+ {
+  "word": "art",
+  "phonetic": "/ɑːrt/",
+  "meaning": "n. 艺术；美术",
+  "chinese": "她非常喜欢现代艺术。"
+ },
+ {
+  "word": "attempt",
+  "phonetic": "/əˈtempt/",
+  "meaning": "v. 尝试；n. 企图",
+  "chinese": "他试图打开那扇锁着的门。"
+ },
+ {
+  "word": "beer",
+  "phonetic": "/bɪr/",
+  "meaning": "n. 啤酒",
+  "chinese": "想来杯冰啤酒吗？"
+ },
+ {
+  "word": "born",
+  "phonetic": "/bɔːrn/",
+  "meaning": "adj. 出生的；天生的",
+  "chinese": "我出生在一个小镇。"
+ },
+ {
+  "word": "broken",
+  "phonetic": "/ˈbroʊkən/",
+  "meaning": "adj. 破碎的；坏掉的",
+  "chinese": "我的手机屏幕又碎了。"
+ },
+ {
+  "word": "clear",
+  "phonetic": "/klɪr/",
+  "meaning": "adj. 清楚的；晴朗的",
+  "chinese": "我的说明够清楚吗？"
+ },
+ {
+  "word": "company",
+  "phonetic": "/ˈkʌmpəni/",
+  "meaning": "n. 公司；陪伴",
+  "chinese": "他在一家大型科技公司工作。"
+ },
+ {
+  "word": "computer",
+  "phonetic": "/kəmˈpjuːtər/",
+  "meaning": "n. 电脑；计算机",
+  "chinese": "我的电脑今天突然不能用了。"
+ },
+ {
+  "word": "distance",
+  "phonetic": "/ˈdɪstəns/",
+  "meaning": "n. 距离",
+  "chinese": "我的学校步行就能到。"
+ },
+ {
+  "word": "driver",
+  "phonetic": "/ˈdraɪvər/",
+  "meaning": "n. 司机；驾驶员",
+  "chinese": "公交车司机在等我们。"
+ },
+ {
+  "word": "effort",
+  "phonetic": "/ˈefərt/",
+  "meaning": "n. 努力；尽力",
+  "chinese": "他非常努力地帮助我们。"
+ },
+ {
+  "word": "eventually",
+  "phonetic": "/ɪˈventʃuəli/",
+  "meaning": "adv. 最终，终于",
+  "chinese": "他努力学习，最终通过了考试。"
+ },
+ {
+  "word": "everyone",
+  "phonetic": "/ˈevriwʌn/",
+  "meaning": "pron. 每个人，人人",
+  "chinese": "大家都非常喜欢这顿晚餐。"
+ },
+ {
+  "word": "field",
+  "phonetic": "/fiːld/",
+  "meaning": "n. 田地；领域",
+  "chinese": "他在医疗领域工作。"
+ },
+ {
+  "word": "fine",
+  "phonetic": "/faɪn/",
+  "meaning": "adj. 好的；晴朗的",
+  "chinese": "我很好，谢谢。"
+ },
+ {
+  "word": "funny",
+  "phonetic": "/ˈfʌni/",
+  "meaning": "adj. 有趣的；滑稽的",
+  "chinese": "那个笑话真好笑！"
+ },
+ {
+  "word": "game",
+  "phonetic": "/ɡeɪm/",
+  "meaning": "n. 游戏；比赛",
+  "chinese": "晚饭后我们玩个游戏吧。"
+ },
+ {
+  "word": "gate",
+  "phonetic": "/ɡeɪt/",
+  "meaning": "n. 大门；登机口",
+  "chinese": "在前门等我。"
+ },
+ {
+  "word": "general",
+  "phonetic": "/ˈdʒenrəl/",
+  "meaning": "adj. 一般的；总的",
+  "chinese": "总的来说，我喜欢辣的食物。"
+ },
+ {
+  "word": "gold",
+  "phonetic": "/ɡoʊld/",
+  "meaning": "n. 金；黄金 adj. 金色的",
+  "chinese": "这枚戒指是金子做的。"
+ },
+ {
+  "word": "group",
+  "phonetic": "/ɡruːp/",
+  "meaning": "n. 组，群；团体",
+  "chinese": "我们小组每周五晚上碰面。"
+ },
+ {
+  "word": "hat",
+  "phonetic": "/hæt/",
+  "meaning": "n. 帽子",
+  "chinese": "你的新帽子真好看。"
+ },
+ {
+  "word": "ice",
+  "phonetic": "/aɪs/",
+  "meaning": "n. 冰；冰块",
+  "chinese": "在我的饮料里放些冰块。"
+ },
+ {
+  "word": "lead",
+  "phonetic": "/liːd/",
+  "meaning": "v. 带领；领先",
+  "chinese": "我来带路去车站。"
+ },
+ {
+  "word": "mother",
+  "phonetic": "/ˈmʌðər/",
+  "meaning": "n. 母亲",
+  "chinese": "我妈妈做饭很好吃。"
+ },
+ {
+  "word": "remember",
+  "phonetic": "/rɪˈmembər/",
+  "meaning": "v. 记得",
+  "chinese": "我记得你的样子。"
+ },
+ {
+  "word": "stand",
+  "phonetic": "/stænd/",
+  "meaning": "v. 站",
+  "chinese": "请起立。"
+ },
+ {
+  "word": "walk",
+  "phonetic": "/wɔːk/",
+  "meaning": "v. 走路",
+  "chinese": "我们走路回家吧。"
+ },
+ {
+  "word": "alone",
+  "phonetic": "/əˈloʊn/",
+  "meaning": "adj. 独自的；单独的",
+  "chinese": "他独自和猫生活在一起。"
+ },
+ {
+  "word": "baby",
+  "phonetic": "/ˈbeɪbi/",
+  "meaning": "n. 婴儿；宝宝",
+  "chinese": "宝宝正在婴儿床里睡觉。"
+ },
+ {
+  "word": "beauty",
+  "phonetic": "/ˈbjuːti/",
+  "meaning": "n. 美；美人",
+  "chinese": "那场日落真是美极了。"
+ },
+ {
+  "word": "bill",
+  "phonetic": "/bɪl/",
+  "meaning": "n. 账单；钞票",
+  "chinese": "可以给我们账单吗？"
+ },
+ {
+  "word": "biscuit",
+  "phonetic": "/ˈbɪskɪt/",
+  "meaning": "n. 饼干",
+  "chinese": "想来块饼干配茶吗？"
+ },
+ {
+  "word": "brother",
+  "phonetic": "/ˈbrʌðər/",
+  "meaning": "n. 兄弟",
+  "chinese": "我哥哥是医生。"
+ },
+ {
+  "word": "building",
+  "phonetic": "/ˈbɪldɪŋ/",
+  "meaning": "n. 建筑物；大楼",
+  "chinese": "那栋楼真高。"
+ },
+ {
+  "word": "cat",
+  "phonetic": "/kæt/",
+  "meaning": "n. 猫",
+  "chinese": "我的猫整天睡在我床上。"
+ },
+ {
+  "word": "catch",
+  "phonetic": "/kætʃ/",
+  "meaning": "v. 抓住；赶上；染上",
+  "chinese": "我们明天赶早班车吧。"
+ },
+ {
+  "word": "clothes",
+  "phonetic": "/kloʊðz/",
+  "meaning": "n. 衣服；衣物",
+  "chinese": "这些衣服还很新。"
+ },
+ {
+  "word": "condition",
+  "phonetic": "/kənˈdɪʃn/",
+  "meaning": "n. 条件；状况",
+  "chinese": "这辆车状况良好。"
+ },
+ {
+  "word": "cup",
+  "phonetic": "/kʌp/",
+  "meaning": "n. 杯子；一杯",
+  "chinese": "你想喝杯茶吗？"
+ },
+ {
+  "word": "custom",
+  "phonetic": "/ˈkʌstəm/",
+  "meaning": "n. 习俗；习惯",
+  "chinese": "鞠躬是当地的一种习俗。"
+ },
+ {
+  "word": "customer",
+  "phonetic": "/ˈkʌstəmər/",
+  "meaning": "n. 顾客；客户",
+  "chinese": "顾客永远是对的。"
+ },
+ {
+  "word": "dark",
+  "phonetic": "/dɑːrk/",
+  "meaning": "adj. 黑暗的；深色的 n. 黑暗",
+  "chinese": "冬天天黑得早。"
+ },
+ {
+  "word": "daughter",
+  "phonetic": "/ˈdɔːtər/",
+  "meaning": "n. 女儿",
+  "chinese": "她女儿六岁了。"
+ },
+ {
+  "word": "easy",
+  "phonetic": "/ˈiːzi/",
+  "meaning": "adj. 容易的；轻松的",
+  "chinese": "这道数学题真的很简单。"
+ },
+ {
+  "word": "escape",
+  "phonetic": "/ɪˈskeɪp/",
+  "meaning": "v. 逃脱，逃离",
+  "chinese": "你是怎么避开堵车的？"
+ },
+ {
+  "word": "eye",
+  "phonetic": "/aɪ/",
+  "meaning": "n. 眼睛",
+  "chinese": "请帮我看着我的包。"
+ },
+ {
+  "word": "factory",
+  "phonetic": "/ˈfæktəri/",
+  "meaning": "n. 工厂",
+  "chinese": "我爸爸在一家鞋厂工作。"
+ },
+ {
+  "word": "fall",
+  "phonetic": "/fɔːl/",
+  "meaning": "v. 跌倒；落下；n. 秋天",
+  "chinese": "小心，别在冰上摔倒。"
+ },
+ {
+  "word": "further",
+  "phonetic": "/ˈfɜːrðər/",
+  "meaning": "adj. 进一步的；adv. 更远地；进一步",
+  "chinese": "我们明天再进一步讨论吧。"
+ },
+ {
+  "word": "ghost",
+  "phonetic": "/ɡoʊst/",
+  "meaning": "n. 鬼；幽灵",
+  "chinese": "你相信有鬼吗？"
+ },
+ {
+  "word": "hello",
+  "phonetic": "/həˈloʊ/",
+  "meaning": "int. 你好",
+  "chinese": "大家好！"
+ },
+ {
+  "word": "ideal",
+  "phonetic": "/aɪˈdiːəl/",
+  "meaning": "adj. 理想的；完美的",
+  "chinese": "海滩是放松的理想场所。"
+ },
+ {
+  "word": "justice",
+  "phonetic": "/ˈdʒʌstɪs/",
+  "meaning": "n. 正义；司法",
+  "chinese": "我们要为受害者讨回公道。"
+ },
+ {
+  "word": "love",
+  "phonetic": "/lʌv/",
+  "meaning": "v./n. 爱",
+  "chinese": "我爱这座城市。"
+ },
+ {
+  "word": "metal",
+  "phonetic": "/ˈmetl/",
+  "meaning": "n. 金属",
+  "chinese": "这个盒子是金属做的。"
+ },
+ {
+  "word": "month",
+  "phonetic": "/mʌnθ/",
+  "meaning": "n. 月",
+  "chinese": "下个月见。"
+ },
+ {
+  "word": "sell",
+  "phonetic": "/sel/",
+  "meaning": "v. 卖",
+  "chinese": "他们卖新鲜水果。"
+ },
+ {
+  "word": "act",
+  "phonetic": "/ækt/",
+  "meaning": "v. 行动；表现 n. 行为",
+  "chinese": "请别表现得像个孩子。"
+ },
+ {
+  "word": "action",
+  "phonetic": "/ˈækʃn/",
+  "meaning": "n. 行动；行为",
+  "chinese": "现在是采取行动的时候了。"
+ },
+ {
+  "word": "avoid",
+  "phonetic": "/əˈvɔɪd/",
+  "meaning": "v. 避免；躲开",
+  "chinese": "避免吃太多垃圾食品。"
+ },
+ {
+  "word": "below",
+  "phonetic": "/bɪˈloʊ/",
+  "meaning": "prep. 在…下面；adv. 在下方",
+  "chinese": "今天气温在零度以下。"
+ },
+ {
+  "word": "bring",
+  "phonetic": "/brɪŋ/",
+  "meaning": "v. 带来",
+  "chinese": "请把你的书带来。"
+ },
+ {
+  "word": "camp",
+  "phonetic": "/kæmp/",
+  "meaning": "n. 营地 v. 露营",
+  "chinese": "我们在湖边扎营。"
+ },
+ {
+  "word": "clean",
+  "phonetic": "/kliːn/",
+  "meaning": "adj. 干净的",
+  "chinese": "保持房间干净。"
+ },
+ {
+  "word": "control",
+  "phonetic": "/kənˈtroʊl/",
+  "meaning": "v. 控制 n. 控制；管理",
+  "chinese": "请尽量控制你的脾气。"
+ },
+ {
+  "word": "danger",
+  "phonetic": "/ˈdeɪndʒər/",
+  "meaning": "n. 危险",
+  "chinese": "快离开，前面有危险！"
+ },
+ {
+  "word": "decide",
+  "phonetic": "/dɪˈsaɪd/",
+  "meaning": "v. 决定；下决心",
+  "chinese": "我决定不了吃什么。"
+ },
+ {
+  "word": "dentist",
+  "phonetic": "/ˈdentɪst/",
+  "meaning": "n. 牙医",
+  "chinese": "我今天需要去看牙医。"
+ },
+ {
+  "word": "easily",
+  "phonetic": "/ˈiːzəli/",
+  "meaning": "adv. 容易地；轻松地",
+  "chinese": "我今天能轻松完成这件事。"
+ },
+ {
+  "word": "effect",
+  "phonetic": "/ɪˈfekt/",
+  "meaning": "n. 影响；效果",
+  "chinese": "这药见效很快。"
+ },
+ {
+  "word": "engine",
+  "phonetic": "/ˈendʒɪn/",
+  "meaning": "n. 发动机；引擎",
+  "chinese": "汽车发动机出问题了。"
+ },
+ {
+  "word": "evidence",
+  "phonetic": "/ˈevɪdəns/",
+  "meaning": "n. 证据",
+  "chinese": "没有证据表明是他干的。"
+ },
+ {
+  "word": "except",
+  "phonetic": "/ɪkˈsept/",
+  "meaning": "prep. 除……之外",
+  "chinese": "除了汤姆，大家都去参加聚会了。"
+ },
+ {
+  "word": "explain",
+  "phonetic": "/ɪkˈspleɪn/",
+  "meaning": "v. 解释；说明",
+  "chinese": "你能解释一下这是怎么运作的吗？"
+ },
+ {
+  "word": "fear",
+  "phonetic": "/fɪr/",
+  "meaning": "n. 恐惧 v. 害怕",
+  "chinese": "不要害怕失败，要从中学习。"
+ },
+ {
+  "word": "fifteen",
+  "phonetic": "/ˌfɪfˈtiːn/",
+  "meaning": "num. 十五",
+  "chinese": "她只有十五岁。"
+ },
+ {
+  "word": "furniture",
+  "phonetic": "/ˈfɜːrnɪtʃər/",
+  "meaning": "n. 家具",
+  "chinese": "我们为客厅买了新家具。"
+ },
+ {
+  "word": "garage",
+  "phonetic": "/ɡəˈrɑːʒ/",
+  "meaning": "n. 车库；汽修厂",
+  "chinese": "我的车停在车库里。"
+ },
+ {
+  "word": "goods",
+  "phonetic": "/ɡʊdz/",
+  "meaning": "n. 商品；货物",
+  "chinese": "这家商店卖各种各样的商品。"
+ },
+ {
+  "word": "grow",
+  "phonetic": "/ɡroʊ/",
+  "meaning": "v. 生长；种植",
+  "chinese": "植物在春天长得很快。"
+ },
+ {
+  "word": "health",
+  "phonetic": "/helθ/",
+  "meaning": "n. 健康；健康状况",
+  "chinese": "锻炼对你的健康有好处。"
+ },
+ {
+  "word": "hot",
+  "phonetic": "/hɑːt/",
+  "meaning": "adj. 热的",
+  "chinese": "茶很烫。"
+ },
+ {
+  "word": "imagine",
+  "phonetic": "/ɪˈmædʒɪn/",
+  "meaning": "v. 想象；设想",
+  "chinese": "想象一下住在一个小岛上。"
+ },
+ {
+  "word": "instead",
+  "phonetic": "/ɪnˈsted/",
+  "meaning": "adv. 代替；反而",
+  "chinese": "我们走路吧，不开车了。"
+ },
+ {
+  "word": "key",
+  "phonetic": "/kiː/",
+  "meaning": "n. 钥匙；关键",
+  "chinese": "我找不到家门钥匙了。"
+ },
+ {
+  "word": "lake",
+  "phonetic": "/leɪk/",
+  "meaning": "n. 湖；湖泊",
+  "chinese": "我们整个下午都在湖里游泳。"
+ },
+ {
+  "word": "length",
+  "phonetic": "/leŋθ/",
+  "meaning": "n. 长度",
+  "chinese": "这根绳子有多长？"
+ },
+ {
+  "word": "lovely",
+  "phonetic": "/ˈlʌvli/",
+  "meaning": "adj. 可爱的；美好的",
+  "chinese": "今天天气真好，正适合散步！"
+ },
+ {
+  "word": "match",
+  "phonetic": "/mætʃ/",
+  "meaning": "v. 相配；匹配 n. 比赛",
+  "chinese": "这双鞋和你的裙子非常相配。"
+ },
+ {
+  "word": "material",
+  "phonetic": "/məˈtɪriəl/",
+  "meaning": "n. 材料；原料",
+  "chinese": "我们需要为这个项目买些材料。"
+ },
+ {
+  "word": "mental",
+  "phonetic": "/ˈmentl/",
+  "meaning": "adj. 精神的；脑力的",
+  "chinese": "阅读对你的精神健康有益。"
+ },
+ {
+  "word": "mere",
+  "phonetic": "/mɪr/",
+  "meaning": "adj. 仅仅的；只不过的",
+  "chinese": "那只是运气，仅此而已。"
+ },
+ {
+  "word": "ready",
+  "phonetic": "/ˈredi/",
+  "meaning": "adj. 准备好的",
+  "chinese": "我准备好出发了。"
+ },
+ {
+  "word": "ability",
+  "phonetic": "/əˈbɪləti/",
+  "meaning": "n. 能力；才能",
+  "chinese": "她有快速解决问题的能力。"
+ },
+ {
+  "word": "account",
+  "phonetic": "/əˈkaʊnt/",
+  "meaning": "n. 账户；账目",
+  "chinese": "我需要查看我的银行账户。"
+ },
+ {
+  "word": "arrive",
+  "phonetic": "/əˈraɪv/",
+  "meaning": "v. 到达；抵达",
+  "chinese": "你什么时候到家的？"
+ },
+ {
+  "word": "beside",
+  "phonetic": "/bɪˈsaɪd/",
+  "meaning": "prep. 在…旁边",
+  "chinese": "请坐在我旁边的沙发上。"
+ },
+ {
+  "word": "board",
+  "phonetic": "/bɔːrd/",
+  "meaning": "n. 木板；董事会",
+  "chinese": "我们中午登机。"
+ },
+ {
+  "word": "breakfast",
+  "phonetic": "/ˈbrekfəst/",
+  "meaning": "n. 早餐",
+  "chinese": "你今天早餐吃了什么？"
+ },
+ {
+  "word": "coat",
+  "phonetic": "/koʊt/",
+  "meaning": "n. 外套；大衣",
+  "chinese": "穿上外套，外面很冷。"
+ },
+ {
+  "word": "common",
+  "phonetic": "/ˈkɑːmən/",
+  "meaning": "adj. 常见的；普通的",
+  "chinese": "那个名字在中国很常见。"
+ },
+ {
+  "word": "crowd",
+  "phonetic": "/kraʊd/",
+  "meaning": "n. 人群；一批人",
+  "chinese": "一大群人观看了比赛。"
+ },
+ {
+  "word": "cupboard",
+  "phonetic": "/ˈkʌbərd/",
+  "meaning": "n. 橱柜；碗柜",
+  "chinese": "盘子在橱柜里。"
+ },
+ {
+  "word": "cut",
+  "phonetic": "/kʌt/",
+  "meaning": "v. 切；割 n. 伤口；削减",
+  "chinese": "小心，别切到手指！"
+ },
+ {
+  "word": "describe",
+  "phonetic": "/dɪˈskraɪb/",
+  "meaning": "v. 描述；形容",
+  "chinese": "你能描述一下那个男人的样子吗？"
+ },
+ {
+  "word": "die",
+  "phonetic": "/daɪ/",
+  "meaning": "v. 死亡；枯萎",
+  "chinese": "没有足够的水，植物会死掉。"
+ },
+ {
+  "word": "display",
+  "phonetic": "/dɪˈspleɪ/",
+  "meaning": "v. 展示；显示",
+  "chinese": "你能把地图显示在屏幕上吗？"
+ },
+ {
+  "word": "doubt",
+  "phonetic": "/daʊt/",
+  "meaning": "v. 怀疑；n. 疑虑",
+  "chinese": "我毫不怀疑她会通过考试。"
+ },
+ {
+  "word": "dream",
+  "phonetic": "/driːm/",
+  "meaning": "n. 梦；梦想 v. 做梦",
+  "chinese": "我的梦想是环游世界。"
+ },
+ {
+  "word": "dry",
+  "phonetic": "/draɪ/",
+  "meaning": "adj. 干的；干燥的 v. 弄干",
+  "chinese": "这个月的天气很干燥。"
+ },
+ {
+  "word": "dust",
+  "phonetic": "/dʌst/",
+  "meaning": "n. 灰尘；尘土 v. 除尘",
+  "chinese": "架子上有很多灰尘。"
+ },
+ {
+  "word": "editor",
+  "phonetic": "/ˈedɪtər/",
+  "meaning": "n. 编辑；主编",
+  "chinese": "我姐姐是一名杂志编辑。"
+ },
+ {
+  "word": "example",
+  "phonetic": "/ɪɡˈzæmpəl/",
+  "meaning": "n. 例子；榜样",
+  "chinese": "你能给我举个例子吗？"
+ },
+ {
+  "word": "fast",
+  "phonetic": "/fæst/",
+  "meaning": "adj./adv. 快的",
+  "chinese": "别开这么快。"
+ },
+ {
+  "word": "figure",
+  "phonetic": "/ˈfɪɡjər/",
+  "meaning": "n. 数字；身材 v. 认为；想出",
+  "chinese": "我弄不明白这个问题。"
+ },
+ {
+  "word": "firm",
+  "phonetic": "/fɜːrm/",
+  "meaning": "n. 公司 adj. 坚定的",
+  "chinese": "他在一家大型律师事务所工作。"
+ },
+ {
+  "word": "force",
+  "phonetic": "/fɔːrs/",
+  "meaning": "v. 强迫；n. 力量；武力",
+  "chinese": "别强迫他去。"
+ },
+ {
+  "word": "former",
+  "phonetic": "/ˈfɔːrmər/",
+  "meaning": "adj. 以前的，从前的",
+  "chinese": "我以前的老师还记得我的名字。"
+ },
+ {
+  "word": "forty",
+  "phonetic": "/ˈfɔːrti/",
+  "meaning": "num. 四十",
+  "chinese": "我妈妈上个月满四十岁了。"
+ },
+ {
+  "word": "grass",
+  "phonetic": "/ɡræs/",
+  "meaning": "n. 草；草地",
+  "chinese": "孩子们正在草地上玩耍。"
+ },
+ {
+  "word": "heart",
+  "phonetic": "/hɑːrt/",
+  "meaning": "n. 心；心脏",
+  "chinese": "我紧张时心跳得很快。"
+ },
+ {
+  "word": "hole",
+  "phonetic": "/hoʊl/",
+  "meaning": "n. 洞，孔",
+  "chinese": "我的袜子上有个洞。"
+ },
+ {
+  "word": "ill",
+  "phonetic": "/ɪl/",
+  "meaning": "adj. 生病的；不舒服的",
+  "chinese": "她饭后感到不舒服。"
+ },
+ {
+  "word": "inside",
+  "phonetic": "/ˌɪnˈsaɪd/",
+  "meaning": "prep. 在…里面 adv. 在里面",
+  "chinese": "我们进去吧，外面很冷。"
+ },
+ {
+  "word": "king",
+  "phonetic": "/kɪŋ/",
+  "meaning": "n. 国王",
+  "chinese": "国王住在一座巨大的城堡里。"
+ },
+ {
+  "word": "kitchen",
+  "phonetic": "/ˈkɪtʃɪn/",
+  "meaning": "n. 厨房",
+  "chinese": "有人在厨房里做饭。"
+ },
+ {
+  "word": "knock",
+  "phonetic": "/nɑːk/",
+  "meaning": "v. 敲；敲击",
+  "chinese": "请先敲门。"
+ },
+ {
+  "word": "lay",
+  "phonetic": "/leɪ/",
+  "meaning": "v. 放置；下（蛋）",
+  "chinese": "请把书放在桌子上。"
+ },
+ {
+  "word": "lose",
+  "phonetic": "/luːz/",
+  "meaning": "v. 丢失；输掉；失去",
+  "chinese": "别再把钥匙弄丢了。"
+ },
+ {
+  "word": "map",
+  "phonetic": "/mæp/",
+  "meaning": "n. 地图",
+  "chinese": "你能给我看看地图吗？"
+ },
+ {
+  "word": "meat",
+  "phonetic": "/miːt/",
+  "meaning": "n. 肉；肉类",
+  "chinese": "我不吃肉，只吃蔬菜。"
+ },
+ {
+  "word": "medical",
+  "phonetic": "/ˈmedɪkl/",
+  "meaning": "adj. 医学的；医疗的",
+  "chinese": "他需要立即接受医疗救治。"
+ },
+ {
+  "word": "medicine",
+  "phonetic": "/ˈmedɪsn/",
+  "meaning": "n. 药；医学",
+  "chinese": "这药一天服用两次。"
+ },
+ {
+  "word": "message",
+  "phonetic": "/ˈmesɪdʒ/",
+  "meaning": "n. 消息；口信",
+  "chinese": "昨晚你收到我的消息了吗？"
+ },
+ {
+  "word": "middle",
+  "phonetic": "/ˈmɪdl/",
+  "meaning": "n. 中间；中部",
+  "chinese": "房间中间有一把椅子。"
+ },
+ {
+  "word": "mine",
+  "phonetic": "/maɪn/",
+  "meaning": "pron. 我的（东西）",
+  "chinese": "这本书是我的，不是你的。"
+ },
+ {
+  "word": "talk",
+  "phonetic": "/tɔːk/",
+  "meaning": "v./n. 谈话",
+  "chinese": "我们晚点再聊。"
+ },
+ {
+  "word": "airport",
+  "phonetic": "/ˈerpɔːrt/",
+  "meaning": "n. 机场",
+  "chinese": "我会去机场接你。"
+ },
+ {
+  "word": "amount",
+  "phonetic": "/əˈmaʊnt/",
+  "meaning": "n. 数量；总额",
+  "chinese": "工作量让我吃惊。"
+ },
+ {
+  "word": "article",
+  "phonetic": "/ˈɑːrtɪkl/",
+  "meaning": "n. 文章；物品",
+  "chinese": "我今天读了一篇有趣的文章。"
+ },
+ {
+  "word": "available",
+  "phonetic": "/əˈveɪləbl/",
+  "meaning": "adj. 可用的；有空的",
+  "chinese": "你这周五下午有空吗？"
+ },
+ {
+  "word": "average",
+  "phonetic": "/ˈævərɪdʒ/",
+  "meaning": "adj. 平均的；普通的 n. 平均数",
+  "chinese": "平均价格大约十美元。"
+ },
+ {
+  "word": "bear",
+  "phonetic": "/ber/",
+  "meaning": "v. 忍受；n. 熊",
+  "chinese": "我受不了这么热的天气。"
+ },
+ {
+  "word": "beef",
+  "phonetic": "/biːf/",
+  "meaning": "n. 牛肉",
+  "chinese": "请给我来一份牛肉面。"
+ },
+ {
+  "word": "begin",
+  "phonetic": "/bɪˈɡɪn/",
+  "meaning": "v. 开始",
+  "chinese": "九点开始上课。"
+ },
+ {
+  "word": "belief",
+  "phonetic": "/bɪˈlif/",
+  "meaning": "n. 信念；信仰",
+  "chinese": "我对你有很强的信心。"
+ },
+ {
+  "word": "carpet",
+  "phonetic": "/ˈkɑːrpɪt/",
+  "meaning": "n. 地毯",
+  "chinese": "红地毯让房间感觉很温馨。"
+ },
+ {
+  "word": "climate",
+  "phonetic": "/ˈklaɪmət/",
+  "meaning": "n. 气候；风气",
+  "chinese": "我喜欢这里温暖的气候。"
+ },
+ {
+  "word": "comfort",
+  "phonetic": "/ˈkʌmfərt/",
+  "meaning": "n. 舒适；安慰 v. 安慰",
+  "chinese": "她尽力安慰哭泣的朋友。"
+ },
+ {
+  "word": "community",
+  "phonetic": "/kəˈmjuːnəti/",
+  "meaning": "n. 社区；社群",
+  "chinese": "我们社区有一个大公园。"
+ },
+ {
+  "word": "crash",
+  "phonetic": "/kræʃ/",
+  "meaning": "v. 撞车；崩溃 n. 碰撞；坠机",
+  "chinese": "我工作时电脑崩溃了。"
+ },
+ {
+  "word": "creature",
+  "phonetic": "/ˈkriːtʃər/",
+  "meaning": "n. 生物；动物",
+  "chinese": "那是个多么奇怪的生物啊！"
+ },
+ {
+  "word": "curious",
+  "phonetic": "/ˈkjʊriəs/",
+  "meaning": "adj. 好奇的；求知欲强的",
+  "chinese": "孩子们对一切都好奇。"
+ },
+ {
+  "word": "desert",
+  "phonetic": "/ˈdezərt/",
+  "meaning": "n. 沙漠",
+  "chinese": "骆驼能在炎热的沙漠里生存。"
+ },
+ {
+  "word": "desk",
+  "phonetic": "/desk/",
+  "meaning": "n. 书桌；办公桌",
+  "chinese": "我的钥匙在桌上。"
+ },
+ {
+  "word": "despite",
+  "phonetic": "/dɪˈspaɪt/",
+  "meaning": "prep. 尽管；不管",
+  "chinese": "尽管下着大雨，我们还是出门了。"
+ },
+ {
+  "word": "develop",
+  "phonetic": "/dɪˈveləp/",
+  "meaning": "v. 发展；开发",
+  "chinese": "他想提高自己的厨艺。"
+ },
+ {
+  "word": "direction",
+  "phonetic": "/dəˈrekʃn/",
+  "meaning": "n. 方向；方位",
+  "chinese": "你能告诉我去车站怎么走吗？"
+ },
+ {
+  "word": "dog",
+  "phonetic": "/dɔːɡ/",
+  "meaning": "n. 狗",
+  "chinese": "我的狗在门口迎接我。"
+ },
+ {
+  "word": "electric",
+  "phonetic": "/ɪˈlektrɪk/",
+  "meaning": "adj. 电的；电动的",
+  "chinese": "我爸爸买了一辆电动车。"
+ },
+ {
+  "word": "engineer",
+  "phonetic": "/ˌendʒɪˈnɪr/",
+  "meaning": "n. 工程师",
+  "chinese": "我哥哥是一名软件工程师。"
+ },
+ {
+  "word": "everywhere",
+  "phonetic": "/ˈevriwer/",
+  "meaning": "adv. 到处，处处",
+  "chinese": "我到处找都没找到钥匙。"
+ },
+ {
+  "word": "excuse",
+  "phonetic": "/ɪkˈskjuːs/",
+  "meaning": "n. 借口；v. 原谅",
+  "chinese": "别再为迟到找借口了。"
+ },
+ {
+  "word": "express",
+  "phonetic": "/ɪkˈspres/",
+  "meaning": "v. 表达；adj. 快速的",
+  "chinese": "很难表达我的感受。"
+ },
+ {
+  "word": "fail",
+  "phonetic": "/feɪl/",
+  "meaning": "v. 失败；不及格",
+  "chinese": "我不想考试不及格。"
+ },
+ {
+  "word": "finally",
+  "phonetic": "/ˈfaɪnəli/",
+  "meaning": "adv. 终于；最后",
+  "chinese": "我终于写完作业了。"
+ },
+ {
+  "word": "football",
+  "phonetic": "/ˈfʊtbɔːl/",
+  "meaning": "n. 足球；橄榄球",
+  "chinese": "我们每个周日都踢足球。"
+ },
+ {
+  "word": "forest",
+  "phonetic": "/ˈfɔːrɪst/",
+  "meaning": "n. 森林",
+  "chinese": "我们徒步穿过了森林。"
+ },
+ {
+  "word": "forward",
+  "phonetic": "/ˈfɔːrwərd/",
+  "meaning": "adv. 向前；今后",
+  "chinese": "我们期待着假期的到来。"
+ },
+ {
+  "word": "gentle",
+  "phonetic": "/ˈdʒentl/",
+  "meaning": "adj. 温柔的；轻柔的",
+  "chinese": "对小狗要温柔一点。"
+ },
+ {
+  "word": "giant",
+  "phonetic": "/ˈdʒaɪənt/",
+  "meaning": "adj. 巨大的 n. 巨人",
+  "chinese": "他们在动物园看到了一头巨大的大象。"
+ },
+ {
+  "word": "gun",
+  "phonetic": "/ɡʌn/",
+  "meaning": "n. 枪，炮",
+  "chinese": "那名警察带着枪。"
+ },
+ {
+  "word": "habit",
+  "phonetic": "/ˈhæbɪt/",
+  "meaning": "n. 习惯，习性",
+  "chinese": "睡前阅读是个好习惯。"
+ },
+ {
+  "word": "height",
+  "phonetic": "/haɪt/",
+  "meaning": "n. 高度；身高",
+  "chinese": "这堵墙是我身高的两倍。"
+ },
+ {
+  "word": "hobby",
+  "phonetic": "/ˈhɑːbi/",
+  "meaning": "n. 爱好，业余爱好",
+  "chinese": "我的爱好是弹吉他。"
+ },
+ {
+  "word": "illness",
+  "phonetic": "/ˈɪlnəs/",
+  "meaning": "n. 疾病；患病",
+  "chinese": "他因生病没去上班。"
+ },
+ {
+  "word": "income",
+  "phonetic": "/ˈɪnkʌm/",
+  "meaning": "n. 收入；收益",
+  "chinese": "她今年的收入翻了一番。"
+ },
+ {
+  "word": "industry",
+  "phonetic": "/ˈɪndəstri/",
+  "meaning": "n. 工业；行业",
+  "chinese": "他一直在汽车行业工作。"
+ },
+ {
+  "word": "latest",
+  "phonetic": "/ˈleɪtɪst/",
+  "meaning": "adj. 最新的；最近的",
+  "chinese": "你听过她最新的歌吗？"
+ },
+ {
+  "word": "list",
+  "phonetic": "/lɪst/",
+  "meaning": "n. 清单，列表 v. 列出",
+  "chinese": "我列了一张购物清单。"
+ },
+ {
+  "word": "major",
+  "phonetic": "/ˈmeɪdʒər/",
+  "meaning": "adj. 主要的 n. 专业",
+  "chinese": "你大学学什么专业？"
+ },
+ {
+  "word": "mean",
+  "phonetic": "/miːn/",
+  "meaning": "v. 意思是；意味着 adj. 刻薄的",
+  "chinese": "你那么说是什么意思？"
+ },
+ {
+  "word": "milk",
+  "phonetic": "/mɪlk/",
+  "meaning": "n. 牛奶",
+  "chinese": "你的咖啡要加牛奶吗？"
+ },
+ {
+  "word": "sister",
+  "phonetic": "/ˈsɪstər/",
+  "meaning": "n. 姐妹",
+  "chinese": "我姐姐在家。"
+ },
+ {
+  "word": "afford",
+  "phonetic": "/əˈfɔːrd/",
+  "meaning": "v. 买得起；负担得起",
+  "chinese": "我现在买不起新车。"
+ },
+ {
+  "word": "ancient",
+  "phonetic": "/ˈeɪnʃənt/",
+  "meaning": "adj. 古代的；古老的",
+  "chinese": "我们参观了一座古庙。"
+ },
+ {
+  "word": "angry",
+  "phonetic": "/ˈæŋɡri/",
+  "meaning": "adj. 生气的；愤怒的",
+  "chinese": "请别生我的气。"
+ },
+ {
+  "word": "appreciate",
+  "phonetic": "/əˈpriːʃieɪt/",
+  "meaning": "v. 感激；欣赏",
+  "chinese": "我真的很感激你的帮助。"
+ },
+ {
+  "word": "arm",
+  "phonetic": "/ɑːrm/",
+  "meaning": "n. 手臂；武器",
+  "chinese": "他打篮球时摔断了胳膊。"
+ },
+ {
+  "word": "army",
+  "phonetic": "/ˈɑːrmi/",
+  "meaning": "n. 军队；陆军",
+  "chinese": "我哥哥去年参了军。"
+ },
+ {
+  "word": "author",
+  "phonetic": "/ˈɔːθər/",
+  "meaning": "n. 作者；作家",
+  "chinese": "那位作者昨天给我的书签了名。"
+ },
+ {
+  "word": "awful",
+  "phonetic": "/ˈɔːfl/",
+  "meaning": "adj. 糟糕的；极坏的",
+  "chinese": "今天天气糟透了。"
+ },
+ {
+  "word": "ball",
+  "phonetic": "/bɔːl/",
+  "meaning": "n. 球",
+  "chinese": "孩子们在玩球。"
+ },
+ {
+  "word": "bar",
+  "phonetic": "/bɑːr/",
+  "meaning": "n. 酒吧；条，棒",
+  "chinese": "我们去酒吧喝一杯吧。"
+ },
+ {
+  "word": "base",
+  "phonetic": "/beɪs/",
+  "meaning": "n. 基地；基础",
+  "chinese": "士兵们回到了他们的基地。"
+ },
+ {
+  "word": "bicycle",
+  "phonetic": "/ˈbaɪsɪkəl/",
+  "meaning": "n. 自行车",
+  "chinese": "我骑自行车上学。"
+ },
+ {
+  "word": "blood",
+  "phonetic": "/blʌd/",
+  "meaning": "n. 血；血液",
+  "chinese": "你衬衫上有血！"
+ },
+ {
+  "word": "body",
+  "phonetic": "/ˈbɑːdi/",
+  "meaning": "n. 身体；躯体",
+  "chinese": "健身后我全身酸痛。"
+ },
+ {
+  "word": "capable",
+  "phonetic": "/ˈkeɪpəbl/",
+  "meaning": "adj. 有能力的；能干的",
+  "chinese": "她有能力独自处理这个项目。"
+ },
+ {
+  "word": "card",
+  "phonetic": "/kɑːrd/",
+  "meaning": "n. 卡片；银行卡",
+  "chinese": "这里可以刷卡吗？"
+ },
+ {
+  "word": "cent",
+  "phonetic": "/sent/",
+  "meaning": "n. 分；美分",
+  "chinese": "它连一分钱都不值。"
+ },
+ {
+  "word": "chicken",
+  "phonetic": "/ˈtʃɪkɪn/",
+  "meaning": "n. 鸡；鸡肉",
+  "chinese": "我们今晚晚餐吃炸鸡。"
+ },
+ {
+  "word": "circle",
+  "phonetic": "/ˈsɜːrkəl/",
+  "meaning": "n. 圆；圈子 v. 环绕；圈出",
+  "chinese": "请把答案圈出来。"
+ },
+ {
+  "word": "complain",
+  "phonetic": "/kəmˈpleɪn/",
+  "meaning": "v. 抱怨；投诉",
+  "chinese": "别抱怨这里的食物了。"
+ },
+ {
+  "word": "complex",
+  "phonetic": "/kəmˈpleks/",
+  "meaning": "adj. 复杂的",
+  "chinese": "这道数学题对我来说太复杂了。"
+ },
+ {
+  "word": "conversation",
+  "phonetic": "/ˌkɑːnvərˈseɪʃn/",
+  "meaning": "n. 谈话；对话",
+  "chinese": "我们边喝咖啡边愉快地聊天。"
+ },
+ {
+  "word": "cover",
+  "phonetic": "/ˈkʌvər/",
+  "meaning": "v. 覆盖；涉及 n. 封面；遮盖物",
+  "chinese": "不要以貌取人。"
+ },
+ {
+  "word": "cross",
+  "phonetic": "/krɔːs/",
+  "meaning": "v. 穿过；交叉",
+  "chinese": "过马路时要小心。"
+ },
+ {
+  "word": "current",
+  "phonetic": "/ˈkɜːrənt/",
+  "meaning": "adj. 当前的；现在的",
+  "chinese": "那边目前的情况怎么样？"
+ },
+ {
+  "word": "drop",
+  "phonetic": "/drɑːp/",
+  "meaning": "v. 掉下；使落下 n. 滴",
+  "chinese": "别把盘子掉了，很易碎。"
+ },
+ {
+  "word": "enable",
+  "phonetic": "/ɪˈneɪbl/",
+  "meaning": "v. 使能够；使可能",
+  "chinese": "现代工具使我们能更快地工作。"
+ },
+ {
+  "word": "energy",
+  "phonetic": "/ˈenərdʒi/",
+  "meaning": "n. 能量；精力",
+  "chinese": "下班后我一点精力都没有。"
+ },
+ {
+  "word": "entrance",
+  "phonetic": "/ˈentrəns/",
+  "meaning": "n. 入口；门口",
+  "chinese": "在正门口等我。"
+ },
+ {
+  "word": "environment",
+  "phonetic": "/ɪnˈvaɪrənmənt/",
+  "meaning": "n. 环境",
+  "chinese": "我们应该为孩子们保护环境。"
+ },
+ {
+  "word": "equal",
+  "phonetic": "/ˈiːkwəl/",
+  "meaning": "adj. 相等的，平等的",
+  "chinese": "所有球员都有平等的上场机会。"
+ },
+ {
+  "word": "exist",
+  "phonetic": "/ɪɡˈzɪst/",
+  "meaning": "v. 存在",
+  "chinese": "你觉得外星人真的存在吗？"
+ },
+ {
+  "word": "face",
+  "phonetic": "/feɪs/",
+  "meaning": "n. 脸；v. 面对",
+  "chinese": "睡觉前洗洗脸。"
+ },
+ {
+  "word": "faith",
+  "phonetic": "/feɪθ/",
+  "meaning": "n. 信心；信仰",
+  "chinese": "对自己要有信心，你能做到的。"
+ },
+ {
+  "word": "fashion",
+  "phonetic": "/ˈfæʃn/",
+  "meaning": "n. 时尚；流行款式",
+  "chinese": "今年长裙又流行起来了。"
+ },
+ {
+  "word": "fellow",
+  "phonetic": "/ˈfeloʊ/",
+  "meaning": "n. 家伙；同伴 adj. 同伴的",
+  "chinese": "他是个很好的人。"
+ },
+ {
+  "word": "festival",
+  "phonetic": "/ˈfestɪvl/",
+  "meaning": "n. 节日；节庆活动",
+  "chinese": "我们喜欢春节。"
+ },
+ {
+  "word": "happen",
+  "phonetic": "/ˈhæpən/",
+  "meaning": "v. 发生；碰巧",
+  "chinese": "你的车怎么了？"
+ },
+ {
+  "word": "hold",
+  "phonetic": "/hoʊld/",
+  "meaning": "v. 握住，拿着；举行",
+  "chinese": "过马路时牵着我的手。"
+ },
+ {
+  "word": "hotel",
+  "phonetic": "/hoʊˈtel/",
+  "meaning": "n. 旅馆，酒店",
+  "chinese": "我们的旅馆在机场附近。"
+ },
+ {
+  "word": "instrument",
+  "phonetic": "/ˈɪnstrəmənt/",
+  "meaning": "n. 乐器；仪器",
+  "chinese": "你会演奏什么乐器？"
+ },
+ {
+  "word": "international",
+  "phonetic": "/ˌɪntərˈnæʃnəl/",
+  "meaning": "adj. 国际的",
+  "chinese": "它现在是一家国际公司。"
+ },
+ {
+  "word": "language",
+  "phonetic": "/ˈlæŋɡwɪdʒ/",
+  "meaning": "n. 语言",
+  "chinese": "在巴西人们说什么语言？"
+ },
+ {
+  "word": "laugh",
+  "phonetic": "/læf/",
+  "meaning": "v. 笑；n. 笑声",
+  "chinese": "那个笑话让大家笑得很大声。"
+ },
+ {
+  "word": "loss",
+  "phonetic": "/lɔːs/",
+  "meaning": "n. 损失；亏损",
+  "chinese": "公司报告了巨额亏损。"
+ },
+ {
+  "word": "lower",
+  "phonetic": "/ˈloʊər/",
+  "meaning": "v. 降低 adj. 较低的",
+  "chinese": "在图书馆里请放低声音。"
+ },
+ {
+  "word": "mad",
+  "phonetic": "/mæd/",
+  "meaning": "adj. 疯狂的；生气的",
+  "chinese": "你现在在生我的气吗？"
+ },
+ {
+  "word": "market",
+  "phonetic": "/ˈmɑːrkɪt/",
+  "meaning": "n. 市场",
+  "chinese": "我们在市场买了新鲜水果。"
+ },
+ {
+  "word": "master",
+  "phonetic": "/ˈmæstər/",
+  "meaning": "n. 大师；主人 v. 精通",
+  "chinese": "她是钢琴大师。"
+ },
+ {
+  "word": "method",
+  "phonetic": "/ˈmeθəd/",
+  "meaning": "n. 方法；办法",
+  "chinese": "你学英语的方法是什么？"
+ },
+ {
+  "word": "mile",
+  "phonetic": "/maɪl/",
+  "meaning": "n. 英里",
+  "chinese": "我每天早上走一英里。"
+ },
+ {
+  "word": "minute",
+  "phonetic": "/ˈmɪnɪt/",
+  "meaning": "n. 分钟",
+  "chinese": "等一下，我马上就来！"
+ },
+ {
+  "word": "mistake",
+  "phonetic": "/mɪˈsteɪk/",
+  "meaning": "n. 错误；v. 弄错",
+  "chinese": "我在作业上犯了个错误。"
+ },
+ {
+  "word": "sit",
+  "phonetic": "/sɪt/",
+  "meaning": "v. 坐",
+  "chinese": "请坐。"
+ },
+ {
+  "word": "accept",
+  "phonetic": "/əkˈsept/",
+  "meaning": "v. 接受；认可",
+  "chinese": "我接受你的道歉，没关系。"
+ },
+ {
+  "word": "admit",
+  "phonetic": "/ədˈmɪt/",
+  "meaning": "v. 承认；准许进入",
+  "chinese": "我承认昨天是我错了。"
+ },
+ {
+  "word": "advance",
+  "phonetic": "/ədˈvæns/",
+  "meaning": "v. 前进；促进 n. 进步",
+  "chinese": "我们提前订了票。"
+ },
+ {
+  "word": "advice",
+  "phonetic": "/ədˈvaɪs/",
+  "meaning": "n. 建议；忠告",
+  "chinese": "谢谢你关于那份工作的建议。"
+ },
+ {
+  "word": "appear",
+  "phonetic": "/əˈpɪr/",
+  "meaning": "v. 出现；似乎",
+  "chinese": "他突然出现在我们身后。"
+ },
+ {
+  "word": "aware",
+  "phonetic": "/əˈwer/",
+  "meaning": "adj. 意识到的；知道的",
+  "chinese": "我没注意到时间。"
+ },
+ {
+  "word": "badly",
+  "phonetic": "/ˈbædli/",
+  "meaning": "adv. 严重地；糟糕地",
+  "chinese": "我今天早上头疼得厉害。"
+ },
+ {
+  "word": "balloon",
+  "phonetic": "/bəˈluːn/",
+  "meaning": "n. 气球",
+  "chinese": "气球飞上了天空。"
+ },
+ {
+  "word": "basic",
+  "phonetic": "/ˈbeɪsɪk/",
+  "meaning": "adj. 基本的；基础的",
+  "chinese": "这些是这个游戏的基本规则。"
+ },
+ {
+  "word": "basket",
+  "phonetic": "/ˈbæskɪt/",
+  "meaning": "n. 篮子",
+  "chinese": "她提着一篮苹果。"
+ },
+ {
+  "word": "battle",
+  "phonetic": "/ˈbætl/",
+  "meaning": "n. 战斗；斗争",
+  "chinese": "经过长时间战斗，他们打赢了这场战役。"
+ },
+ {
+  "word": "bell",
+  "phonetic": "/bɛl/",
+  "meaning": "n. 铃；钟",
+  "chinese": "铃响了，下课了。"
+ },
+ {
+  "word": "birth",
+  "phonetic": "/bɜrθ/",
+  "meaning": "n. 出生；诞生",
+  "chinese": "她生了一个女婴。"
+ },
+ {
+  "word": "bit",
+  "phonetic": "/bɪt/",
+  "meaning": "n. 一点；少量",
+  "chinese": "我现在有点累。"
+ },
+ {
+  "word": "boss",
+  "phonetic": "/bɔːs/",
+  "meaning": "n. 老板；上司",
+  "chinese": "我老板批准了我休假。"
+ },
+ {
+  "word": "build",
+  "phonetic": "/bɪld/",
+  "meaning": "v. 建造；建立",
+  "chinese": "他们想建一座新房子。"
+ },
+ {
+  "word": "bull",
+  "phonetic": "/bʊl/",
+  "meaning": "n. 公牛",
+  "chinese": "公牛跑过了田野。"
+ },
+ {
+  "word": "cake",
+  "phonetic": "/keɪk/",
+  "meaning": "n. 蛋糕",
+  "chinese": "她给我们做了一个巧克力蛋糕。"
+ },
+ {
+  "word": "care",
+  "phonetic": "/ker/",
+  "meaning": "v. 关心；在意 n. 照顾",
+  "chinese": "我真的很在意你的感受。"
+ },
+ {
+  "word": "chain",
+  "phonetic": "/tʃeɪn/",
+  "meaning": "n. 链条；锁链；一连串",
+  "chinese": "她脖子上戴着一条金链子。"
+ },
+ {
+  "word": "charge",
+  "phonetic": "/tʃɑːrdʒ/",
+  "meaning": "v. 收费；充电 n. 费用；负责",
+  "chinese": "我可以在这里给手机充电吗？"
+ },
+ {
+  "word": "cheap",
+  "phonetic": "/tʃiːp/",
+  "meaning": "adj. 便宜的；廉价的",
+  "chinese": "这件衬衫打折时真的很便宜。"
+ },
+ {
+  "word": "check",
+  "phonetic": "/tʃɛk/",
+  "meaning": "v. 检查；核对 n. 支票；账单",
+  "chinese": "我们出发前让我查看一下时间。"
+ },
+ {
+  "word": "cheese",
+  "phonetic": "/tʃiːz/",
+  "meaning": "n. 奶酪；芝士",
+  "chinese": "你的三明治要加奶酪吗？"
+ },
+ {
+  "word": "chemical",
+  "phonetic": "/ˈkɛmɪkəl/",
+  "meaning": "n. 化学品 adj. 化学的",
+  "chinese": "这种饮料不含人工化学物质。"
+ },
+ {
+  "word": "chest",
+  "phonetic": "/tʃɛst/",
+  "meaning": "n. 胸部；胸腔",
+  "chinese": "我深呼吸时胸口会疼。"
+ },
+ {
+  "word": "chocolate",
+  "phonetic": "/ˈtʃɔːklət/",
+  "meaning": "n. 巧克力",
+  "chinese": "她总在桌子里放着巧克力。"
+ },
+ {
+  "word": "church",
+  "phonetic": "/tʃɜːrtʃ/",
+  "meaning": "n. 教堂；教会",
+  "chinese": "我们每周日早上去教堂。"
+ },
+ {
+  "word": "claim",
+  "phonetic": "/kleɪm/",
+  "meaning": "v. 声称；认领 n. 主张；索赔",
+  "chinese": "他声称昨晚看到了鬼。"
+ },
+ {
+  "word": "coast",
+  "phonetic": "/koʊst/",
+  "meaning": "n. 海岸；海滨",
+  "chinese": "我们沿着海岸开车。"
+ },
+ {
+  "word": "collar",
+  "phonetic": "/ˈkɑːlər/",
+  "meaning": "n. 衣领；项圈",
+  "chinese": "你的衬衫领子全脏了。"
+ },
+ {
+  "word": "communicate",
+  "phonetic": "/kəˈmjuːnɪkeɪt/",
+  "meaning": "v. 交流；沟通",
+  "chinese": "我们每天通过电子邮件交流。"
+ },
+ {
+  "word": "complete",
+  "phonetic": "/kəmˈpliːt/",
+  "meaning": "v. 完成；adj. 完整的",
+  "chinese": "请在周五前填完这张表格。"
+ },
+ {
+  "word": "contrast",
+  "phonetic": "/ˈkɑːntræst/",
+  "meaning": "n. 对比 v. 对比；对照",
+  "chinese": "他们之间的差别很大。"
+ },
+ {
+  "word": "counter",
+  "phonetic": "/ˈkaʊntər/",
+  "meaning": "n. 柜台；计数器",
+  "chinese": "请在前面的柜台付款。"
+ },
+ {
+  "word": "cry",
+  "phonetic": "/kraɪ/",
+  "meaning": "v. 哭；喊叫",
+  "chinese": "别哭，一切都会好起来的。"
+ },
+ {
+  "word": "dad",
+  "phonetic": "/dæd/",
+  "meaning": "n. 爸爸；父亲",
+  "chinese": "我爸爸周日做晚饭。"
+ },
+ {
+  "word": "daily",
+  "phonetic": "/ˈdeɪli/",
+  "meaning": "adj. 每日的 adv. 每天",
+  "chinese": "她每天在公园散步。"
+ },
+ {
+  "word": "detect",
+  "phonetic": "/dɪˈtekt/",
+  "meaning": "v. 察觉；发现",
+  "chinese": "我察觉厨房里有东西烧糊了。"
+ },
+ {
+  "word": "discover",
+  "phonetic": "/dɪˈskʌvər/",
+  "meaning": "v. 发现；找到",
+  "chinese": "你会在这家博物馆里发现新东西。"
+ },
+ {
+  "word": "distant",
+  "phonetic": "/ˈdɪstənt/",
+  "meaning": "adj. 遥远的；疏远的",
+  "chinese": "我们看到远处地平线上有一艘船。"
+ },
+ {
+  "word": "draw",
+  "phonetic": "/drɔː/",
+  "meaning": "v. 画；吸引",
+  "chinese": "你能给我画张像吗？"
+ },
+ {
+  "word": "due",
+  "phonetic": "/duː/",
+  "meaning": "adj. 到期的；预期的",
+  "chinese": "报告下周一要交。"
+ },
+ {
+  "word": "edge",
+  "phonetic": "/edʒ/",
+  "meaning": "n. 边缘；刀刃",
+  "chinese": "别站得离边缘那么近。"
+ },
+ {
+  "word": "eleven",
+  "phonetic": "/ɪˈlevən/",
+  "meaning": "num. 十一",
+  "chinese": "会议十一点开始。"
+ },
+ {
+  "word": "equipment",
+  "phonetic": "/ɪˈkwɪpmənt/",
+  "meaning": "n. 设备，器材",
+  "chinese": "别忘了打包你的露营装备。"
+ },
+ {
+  "word": "exact",
+  "phonetic": "/ɪɡˈzækt/",
+  "meaning": "adj. 精确的，确切的",
+  "chinese": "会议的确切时间是几点？"
+ },
+ {
+  "word": "excellent",
+  "phonetic": "/ˈeksələnt/",
+  "meaning": "adj. 极好的；优秀的",
+  "chinese": "你的英语真的很棒！"
+ },
+ {
+  "word": "expect",
+  "phonetic": "/ɪkˈspekt/",
+  "meaning": "v. 期待；预料",
+  "chinese": "没想到在这里见到你！"
+ },
+ {
+  "word": "expert",
+  "phonetic": "/ˈekspɜːrt/",
+  "meaning": "n. 专家；adj. 熟练的",
+  "chinese": "向专家咨询一下建议。"
+ },
+ {
+  "word": "extra",
+  "phonetic": "/ˈekstrə/",
+  "meaning": "adj. 额外的；n. 额外的东西",
+  "chinese": "我需要一些额外的时间来完成。"
+ },
+ {
+  "word": "fat",
+  "phonetic": "/fæt/",
+  "meaning": "adj. 肥胖的；n. 脂肪",
+  "chinese": "饮食中脂肪太多不健康。"
+ },
+ {
+  "word": "finish",
+  "phonetic": "/ˈfɪnɪʃ/",
+  "meaning": "v. 完成；结束",
+  "chinese": "吃完饭再去玩。"
+ },
+ {
+  "word": "fresh",
+  "phonetic": "/freʃ/",
+  "meaning": "adj. 新鲜的；清新的",
+  "chinese": "这面包今天闻起来很新鲜。"
+ },
+ {
+  "word": "gravity",
+  "phonetic": "/ˈɡrævəti/",
+  "meaning": "n. 重力；引力",
+  "chinese": "重力使我们留在地面上。"
+ },
+ {
+  "word": "hammer",
+  "phonetic": "/ˈhæmər/",
+  "meaning": "n. 锤子；v. 锤打",
+  "chinese": "请把那把锤子递给我好吗？"
+ },
+ {
+  "word": "happy",
+  "phonetic": "/ˈhæpi/",
+  "meaning": "adj. 快乐的",
+  "chinese": "见到你很开心。"
+ },
+ {
+  "word": "honest",
+  "phonetic": "/ˈɑːnɪst/",
+  "meaning": "adj. 诚实的，正直的",
+  "chinese": "说实话，我忘了你的生日。"
+ },
+ {
+  "word": "honey",
+  "phonetic": "/ˈhʌni/",
+  "meaning": "n. 蜂蜜；亲爱的",
+  "chinese": "你的茶里要加点蜂蜜吗？"
+ },
+ {
+  "word": "hurry",
+  "phonetic": "/ˈhɜːri/",
+  "meaning": "v. 赶快",
+  "chinese": "快点！我们迟到了。"
+ },
+ {
+  "word": "include",
+  "phonetic": "/ɪnˈkluːd/",
+  "meaning": "v. 包括；包含",
+  "chinese": "这个价格包含早餐吗？"
+ },
+ {
+  "word": "jazz",
+  "phonetic": "/dʒæz/",
+  "meaning": "n. 爵士乐",
+  "chinese": "我喜欢晚上听爵士乐。"
+ },
+ {
+  "word": "level",
+  "phonetic": "/ˈlevl/",
+  "meaning": "n. 水平；等级",
+  "chinese": "她的英语水平很高。"
+ },
+ {
+  "word": "litter",
+  "phonetic": "/ˈlɪtər/",
+  "meaning": "n. 垃圾，废弃物 v. 乱扔垃圾",
+  "chinese": "请不要在海滩上乱扔垃圾。"
+ },
+ {
+  "word": "locate",
+  "phonetic": "/loʊˈkeɪt/",
+  "meaning": "v. 找到；确定…的位置",
+  "chinese": "你能找到最近的加油站在哪儿吗？"
+ },
+ {
+  "word": "manner",
+  "phonetic": "/ˈmænər/",
+  "meaning": "n. 方式；态度",
+  "chinese": "他说话的态度很有礼貌。"
+ },
+ {
+  "word": "march",
+  "phonetic": "/mɑːrtʃ/",
+  "meaning": "v. 行军；前进",
+  "chinese": "士兵们行军穿过田野。"
+ },
+ {
+  "word": "mass",
+  "phonetic": "/mæs/",
+  "meaning": "n. 大量；团",
+  "chinese": "外面有一大群人。"
+ },
+ {
+  "word": "memory",
+  "phonetic": "/ˈmeməri/",
+  "meaning": "n. 记忆；回忆",
+  "chinese": "我对那次旅行有美好的回忆。"
+ },
+ {
+  "word": "mention",
+  "phonetic": "/ˈmenʃn/",
+  "meaning": "v. 提到；说起",
+  "chinese": "别客气，没什么大不了的。"
+ },
+ {
+  "word": "mirror",
+  "phonetic": "/ˈmɪrər/",
+  "meaning": "n. 镜子",
+  "chinese": "她照了照镜子。"
+ },
+ {
+  "word": "wait",
+  "phonetic": "/weɪt/",
+  "meaning": "v. 等",
+  "chinese": "稍等一下。"
+ },
+ {
+  "word": "active",
+  "phonetic": "/ˈæktɪv/",
+  "meaning": "adj. 积极的；活跃的",
+  "chinese": "我爷爷仍然很活跃。"
+ },
+ {
+  "word": "address",
+  "phonetic": "/əˈdres/",
+  "meaning": "n. 地址；住址",
+  "chinese": "请问你的家庭住址是什么？"
+ },
+ {
+  "word": "advantage",
+  "phonetic": "/ədˈvæntɪdʒ/",
+  "meaning": "n. 优势；好处",
+  "chinese": "会说两种语言是个很大的优势。"
+ },
+ {
+  "word": "ahead",
+  "phonetic": "/əˈhed/",
+  "meaning": "adv. 在前面；向前",
+  "chinese": "商店就在前面。"
+ },
+ {
+  "word": "aim",
+  "phonetic": "/eɪm/",
+  "meaning": "v. 瞄准；n. 目标",
+  "chinese": "你应该追求更高的目标。"
+ },
+ {
+  "word": "approach",
+  "phonetic": "/əˈproʊtʃ/",
+  "meaning": "v. 接近；靠近 n. 方法",
+  "chinese": "不要靠近那条野狗。"
+ },
+ {
+  "word": "argue",
+  "phonetic": "/ˈɑːrɡjuː/",
+  "meaning": "v. 争论；争吵",
+  "chinese": "他们总是为钱争吵。"
+ },
+ {
+  "word": "argument",
+  "phonetic": "/ˈɑːrɡjumənt/",
+  "meaning": "n. 争吵；论点",
+  "chinese": "我们就晚餐计划发生了争执。"
+ },
+ {
+  "word": "arrest",
+  "phonetic": "/əˈrest/",
+  "meaning": "v. 逮捕；n. 逮捕",
+  "chinese": "警察昨晚逮捕了他。"
+ },
+ {
+  "word": "assume",
+  "phonetic": "/əˈsuːm/",
+  "meaning": "v. 假定；以为",
+  "chinese": "我猜你会来吃晚饭。"
+ },
+ {
+  "word": "attitude",
+  "phonetic": "/ˈætɪtuːd/",
+  "meaning": "n. 态度；看法",
+  "chinese": "我喜欢你今天积极的态度。"
+ },
+ {
+  "word": "autumn",
+  "phonetic": "/ˈɔːtəm/",
+  "meaning": "n. 秋天；秋季",
+  "chinese": "秋天树叶变红。"
+ },
+ {
+  "word": "barely",
+  "phonetic": "/ˈberli/",
+  "meaning": "adv. 几乎不；勉强地",
+  "chinese": "我差点没赶上公交车。"
+ },
+ {
+  "word": "beat",
+  "phonetic": "/biːt/",
+  "meaning": "v. 打败；敲打",
+  "chinese": "我们队以十分的优势打败了他们。"
+ },
+ {
+  "word": "belong",
+  "phonetic": "/bɪˈlɔŋ/",
+  "meaning": "v. 属于",
+  "chinese": "这本书属于我。"
+ },
+ {
+  "word": "beneath",
+  "phonetic": "/bɪˈniθ/",
+  "meaning": "prep. 在…下方",
+  "chinese": "猫睡在桌子下面。"
+ },
+ {
+  "word": "bite",
+  "phonetic": "/baɪt/",
+  "meaning": "v. 咬；叮咬",
+  "chinese": "吃饭时别咬指甲。"
+ },
+ {
+  "word": "blind",
+  "phonetic": "/blaɪnd/",
+  "meaning": "adj. 失明的；盲目的",
+  "chinese": "他一只眼睛失明了。"
+ },
+ {
+  "word": "block",
+  "phonetic": "/blɑːk/",
+  "meaning": "n. 街区；v. 堵塞",
+  "chinese": "他住在离这里两个街区远的地方。"
+ },
+ {
+  "word": "bomb",
+  "phonetic": "/bɑːm/",
+  "meaning": "n. 炸弹",
+  "chinese": "他们在车里发现了一枚炸弹。"
+ },
+ {
+  "word": "brain",
+  "phonetic": "/breɪn/",
+  "meaning": "n. 大脑；头脑",
+  "chinese": "我今天早上脑子不好使。"
+ },
+ {
+  "word": "bread",
+  "phonetic": "/bred/",
+  "meaning": "n. 面包",
+  "chinese": "我今天早上买了一些新鲜面包。"
+ },
+ {
+  "word": "breath",
+  "phonetic": "/breθ/",
+  "meaning": "n. 呼吸；气息",
+  "chinese": "深吸一口气，放松下来。"
+ },
+ {
+  "word": "bright",
+  "phonetic": "/braɪt/",
+  "meaning": "adj. 明亮的；聪明的",
+  "chinese": "客厅又大又亮堂。"
+ },
+ {
+  "word": "brown",
+  "phonetic": "/braʊn/",
+  "meaning": "adj. 棕色的；褐色的",
+  "chinese": "她有一个棕色皮包。"
+ },
+ {
+  "word": "burst",
+  "phonetic": "/bɜːrst/",
+  "meaning": "v. 爆裂；突然发作",
+  "chinese": "气球砰的一声爆了。"
+ },
+ {
+  "word": "butter",
+  "phonetic": "/ˈbʌtər/",
+  "meaning": "n. 黄油",
+  "chinese": "你面包上要涂点黄油吗？"
+ },
+ {
+  "word": "calm",
+  "phonetic": "/kɑːm/",
+  "meaning": "adj. 平静的；冷静的",
+  "chinese": "考试时尽量保持冷静。"
+ },
+ {
+  "word": "cap",
+  "phonetic": "/kæp/",
+  "meaning": "n. 便帽；盖子",
+  "chinese": "他每天都戴棒球帽。"
+ },
+ {
+  "word": "capital",
+  "phonetic": "/ˈkæpɪtəl/",
+  "meaning": "n. 首都；资本",
+  "chinese": "巴黎是法国的首都。"
+ },
+ {
+  "word": "careful",
+  "phonetic": "/ˈkerfl/",
+  "meaning": "adj. 小心的",
+  "chinese": "小心玻璃杯。"
+ },
+ {
+  "word": "cash",
+  "phonetic": "/kæʃ/",
+  "meaning": "n. 现金",
+  "chinese": "抱歉，我们这里只收现金。"
+ },
+ {
+  "word": "chalk",
+  "phonetic": "/tʃɔːk/",
+  "meaning": "n. 粉笔",
+  "chinese": "老师用粉笔写下了我的名字。"
+ },
+ {
+  "word": "champion",
+  "phonetic": "/ˈtʃæmpiən/",
+  "meaning": "n. 冠军；优胜者",
+  "chinese": "她去年成为了网球冠军。"
+ },
+ {
+  "word": "chimney",
+  "phonetic": "/ˈtʃɪmni/",
+  "meaning": "n. 烟囱",
+  "chinese": "烟从旧烟囱里冒出来。"
+ },
+ {
+  "word": "chip",
+  "phonetic": "/tʃɪp/",
+  "meaning": "n. 薯片；碎片 v. 削缺；弄碎",
+  "chinese": "我喜欢边看电视边吃薯片。"
+ },
+ {
+  "word": "choose",
+  "phonetic": "/tʃuːz/",
+  "meaning": "v. 选择；挑选",
+  "chinese": "你可以随便挑座位。"
+ },
+ {
+  "word": "class",
+  "phonetic": "/klæs/",
+  "meaning": "n. 班级；课",
+  "chinese": "我们有节英语课。"
+ },
+ {
+  "word": "climb",
+  "phonetic": "/klaɪm/",
+  "meaning": "v. 攀登；爬",
+  "chinese": "我们一起爬那座小山吧。"
+ },
+ {
+  "word": "collect",
+  "phonetic": "/kəˈlekt/",
+  "meaning": "v. 收集；收藏",
+  "chinese": "我喜欢在周末收集邮票。"
+ },
+ {
+  "word": "comfortable",
+  "phonetic": "/ˈkʌmfərtəbl/",
+  "meaning": "adj. 舒适的；舒服的",
+  "chinese": "这张床真的很舒服。"
+ },
+ {
+  "word": "command",
+  "phonetic": "/kəˈmænd/",
+  "meaning": "n. 命令；口令 v. 命令",
+  "chinese": "听我口令，开始跑步。"
+ },
+ {
+  "word": "compete",
+  "phonetic": "/kəmˈpiːt/",
+  "meaning": "v. 竞争；比赛",
+  "chinese": "我们队将参加决赛。"
+ },
+ {
+  "word": "contain",
+  "phonetic": "/kənˈteɪn/",
+  "meaning": "v. 包含；容纳",
+  "chinese": "这个瓶子装有两升水。"
+ },
+ {
+  "word": "cool",
+  "phonetic": "/kuːl/",
+  "meaning": "adj. 凉爽的；酷的",
+  "chinese": "你穿那件夹克真的很酷。"
+ },
+ {
+  "word": "copy",
+  "phonetic": "/ˈkɑːpi/",
+  "meaning": "n. 副本；一份 v. 复制；抄袭",
+  "chinese": "我能拿一份这个文件的副本吗？"
+ },
+ {
+  "word": "couple",
+  "phonetic": "/ˈkʌpl/",
+  "meaning": "n. 一对；夫妇；几个",
+  "chinese": "我几分钟就回来。"
+ },
+ {
+  "word": "crew",
+  "phonetic": "/kruː/",
+  "meaning": "n. 全体船员；工作人员",
+  "chinese": "船员们工作了一整夜。"
+ },
+ {
+  "word": "crop",
+  "phonetic": "/krɑːp/",
+  "meaning": "n. 庄稼；作物",
+  "chinese": "今年的玉米收成看起来很好。"
+ },
+ {
+  "word": "culture",
+  "phonetic": "/ˈkʌltʃər/",
+  "meaning": "n. 文化",
+  "chinese": "他们的文化重视家庭和美食。"
+ },
+ {
+  "word": "curtain",
+  "phonetic": "/ˈkɜːrtn/",
+  "meaning": "n. 窗帘；幕布",
+  "chinese": "窗帘挡住了阳光。"
+ },
+ {
+  "word": "dance",
+  "phonetic": "/dæns/",
+  "meaning": "v./n. 跳舞",
+  "chinese": "她喜欢跳舞。"
+ },
+ {
+  "word": "depend",
+  "phonetic": "/dɪˈpend/",
+  "meaning": "v. 依赖；取决于",
+  "chinese": "这取决于明天的天气。"
+ },
+ {
+  "word": "diamond",
+  "phonetic": "/ˈdaɪəmənd/",
+  "meaning": "n. 钻石；菱形",
+  "chinese": "她戴着一枚漂亮的钻戒。"
+ },
+ {
+  "word": "direct",
+  "phonetic": "/dəˈrekt/",
+  "meaning": "adj. 直接的；v. 指导",
+  "chinese": "走这条直路去学校。"
+ },
+ {
+  "word": "double",
+  "phonetic": "/ˈdʌbl/",
+  "meaning": "adj. 双倍的；两倍的",
+  "chinese": "他午餐点了一个双层芝士汉堡。"
+ },
+ {
+  "word": "duty",
+  "phonetic": "/ˈduːti/",
+  "meaning": "n. 责任；职责",
+  "chinese": "帮助你是我的职责。"
+ },
+ {
+  "word": "enter",
+  "phonetic": "/ˈentər/",
+  "meaning": "v. 进入；输入",
+  "chinese": "请再输入一次密码。"
+ },
+ {
+  "word": "essential",
+  "phonetic": "/ɪˈsenʃl/",
+  "meaning": "adj. 必要的，必不可少的",
+  "chinese": "水对每个生物都是必不可少的。"
+ },
+ {
+  "word": "event",
+  "phonetic": "/ɪˈvent/",
+  "meaning": "n. 事件，活动",
+  "chinese": "学校运动会真有趣。"
+ },
+ {
+  "word": "everyday",
+  "phonetic": "/ˈevrideɪ/",
+  "meaning": "adj. 日常的，每天的",
+  "chinese": "这些是我上班穿的日常鞋子。"
+ },
+ {
+  "word": "evil",
+  "phonetic": "/ˈiːvl/",
+  "meaning": "adj. 邪恶的；n. 邪恶",
+  "chinese": "那个邪恶的男人对所有人都撒谎。"
+ },
+ {
+  "word": "experiment",
+  "phonetic": "/ɪkˈsperɪmənt/",
+  "meaning": "n. 实验；v. 做实验",
+  "chinese": "我们今天做了一个科学实验。"
+ },
+ {
+  "word": "extreme",
+  "phonetic": "/ɪkˈstriːm/",
+  "meaning": "adj. 极端的；极度的",
+  "chinese": "那个极限运动看起来真吓人！"
+ },
+ {
+  "word": "fair",
+  "phonetic": "/fer/",
+  "meaning": "adj. 公平的；n. 集市",
+  "chinese": "那不公平！我先来的。"
+ },
+ {
+  "word": "familiar",
+  "phonetic": "/fəˈmɪliər/",
+  "meaning": "adj. 熟悉的",
+  "chinese": "你的脸看起来很眼熟。"
+ },
+ {
+  "word": "fancy",
+  "phonetic": "/ˈfænsi/",
+  "meaning": "adj. 花哨的；华丽的",
+  "chinese": "她穿了一件华丽的裙子去参加聚会。"
+ },
+ {
+  "word": "fantastic",
+  "phonetic": "/fænˈtæstɪk/",
+  "meaning": "adj. 极好的；了不起的",
+  "chinese": "昨晚的音乐会真是太棒了！"
+ },
+ {
+  "word": "fate",
+  "phonetic": "/feɪt/",
+  "meaning": "n. 命运",
+  "chinese": "我们能再次相遇是命中注定的。"
+ },
+ {
+  "word": "feed",
+  "phonetic": "/fiːd/",
+  "meaning": "v. 喂养；进食",
+  "chinese": "你能帮我喂一下猫吗？"
+ },
+ {
+  "word": "fetch",
+  "phonetic": "/fetʃ/",
+  "meaning": "v. 去取来；接来",
+  "chinese": "请给我拿点水来。"
+ },
+ {
+  "word": "final",
+  "phonetic": "/ˈfaɪnl/",
+  "meaning": "adj. 最终的；最后的",
+  "chinese": "这是我的最终答案。"
+ },
+ {
+  "word": "fit",
+  "phonetic": "/fɪt/",
+  "meaning": "v. 适合；合身 adj. 健康的",
+  "chinese": "这双鞋我穿正合适。"
+ },
+ {
+  "word": "foreign",
+  "phonetic": "/ˈfɔːrən/",
+  "meaning": "adj. 外国的；陌生的",
+  "chinese": "她会说三门外语。"
+ },
+ {
+  "word": "forget",
+  "phonetic": "/fərˈɡet/",
+  "meaning": "v. 忘记；忽略",
+  "chinese": "别忘了锁门。"
+ },
+ {
+  "word": "forgive",
+  "phonetic": "/fərˈɡɪv/",
+  "meaning": "v. 原谅；饶恕",
+  "chinese": "请原谅我迟到了。"
+ },
+ {
+  "word": "fortune",
+  "phonetic": "/ˈfɔːrtʃən/",
+  "meaning": "n. 财富，巨款；运气",
+  "chinese": "他卖旧车发了大财。"
+ },
+ {
+  "word": "fraction",
+  "phonetic": "/ˈfrækʃn/",
+  "meaning": "n. 小部分；分数",
+  "chinese": "只有一小部分学生通过了考试。"
+ },
+ {
+  "word": "function",
+  "phonetic": "/ˈfʌŋkʃn/",
+  "meaning": "n. 功能；v. 运转；起作用",
+  "chinese": "这个按钮的主要功能是什么？"
+ },
+ {
+  "word": "funeral",
+  "phonetic": "/ˈfjuːnərəl/",
+  "meaning": "n. 葬礼",
+  "chinese": "葬礼将于周六举行。"
+ },
+ {
+  "word": "fur",
+  "phonetic": "/fɜːr/",
+  "meaning": "n. 毛皮；软毛",
+  "chinese": "这只猫有柔软的白毛。"
+ },
+ {
+  "word": "gift",
+  "phonetic": "/ɡɪft/",
+  "meaning": "n. 礼物；天赋",
+  "chinese": "谢谢你送的可爱礼物。"
+ },
+ {
+  "word": "glad",
+  "phonetic": "/ɡlæd/",
+  "meaning": "adj. 高兴的；乐意的",
+  "chinese": "我很高兴你能来。"
+ },
+ {
+  "word": "globe",
+  "phonetic": "/ɡloʊb/",
+  "meaning": "n. 地球；地球仪",
+  "chinese": "她转动地球仪去找巴西。"
+ },
+ {
+  "word": "golden",
+  "phonetic": "/ˈɡoʊldən/",
+  "meaning": "adj. 金色的；黄金般的",
+  "chinese": "秋天树叶变成金黄色。"
+ },
+ {
+  "word": "grain",
+  "phonetic": "/ɡreɪn/",
+  "meaning": "n. 谷物；颗粒",
+  "chinese": "农民们在秋天收割谷物。"
+ },
+ {
+  "word": "grave",
+  "phonetic": "/ɡreɪv/",
+  "meaning": "n. 坟墓 adj. 严重的",
+  "chinese": "墓前摆放着鲜花。"
+ },
+ {
+  "word": "guard",
+  "phonetic": "/ɡɑːrd/",
+  "meaning": "n. 警卫，守卫；v. 保卫",
+  "chinese": "门卫在大门口检查了我的包。"
+ },
+ {
+  "word": "guess",
+  "phonetic": "/ɡes/",
+  "meaning": "v. 猜测；n. 猜测",
+  "chinese": "你能猜出我多大吗？"
+ },
+ {
+  "word": "hair",
+  "phonetic": "/her/",
+  "meaning": "n. 头发，毛发",
+  "chinese": "她把头发剪得很短。"
+ },
+ {
+  "word": "hide",
+  "phonetic": "/haɪd/",
+  "meaning": "v. 隐藏；躲藏",
+  "chinese": "我们躲到大树后面吧。"
+ },
+ {
+  "word": "horse",
+  "phonetic": "/hɔːrs/",
+  "meaning": "n. 马",
+  "chinese": "她每年夏天都骑马。"
+ },
+ {
+  "word": "hungry",
+  "phonetic": "/ˈhʌŋɡri/",
+  "meaning": "adj. 饥饿的；渴望的",
+  "chinese": "我现在好饿。"
+ },
+ {
+  "word": "hunt",
+  "phonetic": "/hʌnt/",
+  "meaning": "v. 打猎；搜寻",
+  "chinese": "他们在田野里猎兔。"
+ },
+ {
+  "word": "hurt",
+  "phonetic": "/hɜːrt/",
+  "meaning": "v. 使受伤；疼痛",
+  "chinese": "跑步后我的腿疼。"
+ },
+ {
+  "word": "independent",
+  "phonetic": "/ˌɪndɪˈpendənt/",
+  "meaning": "adj. 独立的；自主的",
+  "chinese": "以她的年龄来说，她非常独立。"
+ },
+ {
+  "word": "insect",
+  "phonetic": "/ˈɪnsekt/",
+  "meaning": "n. 昆虫；虫子",
+  "chinese": "一只小昆虫落在了我的手臂上。"
+ },
+ {
+  "word": "insurance",
+  "phonetic": "/ɪnˈʃʊrəns/",
+  "meaning": "n. 保险；保险费",
+  "chinese": "保险覆盖这个吗？"
+ },
+ {
+  "word": "interrupt",
+  "phonetic": "/ˌɪntəˈrʌpt/",
+  "meaning": "v. 打断；中断",
+  "chinese": "抱歉打断你们的谈话。"
+ },
+ {
+  "word": "invest",
+  "phonetic": "/ɪnˈvest/",
+  "meaning": "v. 投资",
+  "chinese": "我想投资股票。"
+ },
+ {
+  "word": "investigate",
+  "phonetic": "/ɪnˈvestɪɡeɪt/",
+  "meaning": "v. 调查；研究",
+  "chinese": "警方将调查这件事。"
+ },
+ {
+  "word": "judge",
+  "phonetic": "/dʒʌdʒ/",
+  "meaning": "n. 法官 v. 判断，评判",
+  "chinese": "不要以貌取人。"
+ },
+ {
+  "word": "kill",
+  "phonetic": "/kɪl/",
+  "meaning": "v. 杀死；使终止",
+  "chinese": "吸烟是会要命的，你知道吗。"
+ },
+ {
+  "word": "lack",
+  "phonetic": "/læk/",
+  "meaning": "v. 缺乏；n. 缺少",
+  "chinese": "我缺钱买不起它。"
+ },
+ {
+  "word": "lane",
+  "phonetic": "/leɪn/",
+  "meaning": "n. 小巷；车道",
+  "chinese": "我们住在一条安静的小巷里。"
+ },
+ {
+  "word": "leg",
+  "phonetic": "/leɡ/",
+  "meaning": "n. 腿",
+  "chinese": "跑步后我的腿疼。"
+ },
+ {
+  "word": "liberty",
+  "phonetic": "/ˈlɪbərti/",
+  "meaning": "n. 自由",
+  "chinese": "我们有选择的自由。"
+ },
+ {
+  "word": "lift",
+  "phonetic": "/lɪft/",
+  "meaning": "v. 举起，抬起 n. 电梯；搭便车",
+  "chinese": "你能让我搭个便车吗？"
+ },
+ {
+  "word": "limit",
+  "phonetic": "/ˈlɪmɪt/",
+  "meaning": "n. 限度，限制 v. 限制",
+  "chinese": "这里有限速。"
+ },
+ {
+  "word": "lonely",
+  "phonetic": "/ˈloʊnli/",
+  "meaning": "adj. 孤独的；寂寞的",
+  "chinese": "你不在的时候我感到很孤独。"
+ },
+ {
+  "word": "lord",
+  "phonetic": "/lɔːrd/",
+  "meaning": "n. 勋爵；主人；上帝",
+  "chinese": "那位勋爵住在一座大城堡里。"
+ },
+ {
+  "word": "loud",
+  "phonetic": "/laʊd/",
+  "meaning": "adj. 大声的；响亮的",
+  "chinese": "音乐太响了，调小一点。"
+ },
+ {
+  "word": "loyal",
+  "phonetic": "/ˈlɔɪəl/",
+  "meaning": "adj. 忠诚的；忠实的",
+  "chinese": "他是我忠实的朋友。"
+ },
+ {
+  "word": "luck",
+  "phonetic": "/lʌk/",
+  "meaning": "n. 运气；好运",
+  "chinese": "祝你明天考试好运！"
+ },
+ {
+  "word": "luxury",
+  "phonetic": "/ˈlʌɡʒəri/",
+  "meaning": "n. 奢侈；奢侈品 adj. 豪华的",
+  "chinese": "他们住在巴黎一家豪华酒店。"
+ },
+ {
+  "word": "mark",
+  "phonetic": "/mɑːrk/",
+  "meaning": "v. 做标记 n. 记号",
+  "chinese": "请把重要的页做上标记。"
+ },
+ {
+  "word": "maximum",
+  "phonetic": "/ˈmæksɪməm/",
+  "meaning": "n. 最大值 adj. 最大的",
+  "chinese": "这部电梯最多能载十个人。"
+ },
+ {
+  "word": "meaning",
+  "phonetic": "/ˈmiːnɪŋ/",
+  "meaning": "n. 意思；含义",
+  "chinese": "我不明白这个词的意思。"
+ },
+ {
+  "word": "measure",
+  "phonetic": "/ˈmeʒər/",
+  "meaning": "v. 测量；衡量 n. 措施",
+  "chinese": "买家具之前让我先量一下房间。"
+ },
+ {
+  "word": "son",
+  "phonetic": "/sʌn/",
+  "meaning": "n. 儿子",
+  "chinese": "他儿子是学生。"
+ },
+ {
+  "word": "teacher",
+  "phonetic": "/ˈtiːtʃər/",
+  "meaning": "n. 老师",
+  "chinese": "我们老师很和善。"
+ },
+ {
+  "word": "achieve",
+  "phonetic": "/əˈtʃiːv/",
+  "meaning": "v. 实现；达到",
+  "chinese": "只要努力，你就能实现目标。"
+ },
+ {
+  "word": "agree",
+  "phonetic": "/əˈɡriː/",
+  "meaning": "v. 同意；赞成",
+  "chinese": "我完全同意你的看法。"
+ },
+ {
+  "word": "alarm",
+  "phonetic": "/əˈlɑːrm/",
+  "meaning": "n. 闹钟；警报",
+  "chinese": "我把闹钟定在六点。"
+ },
+ {
+  "word": "anxious",
+  "phonetic": "/ˈæŋkʃəs/",
+  "meaning": "adj. 焦虑的；担心的",
+  "chinese": "我很担心考试结果。"
+ },
+ {
+  "word": "asleep",
+  "phonetic": "/əˈsliːp/",
+  "meaning": "adj. 睡着的",
+  "chinese": "宝宝很快就睡着了。"
+ },
+ {
+  "word": "attack",
+  "phonetic": "/əˈtæk/",
+  "meaning": "v. 攻击；n. 袭击",
+  "chinese": "昨天那只狗袭击了邮递员。"
+ },
+ {
+  "word": "background",
+  "phonetic": "/ˈbækɡraʊnd/",
+  "meaning": "n. 背景；背景资料",
+  "chinese": "这张照片背景很好看。"
+ },
+ {
+  "word": "bark",
+  "phonetic": "/bɑːrk/",
+  "meaning": "v. （狗）吠叫；n. 吠声",
+  "chinese": "你听到那只狗叫了吗？"
+ },
+ {
+  "word": "basement",
+  "phonetic": "/ˈbeɪsmənt/",
+  "meaning": "n. 地下室",
+  "chinese": "旧箱子都放在地下室里。"
+ },
+ {
+  "word": "bath",
+  "phonetic": "/bæθ/",
+  "meaning": "n. 洗澡；浴缸",
+  "chinese": "我今晚打算洗个澡。"
+ },
+ {
+  "word": "beach",
+  "phonetic": "/biːtʃ/",
+  "meaning": "n. 海滩",
+  "chinese": "我们一整天都在海滩上度过。"
+ },
+ {
+  "word": "beg",
+  "phonetic": "/bɛɡ/",
+  "meaning": "v. 乞求；恳求",
+  "chinese": "我求你帮帮我。"
+ },
+ {
+  "word": "benefit",
+  "phonetic": "/ˈbɛnəfɪt/",
+  "meaning": "n. 好处；益处",
+  "chinese": "锻炼有很多健康益处。"
+ },
+ {
+  "word": "birthday",
+  "phonetic": "/ˈbɜrθˌdeɪ/",
+  "meaning": "n. 生日",
+  "chinese": "祝你生日快乐，我的朋友！"
+ },
+ {
+  "word": "blame",
+  "phonetic": "/bleɪm/",
+  "meaning": "v. 责怪；n. 责任",
+  "chinese": "别怪我迟到。"
+ },
+ {
+  "word": "bore",
+  "phonetic": "/bɔːr/",
+  "meaning": "v. 使厌烦；n. 令人厌烦的人",
+  "chinese": "他的长篇故事总让我厌烦。"
+ },
+ {
+  "word": "bother",
+  "phonetic": "/ˈbɑːðər/",
+  "meaning": "v. 打扰；麻烦",
+  "chinese": "抱歉打扰你，能帮我一下吗？"
+ },
+ {
+  "word": "brake",
+  "phonetic": "/breɪk/",
+  "meaning": "n. 刹车；制动器",
+  "chinese": "踩刹车，红灯了！"
+ },
+ {
+  "word": "brief",
+  "phonetic": "/briːf/",
+  "meaning": "adj. 简短的；短暂的",
+  "chinese": "让我给你简单总结一下。"
+ },
+ {
+  "word": "butterfly",
+  "phonetic": "/ˈbʌtərflaɪ/",
+  "meaning": "n. 蝴蝶",
+  "chinese": "一只蝴蝶落在花上。"
+ },
+ {
+  "word": "calendar",
+  "phonetic": "/ˈkælɪndər/",
+  "meaning": "n. 日历；日程表",
+  "chinese": "看看日历上我们的会议日期。"
+ },
+ {
+  "word": "capture",
+  "phonetic": "/ˈkæptʃər/",
+  "meaning": "v. 捕获；抓住",
+  "chinese": "警察昨晚成功抓住了小偷。"
+ },
+ {
+  "word": "cargo",
+  "phonetic": "/ˈkɑːrɡoʊ/",
+  "meaning": "n. 货物",
+  "chinese": "这艘船正把货物运往日本。"
+ },
+ {
+  "word": "ceiling",
+  "phonetic": "/ˈsiːlɪŋ/",
+  "meaning": "n. 天花板；顶棚",
+  "chinese": "这个房间的天花板真高。"
+ },
+ {
+  "word": "cell",
+  "phonetic": "/sel/",
+  "meaning": "n. 细胞；小房间",
+  "chinese": "我们的身体由微小的细胞构成。"
+ },
+ {
+  "word": "chair",
+  "phonetic": "/tʃer/",
+  "meaning": "n. 椅子",
+  "chinese": "请坐在这把椅子上。"
+ },
+ {
+  "word": "character",
+  "phonetic": "/ˈkærəktər/",
+  "meaning": "n. 性格；角色；人物",
+  "chinese": "他是电影里最有趣的角色。"
+ },
+ {
+  "word": "chief",
+  "phonetic": "/tʃiːf/",
+  "meaning": "adj. 首要的；首席的 n. 首领；长官",
+  "chinese": "她是这个项目的总工程师。"
+ },
+ {
+  "word": "civil",
+  "phonetic": "/ˈsɪvəl/",
+  "meaning": "adj. 公民的；有礼貌的",
+  "chinese": "争论时尽量保持礼貌。"
+ },
+ {
+  "word": "cloth",
+  "phonetic": "/klɔːθ/",
+  "meaning": "n. 布；布料",
+  "chinese": "用这块布擦桌子。"
+ },
+ {
+  "word": "cloud",
+  "phonetic": "/klaʊd/",
+  "meaning": "n. 云；云朵",
+  "chinese": "看那朵乌云。"
+ },
+ {
+  "word": "code",
+  "phonetic": "/koʊd/",
+  "meaning": "n. 密码；代码",
+  "chinese": "请输入你的密码。"
+ },
+ {
+  "word": "college",
+  "phonetic": "/ˈkɑːlɪdʒ/",
+  "meaning": "n. 大学；学院",
+  "chinese": "她在波士顿上大学。"
+ },
+ {
+  "word": "compare",
+  "phonetic": "/kəmˈper/",
+  "meaning": "v. 比较；对比",
+  "chinese": "别过多拿自己和别人比较。"
+ },
+ {
+  "word": "conflict",
+  "phonetic": "/ˈkɑːnflɪkt/",
+  "meaning": "n. 冲突；矛盾 v. 冲突",
+  "chinese": "他们在工作中发生了冲突。"
+ },
+ {
+  "word": "consider",
+  "phonetic": "/kənˈsɪdər/",
+  "meaning": "v. 考虑；认为",
+  "chinese": "我会仔细考虑你的提议。"
+ },
+ {
+  "word": "contact",
+  "phonetic": "/ˈkɑːntækt/",
+  "meaning": "n. 联系 v. 联系；接触",
+  "chinese": "我明天早上联系你。"
+ },
+ {
+  "word": "content",
+  "phonetic": "/ˈkɑːntent/",
+  "meaning": "n. 内容 adj. 满足的",
+  "chinese": "我喜欢这个节目的内容。"
+ },
+ {
+  "word": "continue",
+  "phonetic": "/kənˈtɪnjuː/",
+  "meaning": "v. 继续",
+  "chinese": "我们休息一下后继续。"
+ },
+ {
+  "word": "cook",
+  "phonetic": "/kʊk/",
+  "meaning": "v. 烹饪；煮 n. 厨师",
+  "chinese": "我喜欢为家人做晚饭。"
+ },
+ {
+  "word": "corner",
+  "phonetic": "/ˈkɔːrnər/",
+  "meaning": "n. 角落；拐角",
+  "chinese": "商店就在拐角处。"
+ },
+ {
+  "word": "correct",
+  "phonetic": "/kəˈrekt/",
+  "meaning": "adj. 正确的 v. 改正；纠正",
+  "chinese": "是的，那是正确答案。"
+ },
+ {
+  "word": "cotton",
+  "phonetic": "/ˈkɑːtn/",
+  "meaning": "n. 棉花；棉布",
+  "chinese": "这件衬衫是软棉布做的。"
+ },
+ {
+  "word": "courage",
+  "phonetic": "/ˈkɜːrɪdʒ/",
+  "meaning": "n. 勇气；胆量",
+  "chinese": "尝试新事物需要勇气。"
+ },
+ {
+  "word": "cow",
+  "phonetic": "/kaʊ/",
+  "meaning": "n. 奶牛；母牛",
+  "chinese": "奶牛正在田里吃草。"
+ },
+ {
+  "word": "crack",
+  "phonetic": "/kræk/",
+  "meaning": "n. 裂缝 v. 破裂；敲碎",
+  "chinese": "窗户上有一条裂缝。"
+ },
+ {
+  "word": "cream",
+  "phonetic": "/kriːm/",
+  "meaning": "n. 奶油；乳霜",
+  "chinese": "你想在咖啡里加点奶油吗？"
+ },
+ {
+  "word": "create",
+  "phonetic": "/kriˈeɪt/",
+  "meaning": "v. 创造；创建",
+  "chinese": "她喜欢创作新菜。"
+ },
+ {
+  "word": "credit",
+  "phonetic": "/ˈkredɪt/",
+  "meaning": "n. 信用；学分",
+  "chinese": "我可以用信用卡付款吗？"
+ },
+ {
+  "word": "crime",
+  "phonetic": "/kraɪm/",
+  "meaning": "n. 罪行；犯罪",
+  "chinese": "盗窃是一种严重的罪行。"
+ },
+ {
+  "word": "critic",
+  "phonetic": "/ˈkrɪtɪk/",
+  "meaning": "n. 批评家；评论家",
+  "chinese": "评论家称赞了这部新电影。"
+ },
+ {
+  "word": "damage",
+  "phonetic": "/ˈdæmɪdʒ/",
+  "meaning": "n. 损害 v. 损坏",
+  "chinese": "暴风雨损坏了许多房屋。"
+ },
+ {
+  "word": "data",
+  "phonetic": "/ˈdeɪtə/",
+  "meaning": "n. 数据；资料",
+  "chinese": "数据显示销售额上升了。"
+ },
+ {
+  "word": "decade",
+  "phonetic": "/ˈdekeɪd/",
+  "meaning": "n. 十年",
+  "chinese": "她在这里住了十年了。"
+ },
+ {
+  "word": "declare",
+  "phonetic": "/dɪˈkler/",
+  "meaning": "v. 宣布；声明",
+  "chinese": "他向她表白了爱意。"
+ },
+ {
+  "word": "defeat",
+  "phonetic": "/dɪˈfiːt/",
+  "meaning": "v. 击败；战胜",
+  "chinese": "我们在决赛中击败了他们。"
+ },
+ {
+  "word": "delicate",
+  "phonetic": "/ˈdelɪkət/",
+  "meaning": "adj. 精致的；易碎的",
+  "chinese": "小心，这个玻璃杯很易碎。"
+ },
+ {
+  "word": "demand",
+  "phonetic": "/dɪˈmænd/",
+  "meaning": "v. 要求；n. 需求",
+  "chinese": "他立刻要求得到答复。"
+ },
+ {
+  "word": "department",
+  "phonetic": "/dɪˈpɑːrtmənt/",
+  "meaning": "n. 部门；系",
+  "chinese": "她在销售部工作。"
+ },
+ {
+  "word": "desire",
+  "phonetic": "/dɪˈzaɪər/",
+  "meaning": "n. 欲望；渴望",
+  "chinese": "他有强烈的旅行愿望。"
+ },
+ {
+  "word": "destroy",
+  "phonetic": "/dɪˈstrɔɪ/",
+  "meaning": "v. 破坏；摧毁",
+  "chinese": "大火烧毁了那座旧谷仓。"
+ },
+ {
+  "word": "disaster",
+  "phonetic": "/dɪˈzæstər/",
+  "meaning": "n. 灾难；灾害",
+  "chinese": "这场聚会变成了一场彻底的灾难。"
+ },
+ {
+  "word": "drag",
+  "phonetic": "/dræɡ/",
+  "meaning": "v. 拖，拽；拖沓",
+  "chinese": "你能帮我把这个箱子拖过去吗？"
+ },
+ {
+  "word": "drift",
+  "phonetic": "/drɪft/",
+  "meaning": "v. 漂流；漂移",
+  "chinese": "船开始漂离岸边。"
+ },
+ {
+  "word": "drug",
+  "phonetic": "/drʌɡ/",
+  "meaning": "n. 药物；毒品",
+  "chinese": "这种药一天服两次。"
+ },
+ {
+  "word": "drum",
+  "phonetic": "/drʌm/",
+  "meaning": "n. 鼓",
+  "chinese": "他在一个乐队里打鼓。"
+ },
+ {
+  "word": "duck",
+  "phonetic": "/dʌk/",
+  "meaning": "n. 鸭子；鸭肉",
+  "chinese": "鸭子正在池塘里游泳。"
+ },
+ {
+  "word": "dull",
+  "phonetic": "/dʌl/",
+  "meaning": "adj. 无聊的；单调的",
+  "chinese": "这部电影真的很乏味无聊。"
+ },
+ {
+  "word": "eager",
+  "phonetic": "/ˈiːɡər/",
+  "meaning": "adj. 渴望的；热切的",
+  "chinese": "她渴望开始新工作。"
+ },
+ {
+  "word": "earn",
+  "phonetic": "/ɜːrn/",
+  "meaning": "v. 赚钱；获得",
+  "chinese": "你每个月赚多少钱？"
+ },
+ {
+  "word": "ease",
+  "phonetic": "/iːz/",
+  "meaning": "n. 容易；舒适 v. 减轻",
+  "chinese": "他轻松地通过了考试。"
+ },
+ {
+  "word": "east",
+  "phonetic": "/iːst/",
+  "meaning": "n. 东方 adj. 东方的",
+  "chinese": "太阳从东方升起。"
+ },
+ {
+  "word": "emotion",
+  "phonetic": "/ɪˈmoʊʃən/",
+  "meaning": "n. 情感；情绪",
+  "chinese": "她试图掩饰自己的情绪。"
+ },
+ {
+  "word": "endless",
+  "phonetic": "/ˈendləs/",
+  "meaning": "adj. 无尽的；没完没了的",
+  "chinese": "今天的堵车好像没完没了。"
+ },
+ {
+  "word": "enemy",
+  "phonetic": "/ˈenəmi/",
+  "meaning": "n. 敌人；仇敌",
+  "chinese": "别和邻居树敌。"
+ },
+ {
+  "word": "establish",
+  "phonetic": "/ɪˈstæblɪʃ/",
+  "meaning": "v. 建立，创办",
+  "chinese": "他们计划在这里建一所新学校。"
+ },
+ {
+  "word": "estate",
+  "phonetic": "/ɪˈsteɪt/",
+  "meaning": "n. 房地产；庄园",
+  "chinese": "我叔叔从事房地产行业。"
+ },
+ {
+  "word": "exam",
+  "phonetic": "/ɪɡˈzæm/",
+  "meaning": "n. 考试",
+  "chinese": "我明天有一场英语考试。"
+ },
+ {
+  "word": "exchange",
+  "phonetic": "/ɪksˈtʃeɪndʒ/",
+  "meaning": "v. 交换；兑换",
+  "chinese": "下课后我们交换一下电话号码吧。"
+ },
+ {
+  "word": "exercise",
+  "phonetic": "/ˈeksərsaɪz/",
+  "meaning": "n. 锻炼；练习；v. 锻炼",
+  "chinese": "我每天都在健身房锻炼。"
+ },
+ {
+  "word": "false",
+  "phonetic": "/fɔːls/",
+  "meaning": "adj. 错误的；假的",
+  "chinese": "那是假消息，别相信。"
+ },
+ {
+  "word": "fiction",
+  "phonetic": "/ˈfɪkʃn/",
+  "meaning": "n. 小说；虚构的事",
+  "chinese": "我喜欢读科幻小说。"
+ },
+ {
+  "word": "fierce",
+  "phonetic": "/fɪrs/",
+  "meaning": "adj. 凶猛的；激烈的",
+  "chinese": "竞争真的很激烈。"
+ },
+ {
+  "word": "fill",
+  "phonetic": "/fɪl/",
+  "meaning": "v. 装满；填满",
+  "chinese": "请把杯子装满水。"
+ },
+ {
+  "word": "fix",
+  "phonetic": "/fɪks/",
+  "meaning": "v. 修理；固定",
+  "chinese": "你能修好我那辆坏自行车吗？"
+ },
+ {
+  "word": "flour",
+  "phonetic": "/ˈflaʊər/",
+  "meaning": "n. 面粉",
+  "chinese": "我需要两杯面粉。"
+ },
+ {
+  "word": "flow",
+  "phonetic": "/floʊ/",
+  "meaning": "v. 流动；n. 流动；流量",
+  "chinese": "这里的河水流得很急。"
+ },
+ {
+  "word": "follow",
+  "phonetic": "/ˈfɑːloʊ/",
+  "meaning": "v. 跟随；遵循",
+  "chinese": "跟着我，我认识路。"
+ },
+ {
+  "word": "fourth",
+  "phonetic": "/fɔːrθ/",
+  "meaning": "num. 第四",
+  "chinese": "我的办公室在四楼。"
+ },
+ {
+  "word": "fright",
+  "phonetic": "/fraɪt/",
+  "meaning": "n. 惊吓，恐怖",
+  "chinese": "你真是吓了我一大跳！"
+ },
+ {
+  "word": "fruit",
+  "phonetic": "/fruːt/",
+  "meaning": "n. 水果",
+  "chinese": "我每天早上吃新鲜水果。"
+ },
+ {
+  "word": "fun",
+  "phonetic": "/fʌn/",
+  "meaning": "n. 乐趣；有趣的人或事物",
+  "chinese": "昨晚的派对太有趣了！"
+ },
+ {
+  "word": "gain",
+  "phonetic": "/ɡeɪn/",
+  "meaning": "v. 获得；增加；n. 收益",
+  "chinese": "他假期胖了五磅。"
+ },
+ {
+  "word": "gas",
+  "phonetic": "/ɡæs/",
+  "meaning": "n. 汽油；气体；煤气",
+  "chinese": "出发前我们得去加油。"
+ },
+ {
+  "word": "gear",
+  "phonetic": "/ɡɪr/",
+  "meaning": "n. 齿轮；装备",
+  "chinese": "别忘了你的露营装备。"
+ },
+ {
+  "word": "glue",
+  "phonetic": "/ɡluː/",
+  "meaning": "n. 胶水 v. 粘合",
+  "chinese": "我做这个手工需要胶水。"
+ },
+ {
+  "word": "grab",
+  "phonetic": "/ɡræb/",
+  "meaning": "v. 抓住；赶紧拿",
+  "chinese": "拿上外套，我们马上出发。"
+ },
+ {
+  "word": "grasp",
+  "phonetic": "/ɡræsp/",
+  "meaning": "v. 抓住；理解 n. 掌握",
+  "chinese": "你明白他说的意思了吗？"
+ },
+ {
+  "word": "hang",
+  "phonetic": "/hæŋ/",
+  "meaning": "v. 悬挂；垂下",
+  "chinese": "请把外套挂在挂钩上。"
+ },
+ {
+  "word": "harm",
+  "phonetic": "/hɑːrm/",
+  "meaning": "n./v. 伤害；损害",
+  "chinese": "吸烟会损害你的健康。"
+ },
+ {
+  "word": "hate",
+  "phonetic": "/heɪt/",
+  "meaning": "v. 讨厌",
+  "chinese": "我讨厌迟到。"
+ },
+ {
+  "word": "heat",
+  "phonetic": "/hiːt/",
+  "meaning": "n. 热度；v. 加热",
+  "chinese": "你能帮我把汤热一下吗？"
+ },
+ {
+  "word": "hero",
+  "phonetic": "/ˈhɪroʊ/",
+  "meaning": "n. 英雄；男主角",
+  "chinese": "在我眼里，消防员是英雄。"
+ },
+ {
+  "word": "hydrogen",
+  "phonetic": "/ˈhaɪdrədʒən/",
+  "meaning": "n. 氢；氢气",
+  "chinese": "水是由氢和氧组成的。"
+ },
+ {
+  "word": "identity",
+  "phonetic": "/aɪˈdentəti/",
+  "meaning": "n. 身份；特性",
+  "chinese": "去年有人盗用了我的身份。"
+ },
+ {
+  "word": "image",
+  "phonetic": "/ˈɪmɪdʒ/",
+  "meaning": "n. 图像；形象",
+  "chinese": "屏幕上的图像很模糊。"
+ },
+ {
+  "word": "impulse",
+  "phonetic": "/ˈɪmpʌls/",
+  "meaning": "n. 冲动；一时的念头",
+  "chinese": "我昨天一时冲动买了它。"
+ },
+ {
+  "word": "ink",
+  "phonetic": "/ɪŋk/",
+  "meaning": "n. 墨水；油墨",
+  "chinese": "我的笔没墨水了。"
+ },
+ {
+  "word": "institute",
+  "phonetic": "/ˈɪnstɪtuːt/",
+  "meaning": "n. 学院；研究所",
+  "chinese": "她在一家研究所工作。"
+ },
+ {
+  "word": "internet",
+  "phonetic": "/ˈɪntərnet/",
+  "meaning": "n. 互联网；网络",
+  "chinese": "今天网速真的很慢。"
+ },
+ {
+  "word": "invent",
+  "phonetic": "/ɪnˈvent/",
+  "meaning": "v. 发明；编造",
+  "chinese": "谁发明了电灯泡？"
+ },
+ {
+  "word": "iron",
+  "phonetic": "/ˈaɪərn/",
+  "meaning": "n. 铁；熨斗 v. 熨烫",
+  "chinese": "你能帮我把这件衬衫熨一下吗？"
+ },
+ {
+  "word": "ivory",
+  "phonetic": "/ˈaɪvəri/",
+  "meaning": "n. 象牙；象牙色",
+  "chinese": "钢琴键是用象牙做的。"
+ },
+ {
+  "word": "join",
+  "phonetic": "/dʒɔɪn/",
+  "meaning": "v. 加入，参加；连接",
+  "chinese": "今晚来和我们一起吃晚饭吧。"
+ },
+ {
+  "word": "keen",
+  "phonetic": "/kiːn/",
+  "meaning": "adj. 热衷的；敏锐的",
+  "chinese": "她热衷于打网球。"
+ },
+ {
+  "word": "kettle",
+  "phonetic": "/ˈketl/",
+  "meaning": "n. 水壶",
+  "chinese": "我去烧壶水泡茶。"
+ },
+ {
+  "word": "keyboard",
+  "phonetic": "/ˈkiːbɔːrd/",
+  "meaning": "n. 键盘",
+  "chinese": "这个键盘打字很顺滑。"
+ },
+ {
+  "word": "label",
+  "phonetic": "/ˈleɪbəl/",
+  "meaning": "n. 标签；v. 贴标签于",
+  "chinese": "洗之前先看看标签。"
+ },
+ {
+  "word": "ladder",
+  "phonetic": "/ˈlædər/",
+  "meaning": "n. 梯子",
+  "chinese": "我爬的时候扶住梯子。"
+ },
+ {
+  "word": "lawyer",
+  "phonetic": "/ˈlɔɪər/",
+  "meaning": "n. 律师",
+  "chinese": "你应该先找律师谈谈。"
+ },
+ {
+  "word": "leader",
+  "phonetic": "/ˈliːdər/",
+  "meaning": "n. 领导者；领袖",
+  "chinese": "她是团队里一位很棒的领导者。"
+ },
+ {
+  "word": "liquid",
+  "phonetic": "/ˈlɪkwɪd/",
+  "meaning": "n. 液体 adj. 液体的",
+  "chinese": "水是一种常见的液体。"
+ },
+ {
+  "word": "loose",
+  "phonetic": "/luːs/",
+  "meaning": "adj. 松的；宽松的",
+  "chinese": "这件衬衫我穿着太宽松了。"
+ },
+ {
+  "word": "magazine",
+  "phonetic": "/ˈmæɡəziːn/",
+  "meaning": "n. 杂志",
+  "chinese": "我在一本杂志上读到了这个故事。"
+ },
+ {
+  "word": "mail",
+  "phonetic": "/meɪl/",
+  "meaning": "n. 邮件 v. 邮寄",
+  "chinese": "我今天早上查看了邮件。"
+ },
+ {
+  "word": "manage",
+  "phonetic": "/ˈmænɪdʒ/",
+  "meaning": "v. 管理；设法做到",
+  "chinese": "我在市区经营一家小咖啡店。"
+ },
+ {
+  "word": "member",
+  "phonetic": "/ˈmembər/",
+  "meaning": "n. 成员；会员",
+  "chinese": "你是这家健身房的会员吗？"
+ },
+ {
+  "word": "microwave",
+  "phonetic": "/ˈmaɪkroʊweɪv/",
+  "meaning": "n. 微波炉",
+  "chinese": "把汤放进微波炉里就行。"
+ },
+ {
+  "word": "mid",
+  "phonetic": "/mɪd/",
+  "meaning": "adj. 中间的；中部的",
+  "chinese": "我们七月中旬再见面吧。"
+ },
+ {
+  "word": "midnight",
+  "phonetic": "/ˈmɪdnaɪt/",
+  "meaning": "n. 午夜；半夜",
+  "chinese": "我们今晚午夜前离开吧。"
+ },
+ {
+  "word": "mild",
+  "phonetic": "/maɪld/",
+  "meaning": "adj. 温和的；轻微的",
+  "chinese": "今天天气很温和。"
+ },
+ {
+  "word": "sing",
+  "phonetic": "/sɪŋ/",
+  "meaning": "v. 唱歌",
+  "chinese": "她唱歌很好听。"
+ }
+]

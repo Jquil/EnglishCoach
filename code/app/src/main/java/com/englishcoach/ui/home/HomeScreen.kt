@@ -512,17 +512,17 @@ fun HomeScreen(
 }
 
 /**
- * 首页快捷跟读卡（v11.26 垂直堆叠卡片效果）：
- * - 静止态：当前卡居中（depth 0：x 0 / y 0 / scale 1 / rot 0 / alpha 1.0 / 白底渐变无描边）；
- *   后层卡在右下方露边堆叠——depth d=1,2,3... → x=+12dp×d、y=+12dp×d、scale=1−0.05d、
- *   rot=0°（无旋转）、alpha=1.0（不透明，靠 #F1F4F9 + 1dp #E2E7EF 描边区隔）；
- *   depth>3 不渲染（最多显示4张卡）。三参数（12dp/12dp/0.05）单行可调
+ * 首页快捷跟读卡（v11.27 右侧扇形堆叠效果）：
+ * - 静止态：当前卡居中（depth 0：x 0 / y 0 / scale 1 / rot 0° / alpha 1.0 / 白底渐变无描边）；
+ *   后层卡在右侧扇形堆叠——depth d=1,2,3... → x=+20dp×d、y=0、scale=1−0.03d、
+ *   rot=−3°×d（逆时针扇形）、alpha=1.0（不透明，靠 #F1F4F9 + 1dp #E2E7EF 描边区隔）；
+ *   depth>3 不渲染（最多显示4张卡）。旋转中心为左中心点
  * - 左滑（下一词）＝顶卡飞出：拖动顶卡 x 1:1 跟手（后层卡静止不动）；
  *   松手过阈值（|vx|≥1200px/s 或 |dx|≥30%卡宽）→ 顶卡 spring 飞出屏外 + 后层卡依次
- *   上移到新位置（flip-first：onSelect 先行）；未过阈值 spring 弹回
- * - 右滑（上一词）＝上一词卡从左侧屏外滑入到顶部，其他卡下沉一层
+ *   前移到新位置（flip-first：onSelect 先行）；未过阈值 spring 弹回
+ * - 右滑（上一词）＝上一词卡从左侧屏外滑入到顶部，其他卡后移一层
  * - 边界：首词右滑 / 末词左滑 0.3 阻尼拖出、松手必弹回
- * - 卡宽 = 屏宽 − 40dp；高 168dp 冻结；Box 高 220dp（168 + 垂直堆叠余量）
+ * - 卡宽 = 屏宽 − 40dp；高 168dp 冻结；Box 高 220dp（168 + 旋转余量）
  */
 @Composable
 private fun HomeWordDeck(
@@ -543,10 +543,11 @@ private fun HomeWordDeck(
     val cardWidthDp = (screenWidthDp - 40).dp
     val cardWidthPx = with(density) { cardWidthDp.toPx() }
     val screenWidthPx = with(density) { screenWidthDp.dp.toPx() }
-    // v11.26 堆叠三参数（单行可调）：
-    val stepXDp = 12.dp      // 水平偏移：depth 每深一层右移 12dp
-    val stepYDp = 12.dp      // 垂直偏移：depth 每深一层下移 12dp
-    val scaleStep = 0.05f    // scale 步进：每深一层缩 0.05（营造景深）
+    // v11.27 右侧扇形堆叠参数（高保真还原设计稿）
+    val stepXDp = 20.dp      // 水平偏移：右侧露边
+    val stepYDp = 0.dp       // 垂直偏移：保持水平对齐
+    val scaleStep = 0.03f    // scale 步进：缩放更细腻
+    val rotationStep = -3f   // 旋转步进：每层逆时针旋转3度（扇形效果）
     val stepXPx = with(density) { stepXDp.toPx() }
     val stepYPx = with(density) { stepYDp.toPx() }
     val scope = rememberCoroutineScope()
@@ -607,19 +608,14 @@ private fun HomeWordDeck(
         }
     }
 
-    // 发音 loading（150ms 延迟出现，缓存命中不闪；v11.15 状态行移至卡外提示行）
+    // 发音 loading（300ms 延迟出现，缓存命中不闪；v11.27 增加延迟避免卡顿感）
     var loadingWord by remember { mutableStateOf<String?>(null) }
     val speakWord: (String) -> Unit = { w ->
         scope.launch {
             val loadingJob = launch {
-                kotlinx.coroutines.delay(150)
+                kotlinx.coroutines.delay(300) // 增加到300ms
                 loadingWord = w
             }
-            // v11.15 卡死修复（真机"一直显示发音加载中"）：
-            // ①根因 1：原 `if (loadingWord != w)` 防重入——loadingWord 残留后同词重试被锁死；
-            //   去掉拦截，每次点击开新协程（synthesize 端有在途去重兜并发）
-            // ②根因 2：synthesize 网络挂起无超时——withTimeoutOrNull(8s) 强制兜底
-            // ③完成/失败/超时三路必清 loadingWord；失败走卡外提示行明确报错
             val audio = withTimeoutOrNull(8000) {
                 runCatching { app.ttsClient.synthesize(w) }.getOrNull()
             }
@@ -912,14 +908,14 @@ private fun HomeWordDeck(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(220.dp), // 卡 168dp 固定 + 垂直堆叠余量（3层×12dp=36dp + buffer）；卡顶部对齐
-        contentAlignment = Alignment.TopCenter
+            .height(220.dp), // 卡 168dp 固定 + 旋转余量
+        contentAlignment = Alignment.CenterStart // 改为左对齐，卡片向右展开
     ) {
-        // —— v11.26 垂直堆叠卡片渲染 ——
-        // 静止：卡 j 的 depth d=(j−index)，位置 x=+12dp×d、y=+12dp×d，scale=1−0.05d、
-        // rot=0°、alpha=1.0（侧卡靠 #F1F4F9+#E2E7EF 描边区隔）；depth>3 不渲染（最多4张）。
-        // 左滑提交：顶卡飞出屏外，后层卡上移到新位置（flip-first）。
-        // 右滑：上一词卡从左侧屏外滑入到顶部，其他卡下沉一层。
+        // —— v11.27 右侧扇形堆叠卡片渲染 ——
+        // 静止：卡 j 的 depth d=(j−index)，位置 x=+20dp×d、y=0，scale=1−0.03d、
+        // rot=−3°×d（扇形）、alpha=1.0（侧卡靠 #F1F4F9+#E2E7EF 描边区隔）；depth>3 不渲染（最多4张）。
+        // 左滑提交：顶卡飞出屏外，后层卡前移到新位置（flip-first）。
+        // 右滑：上一词卡从左侧屏外滑入到顶部，其他卡后移一层。
         // 绘制顺序按 effDepth 降序（最深的先画，顶层最后画）
         val commitV = commitAnim.value
         val swapV = swapAnim.value
@@ -936,7 +932,7 @@ private fun HomeWordDeck(
 
         class DeckSlot(
             val j: Int, val x: Float, val y: Float, val effDepth: Float,
-            val alpha: Float, val isFlight: Boolean
+            val alpha: Float, val rotation: Float, val isFlight: Boolean
         )
         val slots = mutableListOf<DeckSlot>()
         for (j in windowStart..windowEnd) {
@@ -946,30 +942,34 @@ private fun HomeWordDeck(
                 val fade = (1f - kotlin.math.abs(flightAnim.value) / (screenWidthPx * 0.7f))
                     .coerceIn(0f, 1f)
                 if (fade > 0.02f) {
-                    slots.add(DeckSlot(j, flightAnim.value, 0f, 0f, fade, true))
+                    slots.add(DeckSlot(j, flightAnim.value, 0f, 0f, fade, 0f, true))
                 }
                 continue
             }
             val x: Float
             val y: Float
             val effDepth: Float
+            val rotation: Float
             when {
                 leftCommit -> {
-                    // 后层卡上移：effDepth = rel+1−cp 收敛到 rel
+                    // 后层卡前移：effDepth = rel+1−cp 收敛到 rel
                     effDepth = rel + (1f - commitV)
                     x = effDepth * stepXPx
-                    y = effDepth * stepYPx
+                    y = 0f
+                    rotation = effDepth * rotationStep
                 }
                 rightCommit -> if (rel == 0) {
                     // 上一词卡从左侧滑入到顶部
                     effDepth = 1f - swapV
                     x = (swapV - 1f) * cardWidthPx
                     y = 0f
+                    rotation = 0f
                 } else if (rel >= 1) {
-                    // 其他卡下沉一层
+                    // 其他卡后移一层
                     effDepth = (rel - 1) + swapV
                     x = effDepth * stepXPx
-                    y = effDepth * stepYPx
+                    y = 0f
+                    rotation = effDepth * rotationStep
                 } else {
                     continue
                 }
@@ -978,23 +978,26 @@ private fun HomeWordDeck(
                     effDepth = 1f - swapT
                     x = (swapT - 1f) * cardWidthPx
                     y = 0f
+                    rotation = 0f
                 } else {
-                    // 其他卡下沉
+                    // 其他卡后移
                     effDepth = rel + swapT
                     x = effDepth * stepXPx
-                    y = effDepth * stepYPx
+                    y = 0f
+                    rotation = effDepth * rotationStep
                 }
                 else -> {
                     // 静止 / 左滑拖动（只拖顶卡，后层卡静止）
                     if (rel < 0) continue
                     effDepth = rel.toFloat()
                     x = if (rel == 0) leftDx else rel * stepXPx // 只有顶卡响应拖拽
-                    y = rel * stepYPx
+                    y = 0f
+                    rotation = if (rel == 0 && leftDx != 0f) 0f else rel * rotationStep
                 }
             }
             val alpha = if (effDepth <= 3f) 1f else (1f - (effDepth - 3f)).coerceIn(0f, 1f)
             if (alpha <= 0.02f) continue
-            slots.add(DeckSlot(j, x, y, effDepth, alpha, false))
+            slots.add(DeckSlot(j, x, y, effDepth, alpha, rotation, false))
         }
         slots.sortByDescending { it.effDepth }
         for (slot in slots) {
@@ -1012,14 +1015,14 @@ private fun HomeWordDeck(
                 modifier = Modifier
                     .width(cardWidthDp)
                     .graphicsLayer {
-                        // v11.26 垂直堆叠：x=+12dp×d、y=+12dp×d、scale=1−0.05d、
-                        // rot=0°（无旋转）；三参数（stepXDp/stepYDp/scaleStep）单行可调
+                        // v11.27 右侧扇形堆叠：水平偏移 + 左中心旋转 + 缩放
                         translationX = slot.x
                         translationY = slot.y
-                        rotationZ = 0f // 无旋转，保持垂直堆叠
+                        rotationZ = slot.rotation
                         scaleX = 1f - scaleStep * slot.effDepth
                         scaleY = 1f - scaleStep * slot.effDepth
                         alpha = slot.alpha
+                        transformOrigin = TransformOrigin(0f, 0.5f) // 左中心为旋转轴
                     }
                     // 侧层卡不可交互、不响应点击：手势链只挂当前卡
                     .then(if (isCurrent) currentGestures else Modifier)
@@ -1258,10 +1261,23 @@ private fun HomeWordCard(
                         overflow = TextOverflow.Ellipsis
                     )
                     Spacer(modifier = Modifier.height(4.dp))
+                    // v11.27：英语例句（主要内容）
+                    if (item.example.isNotBlank()) {
+                        Text(
+                            text = item.example,
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Medium,
+                            color = TextPrimary,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                        Spacer(modifier = Modifier.height(2.dp))
+                    }
+                    // 中文例句（辅助内容，弱化显示）
                     Text(
                         text = item.chinese,
                         fontSize = 11.sp,
-                        color = TextSecondary.copy(alpha = 0.8f),
+                        color = TextSecondary.copy(alpha = 0.7f),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )

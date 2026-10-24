@@ -168,45 +168,45 @@ fun Modifier.voiceDomeGesture(
         state.elapsedMs = 0L
         state.phase = DomePhase.RECORDING
         onPressStart()
+
         val startY = down.position.y
         val cancelPx = CANCEL_SLIDE_DP.toPx()
         var cancelled = false
 
-        // v11.26 新增：录音时长监控，超过15秒自动停止
-        val maxRecordJob = kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.Main).launch {
-            kotlinx.coroutines.delay(MAX_RECORD_MS)
-            // 如果还在录音状态，自动触发松手
-            if (state.phase == DomePhase.RECORDING) {
-                state.phase = DomePhase.RECOGNIZING
-                onPressRelease(MAX_RECORD_MS)
-            }
-        }
+        // v11.27：移除独立作用域的超时任务，改用手势循环内的时间检查
+        // 避免与手势事件竞态导致重复回调
+        val startTime = SystemClock.elapsedRealtime()
 
         while (true) {
             val event = awaitPointerEvent()
             val change = event.changes.firstOrNull() ?: break
+
+            // v11.27：检查录音时长，超过15秒自动停止
+            val elapsed = SystemClock.elapsedRealtime() - startTime
+            if (elapsed >= MAX_RECORD_MS && state.phase == DomePhase.RECORDING) {
+                state.phase = DomePhase.RECOGNIZING
+                onPressRelease(MAX_RECORD_MS)
+                break
+            }
+
             if (!change.pressed) break // 松手
-            // 录音确认后逐帧消费：冻结切词/tap 等并行手势，识别词与屏显词不再错位
+            // 录音确认后逐帧消费：冻结切词/tap 等并行手势
             change.consume()
             val dy = change.position.y - startY
             if (dy < -cancelPx) {
                 if (state.phase != DomePhase.CANCEL) {
                     state.phase = DomePhase.CANCEL
-                    // v11.6 P1-2：滑入取消区触感一下（滑回恢复不触感）
                     hapticFeedback?.invoke()
-                    // QA P2-4：滑入取消区瞬间通知宿主隔离本次已积累的识别结果，
-                    // 堵"停留期间 ASR 提前吐 Final 被误消费"的竞态
                     onEnterCancel()
                 }
                 cancelled = true
             } else if (cancelled) {
-                // 滑回原位恢复录音态（微信同款）：宿主重启 ASR 会话继续听
+                // 滑回原位恢复录音态
                 state.phase = DomePhase.RECORDING
                 cancelled = false
                 onExitCancel()
             }
         }
-        maxRecordJob.cancel() // 松手后取消超时任务
         val elapsed = SystemClock.elapsedRealtime() - downAtMs
         state.elapsedMs = elapsed
         when {
@@ -336,9 +336,8 @@ fun VoiceDomeOverlay(
     )
 
     val isCancel = state.phase == DomePhase.CANCEL
-    // v11.27 UI优化：降低圆顶高度，避免遮挡句子内容
-    // 录音时圆顶高度为屏幕35%，识别时保持不变
-    val domeHeight = (screenHeightDp * 0.35f).dp
+    // v11.27 UI优化：降低圆顶高度，录音时句子显示在更高位置
+    val domeHeight = (screenHeightDp * 0.32f).dp
     val domeScale = 1f
     // v11.6 P1-2：红/蓝渐变 180ms 过渡（替换原硬切）
     val gradTop by animateColorAsState(
@@ -387,13 +386,12 @@ fun VoiceDomeOverlay(
                     .background(Color.Black.copy(alpha = 0.45f))
             )
         }
-        // v11.27：录音/取消态时，在圆顶上方显示当前句子内容（用户可边看边跟读）
-        // 优化：调整位置到屏幕上部1/3处，避免被手指遮挡
+        // v11.27：录音/取消态时，在上方显示当前句子内容（更清晰，不被手指遮挡）
         if ((state.phase == DomePhase.RECORDING || state.phase == DomePhase.CANCEL) && !sentenceContent.isNullOrBlank()) {
             Box(
                 modifier = Modifier
                     .align(Alignment.TopCenter)
-                    .padding(top = (screenHeightDp * 0.25f).dp)
+                    .padding(top = (screenHeightDp * 0.15f).dp)
                     .padding(horizontal = 24.dp)
                     .fillMaxWidth()
             ) {
