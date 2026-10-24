@@ -1380,6 +1380,113 @@ fun NceRepeatScreen(
 }
 
 /**
+ * v11.26 单句实时反馈弹层：跟读结束即刻弹出。
+ * 合格/未合格徽章 + 准确度大数字 + 评语 + 建议，双操作（重读本句 / 继续下一句）。
+ * 样式沿用 WordCardSheet：ModalBottomSheet 白底 + 20dp 水平边距。
+ */
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
+@Composable
+private fun SentenceFeedbackSheet(
+    feedback: SentenceFeedback,
+    onContinue: () -> Unit,
+    onRetry: () -> Unit
+) {
+    val accent = if (feedback.passed) Color(0xFF43CF7C) else Color(0xFFFF6900)
+    ModalBottomSheet(
+        onDismissRequest = onContinue,
+        containerColor = Color.White
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp)
+                .padding(bottom = 32.dp)
+        ) {
+            // 徽章行：合格/未合格
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Box(
+                    modifier = Modifier
+                        .size(10.dp)
+                        .clip(CircleShape)
+                        .background(accent)
+                )
+                Text(
+                    text = if (feedback.passed) "本句合格" else "再试一次会更好",
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = accent,
+                    modifier = Modifier.padding(start = 8.dp)
+                )
+            }
+            // 准确度大数字
+            Text(
+                text = "${(feedback.accuracy * 100).toInt()}%",
+                fontSize = 44.sp,
+                fontWeight = FontWeight.Bold,
+                color = TextPrimary,
+                modifier = Modifier.padding(top = 12.dp)
+            )
+            Text(
+                text = "句子准确度",
+                fontSize = 13.sp,
+                color = TextSecondary
+            )
+            // 评语 + 建议
+            Text(
+                text = feedback.comment,
+                fontSize = 15.sp,
+                color = TextPrimary,
+                lineHeight = 22.sp,
+                modifier = Modifier.padding(top = 16.dp)
+            )
+            Text(
+                text = feedback.suggestion,
+                fontSize = 13.sp,
+                color = TextSecondary,
+                lineHeight = 19.sp,
+                modifier = Modifier.padding(top = 6.dp)
+            )
+            // 操作行：重读本句 / 继续
+            Row(modifier = Modifier.padding(top = 20.dp)) {
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(52.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color(0xFFF1F4F9))
+                        .clickable { onRetry() },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "重读本句",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = TextPrimary
+                    )
+                }
+                Spacer(modifier = Modifier.width(12.dp))
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(52.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(HyperBlue)
+                        .clickable { onContinue() },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "继续",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color.White
+                    )
+                }
+            }
+        }
+    }
+}
+
+/**
  * 点词释义词卡底部弹层：词 + 音标 + 发音钮 + 释义 + 例句 + 【加入单词本】/已在单词本。
  */
 @OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
