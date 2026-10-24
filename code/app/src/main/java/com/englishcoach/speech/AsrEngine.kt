@@ -115,6 +115,7 @@ class CloudAsrEngine(private val context: Context) : AsrEngine {
         val rec = recorder ?: return
         if (!_isListening.value) return
         _isListening.value = false
+        _rmsLevel.value = 0f // 停止录音时归零RMS
         recorder = null
         val wav = rec.stop()
         val durationMs = rec.recordedMs
@@ -152,6 +153,7 @@ class CloudAsrEngine(private val context: Context) : AsrEngine {
     override fun cancelListening() {
         session++ // 作废在途转写（即使已完成上传，结果也会在校验处丢弃）
         _isListening.value = false
+        _rmsLevel.value = 0f // 清空RMS，避免UI残留
         transcribeJob?.cancel()
         transcribeJob = null
         recorder?.cancel()

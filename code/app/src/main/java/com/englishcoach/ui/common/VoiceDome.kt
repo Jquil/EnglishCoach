@@ -98,11 +98,14 @@ class VoiceDomeState {
 @Composable
 fun rememberVoiceDomeState(): VoiceDomeState = remember { VoiceDomeState() }
 
-/** 防误触：不足此时长的按压视为无效（不出结果、等价丢弃） */
-private const val MIN_PRESS_MS = 300L
+/** v11.26 优化：降低防误触阈值，提升响应速度 */
+private const val MIN_PRESS_MS = 200L
 
-/** 上滑取消阈值 */
-private val CANCEL_SLIDE_DP = 56.dp
+/** v11.26 优化：降低取消滑动距离，更容易取消 */
+private val CANCEL_SLIDE_DP = 40.dp
+
+/** v11.26 新增：录音最大时长（15秒），避免用户一直按住 */
+private const val MAX_RECORD_MS = 15000L
 
 /**
  * "按住说话"手势（微信交互）：按下 → 录音（圆顶升起），上滑 ≥56dp → 取消区，
@@ -160,13 +163,24 @@ fun Modifier.voiceDomeGesture(
             if (!confirmed) return@awaitEachGesture
         }
 
-        state.pressAtMs = downAtMs // P1-2：计时从按下起算，圆顶不再显示开机以来时长
+        state.pressAtMs = downAtMs
         state.elapsedMs = 0L
         state.phase = DomePhase.RECORDING
         onPressStart()
         val startY = down.position.y
         val cancelPx = CANCEL_SLIDE_DP.toPx()
         var cancelled = false
+
+        // v11.26 新增：录音时长监控，超过15秒自动停止
+        val maxRecordJob = kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.Main).launch {
+            kotlinx.coroutines.delay(MAX_RECORD_MS)
+            // 如果还在录音状态，自动触发松手
+            if (state.phase == DomePhase.RECORDING) {
+                state.phase = DomePhase.RECOGNIZING
+                onPressRelease(MAX_RECORD_MS)
+            }
+        }
+
         while (true) {
             val event = awaitPointerEvent()
             val change = event.changes.firstOrNull() ?: break
@@ -191,6 +205,7 @@ fun Modifier.voiceDomeGesture(
                 onExitCancel()
             }
         }
+        maxRecordJob.cancel() // 松手后取消超时任务
         val elapsed = SystemClock.elapsedRealtime() - downAtMs
         state.elapsedMs = elapsed
         when {
@@ -200,7 +215,7 @@ fun Modifier.voiceDomeGesture(
             }
 
             elapsed < MIN_PRESS_MS -> {
-                // 极短按防误触：等价丢弃，不出结果（P2-5：250-300ms 窗口与 Nce 口径一致）
+                // v11.26：极短按防误触 200ms，比300ms更灵敏
                 state.phase = DomePhase.HIDDEN
                 onPressCancel()
             }
@@ -213,8 +228,8 @@ fun Modifier.voiceDomeGesture(
     }
 }
 
-/** 识别中超时兜底：RECOGNIZING 停留超过此时长强制收回（不管引擎是否还活着） */
-private const val RECOGNIZING_TIMEOUT_MS = 8000L
+/** v11.26 优化：识别超时从8秒延长到12秒，给用户更多时间 */
+private const val RECOGNIZING_TIMEOUT_MS = 12000L
 
 /** v11.6：RMS EMA 采样周期（与 PcmRecorder ~80ms 节流对齐） */
 private const val RMS_SAMPLE_MS = 80L
@@ -227,23 +242,27 @@ private const val RMS_FALLBACK_MS = 1000L
 private const val IDLE_BREATH_SECONDS = 3.2f
 
 /**
- * 微信式底部圆顶 overlay（v11.1 按用户参考图重做；v11.6 全链路交互优化）：
- * - 圆顶弧顶约到屏幕 46%（识别中收窄至 38%，临界阻尼无过冲），全宽大弧线缓而饱满
- * - 录音态：Mic 下方 5 根声波条随 RMS 起伏（EMA α=0.35），圆顶高度随音量呼吸（≤49%），
- *   峰值涟漪扩散环；ema<0.02 持续 1s → 声波条/涟漪淡出回退现状微起伏（无 RMS 路径不劣化）
+ * 微信式底部圆顶 overlay（v11.26 优化：录音时显示句子内容，避免遮挡）：
+ * - 圆顶弧顶约到屏幕 46%（识别中保持不变），全宽大弧线缓而饱满
+ * - 录音态：Mic 下方 5 根声波条随 RMS 起伏（EMA α=0.20），圆顶高度固定，
+ *   峰值涟漪扩散环；ema<0.02 持续 1s → 声波条/涟漪淡出回退现状微起伏
  * - 识别等待期：46dp 白色不确定进度环 + 文案两段式「正在上传录音…」→「AI 听取中…」
- * - 取消态：触感（手势侧）+ scale 0.97 + 红/蓝渐变 180ms 过渡
+ * - 取消态：触感（手势侧）+ 红/蓝渐变 180ms 过渡
  * - 信息层次：主提示白 96%、计时白 60% 弱化、RECORDING 常驻「上滑取消」白 40%
+ * - v11.26 新增：录音时在圆顶上方显示当前句子内容，用户可边看边跟读
  *
  * v11.3 识别卡死三道修复（圆顶侧，保持）：
  * - [onRecognizingTap]：RECOGNIZING 态点按 scrim 或圆顶任意区域 = 等价取消——用户永远有出口
  * - [onRecognizingTimeout]：RECOGNIZING 停留超 8s 强制回调（宿主收圆顶 + 提示）
+ *
+ * @param sentenceContent 当前句子内容（录音时显示在圆顶上方），格式："英文\n中文"
  */
 @Composable
 fun VoiceDomeOverlay(
     state: VoiceDomeState,
     recordHint: String = "松开跟读",
     cancelHint: String = "松开取消",
+    sentenceContent: String? = null,
     onRecognizingTap: (() -> Unit)? = null,
     onRecognizingTimeout: (() -> Unit)? = null
 ) {
@@ -316,19 +335,10 @@ fun VoiceDomeOverlay(
     )
 
     val isCancel = state.phase == DomePhase.CANCEL
-    // v11.9 3-B：高度呼吸整个移除——录音态恒 46%；识别中收窄 38%（临界阻尼 spring 不变）
-    val heightFraction = if (state.phase == DomePhase.RECOGNIZING) 0.38f else 0.46f
-    val domeHeight by animateDpAsState(
-        targetValue = (screenHeightDp * heightFraction).dp,
-        animationSpec = spring(dampingRatio = 1.0f, stiffness = 180f),
-        label = "domeHeight"
-    )
-    // v11.6 P1-2：取消态圆顶微微收紧（scale 0.97，spring 300/0.9）
-    val domeScale by animateFloatAsState(
-        targetValue = if (isCancel) 0.97f else 1f,
-        animationSpec = spring(dampingRatio = 0.9f, stiffness = 300f),
-        label = "domeScale"
-    )
+    // v11.26 UI优化：圆顶高度保持恒定，不再根据状态变化（避免松开跟读后尺寸突变）
+    val domeHeight = (screenHeightDp * 0.46f).dp
+    // v11.26 UI优化：移除取消态的scale缩放，保持尺寸一致性
+    val domeScale = 1f
     // v11.6 P1-2：红/蓝渐变 180ms 过渡（替换原硬切）
     val gradTop by animateColorAsState(
         targetValue = if (isCancel) Color(0xFFFF8E86) else Color(0xFF74B2FF),
@@ -364,7 +374,7 @@ fun VoiceDomeOverlay(
             Modifier.fillMaxSize()
         }
     ) {
-        // 背景压暗（录音期间拦截其它点击；取消态略深）
+        // 背景压暗（录音期间拦截其它点击；v11.26：保持一致透明度）
         AnimatedVisibility(
             visible = state.phase != DomePhase.HIDDEN,
             enter = fadeIn(animationSpec = tween(120)),
@@ -373,8 +383,49 @@ fun VoiceDomeOverlay(
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color.Black.copy(alpha = if (isCancel) 0.55f else 0.45f))
+                    .background(Color.Black.copy(alpha = 0.45f))
             )
+        }
+        // v11.26：录音/取消态时，在圆顶上方显示当前句子内容（用户可边看边跟读）
+        if ((state.phase == DomePhase.RECORDING || state.phase == DomePhase.CANCEL) && !sentenceContent.isNullOrBlank()) {
+            Box(
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .padding(horizontal = 24.dp)
+                    .fillMaxWidth()
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color.White.copy(alpha = 0.95f))
+                        .border(1.dp, Color.White.copy(alpha = 0.3f), RoundedCornerShape(16.dp))
+                        .padding(horizontal = 20.dp, vertical = 16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    val lines = sentenceContent.split("\n")
+                    if (lines.isNotEmpty()) {
+                        Text(
+                            text = lines[0],
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = Color(0xFF0E0E12),
+                            textAlign = TextAlign.Center,
+                            lineHeight = 26.sp
+                        )
+                    }
+                    if (lines.size > 1) {
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = lines[1],
+                            fontSize = 14.sp,
+                            color = Color(0xFF6C727F),
+                            textAlign = TextAlign.Center,
+                            lineHeight = 20.sp
+                        )
+                    }
+                }
+            }
         }
         // 主列：提示文案（圆顶上方压暗背景上）+ 圆顶，整体贴底居中
         Column(modifier = Modifier.align(Alignment.BottomCenter)) {
@@ -389,26 +440,29 @@ fun VoiceDomeOverlay(
                 ) {
                     when (state.phase) {
                         DomePhase.RECORDING -> {
-                            // v11.6 P1-3：主提示白 96%（黑 scrim 对比 14:1，弃 HyperBlue）
+                            // v11.26：显示录音时长和提示，15秒超时警告
+                            val elapsed = state.elapsedMs / 1000
+                            val isNearMax = elapsed >= 12
                             Text(
                                 text = recordHint,
                                 fontSize = 22.sp,
                                 fontWeight = FontWeight.Bold,
-                                color = Color.White.copy(alpha = 0.96f)
+                                color = if (isNearMax) Color(0xFFFFB300) else Color.White.copy(alpha = 0.96f)
                             )
                             // 计时弱化：白 60% + 字距
                             Text(
-                                text = formatSeconds(state.elapsedMs),
+                                text = formatSeconds(state.elapsedMs) + if (isNearMax) " / 15s" else "",
                                 fontSize = 15.sp,
-                                color = Color.White.copy(alpha = 0.60f),
+                                color = if (isNearMax) Color(0xFFFFB300) else Color.White.copy(alpha = 0.60f),
                                 letterSpacing = 0.5.sp,
                                 modifier = Modifier.padding(top = 6.dp)
                             )
-                            // v11.6 P1-3：常驻「上滑取消」引导（微信同款，取消功能露出）
+                            // v11.26 优化：取消提示更明显
                             Text(
-                                text = "上滑取消",
-                                fontSize = 12.sp,
-                                color = Color.White.copy(alpha = 0.40f),
+                                text = "上滑取消 ↑",
+                                fontSize = 13.sp,
+                                fontWeight = FontWeight.Medium,
+                                color = Color.White.copy(alpha = 0.50f),
                                 modifier = Modifier.padding(top = 4.dp)
                             )
                         }
@@ -470,9 +524,9 @@ fun VoiceDomeOverlay(
                             } else {
                                 translationY = 0f
                             }
-                            // v11.6 P1-2：取消态收紧
-                            scaleX = domeScale
-                            scaleY = domeScale
+                            // v11.26：移除scale变化，保持尺寸一致
+                            scaleX = 1f
+                            scaleY = 1f
                         }
                         .clip(
                             RoundedCornerShape(

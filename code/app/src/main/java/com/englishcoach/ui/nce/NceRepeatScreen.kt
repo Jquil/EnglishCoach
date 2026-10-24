@@ -111,8 +111,17 @@ private val HoldOrange1 = Color(0xFFFF8F1F)  // 按住跟读橙渐变起
 private val HoldOrange2 = Color(0xFFFF6900)  // 按住跟读橙渐变止
 private val Hairline = Color(0x0F000000)     // 6% 黑分隔线
 
-/** 跟读页阶段：加载中 → 原声播放中 → 等待跟读 → 成绩单 */
-enum class NcePhase { LOADING, PLAYING, REPEAT, REPORT }
+/** 单句实时评分结果 */
+data class SentenceFeedback(
+    val passed: Boolean,           // 是否合格（准确度≥70%）
+    val accuracy: Float,           // 准确度 0..1
+    val fluency: Float,            // 流利度 0..1
+    val comment: String,           // 评语
+    val suggestion: String         // 改进建议
+)
+
+/** 跟读页阶段：加载中 → 原声播放中 → 等待跟读 → 显示本句反馈 → 成绩单 */
+enum class NcePhase { LOADING, PLAYING, REPEAT, SENTENCE_FEEDBACK, REPORT }
 
 /** 点词词卡 UI 状态 */
 data class WordCardUi(
@@ -140,7 +149,8 @@ data class NceRepeatUiState(
     val aiReview: AiCoachReview? = null,          // AI 教练点评（null = 加载中/未发起）
     val aiReviewLocal: Boolean = false,           // true = 本地简评（无 Key/调用失败）
     val errorTick: Int = 0,                       // v11.3 ASR 错误脉冲：每次 Error 递增，驱动圆顶"报错即收"
-    val audioMissing: Boolean = false             // v11.8 音频包未安装（底部横幅引导导入；TTS 跟读照常可用）
+    val audioMissing: Boolean = false,            // v11.8 音频包未安装（底部横幅引导导入；TTS 跟读照常可用）
+    val sentenceFeedback: SentenceFeedback? = null // v11.26 单句实时反馈
 ) {
     val sentenceCount: Int get() = lesson?.sentences?.size ?: 0
     val currentSentence: NceSentence? get() = lesson?.sentences?.getOrNull(currentIndex)
@@ -161,8 +171,8 @@ class NceRepeatViewModel(
     companion object {
         private const val TAG = "EC-NceRepeat"
 
-        /** 极短按防误触阈值（与 VoiceDome 组件一致，双保险） */
-        private const val MIN_PRESS_MS = 300L
+        /** v11.26 优化：极短按防误触阈值降至200ms */
+        private const val MIN_PRESS_MS = 200L
 
         fun factory(app: EnglishCoachApp, lessonNo: Int): ViewModelProvider.Factory =
             object : ViewModelProvider.Factory {
@@ -433,20 +443,43 @@ class NceRepeatViewModel(
                 val lesson = state.lesson ?: return
                 val index = state.currentIndex
                 if (index >= lesson.sentences.size) return
-                // 识别即过：不卡准确度，成绩单里再算相似度
+                val sentence = lesson.sentences[index]
+
+                // v11.26：立即评分本句，显示反馈
+                val attempt = NceAttempt(
+                    sentenceIndex = index,
+                    recognized = event.text,
+                    repeatMs = event.durationMs,
+                    referenceMs = state.pendingReferenceMs
+                )
+
+                // 计算准确度和流利度
+                val accuracy = NceScorer.similarity(event.text, sentence.english)
+                val fluency = if (state.pendingReferenceMs > 0 && event.durationMs > 0) {
+                    (state.pendingReferenceMs.toFloat() / event.durationMs).coerceIn(0f, 1f)
+                } else {
+                    0.5f
+                }
+
+                // 生成反馈
+                val passed = accuracy >= 0.7f // 70%准确度为合格线
+                val feedback = SentenceFeedback(
+                    passed = passed,
+                    accuracy = accuracy,
+                    fluency = fluency,
+                    comment = generateComment(accuracy, fluency, passed),
+                    suggestion = generateSuggestion(accuracy, fluency, passed)
+                )
+
                 _uiState.update {
                     it.copy(
-                        attempts = it.attempts + (
-                            index to NceAttempt(
-                                sentenceIndex = index,
-                                recognized = event.text,
-                                repeatMs = event.durationMs,
-                                referenceMs = it.pendingReferenceMs
-                            )
-                            ),
-                        partial = ""
+                        attempts = it.attempts + (index to attempt),
+                        partial = "",
+                        phase = NcePhase.SENTENCE_FEEDBACK,
+                        sentenceFeedback = feedback
                     )
                 }
+
                 // 打卡：任何开口计入（PM 口径），至少 1 秒；每日跟读句数 +1（统计页数据源）
                 viewModelScope.launch {
                     runCatching {
@@ -457,7 +490,6 @@ class NceRepeatViewModel(
                         app.dailyStatsStore.addRepeatSentences(1)
                     }
                 }
-                advance()
             }
 
             is AsrEvent.Error -> {
@@ -470,6 +502,51 @@ class NceRepeatViewModel(
                 _uiState.update { it.copy(partial = "", hint = event.message, errorTick = it.errorTick + 1) }
             }
         }
+    }
+
+    /** v11.26：生成单句评语 */
+    private fun generateComment(accuracy: Float, fluency: Float, passed: Boolean): String {
+        return when {
+            accuracy >= 0.9f && fluency >= 0.8f -> "完美！发音准确，节奏流畅 ⭐"
+            accuracy >= 0.9f -> "太棒了！发音很准确 ✓"
+            accuracy >= 0.8f && fluency >= 0.8f -> "很好！准确度和流利度都不错 👍"
+            accuracy >= 0.8f -> "不错！发音挺准的"
+            accuracy >= 0.7f && fluency >= 0.7f -> "合格！继续保持"
+            accuracy >= 0.7f -> "基本准确，再流利点更好"
+            accuracy >= 0.5f -> "有点偏差，再试一次吧"
+            else -> "跟原句差距较大，多听几遍再试"
+        }
+    }
+
+    /** v11.26：生成改进建议 */
+    private fun generateSuggestion(accuracy: Float, fluency: Float, passed: Boolean): String {
+        return when {
+            !passed && accuracy < 0.5f -> "建议：点 ▶ 多听几遍原声，注意每个单词的发音"
+            !passed && accuracy < 0.7f -> "建议：注意个别单词的发音，可以放慢速度"
+            passed && fluency < 0.6f -> "提示：可以适当加快语速，更接近原声节奏"
+            passed && accuracy < 0.85f -> "提示：个别单词还可以更准确一些"
+            else -> "已经很好了！可以继续下一句 →"
+        }
+    }
+
+    /** v11.26：确认本句反馈，继续下一句 */
+    fun confirmSentenceFeedback() {
+        _uiState.update { it.copy(sentenceFeedback = null, phase = NcePhase.REPEAT) }
+        advance()
+    }
+
+    /** v11.26：重读本句（清除本句attempt，重新播放原声） */
+    fun retryCurrentSentence() {
+        val state = _uiState.value
+        val index = state.currentIndex
+        _uiState.update {
+            it.copy(
+                attempts = it.attempts - index,
+                sentenceFeedback = null,
+                phase = NcePhase.REPEAT
+            )
+        }
+        playCurrent()
     }
 
     /** 前进一句；最后一句之后出整课成绩单 */
@@ -1255,22 +1332,32 @@ fun NceRepeatScreen(
             }
         }
 
-        // 微信式圆顶录音 overlay（1b：三页共用组件）
+        // 微信式圆顶录音 overlay（v11.26：传入当前句子内容，录音时显示避免遮挡）
         VoiceDomeOverlay(
             state = dome,
             recordHint = "松开跟读",
             cancelHint = "松开取消",
+            sentenceContent = state.currentSentence?.let { "${it.english}\n${it.chinese}" },
             // v11.3：识别中点按任意区域 = 等价取消——用户永远有出口
             onRecognizingTap = {
                 viewModel.abortListening()
                 dome.phase = com.englishcoach.ui.common.DomePhase.HIDDEN
             },
-            // v11.3：识别中超 8s 强制收回 + 提示（不管引擎是否还活着）
+            // v11.3：识别中超 12s 强制收回 + 提示（不管引擎是否还活着）
             onRecognizingTimeout = {
                 viewModel.onRecognizingTimeout()
                 dome.phase = com.englishcoach.ui.common.DomePhase.HIDDEN
             }
         )
+
+        // v11.26：单句实时反馈弹层
+        state.sentenceFeedback?.let { feedback ->
+            SentenceFeedbackSheet(
+                feedback = feedback,
+                onContinue = { viewModel.confirmSentenceFeedback() },
+                onRetry = { viewModel.retryCurrentSentence() }
+            )
+        }
 
         // ---------- 点词释义词卡（v3 需求 4） ----------
         state.wordCard?.let { card ->

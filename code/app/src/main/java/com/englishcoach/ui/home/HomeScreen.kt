@@ -512,23 +512,17 @@ fun HomeScreen(
 }
 
 /**
- * 首页快捷跟读卡（v11.25 右侧露边扇形牌堆，按用户参考视频逐帧结论修正 v11.24）：
- * - 静止态：当前卡居中（depth 0：x 0 / scale 1 / rot 0 / alpha 1.0 / 白底渐变无描边）；
- *   后层卡在右侧露边成竖条——depth d=1,2 → x=+20dp×d、scale=1−0.03d、rot=+6°×d
- *   （顺时针扇形）、alpha=1.0（不透明，靠 v11.22 侧卡配色 #F1F4F9 + 1dp #E2E7EF 描边
- *   区隔，禁阴影）；depth>2 不组合（最多 2 条边）。三参数（20dp/0.03/6°）单行可调
- * - 左滑（下一词）＝整摞刚性左移：拖动所有卡 x 同值 1:1 跟手（各自 rotation/缩放不变；
- *   超过一个步进 20dp 后 0.85 次幂软限位——步进远小于卡宽，不限位则提交等价位出现
- *   肉眼回拉，距离阈值也同步按步进归一为 0.6×步进，见 onDragStopped 注释）；松手
- *   过阈值（|vx|≥1500px/s 或 0.6 步进）→ 旧顶卡 spring 飞出屏外 + 整摞 spring 完成一位
- *   位移（flip-first：onSelect 先行 + 视觉等价位 snap；v11.22 收敛不变量/try/finally
- *   防御归位/commitGen 代际守卫全沿用）；未过阈值 spring(0.88/380) 弹回
- * - 右滑（上一词）＝镜像逆放：上一词卡从左侧屏外（−卡宽位）连续插值滑到居中，当前卡
- *   右移 +20dp 沉入 depth1 条位（scale/rot 同步渐变），更深后层顺位右移、最底卡渐隐
- *   退场；满程 = 0.5 卡宽，dragT 0.6 ≈ 30% 卡宽阈值口径不变
- * - 边界：首词右滑 / 末词左滑 0.3 阻尼拖出、松手必弹回；translationY 恒为 0（无垂直分量，
- *   无任何"向下坠落"路径）；侧层卡不可交互；顶层四交互保留；v11.20 手势仲裁沿用
- * - 卡宽 = 屏宽 − 40dp；高 168dp 冻结；Box 高 184dp（168 + 旋转外接余量）
+ * 首页快捷跟读卡（v11.26 垂直堆叠卡片效果）：
+ * - 静止态：当前卡居中（depth 0：x 0 / y 0 / scale 1 / rot 0 / alpha 1.0 / 白底渐变无描边）；
+ *   后层卡在右下方露边堆叠——depth d=1,2,3... → x=+12dp×d、y=+12dp×d、scale=1−0.05d、
+ *   rot=0°（无旋转）、alpha=1.0（不透明，靠 #F1F4F9 + 1dp #E2E7EF 描边区隔）；
+ *   depth>3 不渲染（最多显示4张卡）。三参数（12dp/12dp/0.05）单行可调
+ * - 左滑（下一词）＝顶卡飞出：拖动顶卡 x 1:1 跟手（后层卡静止不动）；
+ *   松手过阈值（|vx|≥1200px/s 或 |dx|≥30%卡宽）→ 顶卡 spring 飞出屏外 + 后层卡依次
+ *   上移到新位置（flip-first：onSelect 先行）；未过阈值 spring 弹回
+ * - 右滑（上一词）＝上一词卡从左侧屏外滑入到顶部，其他卡下沉一层
+ * - 边界：首词右滑 / 末词左滑 0.3 阻尼拖出、松手必弹回
+ * - 卡宽 = 屏宽 − 40dp；高 168dp 冻结；Box 高 220dp（168 + 垂直堆叠余量）
  */
 @Composable
 private fun HomeWordDeck(
@@ -545,26 +539,25 @@ private fun HomeWordDeck(
 ) {
     val density = LocalDensity.current
     val screenWidthDp = LocalConfiguration.current.screenWidthDp
-    // v11.25 扇形牌堆几何：卡宽 = 屏宽 − 40dp（不变），高 168dp 冻结
+    // v11.26 垂直堆叠几何：卡宽 = 屏宽 − 40dp，高 168dp 冻结
     val cardWidthDp = (screenWidthDp - 40).dp
     val cardWidthPx = with(density) { cardWidthDp.toPx() }
     val screenWidthPx = with(density) { screenWidthDp.dp.toPx() }
-    // v11.25 三参数（单行可调，真机与视频观感有差只改这三个数）：
-    val stepDp = 20.dp      // 露边间距：depth 每深一层右移 20dp
-    val scaleStep = 0.03f   // scale 步进：每深一层缩 0.03（0.97/0.94，几乎同大）
-    val fanDeg = 6f         // 扇形角：每深一层顺时针 +6°
-    val stepPx = with(density) { stepDp.toPx() }
+    // v11.26 堆叠三参数（单行可调）：
+    val stepXDp = 12.dp      // 水平偏移：depth 每深一层右移 12dp
+    val stepYDp = 12.dp      // 垂直偏移：depth 每深一层下移 12dp
+    val scaleStep = 0.05f    // scale 步进：每深一层缩 0.05（营造景深）
+    val stepXPx = with(density) { stepXDp.toPx() }
+    val stepYPx = with(density) { stepYDp.toPx() }
     val scope = rememberCoroutineScope()
     // v11.6 P1-2：取消态触感宿主
     val view = androidx.compose.ui.platform.LocalView.current
 
-    // —— v11.25 扇形牌堆动画通道（v11.22 收敛不变量沿用：翻层先行 flip-first，所有
-    // settle 目标恒为"相对当前 index 的静止态"，settle 结束 try/finally 防御归位）——
+    // —— v11.26 扇形牌堆动画通道（垂直堆叠适配）——
     var dragX by remember { mutableFloatStateOf(0f) }
     val bounceX = remember { Animatable(0f) }             // 左滑弹回通道（x 口径）
     val bounceT = remember { Animatable(0f) }             // 右滑弹回通道（交换进度口径）
-    val commitAnim = remember { Animatable(0f) }          // 左滑提交：整摞位移进度 0→1
-    var flightFrom by remember { mutableFloatStateOf(0f) }// 左滑提交捕获的拖拽起点（等价位基准）
+    val commitAnim = remember { Animatable(0f) }          // 左滑提交：后层卡上移进度 0→1
     val flightAnim = remember { Animatable(0f) }          // 左滑提交：旧顶卡飞出 x（→−屏宽）
     val swapAnim = remember { Animatable(0f) }            // 右滑交换进度（提交相 t₀ → 1）
     var committing by remember { mutableStateOf(false) }  // 提交动画中（锁拖拽/锁按住跟读）
@@ -727,20 +720,13 @@ private fun HomeWordDeck(
             orientation = Orientation.Horizontal,
             enabled = practiceWord == null && !committing, // P1-3 跟读互斥；提交动画中锁拖拽
             state = rememberDraggableState { delta ->
-                // v11.22 错位修复：committing 守卫（stale 窗口防 dragX 残留）——沿用
+                // v11.26 堆叠卡片：只拖动顶卡，后层卡静止不动
                 if (practiceWord != null || committing) return@rememberDraggableState
                 val atStart = index == 0
                 val atEnd = index == total - 1
                 // 边界阻尼：首词右滑 / 末词左滑位移 ×0.3（可拖出，松手必弹回）
                 val damped = (atStart && delta > 0f) || (atEnd && delta < 0f)
-                var next = dragX + if (damped) delta * 0.3f else delta // 1:1 跟手
-                // v11.25 软限位（仅左向）：牌堆一位 = 20dp，1:1 不限位则拖拽远超一位、
-                // 提交等价位出现肉眼回拉——超过一个步进后按 0.85 次幂强衰减；
-                // 右向走 dragT 进度口径（满程 0.5 卡宽，dragT 自行饱和），不需限位
-                if (next < -stepPx) {
-                    next = -stepPx - ((-next - stepPx).toDouble().pow(0.85).toFloat() * 0.3f)
-                }
-                dragX = next
+                dragX += if (damped) delta * 0.3f else delta // 1:1 跟手，无软限位
             },
             onDragStopped = { velocity ->
                 scope.launch {
@@ -751,38 +737,27 @@ private fun HomeWordDeck(
                         settleBounceBack(0f)
                         return@launch
                     }
-                    // 提交判定（v11.3 规范 B：方向 sign(x+vx)，快甩速度主导）
-                    val byVelocity = kotlin.math.abs(velocity) >= 1500f
+                    // v11.26 堆叠卡片提交判定：方向 sign(x+vx)，快甩速度主导
+                    val byVelocity = kotlin.math.abs(velocity) >= 1200f
                     val dir = if (dragX + velocity < 0f) 1 else -1 // 左滑（负）= 切下一词
                     val canMove = if (dir == 1) index < total - 1 else index > 0
                     val overThreshold = if (dir == 1) {
-                        // v11.25：距离阈值按步进归一 = 0.6×步进（12dp）。牌堆一位仅 20dp 且
-                        // 左向已软限位于 ~1 步进，30% 卡宽（264px）在几何上不可达——0.6 步进
-                        // 是"明确意图"的等效口径（快甩 |vx|≥1500px/s 口径不变）；如需调整
-                        // 只改此系数
-                        kotlin.math.abs(dragX) >= stepPx * 0.6f || byVelocity
+                        // 左滑判定：距离阈值 30% 卡宽 或 速度 ≥1200px/s
+                        kotlin.math.abs(dragX) >= cardWidthPx * 0.3f || byVelocity
                     } else {
-                        // v11.25 手势修复（真机"无法切换上一词"根因①）：原距离阈值 dragT≥0.6
-                        // = 30% 卡宽（本机 ≈95dp 指距），慢速中距右滑（拖 200~350px 后停顿
-                        // 松手）距离与速度双不满足 → 永远弹回。补中速辅助档：拖过 15% 卡宽
-                        // 且尾速 ≥900px/s 亦提交；快甩 1500 口径不变
-                        dragT >= 0.6f ||
-                            (dragT >= 0.3f && kotlin.math.abs(velocity) >= 900f) ||
-                            byVelocity
+                        // 右滑判定：距离阈值 30% 卡宽（dragT≥0.6）或 速度 ≥1200px/s
+                        dragT >= 0.6f || byVelocity
                     }
                     val commit = overThreshold && canMove && (dragX != 0f || velocity != 0f)
                     if (commit && dir == 1) {
-                        // —— 左滑提交（flip-first，v11.22 收敛不变量沿用）——
-                        // 翻层先行：commitAnim 0→1 驱动整摞完成一位位移（各卡 effDepth =
-                        // rel+1−cp → rel、x 残余拖拽量随 cp 归零，全部收敛静止态）；
-                        // 旧顶卡独立通道 spring 飞出屏外（rotation 保持自身角度不变）。
-                        // spring(320/ζ1.0)，初速 vx×0.5，禁 tween
+                        // —— 左滑提交（v11.26 垂直堆叠）——
+                        // 顶卡独立通道 spring 飞出屏外，后层卡通过 commitAnim 0→1 上移到新位置
+                        // spring(320/ζ1.0)，初速 vx×0.5
                         val gen = ++commitGen
                         committing = true
                         commitDir = 1
-                        onSelect(index + 1)
-                        flightFrom = dragX
-                        flightAnim.snapTo(dragX) // 飞出通道从拖拽位置接力，无跳帧
+                        onSelect(index + 1) // flip-first：翻层先行
+                        flightAnim.snapTo(dragX) // 飞出通道从拖拽位置接力
                         commitAnim.snapTo(0f)
                         dragX = 0f
                         try {
@@ -798,41 +773,36 @@ private fun HomeWordDeck(
                                     commitAnim.animateTo(
                                         1f,
                                         spring(dampingRatio = 1f, stiffness = 320f),
-                                        initialVelocity = velocity * 0.5f / cardWidthPx
+                                        initialVelocity = 0f
                                     )
                                 }
                             }
                         } finally {
-                            // v11.22 防御性归位沿用：settle 结束（含被打断）后所有通道收敛静止态；
-                            // isRunning=true 说明新提交已接管（目标同为静止态），不抢写免互取消
                             if (!flightAnim.isRunning) flightAnim.snapTo(0f)
                             if (!commitAnim.isRunning) commitAnim.snapTo(0f)
-                            // 代际守卫：新提交接管时旧 finally 不清锁（由新提交的 finally 复位）
                             if (commitGen == gen) {
                                 commitDir = 0
                                 committing = false
                             }
                         }
                     } else if (commit && dir == -1) {
-                        // —— 右滑提交（镜像逆放，flip-first）——
-                        // 上一词卡从 −卡宽位 spring 滑到居中，原顶卡右移 +20dp 沉入 depth1
-                        // 条位（scale/rot 同步渐变），更深后层顺位右移、最底卡渐隐退场；
-                        // swapAnim 从拖拽进度 t₀ spring 到 1（静止态），渲染口径切到新 index，
-                        // 翻层前后逐卡视觉等价无跳帧。spring(320/ζ1.0)，初速 vx×0.5
+                        // —— 右滑提交（v11.26 垂直堆叠）——
+                        // 上一词卡从左侧 spring 滑到居中，其他卡下沉一层
+                        // spring(320/ζ1.0)，初速 vx×0.5
                         val gen = ++commitGen
                         committing = true
                         commitDir = -1
-                        onSelect(index - 1)
+                        onSelect(index - 1) // flip-first：翻层先行
                         swapAnim.snapTo(dragT)
                         dragX = 0f
                         try {
                             swapAnim.animateTo(
                                 1f,
                                 spring(dampingRatio = 1f, stiffness = 320f),
-                                initialVelocity = velocity / cardWidthPx
+                                initialVelocity = velocity / (cardWidthPx * 0.5f)
                             )
                         } finally {
-                            if (!swapAnim.isRunning) swapAnim.snapTo(1f)
+                            if (!swapAnim.isRunning) swapAnim.snapTo(0f)
                             if (commitGen == gen) {
                                 commitDir = 0
                                 committing = false
@@ -933,15 +903,15 @@ private fun HomeWordDeck(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(184.dp), // 卡 168dp 固定（v11.15 冻结）+ 扇形旋转外接余量；卡垂直居中
-        contentAlignment = Alignment.Center
+            .height(220.dp), // 卡 168dp 固定 + 垂直堆叠余量（3层×12dp=36dp + buffer）；卡顶部对齐
+        contentAlignment = Alignment.TopCenter
     ) {
-        // —— v11.25 右侧露边扇形牌堆渲染 ——
-        // 静止：卡 j 在 x = (j−index)×step（右侧露边竖条），scale=1−0.03d、rot=+6°×d、
-        // alpha=1（侧卡靠 #F1F4F9+#E2E7EF 描边区隔，禁阴影）；depth>2 不组合。
-        // 左滑提交：整摞完成一位位移（effDepth = rel+1−cp 收敛到 rel，x 残余拖拽量随 cp
-        // 归零）+ 旧顶卡独立通道飞出屏外；右滑：上一词卡从 −卡宽位连续插值进入、原顶卡
-        // 右移沉入条位、最底卡渐隐退场。绘制顺序按 effDepth 降序（最深的先画，顶层最后画）
+        // —— v11.26 垂直堆叠卡片渲染 ——
+        // 静止：卡 j 的 depth d=(j−index)，位置 x=+12dp×d、y=+12dp×d，scale=1−0.05d、
+        // rot=0°、alpha=1.0（侧卡靠 #F1F4F9+#E2E7EF 描边区隔）；depth>3 不渲染（最多4张）。
+        // 左滑提交：顶卡飞出屏外，后层卡上移到新位置（flip-first）。
+        // 右滑：上一词卡从左侧屏外滑入到顶部，其他卡下沉一层。
+        // 绘制顺序按 effDepth 降序（最深的先画，顶层最后画）
         val commitV = commitAnim.value
         val swapV = swapAnim.value
         val bounceXv = bounceX.value
@@ -950,65 +920,72 @@ private fun HomeWordDeck(
         val leftCommit = committing && commitDir == 1
         val rightCommit = committing && commitDir == -1
         val rightDragActive = !committing && (dragX > 0f || bounceTv > 0f)
-        val swapT = (dragTv + bounceTv).coerceIn(0f, 1f) // 右滑拖动/弹回合并进度
+        val swapT = (dragTv + bounceTv).coerceIn(0f, 1f)
         val leftDx = if (!committing && (dragX < 0f || bounceXv != 0f)) dragX + bounceXv else 0f
         val windowStart = (index - 1).coerceAtLeast(0)
-        val windowEnd = (index + if (rightCommit) 3 else 2).coerceAtMost(total - 1)
+        val windowEnd = (index + 3).coerceAtMost(total - 1) // 最多显示4张卡
 
         class DeckSlot(
-            val j: Int, val x: Float, val effDepth: Float,
+            val j: Int, val x: Float, val y: Float, val effDepth: Float,
             val alpha: Float, val isFlight: Boolean
         )
         val slots = mutableListOf<DeckSlot>()
         for (j in windowStart..windowEnd) {
             val rel = j - index
             if (leftCommit && rel == -1) {
-                // 旧顶卡：独立通道飞出屏外（rotation 保持自身角度不变），alpha 归零即移除
+                // 旧顶卡：飞出屏外，alpha 渐变归零
                 val fade = (1f - kotlin.math.abs(flightAnim.value) / (screenWidthPx * 0.7f))
                     .coerceIn(0f, 1f)
                 if (fade > 0.02f) {
-                    slots.add(DeckSlot(j, flightAnim.value, 0f, fade, true))
+                    slots.add(DeckSlot(j, flightAnim.value, 0f, 0f, fade, true))
                 }
                 continue
             }
             val x: Float
+            val y: Float
             val effDepth: Float
             when {
                 leftCommit -> {
-                    // 整摞完成一位位移：effDepth = rel+1−cp 收敛 rel；x 残余拖拽量随 cp 归零
+                    // 后层卡上移：effDepth = rel+1−cp 收敛到 rel
                     effDepth = rel + (1f - commitV)
-                    x = effDepth * stepPx + flightFrom * (1f - commitV)
+                    x = effDepth * stepXPx
+                    y = effDepth * stepYPx
                 }
                 rightCommit -> if (rel == 0) {
-                    // 上一词卡升顶（连续承接右滑拖动插值）
+                    // 上一词卡从左侧滑入到顶部
                     effDepth = 1f - swapV
                     x = (swapV - 1f) * cardWidthPx
+                    y = 0f
                 } else if (rel >= 1) {
-                    // 原顶卡沉入条位 + 更深后层顺位右移（最底卡随 effDepth>2 渐隐退场）
+                    // 其他卡下沉一层
                     effDepth = (rel - 1) + swapV
-                    x = effDepth * stepPx
+                    x = effDepth * stepXPx
+                    y = effDepth * stepYPx
                 } else {
-                    continue // rel<0：屏下不渲染
+                    continue
                 }
                 rightDragActive -> if (rel == -1) {
-                    // 上一词卡从 −卡宽位随拖动连续插值进入
+                    // 上一词卡从左侧拖动进入
                     effDepth = 1f - swapT
                     x = (swapT - 1f) * cardWidthPx
+                    y = 0f
                 } else {
-                    // 原顶卡右移沉入条位 + 后层顺位右移（镜像对称，比例插值）
+                    // 其他卡下沉
                     effDepth = rel + swapT
-                    x = effDepth * stepPx
+                    x = effDepth * stepXPx
+                    y = effDepth * stepYPx
                 }
                 else -> {
-                    // 静止 / 左滑拖动（整摞刚性平移，各自角度与缩放不变）
+                    // 静止 / 左滑拖动（只拖顶卡，后层卡静止）
                     if (rel < 0) continue
                     effDepth = rel.toFloat()
-                    x = rel * stepPx + leftDx
+                    x = if (rel == 0) leftDx else rel * stepXPx // 只有顶卡响应拖拽
+                    y = rel * stepYPx
                 }
             }
-            val alpha = if (effDepth <= 2f) 1f else (1f - (effDepth - 2f)).coerceIn(0f, 1f)
+            val alpha = if (effDepth <= 3f) 1f else (1f - (effDepth - 3f)).coerceIn(0f, 1f)
             if (alpha <= 0.02f) continue
-            slots.add(DeckSlot(j, x, effDepth, alpha, false))
+            slots.add(DeckSlot(j, x, y, effDepth, alpha, false))
         }
         slots.sortByDescending { it.effDepth }
         for (slot in slots) {
@@ -1026,11 +1003,11 @@ private fun HomeWordDeck(
                 modifier = Modifier
                     .width(cardWidthDp)
                     .graphicsLayer {
-                        // v11.25 右侧露边扇形：x=+20dp×d、scale=1−0.03d、rot=+6°×d、
-                        // translationY 恒 0（无垂直分量，禁"向下坠落"路径）；三参数
-                        // （stepDp/scaleStep/fanDeg）单行可调
+                        // v11.26 垂直堆叠：x=+12dp×d、y=+12dp×d、scale=1−0.05d、
+                        // rot=0°（无旋转）；三参数（stepXDp/stepYDp/scaleStep）单行可调
                         translationX = slot.x
-                        rotationZ = fanDeg * slot.effDepth
+                        translationY = slot.y
+                        rotationZ = 0f // 无旋转，保持垂直堆叠
                         scaleX = 1f - scaleStep * slot.effDepth
                         scaleY = 1f - scaleStep * slot.effDepth
                         alpha = slot.alpha
