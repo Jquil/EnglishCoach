@@ -573,6 +573,46 @@ private fun HomeWordDeck(
     // v11.20 手势仲裁标志沿用：本次手势水平位移越过 touch slop 即判拖拽 → 全程禁 tap
     var dragArbitration by remember { mutableStateOf(false) }
     val total = words.size
+    // v11.25 手势修复：tap 检测器 key 由 index 改为 Unit 后，闭包内 practiceWord 必须
+    // 走 rememberUpdatedState 才能读到最新值（否则捕获重组时的旧值）
+    val practiceWordState = androidx.compose.runtime.rememberUpdatedState(practiceWord)
+
+    // v11.25 手势修复：未过阈值 / 边界 / 跟读中松手 / 手势被父级抢走（foundation 1.7 对
+    // cancel 路径统一回调 onDragStopped(velocity=0)，已核验 Draggable.kt processDragCancel）
+    // 共用的弹回路径——从当前 dragX 位 spring 回静止态，初速继承，结束防御归零
+    suspend fun settleBounceBack(initialVx: Float) {
+        val t = (dragX / (cardWidthPx * 0.5f)).coerceIn(0f, 1f)
+        val bx = if (dragX < 0f) dragX else 0f
+        val bt = if (dragX > 0f) t else 0f
+        dragX = 0f
+        bounceX.snapTo(bx)
+        bounceT.snapTo(bt)
+        try {
+            coroutineScope {
+                if (bx != 0f) {
+                    launch {
+                        bounceX.animateTo(
+                            0f,
+                            spring(dampingRatio = 0.88f, stiffness = 380f),
+                            initialVelocity = initialVx
+                        )
+                    }
+                }
+                if (bt != 0f) {
+                    launch {
+                        bounceT.animateTo(
+                            0f,
+                            spring(dampingRatio = 0.88f, stiffness = 380f),
+                            initialVelocity = initialVx / (cardWidthPx * 0.5f)
+                        )
+                    }
+                }
+            }
+        } finally {
+            if (!bounceX.isRunning) bounceX.snapTo(0f)
+            if (!bounceT.isRunning) bounceT.snapTo(0f)
+        }
+    }
 
     // 发音 loading（150ms 延迟出现，缓存命中不闪；v11.15 状态行移至卡外提示行）
     var loadingWord by remember { mutableStateOf<String?>(null) }
@@ -706,36 +746,9 @@ private fun HomeWordDeck(
                 scope.launch {
                     // 右滑交换进度（0..1）：满程 = 0.5 卡宽，dragT 0.6 ≈ 30% 卡宽阈值口径
                     val dragT = (dragX / (cardWidthPx * 0.5f)).coerceIn(0f, 1f)
-                    if (practiceWord != null) {
+                    if (practiceWordState.value != null) {
                         // 跟读中松手：不切词，仅归位（两通道一并归零）
-                        val bx = if (dragX < 0f) dragX else 0f
-                        val bt = if (dragX > 0f) dragT else 0f
-                        dragX = 0f
-                        bounceX.snapTo(bx)
-                        bounceT.snapTo(bt)
-                        try {
-                            coroutineScope {
-                                if (bx != 0f) {
-                                    launch {
-                                        bounceX.animateTo(
-                                            0f,
-                                            spring(dampingRatio = 0.88f, stiffness = 380f)
-                                        )
-                                    }
-                                }
-                                if (bt != 0f) {
-                                    launch {
-                                        bounceT.animateTo(
-                                            0f,
-                                            spring(dampingRatio = 0.88f, stiffness = 380f)
-                                        )
-                                    }
-                                }
-                            }
-                        } finally {
-                            if (!bounceX.isRunning) bounceX.snapTo(0f)
-                            if (!bounceT.isRunning) bounceT.snapTo(0f)
-                        }
+                        settleBounceBack(0f)
                         return@launch
                     }
                     // 提交判定（v11.3 规范 B：方向 sign(x+vx)，快甩速度主导）
@@ -749,7 +762,13 @@ private fun HomeWordDeck(
                         // 只改此系数
                         kotlin.math.abs(dragX) >= stepPx * 0.6f || byVelocity
                     } else {
-                        dragT >= 0.6f || byVelocity
+                        // v11.25 手势修复（真机"无法切换上一词"根因①）：原距离阈值 dragT≥0.6
+                        // = 30% 卡宽（本机 ≈95dp 指距），慢速中距右滑（拖 200~350px 后停顿
+                        // 松手）距离与速度双不满足 → 永远弹回。补中速辅助档：拖过 15% 卡宽
+                        // 且尾速 ≥900px/s 亦提交；快甩 1500 口径不变
+                        dragT >= 0.6f ||
+                            (dragT >= 0.3f && kotlin.math.abs(velocity) >= 900f) ||
+                            byVelocity
                     }
                     val commit = overThreshold && canMove && (dragX != 0f || velocity != 0f)
                     if (commit && dir == 1) {
@@ -820,37 +839,9 @@ private fun HomeWordDeck(
                             }
                         }
                     } else {
-                        // 未过阈值 / 边界：spring(380/ζ0.88) 弹回原位，初速继承
-                        val bx = if (dragX < 0f) dragX else 0f
-                        val bt = if (dragX > 0f) dragT else 0f
-                        dragX = 0f
-                        bounceX.snapTo(bx)
-                        bounceT.snapTo(bt)
-                        try {
-                            coroutineScope {
-                                if (bx != 0f) {
-                                    launch {
-                                        bounceX.animateTo(
-                                            0f,
-                                            spring(dampingRatio = 0.88f, stiffness = 380f),
-                                            initialVelocity = velocity
-                                        )
-                                    }
-                                }
-                                if (bt != 0f) {
-                                    launch {
-                                        bounceT.animateTo(
-                                            0f,
-                                            spring(dampingRatio = 0.88f, stiffness = 380f),
-                                            initialVelocity = velocity / (cardWidthPx * 0.5f)
-                                        )
-                                    }
-                                }
-                            }
-                        } finally {
-                            if (!bounceX.isRunning) bounceX.snapTo(0f)
-                            if (!bounceT.isRunning) bounceT.snapTo(0f)
-                        }
+                        // 未过阈值 / 边界 / 手势被父级抢走（velocity=0）：spring(380/ζ0.88)
+                        // 弹回原位，初速继承
+                        settleBounceBack(velocity)
                     }
                 }
             }
@@ -915,19 +906,24 @@ private fun HomeWordDeck(
                 view.performHapticFeedback(android.view.HapticFeedbackConstants.KEYBOARD_TAP)
             }
         )
-        .pointerInput(index) {
+        // v11.25 手势修复（真机"与点击事件冲突"根因②）：tap 检测器 key 由 index 改为
+        // Unit——原 key=index 时每次 flip-first 切词（含提交动画窗口）都会销毁重建
+        // detectTapGestures，重建窗口内的点击事件被整只吞掉（点击没反应），双击状态也被
+        // 意外清零。闭包内 practiceWord 经 practiceWordState 读最新值，currentWord 本就走
+        // rememberUpdatedState，故 key 恒定不重启是安全的
+        .pointerInput(Unit) {
             detectTapGestures(
                 onTap = {
                     // P2-2：跟读确认后事件已被 consume，tap 不会触发；这里只处理短按播发音
                     // v11.20：手势仲裁——本手势发生过拖拽（越过 slop）则禁 tap，
                     // 杜绝"滑动了还播放"
                     if (!dragArbitration) {
-                        currentWord?.takeIf { practiceWord == null }?.let { speakWord(it) }
+                        currentWord?.takeIf { practiceWordState.value == null }?.let { speakWord(it) }
                     }
                 },
                 onDoubleTap = {
                     // v11.20：双击释义同样受仲裁保护，滑动不触发
-                    if (!dragArbitration && practiceWord == null) {
+                    if (!dragArbitration && practiceWordState.value == null) {
                         currentWord?.let { onMeaning(it) }
                     }
                 }
