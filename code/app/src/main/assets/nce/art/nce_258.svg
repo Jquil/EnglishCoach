@@ -1,0 +1,64 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect width="200" height="200" fill="#FFFFFF" />
+
+  
+  <ns0:line x1="80" y1="60" x2="96" y2="60" stroke="#555555" stroke-width="2" stroke-linecap="round" />
+  <ns0:line x1="86" y1="72" x2="98" y2="72" stroke="#555555" stroke-width="2" stroke-linecap="round" />
+
+  
+  <ns0:path d="M 118 60 L 100 51 L 100 79 L 118 80 Z" fill="#000000" />
+
+  
+  <ns0:path d="M 132 55 L 132 42 Q 132 37 137 37 L 143 37 Q 148 37 148 42 L 148 55" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:path d="M 140 37 L 140 29 L 149 29" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+
+  
+  <ns0:ellipse cx="140" cy="70" rx="32" ry="20" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+
+  
+  <ns0:circle cx="128" cy="70" r="7.5" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:circle cx="128" cy="70" r="2.5" fill="#555555" />
+
+  
+  <ns0:line x1="171" y1="70" x2="175" y2="70" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+  <ns0:path d="M 175 70 L 183 61 M 175 70 L 183 79" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+  <ns0:circle cx="175" cy="70" r="2.2" fill="#000000" />
+
+  
+  <ns0:path d="M 133 89 L 131 98 M 147 89 L 149 98" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+  <ns0:line x1="125" y1="98" x2="155" y2="98" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+
+  
+  <ns0:circle cx="177" cy="47" r="3" fill="none" stroke="#000000" stroke-width="2" />
+  <ns0:circle cx="186" cy="35" r="4.5" fill="none" stroke="#000000" stroke-width="2" />
+  <ns0:circle cx="194" cy="21" r="5.5" fill="none" stroke="#000000" stroke-width="2" />
+
+  
+  <ns0:line x1="134" y1="82" x2="152" y2="142" stroke="#555555" stroke-width="1.5" stroke-dasharray="3 4" />
+
+  
+  <ns0:path d="M 110 130 L 101 124 L 101 136 Z" fill="#555555" stroke="#000000" stroke-width="2" stroke-linejoin="round" />
+  <ns0:ellipse cx="119" cy="130" rx="9" ry="5" fill="#555555" stroke="#000000" stroke-width="2" />
+  <ns0:circle cx="122.5" cy="128.5" r="1.3" fill="#FFFFFF" />
+
+  
+  <ns0:path d="M 144 151 Q 152 144 160 151" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M 136 144 Q 152 131 168 144" fill="none" stroke="#555555" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M 128 137 Q 152 118 176 137" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+
+  
+  <ns0:path d="M 90 164 Q 110 154 130 163 Q 150 171 170 163 Q 185 157 200 163" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+  <ns0:path d="M 104 172 Q 124 165 144 172 Q 164 179 184 172" fill="none" stroke="#555555" stroke-width="1.5" stroke-linecap="round" />
+
+  
+  <ns0:path d="M 146 165 L 156 148 L 167 165 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" stroke-linejoin="round" />
+  <ns0:path d="M 164 165 L 171 155 L 180 165 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linejoin="round" />
+
+  
+  <ns0:circle cx="107" cy="161" r="2" fill="#000000" />
+  <ns0:circle cx="118" cy="159" r="1.4" fill="#555555" />
+
+  
+  <ns0:path d="M 187 165 C 191 155 183 149 189 137" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M 193 165 C 196 157 189 151 194 141" fill="none" stroke="#555555" stroke-width="2" stroke-linecap="round" />
+</ns0:svg>

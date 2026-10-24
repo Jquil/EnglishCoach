@@ -1,0 +1,7 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <ns0:path d="M200 52 H168 V68 H146 V84 H124 V100 H102 V116 H86" stroke="#000000" stroke-width="4" />
+  <ns0:circle cx="110" cy="77" r="8" fill="#FFFFFF" stroke="#000000" stroke-width="3" />
+  <ns0:path d="M116 71 L131 55 M124 62 L136 70 M124 62 L126 45 M131 55 L146 64 M131 55 L145 42" stroke="#000000" stroke-width="3" />
+  <ns0:path d="M99 72 L91 68 M103 64 L97 56 M111 61 L110 52" stroke="#000000" stroke-width="2.5" />
+  <ns0:path d="M156 30 A24 24 0 0 1 168 54 M149 38 A15 15 0 0 1 157 52" stroke="#555555" stroke-width="2.5" />
+</ns0:svg>

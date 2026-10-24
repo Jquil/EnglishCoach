@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语口语陪练 App — UI 设计 v9 · 语音浮层 / 通关收获 / 卡面插画 / 点词释义（HyperOS）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg:#F4F5F7;
+    --card:#FFFFFF;
+    --label:#0E0E12;
+    --label2:rgba(0,0,0,.55);
+    --label3:rgba(0,0,0,.28);
+    --fill2:rgba(0,0,0,.05);
+    --sep:rgba(0,0,0,.06);
+    --blue:#3482FF;
+    --orange:#FF6900;
+    --mi-green:#43CF7C;
+    --ok:#30A24C;
+    --red:#E5484D;
+    --star:#FFB300;
+    --w-teal1:#45D6A0; --w-teal2:#0F9D77;
+    --w-orange1:#FFA94D; --w-orange2:#E85D04;
+    --w-lock1:#C6C7CC;  --w-lock2:#9EA0A8;
+    --ease-spring:cubic-bezier(.3,1.2,.4,1);
+  }
+  body {
+    background:#111114;
+    font-family:"MiSans","MiSans VF","HarmonyOS Sans SC","PingFang SC","Segoe UI","Microsoft YaHei",sans-serif;
+    color:#f2f2f7;
+    padding:64px 32px 96px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1 { font-size:30px; font-weight:700; text-align:center; letter-spacing:-.4px; color:#fff; }
+  .sub { text-align:center; color:rgba(235,235,245,.55); font-size:14px; margin:8px 0 56px; }
+
+  .board { display:flex; flex-wrap:wrap; gap:56px 48px; justify-content:center; align-items:flex-start; }
+  .shot { width:324px; opacity:0; transform:translateY(20px); animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+  .shot:nth-child(2){animation-delay:.07s}.shot:nth-child(3){animation-delay:.14s}
+  .shot:nth-child(4){animation-delay:.21s}.shot:nth-child(5){animation-delay:.28s}
+  .shot:nth-child(6){animation-delay:.35s}.shot:nth-child(7){animation-delay:.42s}
+  .shot:nth-child(8){animation-delay:.49s}
+  @keyframes rise { to { opacity:1; transform:none; } }
+  .shot-label { text-align:center; margin-bottom:14px; }
+  .shot-label b { font-size:15px; font-weight:600; color:rgba(255,255,255,.92); }
+  .shot-label .mod { display:inline-block; font-size:10px; font-weight:600; color:#0E0E12;
+    background:#FFD84D; border-radius:4px; padding:1px 6px; margin-right:6px; vertical-align:2px; }
+  .shot-label .mod.core { background:#7fbfff; }
+  .shot-label span { display:block; color:rgba(235,235,245,.45); font-size:12px; margin-top:3px; }
+
+  /* ============ 手机机身 ============ */
+  .phone {
+    width:324px; height:672px; background:var(--bg); border-radius:48px;
+    border:9px solid #1d1d20; outline:1px solid rgba(255,255,255,.09);
+    overflow:hidden; position:relative; display:flex; flex-direction:column;
+    box-shadow:0 34px 80px rgba(0,0,0,.65), 0 6px 22px rgba(0,0,0,.5);
+  }
+  .notch { position:absolute; top:12px; left:50%; transform:translateX(-50%);
+    width:12px; height:12px; background:#0a0a0c; border-radius:50%; z-index:60; }
+  .statusbar { height:38px; flex-shrink:0; display:flex; justify-content:space-between;
+    align-items:flex-end; padding:0 26px 5px; font-size:13px; font-weight:600; color:var(--label); }
+  .statusbar svg { display:block; }
+  .gbar { position:absolute; bottom:8px; left:50%; transform:translateX(-50%);
+    width:92px; height:3.5px; border-radius:99px; background:rgba(0,0,0,.85); z-index:60; }
+
+  /* ============ HyperOS 通用组件 ============ */
+  .nav { height:52px; flex-shrink:0; display:flex; align-items:center; padding:0 12px;
+    background:rgba(244,245,247,.94); backdrop-filter:blur(20px);
+    border-bottom:.5px solid var(--sep); position:relative; z-index:5; }
+  .nav .back { display:flex; align-items:center; color:var(--label); flex-shrink:0; padding:4px; margin-left:-4px; }
+  .nav .tt { position:absolute; left:50%; transform:translateX(-50%); font-size:17px; font-weight:600;
+    color:var(--label); letter-spacing:-.2px; }
+  .sec-h { font-size:13.5px; font-weight:500; color:var(--label2); padding:14px 18px 8px; display:flex; align-items:baseline; }
+  .sec-h .hint { margin-left:auto; font-size:11.5px; color:var(--label3); display:inline-flex; align-items:center; gap:4px; }
+  .group { background:var(--card); border-radius:20px; margin:0 18px; overflow:hidden; }
+  .hairline { position:absolute; left:16px; right:0; bottom:0; height:.5px; background:var(--sep); }
+  .footnote-out { font-size:12px; color:var(--label2); padding:8px 20px 0 18px; line-height:1.5; }
+  .big-cta { display:flex; align-items:center; justify-content:center; gap:7px; margin:14px 18px 0;
+    height:48px; border-radius:24px; background:var(--blue); color:#fff; font-size:15.5px; font-weight:600;
+    box-shadow:0 8px 18px rgba(52,130,255,.35); }
+
+  /* ============ Wallet 关卡卡（v9 插画水印层） ============ */
+  .carousel { overflow:hidden; flex-shrink:0; }
+  .track-a { display:flex; padding:8px 0 16px; transform:translateX(-324px); }
+  .page-a { width:324px; flex-shrink:0; padding:0 18px; }
+  .lvl { position:relative; overflow:hidden; border-radius:14px;
+    display:flex; flex-direction:column; color:#fff; }
+  .page-a .lvl { width:288px; height:182px; padding:15px 18px; }
+  .lvl.t-orange { background:linear-gradient(155deg,var(--w-orange1) 0%,#F0760F 55%,var(--w-orange2) 100%); }
+  .lvl.t-teal   { background:linear-gradient(155deg,var(--w-teal1) 0%,#2AB58B 55%,var(--w-teal2) 100%); }
+  .lvl.t-lock   { background:linear-gradient(155deg,var(--w-lock1) 0%,var(--w-lock2) 100%); }
+  .art { position:absolute; inset:0; z-index:1; pointer-events:none; }
+  .art svg { position:absolute; inset:0; width:100%; height:100%; }
+  /* 白 duotone 水印层：透明度 ≤35%，位于 sheen 之下 */
+  .art svg .wm { fill:rgba(255,255,255,.32); }
+  .art svg .wm2 { fill:rgba(255,255,255,.18); }
+  .ov { position:absolute; inset:0; border-radius:inherit; z-index:2; pointer-events:none; }
+  .t-orange .ov { background:linear-gradient(155deg, rgba(255,169,77,.10) 0%, rgba(240,118,15,.55) 45%, rgba(140,58,0,.92) 100%); }
+  .t-teal   .ov { background:linear-gradient(155deg, rgba(69,214,160,.12) 0%, rgba(42,181,139,.52) 45%, rgba(9,88,66,.92) 100%); }
+  .t-lock   .ov { background:linear-gradient(155deg, rgba(198,199,204,.25) 0%, rgba(158,160,168,.82) 50%, rgba(112,114,124,.95) 100%); }
+  .sheen { position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:3;
+    background:linear-gradient(105deg, rgba(255,255,255,.26) 0%, rgba(255,255,255,.09) 18%, rgba(255,255,255,0) 36%, rgba(255,255,255,0) 80%, rgba(255,255,255,.05) 100%); }
+  .lvl.t-lock { filter:saturate(0); }
+  .lvl.now { box-shadow:0 12px 28px rgba(232,93,4,.32); }
+  .lv-tag { font-size:10.5px; font-weight:600; letter-spacing:2.2px; color:rgba(255,255,255,.85);
+    position:relative; z-index:4; }
+  .okb { position:absolute; top:12px; right:14px; z-index:5; width:21px; height:21px; border-radius:50%;
+    border:1.5px solid rgba(255,255,255,.95); background:rgba(255,255,255,.2);
+    display:flex; align-items:center; justify-content:center; }
+  .t-lock .lv-tag { color:rgba(255,255,255,.6); }
+  .t-lock .cname { color:rgba(255,255,255,.62); }
+  .t-lock .lv-en { color:rgba(255,255,255,.5); }
+  .t-lock .cstatus { color:rgba(255,255,255,.68); }
+  .cname { margin-top:auto; position:relative; z-index:4;
+    font-size:23px; font-weight:700; letter-spacing:-.3px; color:#fff;
+    text-shadow:0 1px 4px rgba(0,0,0,.22); }
+  .lv-en { position:relative; z-index:4; font-size:12px; letter-spacing:.3px;
+    color:rgba(255,255,255,.8); margin-top:1px; text-shadow:0 1px 3px rgba(0,0,0,.18); }
+  .hook { position:relative; z-index:4; margin-top:4px; display:inline-flex; align-items:center; gap:5px;
+    font-size:11px; font-weight:600; color:#fff;
+    background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.32);
+    border-radius:99px; padding:2.5px 9px; backdrop-filter:blur(4px);
+    text-shadow:0 1px 3px rgba(0,0,0,.15); width:fit-content; }
+  .now-row { position:relative; z-index:4; display:flex; align-items:flex-end; justify-content:space-between; }
+  .cta-w { display:inline-flex; align-items:center; gap:5px; height:32px; padding:0 14px;
+    border-radius:16px; background:#fff; color:#C05E02; font-size:13.5px; font-weight:600;
+    box-shadow:0 4px 10px rgba(0,0,0,.16); }
+  .now-cap { font-size:11.5px; color:rgba(255,255,255,.9); padding-bottom:2px; text-shadow:0 1px 3px rgba(0,0,0,.2); }
+  .pline { position:absolute; left:0; right:0; bottom:0; z-index:4; height:3px; background:rgba(255,255,255,.34); }
+  .pline i { display:block; height:100%; width:13%; background:#fff; }
+  .foot-hint { text-align:center; font-size:12px; color:var(--label2); padding:6px 18px 10px; }
+
+  /* ============ 跟读页骨架（浮层/弹层背景） ============ */
+  .les-head { margin:8px 18px 0; display:flex; align-items:center; gap:10px; }
+  .les-head .lh { flex:1; }
+  .les-head .lh b { font-size:17px; font-weight:700; color:var(--label); letter-spacing:-.2px; }
+  .les-head .lh span { display:block; font-size:12px; color:var(--label2); margin-top:2px; }
+  .les-prog { width:86px; flex-shrink:0; text-align:right; }
+  .les-prog .np { font-size:12.5px; font-weight:600; color:var(--blue); font-variant-numeric:tabular-nums; }
+  .les-prog .pbar { margin-top:6px; height:5px; border-radius:3px; background:var(--fill2); overflow:hidden; }
+  .les-prog .pbar i { display:block; height:100%; width:35%;
+    background:linear-gradient(90deg,#5CA9FF,var(--blue)); border-radius:3px; }
+  .sent-card { background:linear-gradient(165deg,#EAF2FF 0%,#F8FAFF 70%);
+    border-radius:22px; margin:14px 18px 0; padding:18px 20px 14px; }
+  .sent-tag { display:inline-block; font-size:10.5px; font-weight:600; color:var(--blue);
+    background:rgba(52,130,255,.12); border-radius:5px; padding:2px 7px; }
+  .sent-en { font-size:28px; font-weight:700; letter-spacing:-.3px; color:var(--label);
+    line-height:1.34; margin-top:12px; }
+  .sent-cn { font-size:13.5px; color:var(--label2); margin-top:9px; line-height:1.5; }
+  .hl { background:rgba(52,130,255,.1); border-radius:6px; padding:1px 5px;
+    box-shadow:inset 0 -2px 0 rgba(52,130,255,.4); }
+  .hold-btn { margin:14px auto 0; display:flex; align-items:center; justify-content:center; gap:8px;
+    width:198px; height:54px; border-radius:27px;
+    background:linear-gradient(155deg,#FF8F1F,var(--orange));
+    color:#fff; font-size:16px; font-weight:600; letter-spacing:.5px;
+    box-shadow:0 8px 20px rgba(255,105,0,.35); }
+  .hold-cap { text-align:center; font-size:11.5px; color:var(--label3); margin-top:9px; }
+
+  /* ============ v9 · 录音圆顶（微信式底部大圆弧，App 主色蓝） ============ */
+  .vo-mask { position:absolute; inset:0; background:rgba(8,10,16,.55); z-index:40;
+    animation:fade .2s ease backwards; }
+  @keyframes fade { from { opacity:0; } }
+  .vo-dome { position:absolute; left:-16%; width:132%; bottom:0; height:118px; z-index:41;
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
+    background:linear-gradient(180deg,#5CA9FF 0%,var(--blue) 72%);
+    box-shadow:0 -12px 44px rgba(52,130,255,.4);
+    display:flex; align-items:center; justify-content:center;
+    animation:domeUp .4s var(--ease-spring) backwards; }
+  @keyframes domeUp { from { transform:translateY(100%); } }
+  /* 圆顶表面波浪起伏：两层弧面交错缓动（纯循环假动画，无音量联动） */
+  .vo-dome .dome-w { position:absolute; left:-6%; width:112%; height:132%;
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
+    background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,0) 55%);
+    animation:domeWave 2.6s ease-in-out infinite alternate; }
+  .vo-dome .dome-w.w2 { background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,0) 45%);
+    animation-duration:3.4s; animation-delay:-1.2s; }
+  @keyframes domeWave { from { transform:translateY(4px) scaleX(1.02); } to { transform:translateY(-3px) scaleX(.98); } }
+  .vo-dome svg { position:relative; z-index:2; }
+  /* 取消态：圆顶转红、弧线略收、波浪停摆 */
+  .vo-dome.cancel { background:linear-gradient(180deg,#F26D72,var(--red) 72%);
+    box-shadow:0 -12px 44px rgba(229,72,77,.4);
+    transform:scale(.94); animation:none; }
+  .vo-dome.cancel .dome-w { display:none; }
+  /* 弧顶上方提示（≤8 字）+ 计时 */
+  .vo-tip { position:absolute; left:0; right:0; bottom:156px; z-index:41; text-align:center;
+    animation:fade .25s ease backwards; }
+  .vo-tip b { display:block; font-size:17px; font-weight:600; color:#7FB7FF; letter-spacing:1px;
+    text-shadow:0 1px 10px rgba(8,10,16,.65); }
+  .vo-tip span { display:block; font-size:12.5px; color:rgba(235,240,255,.72); margin-top:5px;
+    font-variant-numeric:tabular-nums; text-shadow:0 1px 6px rgba(8,10,16,.6); }
+  .vo-tip.cancel b { color:#F26D72; }
+  .hold-btn.pressing { transform:scale(.96); filter:brightness(.92); }
+
+  /* ============ v9 · 通关成果展示页 ============ */
+  .gain-hero { position:relative; overflow:hidden; border-radius:22px; margin:10px 18px 0;
+    padding:16px 18px 15px; color:#fff;
+    background:linear-gradient(155deg,var(--w-orange1) 0%,#F0760F 55%,var(--w-orange2) 100%);
+    box-shadow:0 10px 24px rgba(232,93,4,.3); }
+  .gain-hero .art svg .wm { fill:rgba(255,255,255,.3); }
+  .gain-hero .gt { font-size:11px; font-weight:600; letter-spacing:2px; color:rgba(255,255,255,.8);
+    position:relative; z-index:4; }
+  .gain-hero .gd { position:relative; z-index:4; font-size:19px; font-weight:700;
+    letter-spacing:-.2px; margin-top:5px; text-shadow:0 1px 4px rgba(0,0,0,.16); }
+  .gain-hero .gs { position:relative; z-index:4; font-size:12px; color:rgba(255,255,255,.88); margin-top:3px; }
+  .stars-row { display:flex; gap:7px; align-items:center; margin:12px 18px 0; }
+  .stars-row svg { filter:drop-shadow(0 3px 8px rgba(255,179,0,.4)); }
+  .stars-row .sn { margin-left:auto; font-size:30px; font-weight:800; color:var(--label);
+    letter-spacing:-1px; font-variant-numeric:tabular-nums; }
+  .stars-row .sn small { font-size:13px; font-weight:600; color:var(--label3); letter-spacing:0; }
+  .learn-row { display:flex; gap:11px; padding:10px 16px; position:relative; min-height:48px; align-items:center; }
+  .lic { width:26px; height:26px; border-radius:8px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; }
+  .lic.c1 { background:rgba(52,130,255,.12); color:var(--blue); }
+  .lic.c2 { background:rgba(255,143,31,.14); color:#E8790A; }
+  .lic.c3 { background:rgba(67,207,124,.16); color:#1F9D57; }
+  .learn-row .lt { font-size:14px; color:var(--label); flex:1; letter-spacing:-.1px; }
+  /* 勾选动画：依次点亮 */
+  .okb-s { width:24px; height:24px; border-radius:50%; flex-shrink:0;
+    background:rgba(67,207,124,.16); color:var(--ok);
+    display:flex; align-items:center; justify-content:center;
+    animation:checkIn .4s var(--ease-spring) backwards; }
+  .learn-row:nth-child(1) .okb-s { animation-delay:.5s; }
+  .learn-row:nth-child(3) .okb-s { animation-delay:1s; }
+  .learn-row:nth-child(5) .okb-s { animation-delay:1.5s; }
+  @keyframes checkIn { from { transform:scale(0); opacity:0; } }
+  .ai-line { background:var(--card); border-radius:16px; margin:10px 18px 0; padding:10px 14px;
+    display:flex; gap:9px; align-items:flex-start; }
+  .ai-ic { width:28px; height:28px; border-radius:9px; flex-shrink:0;
+    background:linear-gradient(155deg,#9B8CFF,#5B4BD5);
+    display:flex; align-items:center; justify-content:center; }
+  .ai-line .at { font-size:12.5px; color:var(--label); line-height:1.55; }
+  .gain-hero .okb { top:14px; right:16px; }
+  .mile-row { display:flex; align-items:center; gap:12px; padding:11px 16px; position:relative; min-height:60px; }
+  .bmedal { width:40px; height:40px; flex-shrink:0; }
+  .bmedal svg { width:100%; height:100%; }
+  .mile-row .mt { font-size:15px; font-weight:600; color:var(--label); }
+  .mile-row .ms { font-size:11.5px; color:var(--label2); margin-top:2px; }
+  .mile-row .ms.done { color:var(--ok); font-weight:600; }
+  .mile-row .val { margin-left:auto; font-size:12px; color:var(--label3); flex-shrink:0; }
+  .pgrid { display:flex; gap:8px; margin:12px 18px 0; }
+  .pstep { flex:1; text-align:center; }
+  .pstep .pb { height:6px; border-radius:3px; background:var(--fill2); overflow:hidden; }
+  .pstep .pb i { display:block; height:100%; }
+  .pstep .pt2 { font-size:10px; color:var(--label3); margin-top:5px; }
+  .pstep.cur .pt2 { color:var(--blue); font-weight:600; }
+
+  /* ============ v9 · 点词释义底部弹层 ============ */
+  .grab { width:36px; height:4px; border-radius:99px; background:rgba(0,0,0,.14); margin:0 auto 4px; }
+  @keyframes sheetUp { from { transform:translateY(100%); } }
+  .wd-mask { position:absolute; inset:0; background:rgba(10,10,14,.36); z-index:40;
+    animation:fade .2s ease backwards; }
+  .wd-sheet { position:absolute; left:0; right:0; bottom:0; z-index:41;
+    background:#fff; border-radius:26px 26px 0 0; padding:8px 20px 30px;
+    box-shadow:0 -16px 44px rgba(0,0,0,.2);
+    animation:sheetUp .26s var(--ease-spring) backwards; }
+  .wd-word { display:flex; align-items:center; gap:10px; margin-top:8px; }
+  .wd-word b { font-size:24px; font-weight:700; color:var(--label); letter-spacing:-.3px; }
+  .wd-say { width:34px; height:34px; border-radius:17px; background:rgba(52,130,255,.1);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .wd-add { margin-left:auto; display:inline-flex; align-items:center; gap:4px; height:34px;
+    padding:0 14px; border-radius:17px; background:var(--blue); color:#fff;
+    font-size:13px; font-weight:600; box-shadow:0 3px 8px rgba(52,130,255,.28); }
+  .wd-add.saved { background:rgba(67,207,124,.16); color:var(--ok); box-shadow:none; }
+  .wd-meta { font-size:13px; color:var(--label2); margin-top:6px; }
+  .wd-def { font-size:14.5px; color:var(--label); margin-top:9px; line-height:1.5; }
+  .wd-ex { font-size:12.5px; color:var(--label2); margin-top:9px; padding-top:9px;
+    border-top:.5px solid var(--sep); line-height:1.55; }
+  .wd-ex b { color:var(--label); font-weight:500; }
+  .wd-src { display:inline-flex; align-items:center; gap:4px; font-size:10.5px; font-weight:500;
+    color:var(--blue); background:rgba(52,130,255,.09); border-radius:4px; padding:1.5px 6px;
+    margin-top:9px; }
+
+  /* ============ 插画方案对比实验板 ============ */
+  .lab { background:#17171b; border-radius:32px; padding:22px 16px; width:324px;
+    border:1px solid rgba(255,255,255,.07);
+    box-shadow:0 34px 80px rgba(0,0,0,.55); }
+  .lab-title { font-size:14px; font-weight:600; color:rgba(255,255,255,.9); text-align:center; margin-bottom:16px; }
+  .demo { margin-bottom:14px; }
+  .demo .dlabel { display:flex; align-items:baseline; gap:7px; margin:0 2px 7px; }
+  .demo .dlabel b { font-size:12.5px; color:rgba(255,255,255,.88); }
+  .demo .dlabel span { font-size:11px; color:rgba(255,255,255,.42); }
+  .demo .dlabel .rec { margin-left:auto; font-size:10px; font-weight:700; color:#0E0E12;
+    background:#43CF7C; border-radius:4px; padding:1.5px 6px; }
+  .demo-lvl { position:relative; width:252px; height:160px; border-radius:13px; overflow:hidden;
+    display:flex; flex-direction:column; color:#fff; margin:0 auto;
+    background:linear-gradient(155deg,#FFA94D 0%,#F0760F 55%,#E85D04 100%);
+    box-shadow:0 10px 24px rgba(0,0,0,.4); }
+  .demo-lvl .art { position:absolute; inset:0; z-index:1; }
+  .demo-lvl .art svg { position:absolute; inset:0; width:100%; height:100%; }
+  .demo-lvl .ovl { position:absolute; inset:0; z-index:2;
+    background:linear-gradient(155deg, rgba(255,169,77,.08) 0%, rgba(240,118,15,.5) 45%, rgba(140,58,0,.92) 100%); }
+  .demo-lvl .shn { position:absolute; inset:0; z-index:3;
+    background:linear-gradient(105deg, rgba(255,255,255,.26) 0%, rgba(255,255,255,.09) 18%, rgba(255,255,255,0) 36%, rgba(255,255,255,0) 80%, rgba(255,255,255,.05) 100%); }
+  .demo-lvl .vinfo { margin-top:auto; position:relative; z-index:4; }
+  .demo-lvl .vinfo .cn2 { font-size:15px; font-weight:700; }
+  .demo-lvl .vinfo .ce2 { font-size:9.5px; color:rgba(255,255,255,.78); margin-top:1px; }
+  .demo-lvl .wm { fill:rgba(255,255,255,.32); }
+  .demo-lvl .wm2 { fill:rgba(255,255,255,.18); }
+  .lab-note { font-size:11px; color:rgba(255,255,255,.4); text-align:center; margin-top:2px; line-height:1.55; }
+
+  /* ============ 设计规范速查 ============ */
+  .spec { max-width:1180px; margin:88px auto 0; }
+  .spec h2 { font-size:22px; font-weight:700; color:#fff; margin-bottom:6px; letter-spacing:-.3px; }
+  .spec .lead { font-size:13.5px; color:rgba(235,235,245,.5); margin-bottom:22px; }
+  .spec-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:18px; }
+  .spec-card { background:#1c1c20; border:1px solid rgba(255,255,255,.07); border-radius:16px; padding:20px; }
+  .spec-card h3 { font-size:14px; font-weight:600; color:rgba(255,255,255,.9); margin-bottom:14px; }
+  table.spec-t { width:100%; border-collapse:collapse; font-size:12.5px; }
+  table.spec-t td { padding:7px 4px; border-bottom:.5px solid rgba(255,255,255,.08); color:rgba(235,235,245,.8); vertical-align:top; }
+  table.spec-t td:first-child { color:rgba(235,235,245,.55); white-space:nowrap; padding-right:12px; }
+  table.spec-t tr:last-child td { border-bottom:none; }
+  code.k { font-family:"SF Mono",Consolas,monospace; font-size:11.5px; color:#7fbfff; }
+</style>
+</head>
+<body>
+
+<h1>英语口语陪练 · 交互与视觉升级 v9（HyperOS）</h1>
+<div class="sub">四需求：微信式录音浮层（底部半模态 · 6 态状态机）· 通关收获与里程碑徽章 · 卡面 AI 插画（白 duotone 水印）· 点词释义底部弹层</div>
+
+<div class="board">
+
+  <!-- ============ ① 录音浮层 · 录音中 ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">新增</span>录音圆顶 · 录音中</b><span>按下后主色蓝大圆顶自底缘弹性升起（微信式圆弧）· 中央白麦克风 · 弧面波浪起伏 + 计时 · 状态文案 ≤8 字</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>16:45</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="nav">
+        <span class="back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </span>
+        <span class="tt">第 12 关 · What's this?</span>
+      </div>
+      <div class="les-head">
+        <span class="lh"><b>逐句跟读</b><span>先听原声，再跟读一遍</span></span>
+        <span class="les-prog"><span class="np">8 / 23 句</span><span class="pbar"><i></i></span></span>
+      </div>
+      <div class="sent-card">
+        <span class="sent-tag">跟读这一句</span>
+        <div class="sent-en">Is this your<br><span class="hl">handbag</span>?</div>
+        <div class="sent-cn">这是你的<span style="color:var(--blue);font-weight:600">手提包</span>吗？</div>
+      </div>
+      <div class="hold-btn pressing">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+        </svg>
+        按住 跟读
+      </div>
+      <div class="hold-cap">松开结束 · 自动比对并进入下一句</div>
+      <!-- 录音圆顶：弧顶上方提示 + 计时 -->
+      <div class="vo-mask"></div>
+      <div class="vo-tip"><b>松开跟读</b><span>00:07</span></div>
+      <div class="vo-dome">
+        <span class="dome-w"></span><span class="dome-w w2"></span>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="3" width="6" height="11" rx="3" fill="#fff" stroke="none"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+        </svg>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ② 录音浮层 · 上滑取消 ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">新增</span>录音圆顶 · 上滑取消</b><span>上滑 ≥56dp 阈值 → 圆顶转红、弧线略收、波浪停摆 · 提示转「松开取消」· 松手作废不计时长</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>16:45</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="nav">
+        <span class="back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </span>
+        <span class="tt">第 12 关 · What's this?</span>
+      </div>
+      <div class="les-head">
+        <span class="lh"><b>逐句跟读</b><span>先听原声，再跟读一遍</span></span>
+        <span class="les-prog"><span class="np">8 / 23 句</span><span class="pbar"><i></i></span></span>
+      </div>
+      <div class="sent-card">
+        <span class="sent-tag">跟读这一句</span>
+        <div class="sent-en">Is this your<br><span class="hl">handbag</span>?</div>
+        <div class="sent-cn">这是你的<span style="color:var(--blue);font-weight:600">手提包</span>吗？</div>
+      </div>
+      <div class="hold-btn pressing">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+        </svg>
+        按住 跟读
+      </div>
+      <div class="hold-cap">松开结束 · 自动比对并进入下一句</div>
+      <!-- 录音圆顶：取消态（转红 + 弧线略收） -->
+      <div class="vo-mask"></div>
+      <div class="vo-tip cancel"><b>松开取消</b><span>00:07 · 录音作废</span></div>
+      <div class="vo-dome cancel">
+        <span class="dome-w"></span><span class="dome-w w2"></span>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+        </svg>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ③ 通关成果展示页 ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod core">核心</span>通关成果 · 你学会了什么</b><span>渐变收获卡「通关可得」+ 清单逐条勾选动画 + AI 鼓励一句 · 连闯 3 关即时激励</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>16:45</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="nav">
+        <span class="back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </span>
+        <span class="tt">第 12 关 · 成绩单</span>
+      </div>
+      <!-- 收获卡：复用关卡卡渐变语言 -->
+      <div class="gain-hero">
+        <div class="art">
+          <svg viewBox="0 0 288 96" fill="none">
+            <circle cx="238" cy="30" r="34" class="wm2"/>
+            <path d="M206 46l7 14 15 2-11 10 3 15-14-8-14 8 3-15-11-10 15-2z" class="wm"/>
+          </svg>
+        </div>
+        <span class="okb">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+        </span>
+        <div class="gt">通关可得</div>
+        <div class="gd">5 个表达 + 1 个句型</div>
+        <div class="gs">连闯 3 关，越说越顺！</div>
+      </div>
+      <!-- 星级 + 总分 -->
+      <div class="stars-row">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2.6l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17l-5.7 3 1.2-6.3L2.8 9.3l6.4-.8z" fill="url(#g1)" stroke="#E8940A" stroke-width=".8"/>
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFD34D"/><stop offset="1" stop-color="#FFA300"/></linearGradient></defs>
+        </svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2.6l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17l-5.7 3 1.2-6.3L2.8 9.3l6.4-.8z" fill="url(#g1)" stroke="#E8940A" stroke-width=".8"/>
+        </svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2.6l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17l-5.7 3 1.2-6.3L2.8 9.3l6.4-.8z" fill="rgba(0,0,0,.07)" stroke="rgba(0,0,0,.14)" stroke-width=".8"/>
+        </svg>
+        <span class="sn">88<small> / 100</small></span>
+      </div>
+      <!-- 你学会了（清单勾选动画） -->
+      <div class="sec-h">本关你学会了
+        <span class="hint">与进关页目标一一对应</span>
+      </div>
+      <div class="group">
+        <div class="learn-row">
+          <span class="lic c1">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21a8.5 8.5 0 1 0-8.5-8.5c0 1.7.5 3.3 1.4 4.6L4 21l4-1c1.2.6 2.6 1 4 1z"/><path d="M8.5 9.5h7M8.5 13h5"/>
+            </svg>
+          </span>
+          <span class="lt">会用英语问"这是什么"，听懂回答</span>
+          <span class="okb-s">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+          </span>
+        </div>
+        <div class="hairline"></div>
+        <div class="learn-row">
+          <span class="lic c2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5V6a2 2 0 0 1 2-2h13v14H6.5A2.5 2.5 0 0 0 4 20.5"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H19"/>
+            </svg>
+          </span>
+          <span class="lt">能说出身边物品的英文名字</span>
+          <span class="okb-s">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+          </span>
+        </div>
+        <div class="hairline"></div>
+        <div class="learn-row">
+          <span class="lic c3">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/>
+            </svg>
+          </span>
+          <span class="lt">把 Is this your…? 句型说顺口</span>
+          <span class="okb-s">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+          </span>
+        </div>
+      </div>
+      <!-- AI 鼓励一句 -->
+      <div class="ai-line">
+        <span class="ai-ic">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21a8.5 8.5 0 1 0-8.5-8.5c0 1.7.5 3.3 1.4 4.6L4 21l4-1c1.2.6 2.6 1 4 1z"/><path d="M8.5 9.5h7M8.5 13h5"/>
+          </svg>
+        </span>
+        <span class="at">流利度进步最明显，第 6 句说得又快又自然！</span>
+      </div>
+      <div class="big-cta" style="margin-top:13px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l10-6.5-10-6.5z"/></svg>
+        再来一次，冲 ⭐⭐⭐
+      </div>
+      <div class="footnote-out" style="text-align:center;margin-top:9px">
+        <span style="color:var(--blue);font-weight:600">第 13 关已解锁，继续 →</span>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ④ 里程碑徽章（4 档） ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">新增</span>里程碑徽章 · 4 档制</b><span>10 / 50 / 100 / 276 关 · 几何风图标 · 已解锁亮色 + 未解锁灰态 + 进度指引</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>16:45</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="nav">
+        <span class="back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </span>
+        <span class="tt">里程碑徽章</span>
+      </div>
+      <!-- 当前进度 -->
+      <div class="sec-h">我的进度
+        <span class="hint">已通关 12 关</span>
+      </div>
+      <div class="pgrid">
+        <div class="pstep done" style="flex:0 0 12%"><div class="pb"><i style="width:100%;background:var(--mi-green)"></i></div><div class="pt2">10 关 ✓</div></div>
+        <div class="pstep cur" style="flex:1"><div class="pb"><i style="width:4%;background:var(--blue)"></i></div><div class="pt2">50 关 · 还差 38</div></div>
+        <div class="pstep" style="flex:1"><div class="pb"></div><div class="pt2">100 关</div></div>
+        <div class="pstep" style="flex:1"><div class="pb"></div><div class="pt2">276 关</div></div>
+      </div>
+      <div class="sec-h">徽章墙 · 共 4 档</div>
+      <div class="group">
+        <div class="mile-row">
+          <span class="bmedal">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="17" r="12" fill="rgba(255,169,77,.2)" stroke="#E8790A" stroke-width="2"/>
+              <path d="M20 10l2 4 4.4.5-3.3 3 .8 4.4-3.9-2.2-3.9 2.2.8-4.4-3.3-3 4.4-.5z" fill="#E8790A"/>
+              <path d="M14 26l-2.5 8L20 30l8.5 4L26 26" stroke="#E8790A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>
+            <span class="mt" style="display:block">入门徽章</span>
+            <span class="ms done">已达成 · 连通 10 关</span>
+          </span>
+          <span class="val">10 关</span>
+        </div>
+        <div class="hairline"></div>
+        <div class="mile-row">
+          <span class="bmedal" style="opacity:.38">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="17" r="12" stroke="var(--label3)" stroke-width="2"/>
+              <path d="M14.5 16.5h11M14.5 20h11M17 13v10M23 13v10" stroke="var(--label3)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 26l-2.5 8L20 30l8.5 4L26 26" stroke="var(--label3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>
+            <span class="mt" style="display:block;color:var(--label2)">坚持徽章</span>
+            <span class="ms">连通 50 关 · 还差 38 关</span>
+          </span>
+          <span class="val">50 关</span>
+        </div>
+        <div class="hairline"></div>
+        <div class="mile-row">
+          <span class="bmedal" style="opacity:.38">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M20 4l4.5 3.5 5.5-.5 1.5 5.5L36 17l-3 4.5.5 5.5-5.5 1L24 32.5 20 30l-4 2.5-4-4.5-5.5-1 .5-5.5L4 17l4.5-4.5L10 7l5.5.5z" stroke="var(--label3)" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M14.5 17.5l4 4 7.5-8" stroke="var(--label3)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>
+            <span class="mt" style="display:block;color:var(--label2)">百关徽章</span>
+            <span class="ms">连通 100 关</span>
+          </span>
+          <span class="val">100 关</span>
+        </div>
+        <div class="hairline"></div>
+        <div class="mile-row">
+          <span class="bmedal" style="opacity:.38">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M12 8h16l6 9-14 17L6 17z" stroke="var(--label3)" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M12 8l8 9 8-9M6 17h28M20 17v17" stroke="var(--label3)" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>
+            <span class="mt" style="display:block;color:var(--label2)">通关徽章</span>
+            <span class="ms">连通全部 276 关</span>
+          </span>
+          <span class="val">276 关</span>
+        </div>
+      </div>
+      <div class="footnote-out">徽章只在达成里程碑时出现，日常练习不打扰 · 图标几何风、随系统浅色</div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ⑤ 插画位三方案对比（A/B/C） ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">方案</span>关卡卡 AI 插画位 · 三方案对比</b><span>推荐 C 背景水印（白 duotone ≤35%、主体右上、左下留白保字）· L1 问候场景示例</span></div>
+    <div class="lab">
+      <div class="lab-title">276 关 × AI 插画：卡面摆放方案（L1 Excuse Me!）</div>
+
+      <!-- 方案 C：背景水印（推荐，符合 PM 白 duotone 口径） -->
+      <div class="demo">
+        <div class="dlabel"><b>方案 C · 背景水印</b><span>插画融底、白字零干扰、渐变语言不变</span><span class="rec">推荐</span></div>
+        <div class="demo-lvl">
+          <!-- L1 问候场景：右上两人剪影 + 气泡，左下留空（白 duotone ≤35%，sheen 之下） -->
+          <div class="art">
+            <svg viewBox="0 0 252 160" fill="none">
+              <circle cx="212" cy="26" r="24" class="wm2"/>
+              <!-- 人物 A（挥手） -->
+              <circle cx="176" cy="62" r="13" class="wm"/>
+              <path d="M154 122c0-20 10-32 22-32s22 12 22 32z" class="wm"/>
+              <path d="M198 74c8-5 13-11 14-19" stroke="rgba(255,255,255,.32)" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="214" cy="52" r="5" class="wm"/>
+              <!-- 人物 B -->
+              <circle cx="226" cy="92" r="10" class="wm2"/>
+              <path d="M210 128c0-15 7-24 16-24s16 9 16 24z" class="wm2"/>
+              <!-- 对话气泡 -->
+              <rect x="128" y="18" width="46" height="22" rx="11" class="wm"/>
+              <path d="M144 40l-4 8 12-8z" class="wm"/>
+            </svg>
+          </div>
+          <div class="ovl"></div>
+          <div class="shn"></div>
+          <div class="vinfo">
+            <div class="cn2">Excuse Me!</div>
+            <div class="ce2">LEVEL 1 · NCE Lesson 1 · 8 句</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 方案 A：卡片顶部横幅 -->
+      <div class="demo">
+        <div class="dlabel"><b>方案 A · 顶部横幅</b><span>插画突出，但卡面被切分、Wallet 一体感减弱</span></div>
+        <div class="demo-lvl">
+          <div class="art" style="bottom:auto;height:58%">
+            <svg viewBox="0 0 252 93" fill="none" style="width:100%;height:100%">
+              <rect width="252" height="93" class="wm2" style="fill:rgba(255,255,255,.12)"/>
+              <circle cx="204" cy="24" r="16" class="wm"/>
+              <circle cx="70" cy="48" r="11" class="wm"/>
+              <path d="M52 93c0-16 8-26 18-26s18 10 18 26z" class="wm"/>
+              <path d="M84 56c6-4 10-9 11-15" stroke="rgba(255,255,255,.32)" stroke-width="4.5" stroke-linecap="round"/>
+              <rect x="118" y="16" width="42" height="20" rx="10" class="wm"/>
+            </svg>
+          </div>
+          <div class="ovl" style="background:linear-gradient(180deg,rgba(140,58,0,.55) 0%,rgba(140,58,0,.5) 57%,rgba(140,58,0,.94) 100%)"></div>
+          <div class="shn"></div>
+          <div class="vinfo" style="padding:0 14px 10px">
+            <div class="cn2">Excuse Me!</div>
+            <div class="ce2">LEVEL 1 · NCE Lesson 1 · 8 句</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 方案 B：卡片左侧小图 -->
+      <div class="demo">
+        <div class="dlabel"><b>方案 B · 左侧小图</b><span>版式像词条卡，插画沦为缩略图、场景感尽失</span></div>
+        <div class="demo-lvl">
+          <div class="art" style="right:auto;width:36%">
+            <svg viewBox="0 0 91 160" fill="none" style="width:100%;height:100%">
+              <rect width="91" height="160" class="wm2" style="fill:rgba(255,255,255,.12)"/>
+              <circle cx="46" cy="52" r="13" class="wm"/>
+              <path d="M24 116c0-19 10-30 22-30s22 11 22 30z" class="wm"/>
+              <path d="M68 66c7-5 11-11 12-18" stroke="rgba(255,255,255,.32)" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="ovl" style="background:linear-gradient(100deg,rgba(140,58,0,.62) 0%,rgba(140,58,0,.42) 36%,rgba(140,58,0,.9) 100%)"></div>
+          <div class="shn"></div>
+          <div class="vinfo" style="padding:0 14px 10px 112px">
+            <div class="cn2">Excuse Me!</div>
+            <div class="ce2">LEVEL 1 · Lesson 1 · 8 句</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lab-note">三方案均保持 1.586:1 真卡几何与 Wallet 渐变语言<br>插画统一白单色 duotone（≤35% 透明度、sheen 之下）</div>
+    </div>
+  </div>
+
+  <!-- ============ ⑥ 口语页 · 插画水印实装（方案 C） ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">升级</span>口语页 · 插画水印实装</b><span>L1 问候 / L2 找伞 / L12 问物 三张示例 · 主体偏右上（原 glyph 位）· 锁定卡 saturate(0) 不变</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>16:45</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="lg-title" style="font-size:28px;padding:2px 18px 2px">口语</div>
+      <div class="word-hero">
+        <div class="wh-left">
+          <span class="wh-tag">快捷跟读</span>
+          <div class="wh-word">corner</div>
+          <div class="wh-meta">/ˈkɔ:rnər/ · n. 拐角</div>
+          <div class="wh-ex"><b>It's on the corner.</b>（就在拐角处）</div>
+        </div>
+        <div class="wh-actions">
+          <span class="wh-say">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z" fill="#fff" stroke="none"/><path d="M15.5 9.5a3.6 3.6 0 0 1 0 5M18.3 7a7.4 7.4 0 0 1 0 10"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div class="sec-h">课文关卡 · 共 276 关
+        <span class="hint">每关一张课文场景插画</span>
+      </div>
+      <div class="carousel">
+        <div class="track-a">
+          <!-- page1：L2 找伞场景（已通关） -->
+          <div class="page-a">
+            <div class="lvl t-teal">
+              <div class="art">
+                <svg viewBox="0 0 288 182" fill="none">
+                  <circle cx="240" cy="38" r="30" class="wm2"/>
+                  <!-- 雨伞（右上主体） -->
+                  <path d="M204 76c0-24 16-38 34-38s34 14 34 38c-8-8-16-10-22-4-5-8-13-8-18 0-6-6-14-4-22 4z" class="wm"/>
+                  <path d="M238 40v42" stroke="rgba(255,255,255,.32)" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M238 82c0 8-10 8-10 0" stroke="rgba(255,255,255,.32)" stroke-width="5" stroke-linecap="round"/>
+                  <!-- 雨滴 -->
+                  <path d="M196 52l4-7M218 44l4-7M254 48l4-7" stroke="rgba(255,255,255,.18)" stroke-width="3.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="ov"></div>
+              <div class="sheen"></div>
+              <div class="lv-tag">LEVEL 2</div>
+              <span class="okb">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+              </span>
+              <div class="cname">Sorry, sir.</div>
+              <div class="lv-en">NCE · Lesson 2</div>
+              <div class="cstatus"><span style="color:#FFE08A;font-size:12.5px;letter-spacing:1.5px">★ ★</span> 81 分 · 点按重练</div>
+            </div>
+          </div>
+          <!-- page2：L1 当前关（问候场景 + 钩子） -->
+          <div class="page-a">
+            <div class="lvl now t-orange">
+              <div class="art">
+                <svg viewBox="0 0 288 182" fill="none">
+                  <circle cx="242" cy="34" r="32" class="wm2"/>
+                  <!-- 人物 A（挥手） -->
+                  <circle cx="198" cy="70" r="15" class="wm"/>
+                  <path d="M172 138c0-23 11-37 26-37s26 14 26 37z" class="wm"/>
+                  <path d="M224 84c9-6 15-13 16-22" stroke="rgba(255,255,255,.32)" stroke-width="6" stroke-linecap="round"/>
+                  <circle cx="243" cy="58" r="6" class="wm"/>
+                  <!-- 人物 B -->
+                  <circle cx="254" cy="104" r="12" class="wm2"/>
+                  <path d="M236 144c0-17 8-28 18-28s18 11 18 28z" class="wm2"/>
+                  <!-- 对话气泡（Excuse me!） -->
+                  <rect x="140" y="20" width="54" height="26" rx="13" class="wm"/>
+                  <path d="M158 46l-5 9 14-9z" class="wm"/>
+                </svg>
+              </div>
+              <div class="ov"></div>
+              <div class="sheen"></div>
+              <div class="lv-tag">LEVEL 1</div>
+              <div class="cname">Excuse Me!</div>
+              <div class="lv-en">NCE · Lesson 1</div>
+              <span class="hook">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+                本关学会 5 个表达
+              </span>
+              <div class="now-row">
+                <span class="cta-w">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="#C05E02"><path d="M8 5.5v13l10-6.5-10-6.5z"/></svg>
+                  继续跟读
+                </span>
+                <span class="now-cap">上次 · 第 3/8 句</span>
+              </div>
+              <div class="pline"><i style="width:37%"></i></div>
+            </div>
+          </div>
+          <!-- page3：L3 锁定（插画置灰） -->
+          <div class="page-a">
+            <div class="lvl t-lock">
+              <div class="art">
+                <svg viewBox="0 0 288 182" fill="none">
+                  <circle cx="242" cy="38" r="30" class="wm2"/>
+                  <circle cx="200" cy="80" r="15" class="wm"/>
+                  <path d="M174 148c0-23 11-37 26-37s26 14 26 37z" class="wm"/>
+                </svg>
+              </div>
+              <div class="ov"></div>
+              <div class="sheen"></div>
+              <div class="lv-tag">LEVEL 3</div>
+              <div class="cname">Sorry, sir.</div>
+              <div class="lv-en">NCE · Lesson 3</div>
+              <div class="cstatus">完成上一关解锁</div>
+            </div>
+          </div>
+          <!-- page4：L4 锁定 -->
+          <div class="page-a">
+            <div class="lvl t-lock">
+              <div class="lv-tag">LEVEL 4</div>
+              <div class="cname">Is this your…?</div>
+              <div class="lv-en">NCE · Lesson 4</div>
+              <div class="cstatus">完成上一关解锁</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-hint">通关 = 整课句子全部跟读完成 · 分数只做评价，不做门槛</div>
+      <div class="tabbar" style="margin-top:auto">
+        <div class="tab active"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.2L12 4l8 7.2"/><path d="M6.2 10v9.8h11.6V10"/></svg>
+        </span>口语</div>
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg>
+        </span>单词</div>
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 20v-7M12 20V4.5M18.5 20v-4.5"/></svg>
+        </span>统计</div>
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.7M12 18.5v2.7M21.2 12h-2.7M5.5 12H2.8M18.6 5.4l-1.9 1.9M7.3 16.7l-1.9 1.9M18.6 18.6l-1.9-1.9M7.3 7.3L5.4 5.4"/></svg>
+        </span>设置</div>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ⑦ 点词释义 · 默认态 ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">新增</span>点词释义 · 默认态</b><span>点句中单词 → 底部词卡弹层（词/音标/发音/释义/例句 + 加入单词本）· 跟读页与对话页共用</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>16:45</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="nav">
+        <span class="back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </span>
+        <span class="tt">第 1 关 · Excuse Me!</span>
+      </div>
+      <div class="les-head">
+        <span class="lh"><b>逐句跟读</b><span>先听原声，再跟读一遍</span></span>
+        <span class="les-prog"><span class="np">3 / 8 句</span><span class="pbar"><i style="width:37%"></i></span></span>
+      </div>
+      <!-- 句子卡：handbag 可点（浅色提示） -->
+      <div class="sent-card" style="margin-bottom:118px">
+        <span class="sent-tag">跟读这一句</span>
+        <div class="sent-en">Is this your<br><span class="hl hit">handbag</span>?</div>
+        <div class="sent-cn">这是你的<span style="color:var(--blue);font-weight:600">手提包</span>吗？</div>
+      </div>
+      <div class="hold-btn">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+        </svg>
+        按住 跟读
+      </div>
+      <!-- 点词释义底部弹层：默认态 -->
+      <div class="wd-mask"></div>
+      <div class="wd-sheet">
+        <div class="grab" style="margin-bottom:2px"></div>
+        <div class="wd-word">
+          <b>handbag</b>
+          <span class="wd-say">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z" fill="var(--blue)" stroke="none"/><path d="M15.5 9.5a3.6 3.6 0 0 1 0 5"/></svg>
+          </span>
+          <span class="wd-add">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            加入单词本
+          </span>
+        </div>
+        <div class="wd-meta">/ˈhændbæɡ/ · <i>n.</i> 名词</div>
+        <div class="wd-def">手提包；手袋</div>
+        <div class="wd-ex"><b>Is this your handbag?</b> — 这是你的手提包吗？（本课原句）</div>
+        <span class="wd-src">来源：NCE 第 1 课 · 与生词本 1/3/7 天复习打通</span>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ⑧ 点词释义 · 已收藏态 ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">新增</span>点词释义 · 已收藏态</b><span>收词成功 → 按钮转绿「已在单词本」+ 词上墨线变实线 · 不重复打扰</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>16:45</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="nav">
+        <span class="back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </span>
+        <span class="tt">第 1 关 · Excuse Me!</span>
+      </div>
+      <div class="les-head">
+        <span class="lh"><b>逐句跟读</b><span>先听原声，再跟读一遍</span></span>
+        <span class="les-prog"><span class="np">3 / 8 句</span><span class="pbar"><i style="width:37%"></i></span></span>
+      </div>
+      <!-- 句子卡：已收藏词 → 实线墨线 -->
+      <div class="sent-card" style="margin-bottom:118px">
+        <span class="sent-tag">跟读这一句</span>
+        <div class="sent-en">Is this your<br><span style="background:rgba(67,207,124,.12);border-radius:6px;padding:1px 5px;box-shadow:inset 0 -2px 0 rgba(48,162,76,.55)">handbag</span>?</div>
+        <div class="sent-cn">这是你的<span style="color:var(--ok);font-weight:600">手提包</span>吗？</div>
+      </div>
+      <div class="hold-btn">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+        </svg>
+        按住 跟读
+      </div>
+      <!-- 点词释义底部弹层：已收藏态 -->
+      <div class="wd-mask"></div>
+      <div class="wd-sheet">
+        <div class="grab" style="margin-bottom:2px"></div>
+        <div class="wd-word">
+          <b>handbag</b>
+          <span class="wd-say">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z" fill="var(--blue)" stroke="none"/><path d="M15.5 9.5a3.6 3.6 0 0 1 0 5"/></svg>
+          </span>
+          <span class="wd-add saved">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+            已在单词本
+          </span>
+        </div>
+        <div class="wd-meta">/ˈhændbæɡ/ · <i>n.</i> 名词</div>
+        <div class="wd-def">手提包；手袋</div>
+        <div class="wd-ex"><b>Is this your handbag?</b> — 这是你的手提包吗？（本课原句）</div>
+        <span class="wd-src" style="color:var(--ok);background:rgba(67,207,124,.12)">已收藏 · 次日到期，跟读一遍即过</span>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== 设计规范速查（v9 · 四需求） ==================== -->
+<div class="spec">
+  <h2>设计规范速查 · v9 交互与视觉升级</h2>
+  <div class="lead">沿用 v6/v8 规范（HyperOS / MiSans / #3482FF / #FF6900 / Wallet 卡 / 方案 A 等宽轮播）。本页只列 v9 新增，口径对齐 PM english-app-v3-requirements.md。</div>
+  <div class="spec-grid">
+
+    <div class="spec-card">
+      <h3>① 微信式录音浮层 · 状态机与动效</h3>
+      <table class="spec-t">
+        <tr><td>形态</td><td><b>底部大圆顶</b>（微信式圆弧，配色改用 App 主色蓝 #3482FF 渐变，不用微信绿）：全宽、高约 118dp、椭圆弧顶（<code class="k">border-radius 50%/100%</code>）；中央白色麦克风图标；对话/课文跟读/单词跟读三页共用一套组件，仅提示文案随场景变</td></tr>
+        <tr><td>文案红线</td><td>状态文案一律 ≤8 字：「松开跟读」「松开取消」「识别中…」「没听清，再试」</td></tr>
+        <tr><td>态 1 按下</td><td>圆顶自底缘弹性升起 400ms <code class="k">cubic-bezier(.3,1.2,.4,1)</code> translateY(100%)→0；背景压暗 rgba(8,10,16,.55) 200ms；按钮转按压态 scale .96</td></tr>
+        <tr><td>态 2 录音中</td><td>弧顶上方蓝字「松开跟读」+ tabular 计时每秒刷新；圆顶表面两层弧面缓慢起伏（2.6s/3.4s 交错 alternate，<b>纯循环假动画，SpeechRecognizer 无实时音量，禁止音量联动</b>）</td></tr>
+        <tr><td>态 3 上滑取消</td><td>上滑 ≥56dp 阈值：圆顶转红渐变（#F26D72→#E5484D）、弧线略收（scale .94）、波浪停摆，提示转红「松开取消」+「录音作废」；未过阈值松手圆顶回落 240ms spring</td></tr>
+        <tr><td>态 4 松手发送</td><td>圆顶下滑收回 180ms → 进入现有 ASR 比对流程</td></tr>
+        <tr><td>态 5 识别成功</td><td>浮层已收起，页面内出结果（与现有一致）</td></tr>
+        <tr><td>态 6 识别失败</td><td>页面内 toast「没听清，再试」≤8 字、300ms 抖动一次，不弹浮层打断</td></tr>
+        <tr><td>取消语义</td><td>取消的录音作废、不计开口时长；最短录音 300ms，不足按误触取消</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>② 通关收获 + 里程碑徽章</h3>
+      <table class="spec-t">
+        <tr><td>收获卡</td><td>复用关卡卡橙渐变语言 + 白 duotone 星形水印；「通关可得」小标 + 内容 ≤20 字（"5 个表达 + 1 个句型"）+ 连闯激励一行（"连闯 3 关，越说越顺！"）</td></tr>
+        <tr><td>勾选动画</td><td>「本关你学会了」清单逐条勾选：checkIn spring scale 0→1，间隔 500ms 依次点亮（3 条约 1.5s 完成）；图标与进关页学习目标一一对应</td></tr>
+        <tr><td>里程碑徽章</td><td><b>只做 4 档：10 / 50 / 100 / 276 关</b>；几何风单色 SVG（入门=星形旗 / 坚持=书本纹 / 百关=锯齿勋章 / 通关=钻石）；已解锁彩色 + 未解锁灰态 opacity .38</td></tr>
+        <tr><td>进度指引</td><td>顶部 4 段进度条（10 关 ✓ / 50 关·还差 38 / 100 关 / 276 关）；徽章只在达成时出现，不做每日打卡装饰</td></tr>
+        <tr><td>连闯 3 关</td><td>不设徽章，以成绩单即时激励文案呈现（保持 4 档克制口径）</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>③ 关卡卡 AI 插画位 + 验收 checklist</h3>
+      <table class="spec-t">
+        <tr><td>推荐 C</td><td><b>背景水印</b>：白单色 duotone（透明度 ≤35%、sheen 之下）、主体偏右上（与原 glyph 位一致）、左下白字区留空——渐变语言不变、白字对比度天然安全</td></tr>
+        <tr><td>备选 A</td><td>顶部横幅：插画突出但卡面割裂、Wallet 一体感减弱——不作首选</td></tr>
+        <tr><td>备选 B</td><td>左侧小图：插画缩为词条缩略、场景感尽失——不作首选</td></tr>
+        <tr><td>示例</td><td>L1 Excuse Me! = 问候场景（双人剪影+气泡）；L2 Sorry, sir. = 找伞场景（雨伞+雨滴）；构图重心右上，左下 1/3 留白</td></tr>
+        <tr><td>checklist 1 构图 <span style="color:#E5484D;font-weight:700">硬性项</span></td><td>主体位于卡面右上 1/3 区域；左下信息区无主要元素入侵；每卡元素 ≤8；景深 ≤2 层。不达标直接重生成/回退 glyph，不打折通过</td></tr>
+        <tr><td>checklist 2 风格 <span style="color:#E5484D;font-weight:700">硬性项</span></td><td>纯白单色 duotone（白 18%~32% 两档）；线条 0、仅色块；无文字入画（气泡内不放字）；276 张同一 prompt 模板批量生成。不达标直接重生成/回退 glyph</td></tr>
+        <tr><td>checklist 3 对比度 <span style="color:#E5484D;font-weight:700">硬性项</span></td><td>叠加后左下信息区背景亮度 ≤30%；白字（含 11.5px 副行）对比 ≥4.5:1；sheen 层在最上不变；锁定卡全卡 saturate(0)。不达标直接重生成/回退 glyph</td></tr>
+        <tr><td>兜底</td><td>离线批量生成 276 张，单张失败回退现有 glyph 渐变卡，永不空卡</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>④ 点词释义底部弹层</h3>
+      <table class="spec-t">
+        <tr><td>触发</td><td>点句中可点词（浅蓝墨线提示）；弹底部词卡（非气泡——不遮句子、拇指可达）；跟读页与对话页共用同一组件</td></tr>
+        <tr><td>词卡结构</td><td>grabber → 词 24px + 发音圆钮 + 「加入单词本」蓝胶囊 → 音标/词性 → 中文释义 → 例句（优先本课原句，标"本课原句"）→ 来源徽标「NCE 第 1 课」</td></tr>
+        <tr><td>已收藏态</td><td>按钮转绿「已在单词本」+ 句中墨线变实线绿、译文对应词转绿——一眼可辨不重复打扰</td></tr>
+        <tr><td>关闭</td><td>点遮罩或下滑关闭，200ms；不挡跟读流程</td></tr>
+        <tr><td>与收词面板区分</td><td>点单个词 = 查词+收词（底部词卡）；长按整句 = 整句收词面板（v7 bottom sheet）——两入口并存互不打扰</td></tr>
+        <tr><td>防误触</td><td>按住跟读手势期间禁用点词；词卡打开时点跟读按钮先关词卡</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>⑤ 沿用项</h3>
+      <table class="spec-t">
+        <tr><td>不变</td><td>方案 A 等宽轮播、单词快捷卡、成绩单算分与鼓励式文案、1/3/7 复习、打卡口径、Tab 命名、锁定卡 saturate(0)</td></tr>
+        <tr><td>替换旧件</td><td>按钮内声浪条（现实现）退役，由底部大圆顶录音组件整体替代；按钮回归静态样式 + 按压态</td></tr>
+        <tr><td>动效基调</td><td>统一 HyperOS spring <code class="k">cubic-bezier(.3,1.2,.4,1)</code>；浮层进出 180~260ms，循环动画 ≥1.6s 缓慢呼吸，避免焦虑感</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

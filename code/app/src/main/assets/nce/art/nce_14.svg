@@ -1,0 +1,36 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  
+  <ns0:path d="M88 148 H198" stroke="#555555" />
+
+  
+  <ns0:rect x="140" y="32" width="30" height="22" />
+  <ns0:rect x="145" y="37" width="20" height="12" stroke-width="1.5" />
+  <ns0:path d="M147 47 L156 40" stroke-width="1.5" />
+
+  
+  <ns0:circle cx="118" cy="46" r="9" />
+  <ns0:path d="M118 46 V40 M118 46 L123 48" stroke-width="1.5" />
+
+  
+  <ns0:path d="M104 80 H124 L130 98 H98 Z" />
+  <ns0:path d="M114 98 V145" />
+  <ns0:path d="M104 148 Q114 141 124 148" />
+
+  
+  <ns0:rect x="158" y="66" width="15" height="62" rx="7" />
+  <ns0:rect x="124" y="86" width="13" height="42" rx="6.5" />
+  <ns0:path d="M137 106 H158" />
+  <ns0:path d="M136 128 H159" />
+  <ns0:path d="M129 128 V148 M168 128 V148" />
+
+  
+  <ns0:path d="M176 114 H196" />
+  <ns0:path d="M179 114 V148 M193 114 V148" />
+  <ns0:path d="M179 132 H193" stroke-width="1.5" />
+
+  
+  <ns0:path d="M183 114 L185 102 H189 L191 114" />
+  <ns0:path d="M187 102 V92" />
+  <ns0:path d="M187 97 Q181 95 180 89" stroke-width="1.5" />
+  <ns0:circle cx="187" cy="88" r="3.5" />
+</ns0:svg>

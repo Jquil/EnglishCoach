@@ -1,0 +1,34 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect x="0" y="0" width="200" height="200" fill="#FFFFFF" />
+
+  
+  <ns0:path d="M132,32 L116,132 L184,132 L168,32 Z" fill="#F1F1F1" stroke="#BBBBBB" stroke-width="1" />
+
+  
+  <ns0:line x1="72" y1="132" x2="194" y2="132" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+
+  
+  <ns0:ellipse cx="150" cy="132" rx="34" ry="7" fill="#DEDEDE" stroke="#000000" stroke-width="2" />
+
+  
+  <ns0:line x1="150" y1="6" x2="150" y2="16" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M138,16 L162,16 L168,32 L132,32 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linejoin="round" />
+
+  
+  <ns0:path d="M148,58 L151,72 L148,86 L145,72 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+  <ns0:path d="M134,72 L148,69 L162,72 L148,75 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+
+  
+  <ns0:path d="M132,50 L140,50 M136,46 L136,54" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M166,100 L174,100 M170,96 L170,104" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+
+  
+  <ns0:circle cx="99" cy="83" r="6.5" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+  <ns0:path d="M99.5,90 L102,107" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M100,93 L89,103" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M100.5,94 L110,104" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M102,107 L97,119 L91,131" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <ns0:path d="M91,131 L85.5,132" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M102,107 L112,115 L114,131" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <ns0:path d="M114,131 L119.5,132" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+</ns0:svg>

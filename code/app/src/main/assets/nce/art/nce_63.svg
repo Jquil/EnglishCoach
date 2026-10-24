@@ -1,0 +1,31 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  
+  <ns0:g fill="none" stroke="#555555" stroke-width="2" stroke-linecap="round">
+    <ns0:path d="M150 72 C147 67 153 62 150 56" />
+    <ns0:path d="M158 70 C155 65 161 60 158 54" />
+    <ns0:path d="M166 72 C163 67 169 62 166 56" />
+    
+    <ns0:path d="M110 76 C107 70 113 65 110 59 C107 53 112 48 110 43" />
+    <ns0:path d="M120 74 C117 68 123 63 120 57 C117 51 122 46 120 41" />
+    <ns0:path d="M130 76 C127 70 133 65 130 59 C127 53 132 48 130 43" />
+  </ns0:g>
+
+  
+  <ns0:ellipse cx="158" cy="103" rx="24" ry="5" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+  <ns0:path d="M145 81 C145 92 150 100 158 100 C166 100 171 92 171 81 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:path d="M171 85 C178 84 178 94 171 93" fill="none" stroke="#000000" stroke-width="2.5" />
+  <ns0:ellipse cx="158" cy="81" rx="13" ry="4" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:ellipse cx="158" cy="81.5" rx="9.5" ry="2.6" fill="none" stroke="#555555" stroke-width="1.5" />
+
+  
+  <ns0:ellipse cx="120" cy="112" rx="27" ry="5.5" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+  <ns0:ellipse cx="120" cy="111.5" rx="17" ry="3.2" fill="none" stroke="#555555" stroke-width="1.5" />
+  <ns0:path d="M103 86 C103 99 110 109 120 109 C130 109 137 99 137 86 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:path d="M103 91 C96 90 96 100 103 99" fill="none" stroke="#000000" stroke-width="2.5" />
+  <ns0:ellipse cx="120" cy="86" rx="17" ry="4.6" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:ellipse cx="120" cy="86.6" rx="13" ry="3" fill="none" stroke="#555555" stroke-width="1.5" />
+
+  
+  <ns0:path d="M88 122 L148 122" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+  <ns0:path d="M152 122 L188 122" fill="none" stroke="#555555" stroke-width="2" stroke-linecap="round" />
+</ns0:svg>

@@ -1,0 +1,13 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect width="200" height="200" fill="#FFFFFF" />
+  <ns0:g fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round">
+    <ns0:ellipse cx="130" cy="68" rx="42" ry="48" transform="rotate(-12 130 68)" stroke-dasharray="30 12 40 14" />
+    <ns0:ellipse cx="130" cy="68" rx="35" ry="41" transform="rotate(-12 130 68)" />
+    <ns0:ellipse cx="130" cy="68" rx="28" ry="34" transform="rotate(-12 130 68)" stroke-dasharray="55 10" />
+    <ns0:ellipse cx="130" cy="68" rx="21" ry="27" transform="rotate(-12 130 68)" />
+    <ns0:ellipse cx="130" cy="68" rx="14" ry="19" transform="rotate(-12 130 68)" stroke-dasharray="40 8" />
+    <ns0:ellipse cx="130" cy="68" rx="7" ry="10" transform="rotate(-12 130 68)" />
+  </ns0:g>
+  <ns0:circle cx="130" cy="68" r="2.2" fill="#000000" />
+  <ns0:path d="M116 111 C116 117 112 120 112 125 A4 4 0 0 0 120 125 C120 120 116 117 116 111 Z" fill="#000000" />
+</ns0:svg>

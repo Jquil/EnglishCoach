@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 252" fill="none">
+  <!-- NCE Lesson 2: Sorry, madam. / umbrella in the rain — white geometric silhouettes -->
+  <g fill="#FFFFFF">
+    <!-- Raindrops -->
+    <g opacity="0.85">
+      <path d="M92 44c5 8 8 13 8 17a8 8 0 1 1-16 0c0-4 3-9 8-17z"/>
+      <path d="M148 28c5 8 8 13 8 17a8 8 0 1 1-16 0c0-4 3-9 8-17z"/>
+      <path d="M64 96c4 6 6 10 6 13a6 6 0 1 1-12 0c0-3 2-7 6-13z"/>
+      <path d="M176 92c4 6 6 10 6 13a6 6 0 1 1-12 0c0-3 2-7 6-13z"/>
+      <path d="M330 48c5 8 8 13 8 17a8 8 0 1 1-16 0c0-4 3-9 8-17z"/>
+      <path d="M310 110c4 6 6 10 6 13a6 6 0 1 1-12 0c0-3 2-7 6-13z"/>
+    </g>
+
+    <!-- Umbrella canopy: half circle with scallops -->
+    <path d="M200 34c-58 0-104 40-104 88 0 0 16-14 26-14s26 14 26 14 16-14 26-14 26 14 26 14 16-14 26-14 26 14 26 14 16-14 26-14 26 14 26 14c0-48-46-88-104-88z"/>
+    <!-- Umbrella pole -->
+    <rect x="197" y="122" width="6" height="96" rx="3"/>
+    <!-- Hook handle -->
+    <path d="M203 218c0 10-8 18-18 18-9 0-16-6-18-14-1-6 8-8 10-3 1 4 4 7 8 7 5 0 8-4 8-8z"/>
+    <!-- Ferrule tip -->
+    <rect x="193" y="26" width="14" height="10" rx="5"/>
+  </g>
+</svg>

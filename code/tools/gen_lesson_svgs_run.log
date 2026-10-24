@@ -1,0 +1,278 @@
+共 276 课，输出目录 C:\Users\admin\WorkBuddy\2026-10-22-11-21-01\EnglishCoach\app\src\main\assets\nce\art，并发 4
+[nce_1] skip（已存在，断点续跑）
+[nce_3] skip（已存在，断点续跑）
+[nce_2] skip（已存在，断点续跑）
+[nce_4] ok（第 1 次尝试）
+[nce_7] ok（第 1 次尝试）
+[nce_5] ok（第 1 次尝试）
+[nce_6] ok（第 1 次尝试）
+[nce_8] ok（第 1 次尝试）
+[nce_12] ok（第 1 次尝试）
+[nce_11] ok（第 2 次尝试）
+[nce_9] ok（第 2 次尝试）
+[nce_13] ok（第 1 次尝试）
+[nce_14] ok（第 1 次尝试）
+[nce_10] fail: TimeoutError: The read operation timed out
+[nce_15] ok（第 2 次尝试）
+[nce_16] ok（第 2 次尝试）
+[nce_19] ok（第 1 次尝试）
+[nce_17] ok（第 3 次尝试）
+[nce_20] ok（第 2 次尝试）
+[nce_21] ok（第 2 次尝试）
+[nce_22] ok（第 1 次尝试）
+[nce_24] ok（第 1 次尝试）
+[nce_18] fail: TimeoutError: The read operation timed out
+[nce_23] ok（第 1 次尝试）
+[nce_27] ok（第 1 次尝试）
+[nce_26] ok（第 2 次尝试）
+[nce_30] ok（第 1 次尝试）
+[nce_25] ok（第 3 次尝试）
+[nce_32] ok（第 1 次尝试）
+[nce_33] ok（第 1 次尝试）
+[nce_28] fail: TimeoutError: The read operation timed out
+[nce_34] ok（第 1 次尝试）
+[nce_35] ok（第 1 次尝试）
+[nce_29] fail: TimeoutError: The read operation timed out
+[nce_36] ok（第 1 次尝试）
+[nce_31] ok（第 3 次尝试）
+[nce_37] ok（第 1 次尝试）
+[nce_38] ok（第 1 次尝试）
+[nce_42] ok（第 1 次尝试）
+[nce_40] ok（第 1 次尝试）
+[nce_39] ok（第 2 次尝试）
+[nce_44] ok（第 2 次尝试）
+[nce_41] ok（第 3 次尝试）
+[nce_45] ok（第 2 次尝试）
+[nce_43] ok（第 3 次尝试）
+[nce_46] ok（第 1 次尝试）
+[nce_49] ok（第 1 次尝试）
+[nce_48] ok（第 1 次尝试）
+[nce_47] ok（第 2 次尝试）
+[nce_52] ok（第 2 次尝试）
+[nce_53] ok（第 2 次尝试）
+[nce_50] ok（第 3 次尝试）
+[nce_54] ok（第 1 次尝试）
+[nce_55] ok（第 1 次尝试）
+[nce_56] ok（第 1 次尝试）
+[nce_51] ok（第 3 次尝试）
+[nce_57] ok（第 1 次尝试）
+[nce_60] ok（第 2 次尝试）
+[nce_59] ok（第 2 次尝试）
+[nce_58] ok（第 3 次尝试）
+[nce_61] ok（第 3 次尝试）
+[nce_62] ok（第 2 次尝试）
+[nce_65] ok（第 1 次尝试）
+[nce_66] ok（第 1 次尝试）
+[nce_68] ok（第 1 次尝试）
+[nce_67] ok（第 2 次尝试）
+[nce_63] fail: TimeoutError: The read operation timed out
+[nce_64] fail: TimeoutError: The read operation timed out
+[nce_71] ok（第 1 次尝试）
+[nce_69] ok（第 2 次尝试）
+[nce_72] ok（第 1 次尝试）
+[nce_75] ok（第 1 次尝试）
+[nce_74] ok（第 2 次尝试）
+[nce_73] ok（第 2 次尝试）
+[nce_70] fail: TimeoutError: The read operation timed out
+[nce_76] ok（第 2 次尝试）
+[nce_78] ok（第 2 次尝试）
+[nce_80] ok（第 1 次尝试）
+[nce_77] ok（第 2 次尝试）
+[nce_83] ok（第 1 次尝试）
+[nce_84] ok（第 1 次尝试）
+[nce_79] ok（第 3 次尝试）
+[nce_81] ok（第 2 次尝试）
+[nce_85] ok（第 1 次尝试）
+[nce_87] ok（第 1 次尝试）
+[nce_89] ok（第 1 次尝试）
+[nce_82] fail: HTTP 500（key 无效/限流/服务端错误）
+[nce_88] ok（第 2 次尝试）
+[nce_86] ok（第 3 次尝试）
+[nce_91] ok（第 1 次尝试）
+[nce_93] ok（第 1 次尝试）
+[nce_90] ok（第 2 次尝试）
+[nce_95] ok（第 1 次尝试）
+[nce_92] ok（第 2 次尝试）
+[nce_96] ok（第 1 次尝试）
+[nce_97] ok（第 1 次尝试）
+[nce_100] ok（第 1 次尝试）
+[nce_98] ok（第 1 次尝试）
+[nce_102] ok（第 1 次尝试）
+[nce_103] ok（第 1 次尝试）
+[nce_94] fail: TimeoutError: The read operation timed out
+[nce_104] ok（第 1 次尝试）
+[nce_105] ok（第 1 次尝试）
+[nce_106] ok（第 1 次尝试）
+[nce_107] ok（第 1 次尝试）
+[nce_99] fail: TimeoutError: The read operation timed out
+[nce_101] fail: TimeoutError: The read operation timed out
+[nce_109] ok（第 1 次尝试）
+[nce_108] ok（第 2 次尝试）
+[nce_112] ok（第 1 次尝试）
+[nce_113] ok（第 1 次尝试）
+[nce_111] ok（第 3 次尝试）
+[nce_110] fail: TimeoutError: The read operation timed out
+[nce_117] ok（第 1 次尝试）
+[nce_116] ok（第 1 次尝试）
+[nce_114] fail: TimeoutError: The read operation timed out
+[nce_115] ok（第 3 次尝试）
+[nce_121] ok（第 1 次尝试）
+[nce_122] ok（第 1 次尝试）
+[nce_123] ok（第 1 次尝试）
+[nce_119] fail: HTTP 500（key 无效/限流/服务端错误）
+[nce_120] fail: HTTP 500（key 无效/限流/服务端错误）
+[nce_118] ok（第 3 次尝试）
+[nce_127] ok（第 1 次尝试）
+[nce_124] ok（第 2 次尝试）
+[nce_125] ok（第 2 次尝试）
+[nce_129] ok（第 1 次尝试）
+[nce_130] ok（第 1 次尝试）
+[nce_126] ok（第 3 次尝试）
+[nce_132] ok（第 1 次尝试）
+[nce_131] ok（第 1 次尝试）
+[nce_134] ok（第 1 次尝试）
+[nce_135] ok（第 1 次尝试）
+[nce_128] ok（第 3 次尝试）
+[nce_133] ok（第 2 次尝试）
+[nce_139] ok（第 1 次尝试）
+[nce_138] ok（第 2 次尝试）
+[nce_137] ok（第 3 次尝试）
+[nce_141] ok（第 1 次尝试）
+[nce_136] fail: TimeoutError: The read operation timed out
+[nce_140] ok（第 2 次尝试）
+[nce_145] ok（第 1 次尝试）
+[nce_142] ok（第 2 次尝试）
+[nce_143] ok（第 2 次尝试）
+[nce_146] ok（第 1 次尝试）
+[nce_147] ok（第 1 次尝试）
+[nce_144] ok（第 2 次尝试）
+[nce_149] ok（第 1 次尝试）
+[nce_151] ok（第 1 次尝试）
+[nce_150] ok（第 3 次尝试）
+[nce_148] fail: TimeoutError: The read operation timed out
+[nce_155] ok（第 1 次尝试）
+[nce_156] ok（第 1 次尝试）
+[nce_152] fail: TimeoutError: The read operation timed out
+[nce_153] fail: TimeoutError: The read operation timed out
+[nce_154] ok（第 2 次尝试）
+[nce_158] ok（第 1 次尝试）
+[nce_157] ok（第 1 次尝试）
+[nce_162] ok（第 1 次尝试）
+[nce_159] ok（第 2 次尝试）
+[nce_160] ok（第 2 次尝试）
+[nce_161] ok（第 2 次尝试）
+[nce_164] ok（第 1 次尝试）
+[nce_163] ok（第 2 次尝试）
+[nce_165] ok（第 2 次尝试）
+[nce_166] ok（第 1 次尝试）
+[nce_168] ok（第 1 次尝试）
+[nce_170] ok（第 1 次尝试）
+[nce_171] ok（第 1 次尝试）
+[nce_173] ok（第 1 次尝试）
+[nce_167] fail: TimeoutError: The read operation timed out
+[nce_172] ok（第 2 次尝试）
+[nce_174] ok（第 2 次尝试）
+[nce_169] fail: TimeoutError: The read operation timed out
+[nce_175] ok（第 1 次尝试）
+[nce_179] ok（第 1 次尝试）
+[nce_176] ok（第 2 次尝试）
+[nce_180] ok（第 1 次尝试）
+[nce_181] ok（第 1 次尝试）
+[nce_182] ok（第 1 次尝试）
+[nce_177] fail: TimeoutError: The read operation timed out
+[nce_178] fail: TimeoutError: The read operation timed out
+[nce_183] ok（第 2 次尝试）
+[nce_186] ok（第 1 次尝试）
+[nce_185] ok（第 1 次尝试）
+[nce_189] ok（第 1 次尝试）
+[nce_190] ok（第 1 次尝试）
+[nce_184] fail: TimeoutError: The read operation timed out
+[nce_187] ok（第 2 次尝试）
+[nce_191] ok（第 1 次尝试）
+[nce_192] ok（第 1 次尝试）
+[nce_194] ok（第 1 次尝试）
+[nce_195] ok（第 1 次尝试）
+[nce_197] ok（第 1 次尝试）
+[nce_188] fail: TimeoutError: The read operation timed out
+[nce_198] ok（第 1 次尝试）
+[nce_196] ok（第 2 次尝试）
+[nce_201] ok（第 1 次尝试）
+[nce_200] ok（第 1 次尝试）
+[nce_193] fail: TimeoutError: The read operation timed out
+[nce_202] ok（第 1 次尝试）
+[nce_204] ok（第 1 次尝试）
+[nce_199] ok（第 2 次尝试）
+[nce_207] ok（第 1 次尝试）
+[nce_205] ok（第 1 次尝试）
+[nce_203] ok（第 2 次尝试）
+[nce_210] ok（第 1 次尝试）
+[nce_208] ok（第 2 次尝试）
+[nce_206] ok（第 2 次尝试）
+[nce_211] ok（第 1 次尝试）
+[nce_212] ok（第 1 次尝试）
+[nce_213] ok（第 1 次尝试）
+[nce_215] ok（第 1 次尝试）
+[nce_209] fail: TimeoutError: The read operation timed out
+[nce_217] ok（第 1 次尝试）
+[nce_219] ok（第 1 次尝试）
+[nce_214] ok（第 3 次尝试）
+[nce_218] ok（第 2 次尝试）
+[nce_221] ok（第 1 次尝试）
+[nce_216] ok（第 3 次尝试）
+[nce_223] ok（第 1 次尝试）
+[nce_220] ok（第 2 次尝试）
+[nce_226] ok（第 1 次尝试）
+[nce_222] ok（第 2 次尝试）
+[nce_228] ok（第 1 次尝试）
+[nce_224] fail: TimeoutError: The read operation timed out
+[nce_225] fail: TimeoutError: The read operation timed out
+[nce_230] ok（第 1 次尝试）
+[nce_227] fail: TimeoutError: The read operation timed out
+[nce_232] ok（第 1 次尝试）
+[nce_229] ok（第 3 次尝试）
+[nce_234] ok（第 1 次尝试）
+[nce_233] ok（第 1 次尝试）
+[nce_237] ok（第 1 次尝试）
+[nce_238] skip（已存在，断点续跑）
+[nce_236] ok（第 2 次尝试）
+[nce_240] skip（已存在，断点续跑）
+[nce_231] fail: TimeoutError: The read operation timed out
+[nce_239] ok（第 2 次尝试）
+[nce_235] ok（第 3 次尝试）
+[nce_244] skip（已存在，断点续跑）
+[nce_245] skip（已存在，断点续跑）
+[nce_243] ok（第 1 次尝试）
+[nce_241] ok（第 2 次尝试）
+[nce_242] ok（第 2 次尝试）
+[nce_246] ok（第 2 次尝试）
+[nce_250] ok（第 1 次尝试）
+[nce_247] ok（第 3 次尝试）
+[nce_248] fail: TimeoutError: The read operation timed out
+[nce_249] fail: TimeoutError: The read operation timed out
+[nce_251] ok（第 2 次尝试）
+[nce_252] ok（第 2 次尝试）
+[nce_256] ok（第 1 次尝试）
+[nce_254] ok（第 3 次尝试）
+[nce_253] fail: TimeoutError: The read operation timed out
+[nce_257] ok（第 2 次尝试）
+[nce_259] ok（第 1 次尝试）
+[nce_261] skip（已存在，断点续跑）
+[nce_258] ok（第 1 次尝试）
+[nce_262] ok（第 1 次尝试）
+[nce_255] fail: TimeoutError: The read operation timed out
+[nce_264] ok（第 1 次尝试）
+[nce_265] ok（第 1 次尝试）
+[nce_266] ok（第 2 次尝试）
+[nce_268] ok（第 1 次尝试）
+[nce_260] fail: TimeoutError: The read operation timed out
+[nce_267] ok（第 2 次尝试）
+[nce_263] fail: TimeoutError: The read operation timed out
+[nce_271] ok（第 2 次尝试）
+[nce_269] fail: TimeoutError: The read operation timed out
+[nce_274] skip（已存在，断点续跑）
+[nce_273] ok（第 1 次尝试）
+[nce_270] ok（第 3 次尝试）
+[nce_272] ok（第 3 次尝试）
+[nce_276] ok（第 1 次尝试）
+[nce_275] fail: TimeoutError: The read operation timed out
+完成：成功/跳过 237，失败 39

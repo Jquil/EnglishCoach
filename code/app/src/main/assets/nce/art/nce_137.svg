@@ -1,0 +1,50 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  
+  <ns0:line x1="92" y1="147" x2="190" y2="147" stroke="#555555" stroke-width="2" stroke-linecap="round" />
+
+  
+  <ns0:path d="M96 82 Q86 88 89 100" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+
+  
+  <ns0:g stroke="#000000" stroke-width="5" stroke-linecap="round">
+    <ns0:line x1="104" y1="110" x2="104" y2="144" />
+    <ns0:line x1="116" y1="115" x2="116" y2="144" />
+    <ns0:line x1="146" y1="112" x2="146" y2="144" />
+    <ns0:line x1="157" y1="108" x2="157" y2="144" />
+  </ns0:g>
+
+  
+  <ns0:circle cx="130" cy="88" r="36" fill="#FFFFFF" stroke="#000000" stroke-width="3" />
+
+  
+  <ns0:circle cx="165" cy="70" r="22" fill="#FFFFFF" stroke="#000000" stroke-width="3" />
+
+  
+  <ns0:path d="M154 57 Q145 71 154 85" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+
+  
+  <ns0:path d="M168 90 C178 100 178 114 166 119" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" />
+
+  
+  <ns0:path d="M172 91 Q180 95 182 103" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+
+  
+  <ns0:circle cx="172" cy="65" r="2.2" fill="#000000" />
+
+  
+  <ns0:g stroke="#000000" stroke-width="2.5" stroke-linecap="round" fill="none">
+    <ns0:line x1="124" y1="54" x2="133" y2="52" />
+    <ns0:line x1="133" y1="52" x2="133" y2="58" />
+    <ns0:line x1="124" y1="53" x2="126" y2="44" />
+    <ns0:line x1="126" y1="47" x2="134" y2="50" />
+  </ns0:g>
+  <ns0:circle cx="127" cy="38" r="4.5" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+  <ns0:path d="M122.5 38 A4.5 4.5 0 0 1 131.5 38 Z" fill="#000000" />
+  <ns0:path d="M131.5 38 L135 36.5" stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
+
+  
+  <ns0:g stroke="#555555" stroke-width="1.5" stroke-linecap="round">
+    <ns0:line x1="186" y1="30" x2="186" y2="38" />
+    <ns0:line x1="182" y1="34" x2="190" y2="34" />
+  </ns0:g>
+</ns0:svg>

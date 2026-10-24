@@ -1,0 +1,13 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect width="200" height="200" fill="#FFFFFF" />
+  <ns0:g stroke="#555555" stroke-width="3" stroke-linecap="round">
+    <ns0:line x1="84" y1="42" x2="74" y2="32" />
+    <ns0:line x1="98" y1="32" x2="93" y2="21" />
+  </ns0:g>
+  <ns0:circle cx="185" cy="176" r="4" fill="#555555" />
+  <ns0:line x1="155" y1="105" x2="181" y2="131" stroke="#000000" stroke-width="11" stroke-linecap="round" />
+  <ns0:circle cx="125" cy="75" r="40" fill="#FFFFFF" stroke="#000000" stroke-width="5" />
+  <ns0:path d="M95 68 Q105 55 118 60 Q125 57 132 60 Q145 55 155 68 Q158 72 152 75 Q143 82 133 76 Q128 73 122 76 Q112 82 103 76 Q97 74 95 68 Z" fill="#000000" />
+  <ns0:ellipse cx="110" cy="69" rx="7" ry="4" fill="#FFFFFF" />
+  <ns0:ellipse cx="140" cy="69" rx="7" ry="4" fill="#FFFFFF" />
+</ns0:svg>

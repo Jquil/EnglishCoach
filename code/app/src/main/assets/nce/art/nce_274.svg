@@ -1,0 +1,24 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:g stroke="#000000" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    
+    <ns0:path d="M118 68 C96 94 72 114 42 152" stroke-width="1.75" />
+    
+    <ns0:path d="M76 30 Q72 30 73 25 Q74 21 78 21 Q79 16 85 16 Q91 16 92 21 Q97 21 96 26 Q95 30 90 30 Z" fill="#FFFFFF" stroke-width="2" />
+    
+    <ns0:path d="M28 54 Q22 54 23 47 Q24 41 31 41 Q32 33 42 33 Q51 33 53 40 Q60 39 61 46 Q62 54 54 54 Z" fill="#FFFFFF" stroke-width="2" />
+    
+    <ns0:path d="M98 62 L162 62 L130 22 Z" fill="#FFFFFF" stroke="none" />
+    <ns0:path d="M98 62 L162 62 L130 108 Z" fill="#CCCCCC" stroke="none" />
+    
+    <ns0:path d="M130 22 L162 62 L130 108 L98 62 Z" stroke-width="3" />
+    
+    <ns0:path d="M130 22 L130 108 M98 62 L162 62" stroke-width="2" />
+    
+    <ns0:path d="M130 108 C142 120 118 132 130 144 C142 156 118 168 130 180" stroke-width="2" />
+    
+    <ns0:path d="M133 117 L127 113 L127 121 Z M133 117 L139 113 L139 121 Z" fill="#FFFFFF" stroke-width="1.75" />
+    <ns0:path d="M127 133 L121 129 L121 137 Z M127 133 L133 129 L133 137 Z" fill="#FFFFFF" stroke-width="1.75" />
+    <ns0:path d="M133 153 L127 149 L127 157 Z M133 153 L139 149 L139 157 Z" fill="#FFFFFF" stroke-width="1.75" />
+    <ns0:path d="M127 171 L121 167 L121 175 Z M127 171 L133 167 L133 175 Z" fill="#FFFFFF" stroke-width="1.75" />
+  </ns0:g>
+</ns0:svg>

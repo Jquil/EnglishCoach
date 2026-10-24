@@ -1,0 +1,26 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:g stroke="#000000" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    
+    <ns0:path d="M88 140 H172" stroke-width="3" />
+    
+    <ns0:path d="M112 48 L119 140 L157 140 L164 48 Z" fill="#FFFFFF" stroke-width="3" />
+    
+    <ns0:path d="M115 78 L161 78" stroke-width="3" />
+    
+    <ns0:circle cx="106" cy="92" r="8" fill="#FFFFFF" stroke-width="2.5" />
+    
+    <ns0:path d="M101 91 q2 2.5 4 0" stroke-width="2" />
+    <ns0:path d="M107 91 q2 2.5 4 0" stroke-width="2" />
+    
+    <ns0:path d="M104 100 C98 108 96 118 100 131" stroke-width="2.5" />
+    
+    <ns0:path d="M104 104 C107 112 111 117 116 120" stroke-width="2.5" />
+    
+    <ns0:path d="M100 131 L116 124 L121 140" stroke-width="2.5" />
+    <ns0:path d="M100 131 L111 128 L113 140" stroke-width="2.5" />
+  </ns0:g>
+  
+  <ns0:path d="M138 8 C134 16 131.2 20.8 131.2 25.5 A6.8 6.8 0 0 0 144.8 25.5 C144.8 20.8 142 16 138 8 Z" fill="#555555" />
+  
+  <ns0:path d="M94 70 C92 74.5 90.8 76.8 90.8 79.2 A3.2 3.2 0 0 0 97.2 79.2 C97.2 76.8 96 74.5 94 70 Z" fill="#555555" />
+</ns0:svg>

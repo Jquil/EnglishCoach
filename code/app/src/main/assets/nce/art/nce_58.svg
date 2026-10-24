@@ -1,0 +1,25 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect width="200" height="200" fill="#FFFFFF" />
+  
+  <ns0:line x1="102" y1="178" x2="196" y2="178" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  
+  <ns0:rect x="112" y="22" width="76" height="156" rx="6" fill="#FFFFFF" stroke="#000000" stroke-width="4" />
+  <ns0:rect x="124" y="34" width="52" height="60" rx="3" fill="none" stroke="#000000" stroke-width="3" />
+  <ns0:rect x="124" y="106" width="52" height="60" rx="3" fill="none" stroke="#000000" stroke-width="3" />
+  
+  <ns0:rect x="114" y="52" width="5" height="14" fill="#000000" />
+  <ns0:rect x="114" y="122" width="5" height="14" fill="#000000" />
+  
+  <ns0:circle cx="170" cy="100" r="4" fill="#000000" />
+  
+  <ns0:circle cx="150" cy="50" r="3.5" fill="#000000" />
+  <ns0:circle cx="150" cy="67" r="13" fill="none" stroke="#000000" stroke-width="5" />
+  <ns0:line x1="142" y1="86" x2="158" y2="86" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  
+  <ns0:line x1="133" y1="47" x2="126" y2="40" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  <ns0:line x1="129" y1="56" x2="120" y2="52" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  
+  <ns0:path d="M 107 57 A 13 13 0 0 0 107 79" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" />
+  <ns0:path d="M 100 49 A 22 22 0 0 0 100 87" fill="none" stroke="#555555" stroke-width="3.5" stroke-linecap="round" />
+  <ns0:path d="M 93 41 A 31 31 0 0 0 93 95" fill="none" stroke="#555555" stroke-width="3" stroke-linecap="round" />
+</ns0:svg>

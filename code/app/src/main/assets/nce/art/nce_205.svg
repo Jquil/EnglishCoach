@@ -1,0 +1,37 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:g stroke-linecap="round" stroke-linejoin="round">
+    <ns0:circle cx="138" cy="72" r="64" fill="#EFEFEF" />
+    <ns0:line x1="24" y1="134" x2="196" y2="134" stroke="#000000" stroke-width="2.5" />
+    <ns0:line x1="48" y1="140" x2="190" y2="140" stroke="#555555" stroke-width="1.5" />
+
+    <ns0:circle cx="86" cy="38" r="12" fill="#FFFFFF" stroke="#555555" stroke-width="2" />
+    <ns0:circle cx="109" cy="42" r="10" fill="#FFFFFF" stroke="#555555" stroke-width="2" />
+    <ns0:circle cx="127" cy="50" r="8" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <ns0:circle cx="142" cy="60" r="6" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+
+    <ns0:line x1="44" y1="94" x2="64" y2="94" stroke="#555555" stroke-width="2.5" />
+    <ns0:line x1="36" y1="106" x2="58" y2="106" stroke="#555555" stroke-width="2.5" />
+    <ns0:line x1="46" y1="118" x2="66" y2="118" stroke="#555555" stroke-width="2.5" />
+
+    <ns0:rect x="100" y="94" width="58" height="22" rx="5" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <ns0:line x1="133" y1="94" x2="133" y2="116" stroke="#000000" stroke-width="1.5" />
+    <ns0:path d="M141 94 L144 78 L152 78 L155 94 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <ns0:path d="M110 94 A8 8 0 0 1 126 94 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <ns0:rect x="74" y="80" width="26" height="36" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <ns0:rect x="69" y="75" width="36" height="6" rx="2" fill="#000000" />
+    <ns0:rect x="80" y="88" width="12" height="11" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+    <ns0:circle cx="163" cy="105" r="4" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <ns0:path d="M158 116 L172 134 L158 134 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+
+    <ns0:circle cx="84" cy="124" r="9" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <ns0:circle cx="110" cy="124" r="9" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <ns0:circle cx="140" cy="124" r="9" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+    <ns0:circle cx="84" cy="124" r="3.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+    <ns0:circle cx="110" cy="124" r="3.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+    <ns0:circle cx="140" cy="124" r="3.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+    <ns0:circle cx="84" cy="124" r="1.5" fill="#000000" />
+    <ns0:circle cx="110" cy="124" r="1.5" fill="#000000" />
+    <ns0:circle cx="140" cy="124" r="1.5" fill="#000000" />
+    <ns0:line x1="84" y1="128" x2="140" y2="128" stroke="#555555" stroke-width="2" />
+  </ns0:g>
+</ns0:svg>

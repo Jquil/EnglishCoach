@@ -1,0 +1,22 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect width="200" height="200" fill="#FFFFFF" />
+
+  
+  <ns0:line x1="60" y1="158" x2="196" y2="158" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+
+  
+  <ns0:path d="M 78 158 L 146 40 L 154 52 L 192 158" fill="none" stroke="#000000" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+
+  
+  <ns0:path d="M 154 52 L 178 158" fill="none" stroke="#555555" stroke-width="1.5" stroke-linecap="round" />
+
+  
+  <ns0:path d="M 118 88 L 125 79 L 133 91 L 141 80 L 148 92 L 156 83 L 163 93 L 169 95" fill="none" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" />
+
+  
+  <ns0:path d="M 98 130 L 140 58" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 7" />
+
+  
+  <ns0:path d="M 52 38 Q 58 32 64 38 Q 70 32 76 38" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M 30 58 Q 35 53 40 58 Q 45 53 50 58" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+</ns0:svg>

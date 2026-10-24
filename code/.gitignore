@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+
+# IDE
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local config
+local.properties
+
+# Build artifacts
+*.apk
+*.aab
+*.zip
+
+# Kotlin
+.kotlin/

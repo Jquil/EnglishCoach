@@ -1,0 +1,17 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:line x1="34" y1="164" x2="110" y2="88" stroke="#555555" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.5 13" />
+  <ns0:circle cx="40" cy="42" r="11" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:circle cx="36" cy="39" r="2.5" fill="#000000" />
+  <ns0:circle cx="45" cy="46" r="1.8" fill="#000000" />
+  <ns0:path d="M 80 22 L 81.6 27.4 L 87 29 L 81.6 30.6 L 80 36 L 78.4 30.6 L 73 29 L 78.4 27.4 Z" fill="#000000" />
+  <ns0:path d="M 184 58 L 185.2 61.8 L 189 63 L 185.2 64.2 L 184 68 L 182.8 64.2 L 179 63 L 182.8 61.8 Z" fill="#000000" />
+  <ns0:circle cx="160" cy="14" r="2" fill="#000000" />
+  <ns0:circle cx="188" cy="104" r="2" fill="#555555" />
+  <ns0:g transform="translate(133 64) rotate(45)" stroke-linejoin="round" stroke-linecap="round">
+    <ns0:path d="M 0 -48 C 11 -34 14 -14 14 12 L -14 12 C -14 -14 -11 -34 0 -48 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+    <ns0:path d="M -14 0 L -24 22 L -14 16 Z" fill="#000000" stroke="#000000" stroke-width="2" />
+    <ns0:path d="M 14 0 L 24 22 L 14 16 Z" fill="#000000" stroke="#000000" stroke-width="2" />
+    <ns0:circle cx="0" cy="-14" r="8" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+    <ns0:path d="M -9 12 L -11 20 L 11 20 L 9 12" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  </ns0:g>
+</ns0:svg>

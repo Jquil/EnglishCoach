@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>快捷跟读卡 · 滑动切词动画规范（可交互原型 v1）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --blue:#3482FF;
+    --orange:#FF6900;
+    --label:#0E0E12;
+    --label2:rgba(0,0,0,.55);
+    --label3:rgba(0,0,0,.28);
+    --fill2:rgba(0,0,0,.05);
+  }
+  body {
+    background:#111114;
+    font-family:"MiSans","MiSans VF","HarmonyOS Sans SC","PingFang SC","Segoe UI","Microsoft YaHei",sans-serif;
+    color:#f2f2f7; padding:56px 32px 96px; -webkit-font-smoothing:antialiased;
+  }
+  h1 { font-size:28px; font-weight:700; text-align:center; letter-spacing:-.4px; color:#fff; }
+  .sub { text-align:center; color:rgba(235,235,245,.55); font-size:14px; margin:8px 0 40px; line-height:1.6; }
+
+  .lab { display:flex; gap:40px; justify-content:center; align-items:flex-start; flex-wrap:wrap; }
+
+  /* ============ 演示舞台 ============ */
+  .stage-wrap { display:flex; flex-direction:column; align-items:center; }
+  .stage-frame { width:340px; border-radius:36px; padding:18px 18px 22px;
+    background:#1c1c20; border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 24px 60px rgba(0,0,0,.5); }
+  .stage { position:relative; height:430px; border-radius:24px; overflow:hidden;
+    background:#F4F5F7; touch-action:none; cursor:grab; }
+  .stage:active { cursor:grabbing; }
+  .stage-hint { position:absolute; top:14px; left:0; right:0; text-align:center;
+    font-size:12px; color:rgba(0,0,0,.35); pointer-events:none; z-index:0; }
+  /* 底层卡堆（静止） */
+  .stackcard { position:absolute; left:50%; top:120px; width:252px; height:300px; margin-left:-126px;
+    border-radius:22px; background:#fff; box-shadow:0 6px 20px rgba(0,0,0,.08); }
+  .stackcard.s1 { transform:translateY(14px) scale(.94); opacity:.7; }
+  .stackcard.s2 { transform:translateY(26px) scale(.88); opacity:.4; }
+  /* 主卡（top）与新卡（middle） */
+  .card { position:absolute; left:50%; top:110px; width:252px; height:300px; margin-left:-126px;
+    border-radius:22px; background:linear-gradient(165deg,#EAF2FF 0%,#F8FAFF 70%);
+    box-shadow:0 12px 32px rgba(52,130,255,.16), 0 2px 8px rgba(0,0,0,.05);
+    padding:20px 22px; display:flex; flex-direction:column;
+    will-change:transform,opacity; }
+  .card.m2 { background:linear-gradient(165deg,#F1F5FC 0%,#FBFCFF 70%);
+    box-shadow:0 4px 14px rgba(52,130,255,.08); }
+  .c-tag { display:inline-block; font-size:11px; font-weight:600; color:var(--blue);
+    background:rgba(52,130,255,.12); border-radius:5px; padding:2.5px 8px; width:fit-content; }
+  .c-word { font-size:44px; font-weight:700; color:var(--label); letter-spacing:-1px;
+    margin-top:14px; line-height:1.05; }
+  .c-meta { font-size:14.5px; color:var(--label2); margin-top:7px; }
+  .c-ex { font-size:13px; color:var(--label2); margin-top:14px; line-height:1.55;
+    border-top:.5px solid rgba(52,130,255,.16); padding-top:13px; }
+  .c-ex b { color:var(--label); font-weight:500; }
+  .c-foot { margin-top:auto; display:flex; align-items:center; justify-content:space-between; }
+  .c-dir { font-size:12px; color:rgba(0,0,0,.3); }
+  .c-say { width:46px; height:46px; border-radius:23px; background:var(--blue);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 5px 14px rgba(52,130,255,.38); }
+  /* 提交方向浮标 */
+  .swipe-fx { position:absolute; top:96px; font-size:13px; font-weight:700; letter-spacing:2px;
+    opacity:0; pointer-events:none; z-index:5; transition:opacity .18s; }
+  .swipe-fx.l { left:26px; color:#E8790A; }
+  .swipe-fx.r { right:26px; color:var(--blue); }
+  .stage-note { margin-top:14px; font-size:12.5px; color:rgba(235,235,245,.5); text-align:center; line-height:1.7; }
+  .stage-note b { color:rgba(235,235,245,.85); font-weight:600; }
+
+  /* ============ 参数面板 ============ */
+  .panel { width:360px; background:#1c1c20; border:1px solid rgba(255,255,255,.07);
+    border-radius:20px; padding:22px; }
+  .panel h2 { font-size:15px; font-weight:600; color:rgba(255,255,255,.9); margin-bottom:4px; }
+  .panel .pd { font-size:12px; color:rgba(235,235,245,.45); margin-bottom:16px; }
+  .presets { display:flex; gap:8px; margin-bottom:18px; }
+  .preset { flex:1; height:36px; border-radius:18px; border:1px solid rgba(255,255,255,.14);
+    background:transparent; color:rgba(255,255,255,.75); font-size:12.5px; font-weight:600;
+    cursor:pointer; font-family:inherit; transition:.15s; }
+  .preset:hover { border-color:var(--blue); color:#fff; }
+  .preset.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+  .ctl { margin-bottom:14px; }
+  .ctl .cl { display:flex; justify-content:space-between; font-size:12.5px;
+    color:rgba(235,235,245,.75); margin-bottom:6px; }
+  .ctl .cl code { font-family:"SF Mono",Consolas,monospace; font-size:12px; color:#7fbfff; }
+  input[type=range] { width:100%; height:4px; -webkit-appearance:none; appearance:none;
+    border-radius:2px; background:rgba(255,255,255,.14); outline:none; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; appearance:none;
+    width:16px; height:16px; border-radius:50%; background:#fff; cursor:pointer;
+    box-shadow:0 1px 4px rgba(0,0,0,.4); }
+  .panel .live { margin-top:14px; padding-top:12px; border-top:.5px solid rgba(255,255,255,.08);
+    font-size:11.5px; color:rgba(235,235,245,.4); font-family:"SF Mono",Consolas,monospace; line-height:1.7; }
+  .panel .live b { color:#7fbfff; font-weight:500; }
+
+  /* ============ 参数规范表 ============ */
+  .spec { max-width:1120px; margin:72px auto 0; }
+  .spec h2 { font-size:22px; font-weight:700; color:#fff; margin-bottom:6px; letter-spacing:-.3px; }
+  .spec .lead { font-size:13.5px; color:rgba(235,235,245,.5); margin-bottom:22px; line-height:1.7; }
+  .spec-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(480px,1fr)); gap:18px; }
+  .spec-card { background:#1c1c20; border:1px solid rgba(255,255,255,.07); border-radius:16px; padding:20px; }
+  .spec-card h3 { font-size:14px; font-weight:600; color:rgba(255,255,255,.9); margin-bottom:14px; }
+  table.spec-t { width:100%; border-collapse:collapse; font-size:12.5px; }
+  table.spec-t td { padding:7px 4px; border-bottom:.5px solid rgba(255,255,255,.08); color:rgba(235,235,245,.8); vertical-align:top; }
+  table.spec-t td:first-child { color:rgba(235,235,245,.55); white-space:nowrap; padding-right:12px; }
+  table.spec-t tr:last-child td { border-bottom:none; }
+  code.k { font-family:"SF Mono",Consolas,monospace; font-size:11.5px; color:#7fbfff; }
+  .hl-red { color:#FF8A8A; font-weight:600; }
+</style>
+</head>
+<body>
+
+<h1>快捷跟读卡 · 滑动切词动画规范（可交互原型）</h1>
+<div class="sub">
+  在卡片上按住左右拖拽体验：拖拽跟手 → 过阈值提交（旧卡滑出 / 新卡归位）→ 不足弹回。<br>
+  核心方案：<b style="color:#7fbfff">全程 spring 物理 + 初速度继承</b>——提交瞬间旧卡以拖拽末速度继续飞出，新卡归位同步启动，无两段 tween 拼接。
+</div>
+
+<div class="lab">
+
+  <!-- ============ 演示舞台 ============ -->
+  <div class="stage-wrap">
+    <div class="stage-frame">
+      <div class="stage" id="stage">
+        <div class="stage-hint">← 左右拖拽单词卡 →</div>
+        <div class="stackcard s2"></div>
+        <div class="stackcard s1"></div>
+        <div class="card m2" id="cardM2"></div>
+        <div class="card m1" id="cardM1"></div>
+        <span class="swipe-fx l" id="fxL">换一个</span>
+        <span class="swipe-fx r" id="fxR">换一个</span>
+      </div>
+    </div>
+    <div class="stage-note">
+      <b>操作</b>：慢拖过半可提交 · 轻甩（快扫）直接提交 · 不够弹回 · 提交后可立刻连滑<br>
+      <b>右侧滑块</b>实时生效，调到手感满意后按表抄参数
+    </div>
+  </div>
+
+  <!-- ============ 参数面板 ============ -->
+  <div class="panel">
+    <h2>动效参数</h2>
+    <div class="pd">改任一滑块立即生效 · 拖卡感受差异</div>
+    <div class="presets">
+      <button class="preset on" data-p="apple">Apple 克制</button>
+      <button class="preset" data-p="sticky">黏滞跟手</button>
+      <button class="preset" data-p="snappy">轻快利落</button>
+    </div>
+
+    <div class="ctl"><div class="cl"><span>拖拽跟随比例 follow</span><code id="v-follow">1.00</code></div>
+      <input type="range" id="follow" min="0.85" max="1.15" step="0.01" value="1.0"></div>
+    <div class="ctl"><div class="cl"><span>提交阈值（×卡宽）thresh</span><code id="v-thresh">0.25</code></div>
+      <input type="range" id="thresh" min="0.15" max="0.5" step="0.01" value="0.25"></div>
+    <div class="ctl"><div class="cl"><span>甩动速度阈值 vx（px/s）</span><code id="v-vthresh">1500</code></div>
+      <input type="range" id="vthresh" min="800" max="2500" step="50" value="1500"></div>
+    <div class="ctl"><div class="cl"><span>旋转系数 rotK（deg/px）</span><code id="v-rot">0.05</code></div>
+      <input type="range" id="rot" min="0" max="0.12" step="0.005" value="0.05"></div>
+    <div class="ctl"><div class="cl"><span>新卡预备 scale prep</span><code id="v-prep">0.93</code></div>
+      <input type="range" id="prep" min="0.88" max="0.98" step="0.005" value="0.93"></div>
+    <div class="ctl"><div class="cl"><span>滑出刚度 kOut</span><code id="v-kout">320</code></div>
+      <input type="range" id="kout" min="150" max="500" step="10" value="320"></div>
+    <div class="ctl"><div class="cl"><span>归位刚度 kHome</span><code id="v-khome">380</code></div>
+      <input type="range" id="khome" min="200" max="600" step="10" value="380"></div>
+    <div class="ctl"><div class="cl"><span>阻尼比 zeta</span><code id="v-zeta">0.88</code></div>
+      <input type="range" id="zeta" min="0.6" max="1.1" step="0.02" value="0.88"></div>
+
+    <div class="live" id="live">拖动卡片观察这里…</div>
+  </div>
+
+</div>
+
+<!-- ==================== 参数规范 ==================== -->
+<div class="spec">
+  <h2>滑动切词 · 参数规范表（工程师照表实现）</h2>
+  <div class="lead">
+    坐标系：卡水平位移 <code class="k">x</code>（px，右为正）、旋转 <code class="k">rot</code>（deg）、新卡缩放 <code class="k">s2</code>。<br>
+    <span class="hl-red">核心原则：拖拽、滑出、归位共用一套 spring 积分器，提交时把拖拽末速度 <code class="k">vx</code> 作为 spring 初速度——不允许"松手后重新 tween"，这是手感连贯的唯一要点。</span>
+  </div>
+  <div class="spec-grid">
+
+    <div class="spec-card">
+      <h3>A. 拖拽阶段（pointer down → move）</h3>
+      <table class="spec-t">
+        <tr><td>跟随</td><td><code class="k">x = dx × follow</code>，follow 默认 1.0（1:1 跟手）；单指水平分量，竖直分量忽略</td></tr>
+        <tr><td>旋转</td><td><code class="k">rot = clamp(dx × rotK, ±10°)</code>，rotK 默认 0.05 deg/px——卡片随拖拽轻微倾斜，方向感来源</td></tr>
+        <tr><td>新卡预备</td><td><code class="k">s2 = lerp(prep, prep+0.04, min(|x|/xThresh, 1))</code>，y2 = lerp(8, 3, 同上)——后层卡随拖拽进度缓缓"迎上来"，不跳</td></tr>
+        <tr><td>位移上限</td><td>|x| &gt; 0.5×stage 宽后按 0.85 次幂阻尼衰减，防拖出无边</td></tr>
+        <tr><td>提交判定</td><td>松手时 <code class="k">|x| ≥ xThresh</code>（默认 0.25×卡宽 ≈ 63px）<b>或</b> <code class="k">|vx| ≥ 1500px/s</code>（快甩）——vx 由最近 2~3 帧 move 采样计算</td></tr>
+        <tr><td>方向浮标</td><td>|x| &gt; 0.3×阈值时显示「换一个」淡入（透明度随进度），提交瞬间到达 1——给方向确认感</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>B. 提交阶段（旧卡滑出 ∥ 新卡归位，同一时刻启动）</h3>
+      <table class="spec-t">
+        <tr><td>旧卡滑出</td><td>spring：初值 x、初速 <code class="k">vx</code>（继承拖拽），目标 <code class="k">sign(x+vx) × (stage半宽 + 卡宽)</code>；刚度 kOut=320、zeta=1.0（临界阻尼，不带回调弹跳）；rot 追加到 sign×12°；透明度 1→0 在行程后 45% 线性淡出</td></tr>
+        <tr><td>快甩加权</td><td>若由速度判定触发（|vx|≥阈值而位移不足），滑出目标不变，但 spring 初速已是高 vx——自然飞得更快，<b>无需额外时长分支</b></td></tr>
+        <tr><td>新卡归位</td><td>spring：scale prep+0.04→1、y→0，刚度 kHome=380、zeta=0.88（欠阻尼 1 次轻收，无可见跳动）；与旧卡滑出<b>同一帧启动</b></td></tr>
+        <tr><td>出牌观感</td><td>旧卡 opacity 到 0 后立即从层上移除并回填到底层堆（换词、重置 scale .88）；不等归位完成</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>C. 弹回阶段（未过阈值）</h3>
+      <table class="spec-t">
+        <tr><td>双卡回位</td><td>同一帧启动：当前卡 spring 回 x=0、rot=0（kHome, zeta）；新卡 spring 回 s2=prep、y=8</td></tr>
+        <tr><td>手感</td><td>初速同样继承 vx——轻轻一拨卡片"滑"回来而不是"吸"回来；zeta &lt; 0.9 时有约 1 次微过冲，即 iOS 相册的"果冻感"，默认 0.88</td></tr>
+        <tr><td>边界</td><td>弹回期间再按住卡片 = 无缝接管为拖拽（把 spring 当前 x/v 接进拖拽状态）——连拨不卡手</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>D. 帧循环与工程实现要点</h3>
+      <table class="spec-t">
+        <tr><td>积分器</td><td>半隐式欧拉：每帧 <code class="k">v += (-k(x-target) - c·v)·dt; x += v·dt</code>；c = 2·zeta·√k；dt = clamp(frameΔt, 0, 32ms)，标签页切回不跳变</td></tr>
+        <tr><td>状态机</td><td>idle → dragging → settle(out∥home) → idle；settle 进行到 <b>60%</b> 即解锁新一轮拖拽（连滑不等待）</td></tr>
+        <tr><td>Compose 对应</td><td><code class="k">Animatable</code> + <code class="k">animateTo(spring(stiffness=k, dampingRatio=zeta, visibilityThreshold…))</code>，滑出用 <code class="k">initialVelocity = vx</code>；位移上限用 <code class="k">draggable</code> 的 onDelta 里做幂衰减；禁用默认 <code class="k">animateDecay</code> 惯性（由 spring 初速替代）</td></tr>
+        <tr><td>禁止项</td><td><span class="hl-red">禁止</span>松手后用固定时长 tween 重演位移（两段速度不衔接=手感割裂的根源）；<span class="hl-red">禁止</span>新卡从大幅 y 偏移"托起"（纵跳感根源，y 幅度 ≤8dp）；<span class="hl-red">禁止</span>旧卡与新卡交叉淡入淡出（半透明重叠感根源）</td></tr>
+        <tr><td>性能</td><td>只动 transform/opacity；卡 ≤3 张在层上；swipe 期间关闭阴影动画（阴影恒定）</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>E. 预设参数（对应面板三档）</h3>
+      <table class="spec-t">
+        <tr><td>Apple 克制</td><td>follow 1.0 · thresh 0.25 · vx 1500 · rotK 0.05 · prep 0.93 · kOut 320 · kHome 380 · zeta 0.88 —— 默认推荐</td></tr>
+        <tr><td>黏滞跟手</td><td>follow 1.05 · rotK 0.08 · kHome 300 · zeta 0.75 —— 果冻感更强，拨回有明显回弹</td></tr>
+        <tr><td>轻快利落</td><td>vx 1100 · kOut 420 · kHome 520 · zeta 1.0 —— 快切词流，几乎无弹性</td></tr>
+        <tr><td>调参口径</td><td>先在原型上调到满意 → 把 8 个值抄进 Compose 常量；用户点头后参数冻结，不再"感觉改"</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  // ---------- 假数据 ----------
+  var words = [
+    { w: "corner",  m: "/ˈkɔ:rnər/ · n. 拐角",   ex: "It's on the corner.",  cn: "就在拐角处" },
+    { w: "handbag", m: "/ˈhændbæɡ/ · n. 手提包", ex: "Is this your handbag?", cn: "这是你的手提包吗" },
+    { w: "perhaps", m: "/pərˈhæps/ · adv. 或许", ex: "Perhaps you are right.", cn: "也许你是对的" },
+    { w: "pardon",  m: "/ˈpɑ:rdn/ · int. 原谅",  ex: "I beg your pardon?",   cn: "请再说一遍？" },
+    { w: "excuse",  m: "/ɪkˈskju:z/ · v. 原谅",  ex: "Excuse me!",           cn: "打扰一下！" },
+    { w: "office",  m: "/ˈɔ:fɪs/ · n. 办公室",   ex: "He is in the office.", cn: "他在办公室" }
+  ];
+  var idx = 0, next = 1;
+
+  var stage = document.getElementById("stage");
+  var elA = document.getElementById("cardM1");
+  var elB = document.getElementById("cardM2");
+  var fxL = document.getElementById("fxL"), fxR = document.getElementById("fxR");
+  var live = document.getElementById("live");
+
+  function render(el, d) {
+    el.innerHTML =
+      '<span class="c-tag">快捷跟读</span>' +
+      '<div class="c-word">' + d.w + '</div>' +
+      '<div class="c-meta">' + d.m + '</div>' +
+      '<div class="c-ex"><b>' + d.ex + '</b>（' + d.cn + '）</div>' +
+      '<div class="c-foot"><span class="c-dir">左右拖拽切词</span>' +
+      '<span class="c-say"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z" fill="#fff" stroke="none"/><path d="M15.5 9.5a3.6 3.6 0 0 1 0 5M18.3 7a7.4 7.4 0 0 1 0 10"/></svg></span></div>';
+  }
+
+  // ---------- 角色 → 元素映射（提交完成后交换） ----------
+  var topEl = elA, midEl = elB;
+  render(topEl, words[idx]);
+  render(midEl, words[next]);
+
+  // ---------- 参数（滑块可调） ----------
+  var P = {};
+  var keys = ["follow", "thresh", "vthresh", "rot", "prep", "kout", "khome", "zeta"];
+  keys.forEach(function (k) {
+    P[k] = parseFloat(document.getElementById(k).value);
+    document.getElementById(k).addEventListener("input", function () {
+      P[k] = parseFloat(this.value);
+      document.getElementById("v-" + k).textContent = this.value;
+    });
+  });
+
+  var PRESETS = {
+    apple:  { follow:1.0,  thresh:0.25, vthresh:1500, rot:0.05, prep:0.93, kout:320, khome:380, zeta:0.88 },
+    sticky: { follow:1.05, thresh:0.28, vthresh:1500, rot:0.08, prep:0.93, kout:280, khome:300, zeta:0.75 },
+    snappy: { follow:1.0,  thresh:0.22, vthresh:1100, rot:0.05, prep:0.94, kout:420, khome:520, zeta:1.0  }
+  };
+  document.querySelectorAll(".preset").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".preset").forEach(function (b) { b.classList.remove("on"); });
+      btn.classList.add("on");
+      var p = PRESETS[btn.dataset.p];
+      keys.forEach(function (k) {
+        P[k] = p[k];
+        var el = document.getElementById(k);
+        el.value = p[k];
+        document.getElementById("v-" + k).textContent = el.value;
+      });
+    });
+  });
+
+  // ---------- spring ----------
+  function makeSpring(value) { return { x: value, v: 0, target: value, k: 380, zeta: 0.88, active: false }; }
+  function stepSpring(s, dt) {
+    if (!s.active) return;
+    var c = 2 * s.zeta * Math.sqrt(s.k);
+    var a = -s.k * (s.x - s.target) - c * s.v;
+    s.v += a * dt;
+    s.x += s.v * dt;
+  }
+
+  var top = { x: 0, rot: 0, opacity: 1, y: 0,
+    sx: makeSpring(0), srot: makeSpring(0), sop: makeSpring(1) };
+  var mid = { scale: P.prep, y: 8, s: null };
+  var mode = "idle";           // idle | drag | settle
+  var startX = 0, lastX = 0, lastT = 0, vx = 0, sign = 1, settleT = 0;
+
+  var STAGE_W = 304;           // stage 内宽（px）
+  var CARD_W = 252;
+  var X_THRESH = function () { return CARD_W * P.thresh; };
+  var X_OUT = function () { return STAGE_W / 2 + CARD_W; };
+
+  function applyTop() {
+    topEl.style.transform = "translate(" + top.x + "px," + top.y + "px) rotate(" + top.rot + "deg)";
+    topEl.style.opacity = top.opacity;
+  }
+  function applyMid() {
+    midEl.style.transform = "translate(0," + mid.y.toFixed(1) + "px) scale(" + mid.scale.toFixed(4) + ")";
+    midEl.style.opacity = 1;
+  }
+  applyTop(); applyMid();
+
+  // ---------- 手势 ----------
+  stage.addEventListener("pointerdown", function (e) {
+    // 滑出中不可打断；弹回中无缝接管（继承当前位移/速度）
+    if (mode === "settle" && top.sx.target !== 0) return;
+    if (mode === "settle") { top.sx.active = false; top.srot.active = false; top.sop.active = false; }
+    mode = "drag";
+    stage.setPointerCapture(e.pointerId);
+    startX = e.clientX - top.x / P.follow;   // 接管时从当前位移继续
+    lastX = e.clientX; lastT = performance.now(); vx = 0;
+  });
+  stage.addEventListener("pointermove", function (e) {
+    if (mode !== "drag") return;
+    var now = performance.now();
+    var dx = (e.clientX - startX) * P.follow;
+    var dt = Math.max(now - lastT, 1);
+    vx = 0.6 * vx + 0.4 * ((e.clientX - lastX) / dt * 1000);   // 近帧加权速度
+    lastX = e.clientX; lastT = now;
+    // 位移上限：幂衰减
+    var lim = STAGE_W * 0.5, ax = Math.abs(dx);
+    if (ax > lim) dx = Math.sign(dx) * (lim + Math.pow(ax - lim, 0.85) * 0.5);
+    top.x = dx;
+    top.rot = Math.max(-10, Math.min(10, dx * P.rot));
+    // 新卡预备：随拖拽进度缓缓迎上来（y 幅度 ≤8dp，禁止纵跳）
+    var prog = Math.min(Math.abs(dx) / X_THRESH(), 1);
+    mid.scale = P.prep + 0.04 * prog;
+    mid.y = 8 - 5 * prog;
+    applyTop(); applyMid();
+    // 方向浮标
+    var fxOn = Math.abs(dx) > X_THRESH() * 0.3;
+    fxL.style.opacity = (fxOn && dx < 0) ? 1 : 0;
+    fxR.style.opacity = (fxOn && dx > 0) ? 1 : 0;
+    live.innerHTML = "dragging · x=" + dx.toFixed(0) + "px · vx=" + vx.toFixed(0) + "px/s" +
+      (Math.abs(dx) >= X_THRESH() || Math.abs(vx) >= P.vthresh ? " · <b>松手提交</b>" : "");
+  });
+
+  function endDrag() {
+    if (mode !== "drag") return;
+    var commit = Math.abs(top.x) >= X_THRESH() || Math.abs(vx) >= P.vthresh;
+    if (commit) {
+      sign = (top.x + vx) >= 0 ? 1 : -1;
+      // 旧卡滑出：spring 带拖拽末速度（临界阻尼，无回弹）
+      top.sx.x = top.x;   top.sx.v = vx; top.sx.target = sign * X_OUT();
+      top.sx.k = P.kout;  top.sx.zeta = 1.0; top.sx.active = true;
+      top.srot.x = top.rot; top.srot.v = 0; top.srot.target = sign * 12;
+      top.srot.k = P.kout;  top.srot.zeta = 1.0; top.srot.active = true;
+      top.sop.x = 1; top.sop.v = 0; top.sop.target = 0;
+      top.sop.k = P.kout;   top.sop.zeta = 1.0; top.sop.active = true;
+      // 新卡归位：同一帧启动（欠阻尼轻收）
+      mid.s = { x: mid.scale, v: 0 };
+      mode = "settle"; settleT = 0;
+      live.innerHTML = "commit · " + (sign > 0 ? "→" : "←") + " · vx=" + vx.toFixed(0) + "px/s";
+    } else {
+      // 弹回：初速继承，zeta &lt;0.9 带一次微过冲（果冻感）
+      top.sx.x = top.x; top.sx.v = vx; top.sx.target = 0;
+      top.sx.k = P.khome; top.sx.zeta = P.zeta; top.sx.active = true;
+      top.srot.x = top.rot; top.srot.v = 0; top.srot.target = 0;
+      top.srot.k = P.khome; top.srot.zeta = P.zeta; top.srot.active = true;
+      mid.s = { x: mid.scale, v: 0, back: true };
+      mode = "settle"; settleT = 0;
+      live.innerHTML = "bounce back · x=" + top.x.toFixed(0) + "px";
+    }
+    fxL.style.opacity = 0; fxR.style.opacity = 0;
+  }
+  stage.addEventListener("pointerup", endDrag);
+  stage.addEventListener("pointercancel", endDrag);
+
+  // ---------- 主循环 ----------
+  var lastFrame = performance.now();
+  function loop(now) {
+    var dt = Math.min((now - lastFrame) / 1000, 0.032);
+    lastFrame = now;
+
+    if (mode === "settle") {
+      settleT += dt;
+      stepSpring(top.sx, dt); stepSpring(top.srot, dt); stepSpring(top.sop, dt);
+      top.x = top.sx.x; top.rot = top.srot.x;
+      top.opacity = Math.max(0, Math.min(1, top.sop.x));
+      top.y = 0;
+
+      // 新卡 spring（提交：prep→1；弹回：→prep）
+      var hs = mid.s;
+      if (hs) {
+        hs.k = P.khome; hs.zeta = P.zeta;
+        hs.target = hs.back ? P.prep : 1;
+        var c = 2 * hs.zeta * Math.sqrt(hs.k);
+        hs.v += (-hs.k * (hs.x - hs.target) - c * hs.v) * dt;
+        hs.x += hs.v * dt;
+        mid.scale = hs.x;
+        mid.y = hs.back ? 8 : Math.max(0, mid.y - 40 * dt);
+      }
+      applyTop(); applyMid();
+
+      // 滑出完成 → 层交换（引用互换，内容轮换）
+      if (top.sx.target !== 0 && (Math.abs(top.x) > X_OUT() * 0.98 || top.opacity <= 0.01)) {
+        idx = (idx + 1) % words.length; next = (idx + 1) % words.length;
+        var tmp = topEl; topEl = midEl; midEl = tmp;   // 原新卡升为当前卡
+        render(topEl, words[idx]);
+        render(midEl, words[next]);                    // 原当前卡回预备位，换新词
+        mid.s = null; mid.scale = P.prep; mid.y = 8;
+        top.x = 0; top.rot = 0; top.y = 0; top.opacity = 1;
+        top.sx.active = false; top.srot.active = false; top.sop.active = false;
+        top.sx.x = 0; top.sx.v = 0; top.srot.x = 0; top.srot.v = 0; top.sop.x = 1;
+        mode = "idle";
+        live.innerHTML = "idle · 已切换 → <b>" + words[idx].w + "</b>（可立刻连滑）";
+      }
+      // 弹回完成判定（主动收敛 + 1.2s 超时兜底）
+      if (top.sx.target === 0 && settleT > 0 && (settleT > 1.2 ||
+          (Math.abs(top.sx.x) < 0.5 && Math.abs(top.sx.v) < 4))) {
+        top.x = 0; top.rot = 0; top.opacity = 1; top.y = 0;
+        top.sx.active = false; top.srot.active = false; top.sop.active = false;
+        mid.scale = P.prep; mid.y = 8; mid.s = null;
+        mode = "idle";
+        live.innerHTML = "idle · 已弹回";
+      }
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+
+</body>
+</html>

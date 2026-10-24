@@ -1,0 +1,15 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect x="0" y="0" width="200" height="200" fill="#FFFFFF" />
+  <ns0:line x1="100" y1="142" x2="192" y2="142" stroke="#000000" stroke-width="2.5" stroke-linecap="square" />
+  <ns0:line x1="132" y1="102" x2="132" y2="142" stroke="#000000" stroke-width="2" />
+  <ns0:path d="M148.6 0.2 A64 64 0 0 1 192.1 40.1" fill="none" stroke="#555555" stroke-width="1.8" stroke-linecap="round" />
+  <ns0:path d="M146.5 7.9 A56 56 0 0 1 184.6 42.8" fill="none" stroke="#555555" stroke-width="1.8" stroke-linecap="round" />
+  <ns0:path d="M144.4 15.6 A48 48 0 0 1 177.1 45.6" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:circle cx="132" cy="62" r="40" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:circle cx="132" cy="62" r="27" fill="none" stroke="#555555" stroke-width="1.5" stroke-dasharray="3 4" />
+  <ns0:path d="M140 29 L123 59 L136 59 L119 93" fill="none" stroke="#000000" stroke-width="3.5" stroke-linejoin="miter" stroke-linecap="round" />
+  <ns0:circle cx="119" cy="93" r="3.2" fill="#000000" />
+  <ns0:circle cx="165.9" cy="28.1" r="4.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.6" />
+  <ns0:rect x="183" y="8" width="8" height="8" fill="#000000" />
+  <ns0:circle cx="178" cy="138" r="4" fill="#000000" />
+</ns0:svg>

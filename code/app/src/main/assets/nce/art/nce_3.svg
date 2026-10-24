@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 252" fill="none">
+  <!-- NCE Lesson 3: Please send me a card — reading/writing at desk, white geometric silhouettes -->
+  <g fill="#FFFFFF">
+    <!-- Open postcard in hands (center) -->
+    <path d="M148 96h104a8 8 0 0 1 8 8v56a8 8 0 0 1-8 8H148a8 8 0 0 1-8-8v-56a8 8 0 0 1 8-8z"/>
+    <!-- Postcard divider + stamp (cut out) -->
+    <rect x="216" y="104" width="2" height="56" fill="#000000"/>
+    <rect x="228" y="110" width="18" height="14" rx="2" fill="#000000"/>
+    <!-- Address lines (cut out) -->
+    <rect x="160" y="112" width="44" height="6" rx="3" fill="#000000"/>
+    <rect x="160" y="126" width="36" height="6" rx="3" fill="#000000"/>
+    <rect x="160" y="140" width="40" height="6" rx="3" fill="#000000"/>
+
+    <!-- Left hand holding card -->
+    <path d="M118 150c-8-4-12-14-8-22 3-6 12-6 15 0l12 22c4 8-2 16-10 16h-16c-6 0-6-9 0-9z"/>
+    <!-- Right hand holding pen -->
+    <path d="M282 150c8-4 12-14 8-22-3-6-12-6-15 0l-12 22c-4 8 2 16 10 16h16c6 0 6-9 0-9z"/>
+    <!-- Pen -->
+    <path d="M300 120l30-44c3-4 9-1 7 4l-22 48z"/>
+
+    <!-- Desk line -->
+    <rect x="70" y="184" width="260" height="8" rx="4"/>
+    <!-- Desk legs -->
+    <rect x="88" y="192" width="10" height="44" rx="4"/>
+    <rect x="302" y="192" width="10" height="44" rx="4"/>
+  </g>
+</svg>

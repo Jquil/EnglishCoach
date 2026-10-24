@@ -1,0 +1,56 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect width="200" height="200" fill="#FFFFFF" />
+
+  
+  <ns0:circle cx="46" cy="38" r="10" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+
+  
+  <ns0:path d="M32 62 Q37 56 42 62 Q47 56 52 62" fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
+  <ns0:path d="M62 46 Q66.5 41.5 71 46 Q75.5 41.5 80 46" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M84 30 Q88 26 92 30 Q96 26 100 30" fill="none" stroke="#000000" stroke-width="1.2" stroke-linecap="round" />
+
+  
+  <ns0:path d="M116 46 L144 30" fill="none" stroke="#555555" stroke-width="1" />
+  <ns0:path d="M144 30 L170 52" fill="none" stroke="#555555" stroke-width="1" />
+
+  
+  <ns0:path d="M116 54 Q130 66 144 56" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M116 68 Q130 80 144 70" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M116 82 Q130 94 144 84" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M116 96 Q130 106 144 98" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+
+  
+  <ns0:path d="M144 58 Q157 68 170 60" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M144 72 Q157 82 170 74" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M144 86 Q157 96 170 88" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+
+  
+  <ns0:path d="M116 52 L82 95 Q98 104 112 106 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+
+  
+  <ns0:path d="M170 60 Q184 82 188 104 L170 104 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" />
+
+  
+  <ns0:path d="M116 110 L116 46" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M144 110 L144 30" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M170 110 L170 52" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+
+  
+  <ns0:path d="M96 110 L78 96" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+
+  
+  <ns0:path d="M144 30 L156 33 L144 36 Z" fill="#000000" />
+
+  
+  <ns0:path d="M96 110 L190 110 C186 121 178 128 164 128 L118 128 C106 127 99 120 96 110 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" stroke-linejoin="round" />
+
+  
+  <ns0:circle cx="122" cy="119" r="1.7" fill="#000000" />
+  <ns0:circle cx="140" cy="119" r="1.7" fill="#000000" />
+  <ns0:circle cx="158" cy="119" r="1.7" fill="#000000" />
+
+  
+  <ns0:path d="M88 136 Q96 132 104 136 T120 136 T136 136 T152 136 T168 136 T184 136" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M104 146 Q111 143 118 146 T132 146 T146 146 T160 146 T174 146 T188 146" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M126 155 Q132 152 138 155 T150 155 T162 155 T174 155" fill="none" stroke="#000000" stroke-width="1.2" stroke-linecap="round" />
+</ns0:svg>

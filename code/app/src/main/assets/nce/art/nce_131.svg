@@ -1,0 +1,35 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  
+  <ns0:rect x="110" y="35" width="70" height="115" fill="#ECECEC" />
+  
+  <ns0:g stroke="#999999" stroke-width="2.5" stroke-linecap="round">
+    <ns0:line x1="36" y1="48" x2="31" y2="64" />
+    <ns0:line x1="54" y1="42" x2="49" y2="58" />
+    <ns0:line x1="72" y1="50" x2="67" y2="66" />
+  </ns0:g>
+  
+  <ns0:g stroke="#000000" stroke-width="3" stroke-linecap="round" fill="none">
+    <ns0:line x1="110" y1="35" x2="110" y2="150" />
+    <ns0:line x1="110" y1="35" x2="180" y2="35" />
+    <ns0:line x1="180" y1="35" x2="180" y2="150" />
+    <ns0:line x1="90" y1="150" x2="196" y2="150" />
+  </ns0:g>
+  
+  <ns0:polygon points="110,35 94,47 94,143 110,150" fill="#FFFFFF" stroke="#000000" stroke-width="3" stroke-linejoin="round" />
+  <ns0:circle cx="99" cy="102" r="2.2" fill="#000000" />
+  
+  <ns0:ellipse cx="152" cy="150.5" rx="28" ry="3.5" fill="#CCCCCC" />
+  
+  <ns0:g fill="#000000">
+    <ns0:polygon points="142,80 145,62 152,75" />
+    <ns0:polygon points="162,80 159,62 152,75" />
+    <ns0:circle cx="152" cy="88" r="13" />
+    <ns0:path d="M 141 96 C 133 112, 130 134, 133 150 L 171 150 C 174 134, 171 112, 163 96 Z" />
+    <ns0:path d="M 168 146 C 177 149, 178 137, 175 128 C 173 121, 167 120, 164 124" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" />
+  </ns0:g>
+  
+  <ns0:circle cx="147" cy="86" r="2" fill="#FFFFFF" />
+  <ns0:circle cx="157" cy="86" r="2" fill="#FFFFFF" />
+  
+  <ns0:line x1="152" y1="149" x2="152" y2="137" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+</ns0:svg>

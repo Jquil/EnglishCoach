@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 网络：LLM / TTS 请求 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- ASR：原生 SpeechRecognizer 需要麦克风 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Android 13+ 每日提醒通知需要运行时权限 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- targetSdk 30+ 包可见性过滤：不声明这个，SpeechRecognizer 可能查不到识别服务 -->
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+
+
+    <application
+        android:name=".EnglishCoachApp"
+        android:allowBackup="true"
+        android:icon="@android:drawable/sym_def_app_icon"
+        android:label="英语陪练"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EnglishCoach">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

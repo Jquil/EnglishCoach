@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 252" fill="none">
+  <!-- NCE Lesson 1: Excuse me! — two people greeting + speech bubble, white geometric silhouettes -->
+  <g fill="#FFFFFF">
+    <!-- Speech bubble -->
+    <path d="M238 34h96a14 14 0 0 1 14 14v34a14 14 0 0 1-14 14h-58l-20 18v-18h-18a14 14 0 0 1-14-14V48a14 14 0 0 1 14-14z"/>
+    <!-- Dots inside bubble (cut out, card background shows through) -->
+    <circle cx="272" cy="65" r="6" fill="#000000"/>
+    <circle cx="296" cy="65" r="6" fill="#000000"/>
+    <circle cx="320" cy="65" r="6" fill="#000000"/>
+
+    <!-- Person A (left, standing, waving) -->
+    <circle cx="118" cy="96" r="22"/>
+    <path d="M96 124h44c10 0 16 8 16 18v34c0 8-5 14-12 16l4 40c0 6-4 10-10 10h-2c-5 0-9-4-9-9l-3-36h-12l-3 36c0 5-4 9-9 9h-2c-6 0-10-4-10-10l4-40c-7-2-12-8-12-16v-34c0-10 6-18 16-18z"/>
+    <!-- Waving arm -->
+    <path d="M96 132c-12-6-22-18-24-32-1-6 8-9 11-3 4 10 11 18 20 22z"/>
+
+    <!-- Person B (right, slightly shorter, waving back) -->
+    <circle cx="182" cy="108" r="19"/>
+    <path d="M164 132h36c9 0 14 7 14 16v28c0 7-4 12-10 14l4 34c0 5-4 9-9 9h-1c-4 0-8-3-8-8l-3-30h-10l-3 30c0 5-4 8-8 8h-1c-5 0-9-4-9-9l4-34c-6-2-10-7-10-14v-28c0-9 5-16 14-16z"/>
+    <!-- Waving arm B -->
+    <path d="M164 140c-10-5-18-14-20-25-1-5 7-8 9-3 4 8 10 14 17 17z"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect width="200" height="200" fill="#FFFFFF" />
+  <ns0:circle cx="152" cy="60" r="30" fill="none" stroke="#999999" stroke-width="1.5" stroke-dasharray="1 6" stroke-linecap="round" />
+  <ns0:circle cx="152" cy="60" r="42" fill="none" stroke="#BBBBBB" stroke-width="1.2" stroke-dasharray="1 7" stroke-linecap="round" />
+  <ns0:rect x="8" y="55" width="7" height="14" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linejoin="round" />
+  <ns0:polygon points="15,58 24,49 24,75 15,66" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linejoin="round" />
+  <ns0:path d="M28,59 L33,59 L36,50 L39,68 L43,47 L47,71 L50,59 L55,59 L58,52 L61,66 L64,59 L69,59 L72,53 L75,65 L78,59 L84,59 L87,54 L90,64 L93,59 L99,59 L102,55 L105,63 L108,59 L114,59 L117,56 L120,62 L123,59 L130,58 L136,58 L142,58 L144,55 L146,61 L148,50 L151,68 L153,59 L157,61 L163,61" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+  <ns0:path d="M152,78 C143,69 134,62 134,53.5 C134,47.5 139,44.5 143.5,44.5 C147,44.5 150.5,46.5 152,50 C153.5,46.5 157,44.5 160.5,44.5 C165,44.5 170,47.5 170,53.5 C170,62 161,69 152,78 Z" fill="none" stroke="#000000" stroke-width="2.5" stroke-linejoin="round" />
+  <ns0:path d="M182,18 L184,24 L190,26 L184,28 L182,34 L180,28 L174,26 L180,24 Z" fill="#000000" />
+  <ns0:path d="M168,12 L169.5,16 L173,17 L169.5,18 L168,22 L166.5,18 L163,17 L166.5,16 Z" fill="#555555" />
+</ns0:svg>

@@ -1,0 +1,29 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  
+  <ns0:line x1="74" y1="142.5" x2="184" y2="142.5" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+
+  
+  <ns0:rect x="88" y="128" width="13" height="14" rx="1.5" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+  <ns0:line x1="94.5" y1="128" x2="94.5" y2="122" stroke="#000000" stroke-width="1.6" stroke-linecap="round" />
+  <ns0:path d="M94.5 119 C 91.5 114, 97.5 111, 94.5 105" fill="none" stroke="#555555" stroke-width="1.6" stroke-linecap="round" />
+
+  <ns0:rect x="110" y="122" width="13" height="20" rx="1.5" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+  <ns0:line x1="116.5" y1="122" x2="116.5" y2="115" stroke="#000000" stroke-width="1.6" stroke-linecap="round" />
+  <ns0:path d="M116.5 112 C 113.5 107, 119.5 104, 116.5 98" fill="none" stroke="#555555" stroke-width="1.6" stroke-linecap="round" />
+
+  <ns0:rect x="132" y="116" width="13" height="26" rx="1.5" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+  <ns0:line x1="138.5" y1="116" x2="138.5" y2="109" stroke="#000000" stroke-width="1.6" stroke-linecap="round" />
+  <ns0:path d="M138.5 106 C 135.5 101, 141.5 98, 138.5 92" fill="none" stroke="#555555" stroke-width="1.6" stroke-linecap="round" />
+
+  
+  <ns0:rect x="154" y="78" width="17" height="64" rx="1.5" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
+  <ns0:line x1="154" y1="86" x2="171" y2="86" stroke="#000000" stroke-width="1.4" />
+  <ns0:line x1="162.5" y1="78" x2="162.5" y2="70" stroke="#000000" stroke-width="1.6" stroke-linecap="round" />
+  <ns0:path d="M162.5 44 C 169 53, 169.5 61, 162.5 66 C 155.5 61, 156 53, 162.5 44 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linejoin="round" />
+  <ns0:path d="M162.5 51 C 165.5 55, 165.5 60, 162.5 62.5 C 159.5 60, 159.5 55, 162.5 51 Z" fill="none" stroke="#555555" stroke-width="1.4" />
+
+  
+  <ns0:circle cx="174" cy="48" r="1.5" fill="#555555" />
+  <ns0:circle cx="150" cy="38" r="1" fill="#555555" />
+  <ns0:circle cx="177" cy="60" r="1" fill="#555555" />
+</ns0:svg>

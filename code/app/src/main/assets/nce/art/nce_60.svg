@@ -1,0 +1,9 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect x="0" y="0" width="200" height="200" fill="#FFFFFF" />
+  <ns0:circle cx="112" cy="62" r="46" fill="#D9D9D9" />
+  <ns0:path d="M114 119 A46 46 0 1 0 95 106 L72 148 Z" fill="#FFFFFF" stroke="#000000" stroke-width="3" stroke-linejoin="round" />
+  <ns0:path d="M105 78 L123 97 L160 55" fill="none" stroke="#000000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <ns0:circle cx="63" cy="159" r="3" fill="#000000" />
+  <ns0:circle cx="56" cy="168" r="2" fill="#000000" />
+  <ns0:circle cx="34" cy="38" r="5" fill="none" stroke="#000000" stroke-width="2" />
+</ns0:svg>

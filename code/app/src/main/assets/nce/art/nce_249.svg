@@ -1,0 +1,20 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect width="200" height="200" fill="#FFFFFF" />
+  
+  <ns0:path d="M 103 78 L 105 60 Q 106 42 126 42 L 144 42 Q 164 42 165 60 L 167 78 Q 135 87 103 78 Z" fill="#000000" />
+  <ns0:path d="M 135 46 L 135 68" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <ns0:path d="M 105 70 Q 135 79 165 70" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" fill="none" />
+  <ns0:path d="M 76 68 Q 135 104 194 68 Q 135 86 76 68 Z" fill="#000000" />
+  
+  <ns0:rect x="70" y="104" width="64" height="8" rx="1.5" fill="#000000" />
+  <ns0:path d="M 70 104 L 70 97 L 75.5 97 L 75.5 104 Z" fill="#000000" />
+  <ns0:rect x="127" y="100" width="21" height="17" rx="3" fill="#000000" />
+  <ns0:path d="M 146 101 L 152 93 L 157.5 97.5 L 150 103 Z" fill="#000000" />
+  <ns0:path d="M 145 112 Q 163 114 164.5 121 Q 166 137 158 146 Q 150 151.5 144 144 Q 140 137 141 120 Q 141.5 113 145 112 Z" fill="#000000" />
+  <ns0:path d="M 130 117 Q 129 131 141 130" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  <ns0:path d="M 134.5 118.5 L 133.5 126" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+  
+  <ns0:path d="M 179 98 L 181.6 105.4 L 189.5 105.6 L 183.3 110.4 L 185.5 117.9 L 179 113.5 L 172.5 117.9 L 174.7 110.4 L 168.5 105.6 L 176.4 105.4 Z" fill="#000000" />
+  
+  <ns0:path d="M 96 160 L 192 160" stroke="#555555" stroke-width="1.5" stroke-linecap="round" />
+</ns0:svg>

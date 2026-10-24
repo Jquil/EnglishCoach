@@ -1,0 +1,9 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ns0:g transform="rotate(-8 104 62)">
+    <ns0:path d="M 184 62 L 104 40 L 126 62 L 104 84 Z" fill="#FFFFFF" stroke="#000000" stroke-width="3" stroke-linejoin="round" />
+    <ns0:path d="M 184 62 L 126 62" stroke="#555555" stroke-width="1.5" stroke-linecap="round" />
+  </ns0:g>
+  <ns0:path d="M 95.5 53.5 A 12 12 0 0 0 95.5 70.5" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+  <ns0:path d="M 88.4 46.4 A 22 22 0 0 0 88.4 77.6" stroke="#555555" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M 81.4 39.4 A 32 32 0 0 0 81.4 84.6" stroke="#999999" stroke-width="1.5" stroke-linecap="round" />
+</ns0:svg>

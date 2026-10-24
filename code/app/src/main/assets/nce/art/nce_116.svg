@@ -1,0 +1,53 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect width="200" height="200" fill="#FFFFFF" />
+
+  
+  <ns0:circle cx="176" cy="34" r="14" fill="none" stroke="#555555" stroke-width="2" />
+
+  
+  <ns0:path d="M120 47 q4 -5 8 0 q4 -5 8 0" fill="none" stroke="#555555" stroke-width="1.6" stroke-linecap="round" />
+  <ns0:path d="M141 33 q3 -4 6 0 q3 -4 6 0" fill="none" stroke="#555555" stroke-width="1.6" stroke-linecap="round" />
+
+  
+  <ns0:path d="M96 152 H196" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M104 152 L102 147 M164 152 L166 147" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+
+  
+  <ns0:g stroke="#000000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <ns0:path d="M124 152 V132" />
+    <ns0:path d="M107 134 L124 112 L141 134" />
+    <ns0:path d="M112 120 L124 100 L136 120" />
+    <ns0:path d="M116 108 L124 92 L132 108" />
+    <ns0:path d="M119 100 L124 90 L129 100" />
+  </ns0:g>
+
+  
+  <ns0:g stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <ns0:path d="M178 152 V136" />
+    <ns0:path d="M166 138 L178 122 L190 138" />
+    <ns0:path d="M170 128 L178 114 L186 128" />
+    <ns0:path d="M178 114 V108" />
+  </ns0:g>
+
+  
+  <ns0:g stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <ns0:path d="M152 152 V128" />
+    <ns0:path d="M129 128 L152 102 L175 128" />
+    <ns0:path d="M134 110 L152 86 L170 110" />
+    <ns0:path d="M139 92 L152 70 L165 92" />
+    <ns0:path d="M144 78 L152 64 L160 78" />
+  </ns0:g>
+
+  
+  <ns0:path d="M16 184 C44 177 72 170 98 163 C114 159 132 154 148 152.5" fill="none" stroke="#000000" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 8" />
+
+  
+  <ns0:g stroke="#000000" stroke-width="2" stroke-linecap="round" fill="none">
+    <ns0:circle cx="98" cy="141.5" r="3.2" />
+    <ns0:path d="M98 144.7 V154" />
+    <ns0:path d="M98 154 L93 164" />
+    <ns0:path d="M98 154 L103 162" />
+    <ns0:path d="M98 147.5 L93 150.5" />
+    <ns0:path d="M98 147.5 L103 151.5" />
+  </ns0:g>
+</ns0:svg>

@@ -1,0 +1,7 @@
+词表共 294 词（dict.json + words.json 去重）
+待生成 294 词，批大小 80，并发 4
+  进度 1/4 批，累计 54 条
+  进度 2/4 批，累计 134 条
+  进度 3/4 批，累计 213 条
+  进度 4/4 批，累计 293 条
+完成：输出 293 条 → C:\Users\admin\WorkBuddy\2026-10-22-11-21-01\EnglishCoach\app\src\main\assets\nce\syllables.json（本次新增 293，失败 1）

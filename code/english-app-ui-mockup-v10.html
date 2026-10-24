@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语口语陪练 App — UI 设计 v10 · 真机反馈四项（HyperOS）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg:#F4F5F7;
+    --card:#FFFFFF;
+    --label:#0E0E12;
+    --label2:rgba(0,0,0,.55);
+    --label3:rgba(0,0,0,.28);
+    --fill2:rgba(0,0,0,.05);
+    --sep:rgba(0,0,0,.06);
+    --blue:#3482FF;
+    --orange:#FF6900;
+    --mi-green:#43CF7C;
+    --ok:#30A24C;
+    --red:#E5484D;
+    --star:#FFB300;
+    --w-teal1:#45D6A0; --w-teal2:#0F9D77;
+    --w-orange1:#FFA94D; --w-orange2:#E85D04;
+    --ease-spring:cubic-bezier(.3,1.2,.4,1);
+  }
+  body {
+    background:#111114;
+    font-family:"MiSans","MiSans VF","HarmonyOS Sans SC","PingFang SC","Segoe UI","Microsoft YaHei",sans-serif;
+    color:#f2f2f7;
+    padding:64px 32px 96px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1 { font-size:30px; font-weight:700; text-align:center; letter-spacing:-.4px; color:#fff; }
+  .sub { text-align:center; color:rgba(235,235,245,.55); font-size:14px; margin:8px 0 56px; }
+
+  .board { display:flex; flex-wrap:wrap; gap:56px 48px; justify-content:center; align-items:flex-start; }
+  .shot { width:324px; opacity:0; transform:translateY(20px); animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+  .shot:nth-child(2){animation-delay:.07s}.shot:nth-child(3){animation-delay:.14s}
+  .shot:nth-child(4){animation-delay:.21s}.shot:nth-child(5){animation-delay:.28s}
+  .shot:nth-child(6){animation-delay:.35s}.shot:nth-child(7){animation-delay:.42s}
+  @keyframes rise { to { opacity:1; transform:none; } }
+  .shot-label { text-align:center; margin-bottom:14px; }
+  .shot-label b { font-size:15px; font-weight:600; color:rgba(255,255,255,.92); }
+  .shot-label .mod { display:inline-block; font-size:10px; font-weight:600; color:#0E0E12;
+    background:#FFD84D; border-radius:4px; padding:1px 6px; margin-right:6px; vertical-align:2px; }
+  .shot-label .mod.core { background:#7fbfff; }
+  .shot-label .mod.rec { background:#43CF7C; }
+  .shot-label span { display:block; color:rgba(235,235,245,.45); font-size:12px; margin-top:3px; }
+
+  /* ============ 手机机身 ============ */
+  .phone {
+    width:324px; height:672px; background:var(--bg); border-radius:48px;
+    border:9px solid #1d1d20; outline:1px solid rgba(255,255,255,.09);
+    overflow:hidden; position:relative; display:flex; flex-direction:column;
+    box-shadow:0 34px 80px rgba(0,0,0,.65), 0 6px 22px rgba(0,0,0,.5);
+  }
+  .notch { position:absolute; top:12px; left:50%; transform:translateX(-50%);
+    width:12px; height:12px; background:#0a0a0c; border-radius:50%; z-index:60; }
+  .statusbar { height:38px; flex-shrink:0; display:flex; justify-content:space-between;
+    align-items:flex-end; padding:0 26px 5px; font-size:13px; font-weight:600; color:var(--label); }
+  .statusbar svg { display:block; }
+  .gbar { position:absolute; bottom:8px; left:50%; transform:translateX(-50%);
+    width:92px; height:3.5px; border-radius:99px; background:rgba(0,0,0,.85); z-index:60; }
+
+  /* ============ HyperOS 通用组件 ============ */
+  .lg-title { font-size:34px; font-weight:700; letter-spacing:-.5px; color:var(--label); padding:2px 18px 8px; }
+  .nav { height:52px; flex-shrink:0; display:flex; align-items:center; padding:0 12px;
+    background:rgba(244,245,247,.94); backdrop-filter:blur(20px);
+    border-bottom:.5px solid var(--sep); position:relative; z-index:5; }
+  .nav .back { display:flex; align-items:center; color:var(--label); flex-shrink:0; padding:4px; margin-left:-4px; }
+  .nav .tt { position:absolute; left:50%; transform:translateX(-50%); font-size:17px; font-weight:600;
+    color:var(--label); letter-spacing:-.2px; }
+  .sec-h { font-size:13.5px; font-weight:500; color:var(--label2); padding:14px 18px 8px; display:flex; align-items:baseline; }
+  .sec-h .hint { margin-left:auto; font-size:11.5px; color:var(--label3); display:inline-flex; align-items:center; gap:4px; }
+  .group { background:var(--card); border-radius:20px; margin:0 18px; overflow:hidden; }
+  .hairline { position:absolute; left:16px; right:0; bottom:0; height:.5px; background:var(--sep); }
+  .footnote-out { font-size:12px; color:var(--label2); padding:8px 20px 0 18px; line-height:1.5; }
+
+  .tabbar { flex-shrink:0; height:74px; display:flex;
+    background:rgba(240,241,244,.97); backdrop-filter:blur(20px); padding-bottom:12px; }
+  .tab { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;
+    font-size:12px; color:rgba(0,0,0,.55); }
+  .tab .ind { display:flex; align-items:center; justify-content:center;
+    padding:4px 20px; border-radius:18px; }
+  .tab.active { color:var(--blue); font-weight:500; }
+  .tab.active .ind { background:rgba(52,130,255,.12); }
+
+  /* ============ 跟读页骨架（对齐真机现状） ============ */
+  .les-head { margin:8px 18px 0; display:flex; align-items:center; gap:10px; }
+  .les-head .lh { flex:1; }
+  .les-head .lh b { font-size:17px; font-weight:700; color:var(--label); letter-spacing:-.2px; }
+  .les-head .lh span { display:block; font-size:12px; color:var(--label2); margin-top:2px; }
+  .les-prog { width:86px; flex-shrink:0; text-align:right; }
+  .les-prog .np { font-size:12.5px; font-weight:600; color:var(--blue); font-variant-numeric:tabular-nums; }
+  .les-prog .pbar { margin-top:6px; height:5px; border-radius:3px; background:var(--fill2); overflow:hidden; }
+  .les-prog .pbar i { display:block; height:100%; width:37%;
+    background:linear-gradient(90deg,#5CA9FF,var(--blue)); border-radius:3px; }
+  .goals-mini { display:flex; gap:8px; padding:10px 18px 0; overflow:hidden; }
+  .goal-chip { font-size:11px; font-weight:500; color:var(--label2); background:var(--card);
+    border-radius:99px; padding:5px 10px; white-space:nowrap; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+  .sent-card { background:linear-gradient(165deg,#EAF2FF 0%,#F8FAFF 70%);
+    border-radius:22px; margin:14px 18px 0; padding:18px 20px 15px; position:relative; }
+  .sent-tag { display:inline-block; font-size:10.5px; font-weight:600; color:var(--blue);
+    background:rgba(52,130,255,.12); border-radius:5px; padding:2px 7px; }
+  .sent-en { font-size:28px; font-weight:700; letter-spacing:-.3px; color:var(--label);
+    line-height:1.34; margin-top:12px; }
+  .sent-cn { font-size:13.5px; color:var(--label2); margin-top:9px; line-height:1.5; }
+  .sent-tip { font-size:11.5px; color:var(--label3); margin-top:10px; padding-top:10px;
+    border-top:.5px solid rgba(52,130,255,.14); }
+  /* 方案一：原声播放小圆钮（句子卡右上，带进度环） */
+  .play-mini { position:absolute; top:14px; right:14px; width:38px; height:38px;
+    display:flex; align-items:center; justify-content:center; }
+  .play-mini .ring { position:absolute; inset:0; }
+  .play-mini .pc { width:32px; height:32px; border-radius:16px; background:var(--blue);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 3px 8px rgba(52,130,255,.3); }
+  .play-cap { position:absolute; top:56px; right:8px; font-size:10px; color:var(--blue);
+    background:rgba(52,130,255,.08); border-radius:4px; padding:1.5px 5px; }
+
+  /* ============ v10 · 底部方案一（播放收进句子卡，胶囊为主角） ============ */
+  .bot-a { margin-top:auto; padding:10px 18px calc(20px); }
+  .bot-a .hold-btn { margin:0 auto; }
+  .hold-btn { display:flex; align-items:center; justify-content:center; gap:8px;
+    width:100%; height:54px; border-radius:27px;
+    background:linear-gradient(155deg,#FF8F1F,var(--orange));
+    color:#fff; font-size:16px; font-weight:600; letter-spacing:.5px;
+    box-shadow:0 8px 20px rgba(255,105,0,.35); }
+  .hold-btn.waiting { background:var(--fill2); color:var(--label3); box-shadow:none; }
+  .pn-row { display:flex; align-items:center; justify-content:space-between; margin:0 6px 12px; }
+  .pn-row .pv, .pn-row .nx { width:36px; height:36px; border-radius:18px;
+    display:flex; align-items:center; justify-content:center; }
+  .pn-row .pv { background:var(--fill2); color:var(--label2); }
+  .pn-row .nx { background:var(--blue); color:#fff; box-shadow:0 3px 8px rgba(52,130,255,.3); }
+  .pn-row .cap { font-size:11.5px; color:var(--label3); }
+
+  /* ============ v10 · 底部方案二（一排两钮） ============ */
+  .bot-b { margin-top:auto; padding:12px 18px calc(20px); display:flex; gap:11px; align-items:center; }
+  .play-big { width:56px; height:56px; border-radius:28px; flex-shrink:0;
+    background:var(--blue); display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    box-shadow:0 6px 16px rgba(52,130,255,.35); }
+  .play-big small { font-size:8.5px; color:rgba(255,255,255,.85); font-weight:600; margin-top:1px; }
+  .bot-b .hold-btn { flex:1; width:auto; }
+
+  /* ============ v10 · 录音圆顶（修正版） ============ */
+  .vo-mask { position:absolute; inset:0; background:rgba(8,10,16,.6); z-index:40;
+    backdrop-filter:blur(2px); animation:fade .22s ease backwards; }
+  @keyframes fade { from { opacity:0; } }
+  .vo-dome { position:absolute; left:-25%; width:150%; bottom:0; height:140px; z-index:41;
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
+    background:linear-gradient(180deg,#6BB0FF 0%,var(--blue) 62%,#2468D8 100%);
+    box-shadow:0 -14px 50px rgba(52,130,255,.45);
+    display:flex; align-items:center; justify-content:center;
+    animation:domeUp .38s cubic-bezier(.22,.9,.34,1) backwards; }
+  @keyframes domeUp { from { transform:translateY(102%); } }
+  .vo-dome .dome-w { position:absolute; left:-6%; width:112%; height:140%;
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
+    background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,0) 52%);
+    animation:domeWave 3.2s ease-in-out infinite alternate; }
+  .vo-dome .dome-w.w2 { background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,0) 42%);
+    animation-duration:4.1s; animation-delay:-1.6s; }
+  @keyframes domeWave { from { transform:translateY(5px) scaleX(1.03); } to { transform:translateY(-4px) scaleX(.97); } }
+  .vo-dome svg { position:relative; z-index:2; filter:drop-shadow(0 2px 8px rgba(0,40,120,.3)); }
+  .vo-dome.cancel { background:linear-gradient(180deg,#F58A8E,var(--red) 62%,#C23338 100%);
+    box-shadow:0 -14px 50px rgba(229,72,77,.45);
+    transform:scale(.95); animation:none; }
+  .vo-dome.cancel .dome-w { display:none; }
+  .vo-tip { position:absolute; left:0; right:0; bottom:170px; z-index:41; text-align:center;
+    animation:fade .25s ease backwards; }
+  .vo-tip b { display:block; font-size:17px; font-weight:600; color:#8FC0FF; letter-spacing:1px;
+    text-shadow:0 1px 10px rgba(8,10,16,.7); }
+  .vo-tip span { display:block; font-size:12.5px; color:rgba(235,240,255,.75); margin-top:5px;
+    font-variant-numeric:tabular-nums; text-shadow:0 1px 6px rgba(8,10,16,.6); }
+  .vo-tip.cancel b { color:#F58A8E; }
+  .hold-btn.pressing { transform:scale(.97); filter:brightness(.94); }
+
+  /* ============ v10 · 单词页 ============ */
+  .wd-hero { position:relative; overflow:hidden; border-radius:20px; margin:0 18px;
+    padding:14px 17px; color:#fff;
+    background:linear-gradient(155deg,#5CA9FF 0%,var(--blue) 55%,#1F6FE0 100%);
+    box-shadow:0 8px 20px rgba(52,130,255,.32); }
+  .wd-hero .wt { font-size:11px; font-weight:600; letter-spacing:2px; color:rgba(255,255,255,.8);
+    position:relative; z-index:2; }
+  .wd-hero .wn { position:relative; z-index:2; font-size:26px; font-weight:800; margin-top:4px;
+    letter-spacing:-.4px; }
+  .wd-hero .wn small { font-size:13px; font-weight:600; color:rgba(255,255,255,.8); letter-spacing:0; }
+  .wd-hero .wstats { position:relative; z-index:2; display:flex; gap:16px; margin-top:9px; }
+  .wd-hero .wstats div { font-size:11.5px; color:rgba(255,255,255,.85); }
+  .wd-hero .wstats b { font-size:14px; font-weight:700; color:#fff; margin-right:2px; }
+  .wd-hero .art { position:absolute; inset:0; }
+  .wd-hero .art svg { position:absolute; right:-8px; top:-6px; }
+  .wd-hero .art svg path { fill:rgba(255,255,255,.16); }
+  .rev-card { background:var(--card); border-radius:18px; margin:10px 18px 0;
+    padding:12px 16px; display:flex; align-items:center; }
+  .rev-card .rt { font-size:15px; font-weight:600; color:var(--label); }
+  .rev-card .rs { font-size:12px; color:var(--label2); margin-top:2px; }
+  .rev-card .rs b { color:var(--orange); font-weight:700; }
+  .rev-btn { margin-left:auto; display:inline-flex; align-items:center; gap:5px; height:34px; padding:0 15px;
+    border-radius:17px; background:var(--blue); color:#fff; font-size:13.5px; font-weight:600;
+    box-shadow:0 4px 10px rgba(52,130,255,.3); flex-shrink:0; }
+  .wrow { display:flex; align-items:center; gap:12px; padding:10.5px 16px; position:relative; min-height:56px; }
+  .wrow .ww { font-size:17px; font-weight:600; color:var(--label); display:flex; align-items:center; gap:7px; }
+  .wrow .due { width:6px; height:6px; border-radius:50%; background:var(--orange); flex-shrink:0; }
+  .wrow .wm { font-size:12px; color:var(--label2); margin-top:2px; }
+  .wrow .wsub { display:flex; align-items:center; gap:6px; margin-top:4px; }
+  .wrow .src { display:inline-block; font-size:10.5px; font-weight:500; color:var(--blue);
+    background:rgba(52,130,255,.09); border-radius:4px; padding:1.5px 6px; }
+  .wrow .src.nce { color:#6A5BFF; background:rgba(106,91,255,.09); }
+  .wrow .cd { font-size:10.5px; color:var(--label3); }
+  .wrow .cd.hot { color:var(--orange); font-weight:600; }
+  .wrow .say { margin-left:auto; width:34px; height:34px; border-radius:17px; background:rgba(52,130,255,.1);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  /* 空态 */
+  .empty { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:0 30px; text-align:center; }
+  .empty-stack { position:relative; width:130px; height:100px; margin-bottom:20px; }
+  .empty-stack i { position:absolute; width:88px; height:58px; border-radius:12px; background:#fff;
+    box-shadow:0 6px 18px rgba(0,0,0,.08); display:flex; align-items:center; justify-content:center;
+    font-style:normal; font-weight:700; color:var(--label3); }
+  .empty-stack i:nth-child(1) { transform:rotate(-8deg); left:0; top:22px; font-size:15px; }
+  .empty-stack i:nth-child(2) { transform:rotate(6deg); right:0; top:16px; font-size:18px; color:rgba(52,130,255,.5); }
+  .empty-stack i:nth-child(3) { transform:rotate(-1deg); left:21px; top:0; font-size:16px;
+    color:var(--blue); border:1.5px dashed rgba(52,130,255,.4); background:#F8FAFF; }
+  .empty .et { font-size:17px; font-weight:600; color:var(--label); }
+  .empty .es { font-size:13px; color:var(--label2); line-height:1.6; margin-top:6px; }
+  .howto { width:100%; margin-top:16px; }
+  .howto .how { display:flex; align-items:center; gap:11px; background:var(--card);
+    border-radius:14px; padding:11px 13px; text-align:left; }
+  .howto .how + .how { margin-top:8px; }
+  .howto .hic { width:34px; height:34px; border-radius:10px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; }
+  .howto .hic.a { background:rgba(52,130,255,.1); color:var(--blue); }
+  .howto .hic.b { background:rgba(67,207,124,.16); color:#1F9D57; }
+  .howto .ht { font-size:13px; color:var(--label); font-weight:500; }
+  .howto .hs { font-size:11px; color:var(--label3); margin-top:1px; }
+
+  /* ============ v10 · 统计页 ============ */
+  .streak-hero { position:relative; overflow:hidden; border-radius:22px; margin:0 18px;
+    padding:16px 18px; color:#fff; display:flex; align-items:center; gap:14px;
+    background:linear-gradient(155deg,#FFB35C 0%,var(--orange) 55%,#E85D04 100%);
+    box-shadow:0 10px 24px rgba(232,93,4,.3); }
+  .streak-hero .flame { width:56px; height:56px; border-radius:28px; flex-shrink:0;
+    background:rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center; }
+  .streak-hero .sn { font-size:30px; font-weight:800; letter-spacing:-.5px; line-height:1; }
+  .streak-hero .sn small { font-size:13px; font-weight:600; color:rgba(255,255,255,.85); letter-spacing:0; }
+  .streak-hero .sc { font-size:11.5px; color:rgba(255,255,255,.85); margin-top:4px; }
+  .dim3 { display:flex; gap:8px; margin:10px 18px 0; }
+  .dim { flex:1; background:var(--card); border-radius:16px; padding:12px 6px 11px; text-align:center; }
+  .dim .dn { font-size:10.5px; color:var(--label2); }
+  .dim .dv { font-size:20px; font-weight:700; color:var(--label); margin-top:4px; letter-spacing:-.5px;
+    font-variant-numeric:tabular-nums; }
+  .dim .dv small { font-size:11px; font-weight:600; color:var(--label3); letter-spacing:0; }
+  .bdg-row { display:flex; align-items:center; gap:12px; padding:11px 16px; position:relative; min-height:54px; }
+  .bdg-row .bmedal { width:36px; height:36px; flex-shrink:0; }
+  .bdg-row .bmedal svg { width:100%; height:100%; }
+  .bdg-row .mt { font-size:14.5px; font-weight:600; color:var(--label); }
+  .bdg-row .ms { font-size:11px; color:var(--label2); margin-top:1px; }
+  .bdg-row .bbar { margin-left:auto; width:70px; height:5px; border-radius:3px; background:var(--fill2);
+    overflow:hidden; flex-shrink:0; }
+  .bdg-row .bbar i { display:block; height:100%; border-radius:3px; }
+
+  /* ============ 设计规范速查 ============ */
+  .spec { max-width:1180px; margin:88px auto 0; }
+  .spec h2 { font-size:22px; font-weight:700; color:#fff; margin-bottom:6px; letter-spacing:-.3px; }
+  .spec .lead { font-size:13.5px; color:rgba(235,235,245,.5); margin-bottom:22px; }
+  .spec-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:18px; }
+  .spec-card { background:#1c1c20; border:1px solid rgba(255,255,255,.07); border-radius:16px; padding:20px; }
+  .spec-card h3 { font-size:14px; font-weight:600; color:rgba(255,255,255,.9); margin-bottom:14px; }
+  table.spec-t { width:100%; border-collapse:collapse; font-size:12.5px; }
+  table.spec-t td { padding:7px 4px; border-bottom:.5px solid rgba(255,255,255,.08); color:rgba(235,235,245,.8); vertical-align:top; }
+  table.spec-t td:first-child { color:rgba(235,235,245,.55); white-space:nowrap; padding-right:12px; }
+  table.spec-t tr:last-child td { border-bottom:none; }
+  code.k { font-family:"SF Mono",Consolas,monospace; font-size:11.5px; color:#7fbfff; }
+</style>
+</head>
+<body>
+
+<h1>英语口语陪练 · 真机反馈 v10（HyperOS）</h1>
+<div class="sub">四项：跟读页底部布局重做（两方案） · 录音圆顶效果修正 · 单词页两态重设计 · 统计页取舍稿</div>
+
+<div class="board">
+
+  <!-- ============ ① 底部布局 · 方案一（推荐） ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod rec">推荐</span>跟读页底部 · 方案一</b><span>原声播放收成句子卡右上小圆钮（带进度环）· 底部只留跟读胶囊一个主角 ·「先听后说」动线自然</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>10:06</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="nav">
+        <span class="back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </span>
+        <span class="tt">第 1 关 · Excuse Me!</span>
+      </div>
+      <div class="les-head">
+        <span class="lh"><b>逐句跟读</b><span>先听原声，再跟读一遍</span></span>
+        <span class="les-prog"><span class="np">1 / 10 句</span><span class="pbar"><i></i></span></span>
+      </div>
+      <!-- 学习目标收成 chips 行（不再占大块版面） -->
+      <div class="goals-mini">
+        <span class="goal-chip">打招呼 Excuse me!</span>
+        <span class="goal-chip">手提包 handbag</span>
+        <span class="goal-chip">+2 个表达</span>
+      </div>
+      <!-- 句子卡：右上原声播放小圆钮（播放中，进度环 65%） -->
+      <div class="sent-card">
+        <span class="play-mini">
+          <svg class="ring" width="38" height="38" viewBox="0 0 38 38" fill="none">
+            <circle cx="19" cy="19" r="17.5" stroke="rgba(52,130,255,.18)" stroke-width="2"/>
+            <circle cx="19" cy="19" r="17.5" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"
+              stroke-dasharray="71 110" transform="rotate(-90 19 19)"/>
+          </svg>
+          <span class="pc">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><rect x="6" y="4" width="4" height="16" rx="1.5"/><rect x="14" y="4" width="4" height="16" rx="1.5"/></svg>
+          </span>
+        </span>
+        <span class="play-cap">原声播放中</span>
+        <span class="sent-tag">跟读这一句</span>
+        <div class="sent-en">Excuse me!</div>
+        <div class="sent-cn">打扰一下！</div>
+        <div class="sent-tip">点句中词语查释义、收进单词本</div>
+      </div>
+      <div class="footnote-out" style="margin-top:14px">
+        播放结束自动进入跟读 · 再点一次圆钮可暂停原声
+      </div>
+      <!-- 底部：只有跟读胶囊一个主角 -->
+      <div class="bot-a">
+        <div class="pn-row">
+          <span class="pv">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+          </span>
+          <span class="cap">播放结束后点亮跟读</span>
+          <span class="nx">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="hold-btn">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+          </svg>
+          按住 跟读
+        </div>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ② 底部布局 · 方案二（对比） ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">对比</span>跟读页底部 · 方案二</b><span>播放 / 跟读一排两钮：直达性最好，但跟读主角感被稀释、胶囊宽度受挤压</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>10:06</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="nav">
+        <span class="back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </span>
+        <span class="tt">第 1 关 · Excuse Me!</span>
+      </div>
+      <div class="les-head">
+        <span class="lh"><b>逐句跟读</b><span>先听原声，再跟读一遍</span></span>
+        <span class="les-prog"><span class="np">1 / 10 句</span><span class="pbar"><i></i></span></span>
+      </div>
+      <div class="goals-mini">
+        <span class="goal-chip">打招呼 Excuse me!</span>
+        <span class="goal-chip">手提包 handbag</span>
+        <span class="goal-chip">+2 个表达</span>
+      </div>
+      <!-- 句子卡：无播放钮（播放沉到底部行） -->
+      <div class="sent-card">
+        <span class="sent-tag">跟读这一句</span>
+        <div class="sent-en">Excuse me!</div>
+        <div class="sent-cn">打扰一下！</div>
+        <div class="sent-tip">点句中词语查释义、收进单词本</div>
+      </div>
+      <div class="footnote-out" style="margin-top:14px">
+        播放与跟读同级，随时可切
+      </div>
+      <!-- 底部：一排两钮 -->
+      <div class="bot-b">
+        <span class="play-big">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l10-6.5-10-6.5z"/></svg>
+          <small>原声</small>
+        </span>
+        <div class="hold-btn">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+          </svg>
+          按住 跟读
+        </div>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ③ 录音圆顶修正 · 录音中 ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod core">修正</span>录音圆顶 · 录音中</b><span>升起改无过冲曲线 380ms、弧线更宽更缓（150% 超宽）、mic 嵌入弧心、压暗加深至 .6+blur</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>10:06</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="nav">
+        <span class="back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </span>
+        <span class="tt">第 1 关 · Excuse Me!</span>
+      </div>
+      <div class="les-head">
+        <span class="lh"><b>逐句跟读</b><span>先听原声，再跟读一遍</span></span>
+        <span class="les-prog"><span class="np">1 / 10 句</span><span class="pbar"><i></i></span></span>
+      </div>
+      <div class="sent-card">
+        <span class="sent-tag">跟读这一句</span>
+        <div class="sent-en">Excuse me!</div>
+        <div class="sent-cn">打扰一下！</div>
+      </div>
+      <div class="hold-btn pressing">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+        </svg>
+        按住 跟读
+      </div>
+      <!-- 修正版圆顶：录音中 -->
+      <div class="vo-mask"></div>
+      <div class="vo-tip"><b>松开跟读</b><span>00:07 · 上滑取消</span></div>
+      <div class="vo-dome">
+        <span class="dome-w"></span><span class="dome-w w2"></span>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="3" width="6" height="11" rx="3" fill="#fff" stroke="none"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+        </svg>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ④ 录音圆顶修正 · 上滑取消 ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">修正</span>录音圆顶 · 上滑取消</b><span>≥56dp 阈值 → 整体渐变转红、弧线微收 scale .95、波浪停摆 · 提示同步转红</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>10:06</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="nav">
+        <span class="back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </span>
+        <span class="tt">第 1 关 · Excuse Me!</span>
+      </div>
+      <div class="les-head">
+        <span class="lh"><b>逐句跟读</b><span>先听原声，再跟读一遍</span></span>
+        <span class="les-prog"><span class="np">1 / 10 句</span><span class="pbar"><i></i></span></span>
+      </div>
+      <div class="sent-card">
+        <span class="sent-tag">跟读这一句</span>
+        <div class="sent-en">Excuse me!</div>
+        <div class="sent-cn">打扰一下！</div>
+      </div>
+      <div class="hold-btn pressing">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+        </svg>
+        按住 跟读
+      </div>
+      <!-- 修正版圆顶：取消态 -->
+      <div class="vo-mask"></div>
+      <div class="vo-tip cancel"><b>松开取消</b><span>00:07 · 录音作废</span></div>
+      <div class="vo-dome cancel">
+        <span class="dome-w"></span><span class="dome-w w2"></span>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>
+        </svg>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ⑤ 单词页 · 有词态 ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">重做</span>单词 · 有词态</b><span>渐变汇总头卡（已收/待复习/已掌握）+ 今日到期复习入口 + 词卡行（来源徽标+复习倒计时）</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>10:06</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="lg-title">单词</div>
+      <!-- 顶部信息区：渐变汇总头卡 -->
+      <div class="wd-hero">
+        <div class="art">
+          <svg width="130" height="120" viewBox="0 0 130 120" fill="none">
+            <path d="M96 12l9 18 20 3-14 14 3 20-18-9-18 9 3-20-14-14 20-3z"/>
+          </svg>
+        </div>
+        <div class="wt">我的生词本</div>
+        <div class="wn">45 <small>个词</small></div>
+        <div class="wstats">
+          <div><b>5</b>待复习</div>
+          <div><b>32</b>已掌握</div>
+          <div><b>8</b>学习中</div>
+        </div>
+      </div>
+      <!-- 今日复习入口 -->
+      <div class="rev-card">
+        <span>
+          <span class="rt" style="display:block">今日复习</span>
+          <span class="rs">到期 <b>5</b> 词 · 跟读一遍即过</span>
+        </span>
+        <span class="rev-btn">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l10-6.5-10-6.5z"/></svg>
+          开始复习
+        </span>
+      </div>
+      <div class="sec-h">全部生词
+        <span class="hint">按收词时间排序</span>
+      </div>
+      <div class="group">
+        <div class="wrow">
+          <span class="ww"><span class="due"></span>handbag</span>
+          <span>
+            <span class="wm">/ˈhændbæɡ/ · n. 手提包</span>
+            <span class="wsub"><span class="src nce">NCE L1</span><span class="cd hot">今天到期</span></span>
+          </span>
+          <span class="say">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z" fill="var(--blue)" stroke="none"/><path d="M15.5 9.5a3.6 3.6 0 0 1 0 5"/></svg>
+          </span>
+        </div>
+        <div class="hairline"></div>
+        <div class="wrow">
+          <span class="ww"><span class="due"></span>corner</span>
+          <span>
+            <span class="wm">/ˈkɔ:rnər/ · n. 拐角</span>
+            <span class="wsub"><span class="src">口语 · 点餐</span><span class="cd hot">1 天后</span></span>
+          </span>
+          <span class="say">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z" fill="var(--blue)" stroke="none"/><path d="M15.5 9.5a3.6 3.6 0 0 1 0 5"/></svg>
+          </span>
+        </div>
+        <div class="hairline"></div>
+        <div class="wrow">
+          <span class="ww">perhaps</span>
+          <span>
+            <span class="wm">/pərˈhæps/ · adv. 或许</span>
+            <span class="wsub"><span class="src">口语 · 闲聊</span><span class="cd">3 天后</span></span>
+          </span>
+          <span class="say">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z" fill="var(--blue)" stroke="none"/><path d="M15.5 9.5a3.6 3.6 0 0 1 0 5"/></svg>
+          </span>
+        </div>
+        <div class="hairline"></div>
+        <div class="wrow">
+          <span class="ww">pardon</span>
+          <span>
+            <span class="wm">/ˈpɑ:rdn/ · int. 请再说一遍</span>
+            <span class="wsub"><span class="src nce">NCE L1</span><span class="cd">6 天后</span></span>
+          </span>
+          <span class="say">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4z" fill="var(--blue)" stroke="none"/><path d="M15.5 9.5a3.6 3.6 0 0 1 0 5"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="tabbar" style="margin-top:auto">
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.2L12 4l8 7.2"/><path d="M6.2 10v9.8h11.6V10"/></svg>
+        </span>口语</div>
+        <div class="tab active"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg>
+        </span>单词</div>
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 20v-7M12 20V4.5M18.5 20v-4.5"/></svg>
+        </span>统计</div>
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.7M12 18.5v2.7M21.2 12h-2.7M5.5 12H2.8M18.6 5.4l-1.9 1.9M7.3 16.7l-1.9 1.9M18.6 18.6l-1.9-1.9M7.3 7.3L5.4 5.4"/></svg>
+        </span>设置</div>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ⑥ 单词页 · 空态 ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">新增</span>单词 · 空态引导</b><span>不是"坏了"：两张收词路径卡（跟读点词 / 对话纠错自动收）+ 去读第 1 关</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>10:06</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="lg-title">单词</div>
+      <div class="empty">
+        <div class="empty-stack"><i>Aa</i><i>Bb</i><i>+词</i></div>
+        <div class="et">生词本还是空的</div>
+        <div class="es">练的时候顺手就能攒下生词，<br>两种收法都很快：</div>
+        <div class="howto">
+          <div class="how">
+            <span class="hic a">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21a8.5 8.5 0 1 0-8.5-8.5c0 1.7.5 3.3 1.4 4.6L4 21l4-1c1.2.6 2.6 1 4 1z"/><path d="M8.5 9.5h7M8.5 13h5"/>
+              </svg>
+            </span>
+            <span>
+              <span class="ht" style="display:block">跟读时点句中生词</span>
+              <span class="hs" style="display:block">句子里的词点一下就收进本子</span>
+            </span>
+          </div>
+          <div class="how">
+            <span class="hic b">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+            </span>
+            <span>
+              <span class="ht" style="display:block">对话纠错自动收集</span>
+              <span class="hs" style="display:block">AI 帮你把说错的关键词收好</span>
+            </span>
+          </div>
+        </div>
+        <div class="big-cta" style="margin:18px 0 0">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l10-6.5-10-6.5z"/></svg>
+          去读第 1 关
+        </div>
+        <div class="es" style="font-size:11.5px;color:var(--label3);margin-top:10px">收进来的词次日到期，跟读一遍即过</div>
+      </div>
+      <div class="tabbar" style="margin-top:auto">
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.2L12 4l8 7.2"/><path d="M6.2 10v9.8h11.6V10"/></svg>
+        </span>口语</div>
+        <div class="tab active"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg>
+        </span>单词</div>
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 20v-7M12 20V4.5M18.5 20v-4.5"/></svg>
+        </span>统计</div>
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.7M12 18.5v2.7M21.2 12h-2.7M5.5 12H2.8M18.6 5.4l-1.9 1.9M7.3 16.7l-1.9 1.9M18.6 18.6l-1.9-1.9M7.3 7.3L5.4 5.4"/></svg>
+        </span>设置</div>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+  <!-- ============ ⑦ 统计页（取舍稿） ============ -->
+  <div class="shot">
+    <div class="shot-label"><b><span class="mod">重做</span>统计 · 取舍稿</b><span>保留 4 项高价值：连续打卡 / 累计跟读句数 / 本周时长 / 徽章进度 · 砍掉曲线图等低价值项</span></div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="statusbar">
+        <span>10:06</span>
+        <svg width="62" height="14" viewBox="0 0 62 14" fill="none">
+          <rect x="0" y="8" width="3" height="5" rx="1" fill="#000"/><rect x="4.5" y="6" width="3" height="7" rx="1" fill="#000"/>
+          <rect x="9" y="3.5" width="3" height="9.5" rx="1" fill="#000"/><rect x="13.5" y="1" width="3" height="12" rx="1" fill="#000"/>
+          <path d="M28 4.5a9.5 9.5 0 0 1 12 0l-1.7 2a7 7 0 0 0-8.6 0z" fill="#000"/>
+          <path d="M30.4 8.1a5.5 5.5 0 0 1 7.2 0L36 10.2a3 3 0 0 0-4 0z" fill="#000"/>
+          <circle cx="34" cy="12" r="1.6" fill="#000"/>
+          <rect x="49" y="2.6" width="7" height="10.4" rx="2" stroke="#000" stroke-opacity=".4" fill="none"/>
+          <rect x="50.5" y="0.8" width="4" height="1.6" rx="0.8" fill="#000" fill-opacity=".4"/>
+          <rect x="50.5" y="4.8" width="4" height="6.4" rx="1" fill="#000"/>
+        </svg>
+      </div>
+      <div class="lg-title">统计</div>
+      <!-- 连续打卡（火苗卡） -->
+      <div class="streak-hero">
+        <span class="flame">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">
+            <path d="M12 2c1 3-2 4.5-2 7a4 4 0 0 0 8 .3C18.5 6 14 5.5 12 2zM8.5 12.5A4.5 4.5 0 0 0 12 21a4.5 4.5 0 0 0 3.5-8.5c.2 1.6-.8 2.6-1.8 3.1.3-1.8-.7-3.4-2.2-4.3-.1 1.7-.9 2.7-1.6 3.4-.6.6-1.3 1.1-1.4 1.8z" stroke="#E8790A" stroke-width=".6"/>
+          </svg>
+        </span>
+        <span>
+          <span class="sn">7<small> 天连续打卡</small></span>
+          <span class="sc" style="display:block">最佳纪录 12 天 · 今天还差 1 分钟</span>
+        </span>
+      </div>
+      <!-- 三个核心数据 -->
+      <div class="dim3">
+        <div class="dim"><div class="dn">累计跟读</div><div class="dv">126<small> 句</small></div></div>
+        <div class="dim"><div class="dn">本周时长</div><div class="dv">38<small> 分钟</small></div></div>
+        <div class="dim"><div class="dn">累计开口</div><div class="dv">5.2<small> 小时</small></div></div>
+      </div>
+      <!-- 徽章进度 -->
+      <div class="sec-h">里程碑徽章
+        <span class="hint">下一枚 · 50 关</span>
+      </div>
+      <div class="group">
+        <div class="bdg-row">
+          <span class="bmedal">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="17" r="12" fill="rgba(255,169,77,.2)" stroke="#E8790A" stroke-width="2"/>
+              <path d="M20 10l2 4 4.4.5-3.3 3 .8 4.4-3.9-2.2-3.9 2.2.8-4.4-3.3-3 4.4-.5z" fill="#E8790A"/>
+              <path d="M14 26l-2.5 8L20 30l8.5 4L26 26" stroke="#E8790A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>
+            <span class="mt" style="display:block">入门徽章</span>
+            <span class="ms">已达成</span>
+          </span>
+          <span class="bbar"><i style="width:100%;background:var(--mi-green)"></i></span>
+        </div>
+        <div class="hairline"></div>
+        <div class="bdg-row">
+          <span class="bmedal" style="opacity:.38">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="17" r="12" stroke="var(--label3)" stroke-width="2"/>
+              <path d="M14.5 16.5h11M14.5 20h11M17 13v10M23 13v10" stroke="var(--label3)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 26l-2.5 8L20 30l8.5 4L26 26" stroke="var(--label3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>
+            <span class="mt" style="display:block;color:var(--label2)">坚持徽章</span>
+            <span class="ms">已通关 12 / 50 关</span>
+          </span>
+          <span class="bbar"><i style="width:24%;background:var(--blue)"></i></span>
+        </div>
+        <div class="hairline"></div>
+        <div class="bdg-row">
+          <span class="bmedal" style="opacity:.38">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M20 4l4.5 3.5 5.5-.5 1.5 5.5L36 17l-3 4.5.5 5.5-5.5 1L24 32.5 20 30l-4 2.5-4-4.5-5.5-1 .5-5.5L4 17l4.5-4.5L10 7l5.5.5z" stroke="var(--label3)" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M14.5 17.5l4 4 7.5-8" stroke="var(--label3)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>
+            <span class="mt" style="display:block;color:var(--label2)">百关徽章</span>
+            <span class="ms">100 关解锁</span>
+          </span>
+          <span class="bbar"><i style="width:12%;background:var(--blue)"></i></span>
+        </div>
+        <div class="hairline"></div>
+        <div class="bdg-row">
+          <span class="bmedal" style="opacity:.38">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M12 8h16l6 9-14 17L6 17z" stroke="var(--label3)" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M12 8l8 9 8-9M6 17h28M20 17v17" stroke="var(--label3)" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>
+            <span class="mt" style="display:block;color:var(--label2)">通关徽章</span>
+            <span class="ms">276 关解锁</span>
+          </span>
+          <span class="bbar"><i style="width:4%;background:var(--blue)"></i></span>
+        </div>
+      </div>
+      <div class="footnote-out">只显示帮到你坚持的数据 · 开口满 3 分钟即计打卡</div>
+      <div class="tabbar" style="margin-top:auto">
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.2L12 4l8 7.2"/><path d="M6.2 10v9.8h11.6V10"/></svg>
+        </span>口语</div>
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg>
+        </span>单词</div>
+        <div class="tab active"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 20v-7M12 20V4.5M18.5 20v-4.5"/></svg>
+        </span>统计</div>
+        <div class="tab"><span class="ind">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.7M12 18.5v2.7M21.2 12h-2.7M5.5 12H2.8M18.6 5.4l-1.9 1.9M7.3 16.7l-1.9 1.9M18.6 18.6l-1.9-1.9M7.3 7.3L5.4 5.4"/></svg>
+        </span>设置</div>
+      </div>
+      <div class="gbar"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== 设计规范速查（v10 · 真机反馈四项） ==================== -->
+<div class="spec">
+  <h2>设计规范速查 · v10 真机反馈</h2>
+  <div class="lead">沿用 v6~v9 规范（HyperOS / MiSans / #3482FF / #FF6900 / Wallet 卡 / 方案 A 等宽轮播 / 大圆顶录音组件）。本页只列 v10 变更。</div>
+  <div class="spec-grid">
+
+    <div class="spec-card">
+      <h3>① 跟读页底部布局（两方案）</h3>
+      <table class="spec-t">
+        <tr><td>现状问题</td><td>真机：滚动区下浮着「播放圆钮+文字」与「灰胶囊」两个元素——灰胶囊像禁用态、播放与跟读关系不明、中间大片留白</td></tr>
+        <tr><td>方案一（推荐）</td><td>原声播放收成句子卡右上 38dp 小圆钮 + 进度环（播放中显示暂停 icon + 环形进度 + 「原声播放中」小标）；底部只留跟读胶囊一个主角 + 上一句/下一句小钮行</td></tr>
+        <tr><td>状态逻辑</td><td>播放中：胶囊灰底文案「听完这句，跟读」（不再是禁用感的纯灰）；播放结束：胶囊点亮橙渐变 + 顶部提示消失——「先听后说」用状态色表达，不用禁用</td></tr>
+        <tr><td>方案二（对比）</td><td>一排两钮：56dp 播放大钮 + 跟读胶囊水平并排——直达性最好，但跟读主角感被稀释、胶囊宽度受挤压，且播放/跟读无先后引导</td></tr>
+        <tr><td>推荐理由</td><td>动线顺序（听→说）内建于布局；底部单主角层次清晰；句子卡信息密度提高（播放状态就近展示）；同时解决留白失衡</td></tr>
+        <tr><td>顺带</td><td>真机的「通过本关卡，你将学会什么」大列表压缩为 chips 行（≤3 枚），把版面还给跟读</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>② 录音圆顶修正（对比 v9-dome 实现）</h3>
+      <table class="spec-t">
+        <tr><td>问题诊断</td><td>a) 升起用 overshoot spring（.3,1.2,.4,1）产生回弹，观感"生硬"；b) 圆顶 118dp 偏矮、弧线不够舒展；c) mic 与提示文案层级贴近、缺少呼吸空间；d) 背景压暗 .55 不够、无 blur，圆顶浮不出来</td></tr>
+        <tr><td>修正 1 曲线</td><td>升起改 <code class="k">cubic-bezier(.22,.9,.34,1)</code> 380ms——先快后缓、无回弹（"涌上来"而非"弹上来"）；回落 240ms ease-in</td></tr>
+        <tr><td>修正 2 形态</td><td>高 118→140dp；宽度 132%→150% 超出屏宽，弧顶更平缓；三段渐变（#6BB0FF→#3482FF→#2468D8）加底部暗部，弧面更立体</td></tr>
+        <tr><td>修正 3 层级</td><td>提示「松开跟读」固定于弧顶上方 ~30dp（不随圆顶动）；计时与「上滑取消」合并进副行；mic 32dp 白色 + 投影嵌于弧心</td></tr>
+        <tr><td>修正 4 背景</td><td>压暗 .55→.6 + blur(2px)，圆顶投影加强（-14dp 50dp 大范围蓝晕）</td></tr>
+        <tr><td>波浪</td><td>两层弧面高光带 translateY ±5dp / scaleX ±3% 交错（3.2s/4.1s），比竖条声波更贴圆顶形态；仍是纯循环假动画</td></tr>
+        <tr><td>取消态</td><td>整体渐变转红（#F58A8E→#E5484D→#C23338 三段）、scale .95、波浪停摆，提示转红「松开取消 · 录音作废」；阈值 ≥56dp 不变</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>③ 单词页（两态 + 顶部信息区）</h3>
+      <table class="spec-t">
+        <tr><td>顶部信息区</td><td>蓝渐变头卡「我的生词本」：总词数大数字（45 个词）+ 三列小计（待复习 5 / 已掌握 32 / 学习中 8）+ 右上白 duotone 星形水印（与关卡卡语言同源）</td></tr>
+        <tr><td>复习入口</td><td>白卡「今日复习 · 到期 5 词（橙强调）· 跟读一遍即过」+「开始复习」蓝胶囊——固定在头卡下，有词才出现</td></tr>
+        <tr><td>有词列表</td><td>词 17px + 音标释义 12px；副行 = 来源徽标（蓝=对话 / 紫=NCE L1）+ 复习倒计时（今天到期/1 天后橙色强调，3 天后起灰色）；右侧 34dp 发音圆钮</td></tr>
+        <tr><td>空态</td><td>倾斜卡堆插画（第三张虚线"+词"暗示可填）+「生词本还是空的」+ 两张收词路径卡（跟读点句中生词 / 对话纠错自动收集）+「去读第 1 关」CTA——把空态做成引导，不做报错感</td></tr>
+        <tr><td>口径</td><td>收词次日到期、跟读一遍即过（沿用）；倒计时数字与 1/3/7 天复习周期一致</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>④ 统计页取舍稿（待 PM v4 校准）</h3>
+      <table class="spec-t">
+        <tr><td>保留 4 项</td><td>连续打卡（橙渐变火苗卡 + 最佳纪录 +「今天还差 1 分钟」行动提示）；累计跟读 126 句；本周时长 38 分钟；累计开口 5.2 小时（三列数据块）</td></tr>
+        <tr><td>徽章进度</td><td>4 档里程碑行（v9 徽章体系复用）：每行徽章 + 状态 + 70dp 进度条；sec-h 提示「下一枚 · 50 关」</td></tr>
+        <tr><td>砍掉</td><td>每日时长柱状图/曲线、准确率历史、词性分布、按小时热力等分析型图表——自用场景看完即走，无回看价值</td></tr>
+        <tr><td>原则</td><td>只显示帮用户"坚持"的数据（进度感/连续感/临近目标），不显示"分析"数据；页脚一句口径「开口满 3 分钟即计打卡」</td></tr>
+        <tr><td>待定</td><td>PM v4 文档口径如与此稿冲突（阈值/命名/取舍），以 v4 为准微调数值与文案，结构不变</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-card">
+      <h3>⑤ 跳过入口核查 + 沿用项</h3>
+      <table class="spec-t">
+        <tr><td>跳过核查</td><td>已 grep 全部历史设计稿（v3~v9）：无任何「跳过」入口，v10 亦不引入；本次截图（第 1 关跟读页）中同样不存在。若工程实现里出现了跳过按钮，属实现超出设计稿，建议按 PM v4 口径移除</td></tr>
+        <tr><td>沿用项</td><td>方案 A 等宽轮播、单词快捷卡、成绩单、圆顶录音组件（含 ≤8 字文案红线）、1/3/7 复习、Tab 命名、点词释义底部弹层</td></tr>
+        <tr><td>动效基调</td><td>页面转场/弹出统一 spring <code class="k">.3,1.2,.4,1</code>；圆顶升起是唯一例外（用无过冲 .22,.9,.34,1）——大色块回弹会显生硬</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

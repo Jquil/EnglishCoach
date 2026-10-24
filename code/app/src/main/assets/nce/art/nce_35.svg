@@ -1,0 +1,42 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:defs>
+    <ns0:g id="car" stroke="#000000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <ns0:path d="M6 27 H3 Q1 27 1 24 V18 Q1 14 7 13 L19 12 Q26 3 37 3 H45 Q53 3 57 11 L61 15 Q63 17 63 21 V25 Q63 27 61 27 Z" fill="#FFFFFF" />
+      <ns0:path d="M0 8 H10 M4.5 8 V13" />
+      <ns0:path d="M30 11 Q33 6 38 6 H42 V11 Z" fill="#555555" stroke="none" />
+      <ns0:circle cx="58.5" cy="17.5" r="1.4" fill="#000000" stroke="none" />
+      <ns0:circle cx="16" cy="27" r="6" fill="#FFFFFF" />
+      <ns0:circle cx="16" cy="27" r="1.8" fill="#000000" stroke="none" />
+      <ns0:circle cx="48" cy="27" r="6" fill="#FFFFFF" />
+      <ns0:circle cx="48" cy="27" r="1.8" fill="#000000" stroke="none" />
+    </ns0:g>
+  </ns0:defs>
+
+  
+  <ns0:line x1="190" y1="24" x2="190" y2="64" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:rect x="166" y="24" width="24" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" />
+  <ns0:rect x="166" y="24" width="6" height="6" fill="#000000" />
+  <ns0:rect x="178" y="24" width="6" height="6" fill="#000000" />
+  <ns0:rect x="172" y="30" width="6" height="6" fill="#000000" />
+  <ns0:rect x="184" y="30" width="6" height="6" fill="#000000" />
+
+  
+  <ns0:use href="#car" ns1:href="#car" transform="translate(58 42) scale(0.8)" />
+
+  
+  <ns0:use href="#car" ns1:href="#car" transform="translate(112 64) scale(1.1)" />
+
+  
+  <ns0:g stroke="#000000" stroke-width="2.5" stroke-linecap="round">
+    <ns0:path d="M8 50 H44" />
+    <ns0:path d="M18 57 H52" />
+    <ns0:path d="M6 64 H38" />
+    <ns0:path d="M68 76 H104" />
+    <ns0:path d="M56 84 H102" />
+    <ns0:path d="M72 93 H106" />
+  </ns0:g>
+
+  
+  <ns0:path d="M100 101 H196" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:path d="M120 108 H140 M150 108 H162" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+</ns0:svg>

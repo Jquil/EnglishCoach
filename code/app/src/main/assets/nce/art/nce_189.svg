@@ -1,0 +1,14 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <ns0:circle cx="134" cy="60" r="52" stroke="#555555" stroke-width="1.2" stroke-dasharray="0.5 7" />
+  <ns0:path d="M58 42 Q76 44 88 52 M52 60 Q72 60 88 62 M58 78 Q76 76 88 70" stroke="#555555" stroke-width="2.4" />
+  <ns0:path d="M152 4 L152 16 M146 10 L158 10" stroke="#555555" stroke-width="2" />
+  <ns0:path d="M190 38 L197 31 M192 56 L198 56 M190 72 L197 79" stroke="#000000" stroke-width="2.4" />
+  <ns0:rect x="90" y="40" width="28" height="46" rx="8" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:line x1="100" y1="44" x2="100" y2="82" stroke="#000000" stroke-width="2" />
+  <ns0:path d="M116 44 C121 30 140 20 158 25 C178 31 189 52 180 70 C172 86 148 94 130 86 L118 76 C112 66 112 55 116 44 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:path d="M166 32 C174 44 174 62 166 76" stroke="#000000" stroke-width="2" />
+  <ns0:ellipse cx="146" cy="88" rx="17" ry="12" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" />
+  <ns0:circle cx="36" cy="158" r="1.6" fill="#000000" />
+  <ns0:circle cx="50" cy="148" r="2.1" fill="#000000" />
+  <ns0:circle cx="64" cy="138" r="2.6" fill="#000000" />
+</ns0:svg>

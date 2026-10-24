@@ -1,0 +1,10278 @@
+{
+ "there": {
+  "s": [
+   "there"
+  ],
+  "st": 0
+ },
+ "these": {
+  "s": [
+   "these"
+  ],
+  "st": 0
+ },
+ "they": {
+  "s": [
+   "they"
+  ],
+  "st": 0
+ },
+ "thing": {
+  "s": [
+   "thing"
+  ],
+  "st": 0
+ },
+ "think": {
+  "s": [
+   "think"
+  ],
+  "st": 0
+ },
+ "thirsty": {
+  "s": [
+   "thirs",
+   "ty"
+  ],
+  "st": 0
+ },
+ "this": {
+  "s": [
+   "this"
+  ],
+  "st": 0
+ },
+ "those": {
+  "s": [
+   "those"
+  ],
+  "st": 0
+ },
+ "three": {
+  "s": [
+   "three"
+  ],
+  "st": 0
+ },
+ "time": {
+  "s": [
+   "time"
+  ],
+  "st": 0
+ },
+ "to": {
+  "s": [
+   "to"
+  ],
+  "st": 0
+ },
+ "today": {
+  "s": [
+   "to",
+   "day"
+  ],
+  "st": 1
+ },
+ "together": {
+  "s": [
+   "to",
+   "geth",
+   "er"
+  ],
+  "st": 1
+ },
+ "too": {
+  "s": [
+   "too"
+  ],
+  "st": 0
+ },
+ "traffic": {
+  "s": [
+   "traf",
+   "fic"
+  ],
+  "st": 0
+ },
+ "travel": {
+  "s": [
+   "trav",
+   "el"
+  ],
+  "st": 0
+ },
+ "try": {
+  "s": [
+   "try"
+  ],
+  "st": 0
+ },
+ "two": {
+  "s": [
+   "two"
+  ],
+  "st": 0
+ },
+ "under": {
+  "s": [
+   "un",
+   "der"
+  ],
+  "st": 0
+ },
+ "understand": {
+  "s": [
+   "un",
+   "der",
+   "stand"
+  ],
+  "st": 2
+ },
+ "update": {
+  "s": [
+   "up",
+   "date"
+  ],
+  "st": 1
+ },
+ "us": {
+  "s": [
+   "us"
+  ],
+  "st": 0
+ },
+ "use": {
+  "s": [
+   "use"
+  ],
+  "st": 0
+ },
+ "very": {
+  "s": [
+   "ver",
+   "y"
+  ],
+  "st": 0
+ },
+ "visit": {
+  "s": [
+   "vis",
+   "it"
+  ],
+  "st": 0
+ },
+ "wait": {
+  "s": [
+   "wait"
+  ],
+  "st": 0
+ },
+ "walk": {
+  "s": [
+   "walk"
+  ],
+  "st": 0
+ },
+ "want": {
+  "s": [
+   "want"
+  ],
+  "st": 0
+ },
+ "warm": {
+  "s": [
+   "warm"
+  ],
+  "st": 0
+ },
+ "water": {
+  "s": [
+   "wa",
+   "ter"
+  ],
+  "st": 0
+ },
+ "way": {
+  "s": [
+   "way"
+  ],
+  "st": 0
+ },
+ "we": {
+  "s": [
+   "we"
+  ],
+  "st": 0
+ },
+ "weather": {
+  "s": [
+   "weath",
+   "er"
+  ],
+  "st": 0
+ },
+ "week": {
+  "s": [
+   "week"
+  ],
+  "st": 0
+ },
+ "weekend": {
+  "s": [
+   "week",
+   "end"
+  ],
+  "st": 0
+ },
+ "well": {
+  "s": [
+   "well"
+  ],
+  "st": 0
+ },
+ "what": {
+  "s": [
+   "what"
+  ],
+  "st": 0
+ },
+ "when": {
+  "s": [
+   "when"
+  ],
+  "st": 0
+ },
+ "where": {
+  "s": [
+   "where"
+  ],
+  "st": 0
+ },
+ "which": {
+  "s": [
+   "which"
+  ],
+  "st": 0
+ },
+ "white": {
+  "s": [
+   "white"
+  ],
+  "st": 0
+ },
+ "who": {
+  "s": [
+   "who"
+  ],
+  "st": 0
+ },
+ "why": {
+  "s": [
+   "why"
+  ],
+  "st": 0
+ },
+ "will": {
+  "s": [
+   "will"
+  ],
+  "st": 0
+ },
+ "with": {
+  "s": [
+   "with"
+  ],
+  "st": 0
+ },
+ "woman": {
+  "s": [
+   "wom",
+   "an"
+  ],
+  "st": 0
+ },
+ "work": {
+  "s": [
+   "work"
+  ],
+  "st": 0
+ },
+ "world": {
+  "s": [
+   "world"
+  ],
+  "st": 0
+ },
+ "wrong": {
+  "s": [
+   "wrong"
+  ],
+  "st": 0
+ },
+ "yes": {
+  "s": [
+   "yes"
+  ],
+  "st": 0
+ },
+ "yet": {
+  "s": [
+   "yet"
+  ],
+  "st": 0
+ },
+ "you": {
+  "s": [
+   "you"
+  ],
+  "st": 0
+ },
+ "young": {
+  "s": [
+   "young"
+  ],
+  "st": 0
+ },
+ "your": {
+  "s": [
+   "your"
+  ],
+  "st": 0
+ },
+ "news": {
+  "s": [
+   "news"
+  ],
+  "st": 0
+ },
+ "next": {
+  "s": [
+   "next"
+  ],
+  "st": 0
+ },
+ "nice": {
+  "s": [
+   "nice"
+  ],
+  "st": 0
+ },
+ "night": {
+  "s": [
+   "night"
+  ],
+  "st": 0
+ },
+ "no": {
+  "s": [
+   "no"
+  ],
+  "st": 0
+ },
+ "now": {
+  "s": [
+   "now"
+  ],
+  "st": 0
+ },
+ "off": {
+  "s": [
+   "off"
+  ],
+  "st": 0
+ },
+ "often": {
+  "s": [
+   "of",
+   "ten"
+  ],
+  "st": 0
+ },
+ "old": {
+  "s": [
+   "old"
+  ],
+  "st": 0
+ },
+ "on": {
+  "s": [
+   "on"
+  ],
+  "st": 0
+ },
+ "only": {
+  "s": [
+   "on",
+   "ly"
+  ],
+  "st": 0
+ },
+ "open": {
+  "s": [
+   "o",
+   "pen"
+  ],
+  "st": 0
+ },
+ "or": {
+  "s": [
+   "or"
+  ],
+  "st": 0
+ },
+ "order": {
+  "s": [
+   "or",
+   "der"
+  ],
+  "st": 0
+ },
+ "other": {
+  "s": [
+   "oth",
+   "er"
+  ],
+  "st": 0
+ },
+ "our": {
+  "s": [
+   "our"
+  ],
+  "st": 0
+ },
+ "out": {
+  "s": [
+   "out"
+  ],
+  "st": 0
+ },
+ "over": {
+  "s": [
+   "o",
+   "ver"
+  ],
+  "st": 0
+ },
+ "own": {
+  "s": [
+   "own"
+  ],
+  "st": 0
+ },
+ "people": {
+  "s": [
+   "peo",
+   "ple"
+  ],
+  "st": 0
+ },
+ "place": {
+  "s": [
+   "place"
+  ],
+  "st": 0
+ },
+ "play": {
+  "s": [
+   "play"
+  ],
+  "st": 0
+ },
+ "please": {
+  "s": [
+   "please"
+  ],
+  "st": 0
+ },
+ "progress": {
+  "s": [
+   "prog",
+   "ress"
+  ],
+  "st": 0
+ },
+ "project": {
+  "s": [
+   "proj",
+   "ect"
+  ],
+  "st": 0
+ },
+ "question": {
+  "s": [
+   "ques",
+   "tion"
+  ],
+  "st": 0
+ },
+ "ready": {
+  "s": [
+   "read",
+   "y"
+  ],
+  "st": 0
+ },
+ "really": {
+  "s": [
+   "real",
+   "ly"
+  ],
+  "st": 0
+ },
+ "receipt": {
+  "s": [
+   "re",
+   "ceipt"
+  ],
+  "st": 1
+ },
+ "recently": {
+  "s": [
+   "re",
+   "cent",
+   "ly"
+  ],
+  "st": 1
+ },
+ "relax": {
+  "s": [
+   "re",
+   "lax"
+  ],
+  "st": 1
+ },
+ "remember": {
+  "s": [
+   "re",
+   "mem",
+   "ber"
+  ],
+  "st": 1
+ },
+ "reschedule": {
+  "s": [
+   "re",
+   "sched",
+   "ule"
+  ],
+  "st": 1
+ },
+ "review": {
+  "s": [
+   "re",
+   "view"
+  ],
+  "st": 1
+ },
+ "right": {
+  "s": [
+   "right"
+  ],
+  "st": 0
+ },
+ "room": {
+  "s": [
+   "room"
+  ],
+  "st": 0
+ },
+ "run": {
+  "s": [
+   "run"
+  ],
+  "st": 0
+ },
+ "said": {
+  "s": [
+   "said"
+  ],
+  "st": 0
+ },
+ "salad": {
+  "s": [
+   "sal",
+   "ad"
+  ],
+  "st": 0
+ },
+ "same": {
+  "s": [
+   "same"
+  ],
+  "st": 0
+ },
+ "sandwich": {
+  "s": [
+   "sand",
+   "wich"
+  ],
+  "st": 0
+ },
+ "schedule": {
+  "s": [
+   "sched",
+   "ule"
+  ],
+  "st": 0
+ },
+ "school": {
+  "s": [
+   "school"
+  ],
+  "st": 0
+ },
+ "see": {
+  "s": [
+   "see"
+  ],
+  "st": 0
+ },
+ "sell": {
+  "s": [
+   "sell"
+  ],
+  "st": 0
+ },
+ "she": {
+  "s": [
+   "she"
+  ],
+  "st": 0
+ },
+ "should": {
+  "s": [
+   "should"
+  ],
+  "st": 0
+ },
+ "show": {
+  "s": [
+   "show"
+  ],
+  "st": 0
+ },
+ "sidewalk": {
+  "s": [
+   "side",
+   "walk"
+  ],
+  "st": 0
+ },
+ "sing": {
+  "s": [
+   "sing"
+  ],
+  "st": 0
+ },
+ "sister": {
+  "s": [
+   "sis",
+   "ter"
+  ],
+  "st": 0
+ },
+ "sit": {
+  "s": [
+   "sit"
+  ],
+  "st": 0
+ },
+ "small": {
+  "s": [
+   "small"
+  ],
+  "st": 0
+ },
+ "some": {
+  "s": [
+   "some"
+  ],
+  "st": 0
+ },
+ "son": {
+  "s": [
+   "son"
+  ],
+  "st": 0
+ },
+ "soon": {
+  "s": [
+   "soon"
+  ],
+  "st": 0
+ },
+ "sorry": {
+  "s": [
+   "sor",
+   "ry"
+  ],
+  "st": 0
+ },
+ "speak": {
+  "s": [
+   "speak"
+  ],
+  "st": 0
+ },
+ "stand": {
+  "s": [
+   "stand"
+  ],
+  "st": 0
+ },
+ "start": {
+  "s": [
+   "start"
+  ],
+  "st": 0
+ },
+ "station": {
+  "s": [
+   "sta",
+   "tion"
+  ],
+  "st": 0
+ },
+ "stay": {
+  "s": [
+   "stay"
+  ],
+  "st": 0
+ },
+ "still": {
+  "s": [
+   "still"
+  ],
+  "st": 0
+ },
+ "stop": {
+  "s": [
+   "stop"
+  ],
+  "st": 0
+ },
+ "straight": {
+  "s": [
+   "straight"
+  ],
+  "st": 0
+ },
+ "student": {
+  "s": [
+   "stu",
+   "dent"
+  ],
+  "st": 0
+ },
+ "study": {
+  "s": [
+   "stud",
+   "y"
+  ],
+  "st": 0
+ },
+ "subway": {
+  "s": [
+   "sub",
+   "way"
+  ],
+  "st": 0
+ },
+ "such": {
+  "s": [
+   "such"
+  ],
+  "st": 0
+ },
+ "sure": {
+  "s": [
+   "sure"
+  ],
+  "st": 0
+ },
+ "take": {
+  "s": [
+   "take"
+  ],
+  "st": 0
+ },
+ "takeaway": {
+  "s": [
+   "take",
+   "a",
+   "way"
+  ],
+  "st": 1
+ },
+ "talk": {
+  "s": [
+   "talk"
+  ],
+  "st": 0
+ },
+ "teacher": {
+  "s": [
+   "teach",
+   "er"
+  ],
+  "st": 0
+ },
+ "tell": {
+  "s": [
+   "tell"
+  ],
+  "st": 0
+ },
+ "thank": {
+  "s": [
+   "thank"
+  ],
+  "st": 0
+ },
+ "that": {
+  "s": [
+   "that"
+  ],
+  "st": 0
+ },
+ "their": {
+  "s": [
+   "their"
+  ],
+  "st": 0
+ },
+ "them": {
+  "s": [
+   "them"
+  ],
+  "st": 0
+ },
+ "then": {
+  "s": [
+   "then"
+  ],
+  "st": 0
+ },
+ "fine": {
+  "s": [
+   "fine"
+  ],
+  "st": 0
+ },
+ "first": {
+  "s": [
+   "first"
+  ],
+  "st": 0
+ },
+ "five": {
+  "s": [
+   "five"
+  ],
+  "st": 0
+ },
+ "food": {
+  "s": [
+   "food"
+  ],
+  "st": 0
+ },
+ "friend": {
+  "s": [
+   "friend"
+  ],
+  "st": 0
+ },
+ "from": {
+  "s": [
+   "from"
+  ],
+  "st": 0
+ },
+ "get": {
+  "s": [
+   "get"
+  ],
+  "st": 0
+ },
+ "girl": {
+  "s": [
+   "girl"
+  ],
+  "st": 0
+ },
+ "give": {
+  "s": [
+   "give"
+  ],
+  "st": 0
+ },
+ "go": {
+  "s": [
+   "go"
+  ],
+  "st": 0
+ },
+ "good": {
+  "s": [
+   "good"
+  ],
+  "st": 0
+ },
+ "great": {
+  "s": [
+   "great"
+  ],
+  "st": 0
+ },
+ "hand": {
+  "s": [
+   "hand"
+  ],
+  "st": 0
+ },
+ "happy": {
+  "s": [
+   "hap",
+   "py"
+  ],
+  "st": 0
+ },
+ "hate": {
+  "s": [
+   "hate"
+  ],
+  "st": 0
+ },
+ "have": {
+  "s": [
+   "have"
+  ],
+  "st": 0
+ },
+ "he": {
+  "s": [
+   "he"
+  ],
+  "st": 0
+ },
+ "hear": {
+  "s": [
+   "hear"
+  ],
+  "st": 0
+ },
+ "hello": {
+  "s": [
+   "hel",
+   "lo"
+  ],
+  "st": 1
+ },
+ "help": {
+  "s": [
+   "help"
+  ],
+  "st": 0
+ },
+ "her": {
+  "s": [
+   "her"
+  ],
+  "st": 0
+ },
+ "here": {
+  "s": [
+   "here"
+  ],
+  "st": 0
+ },
+ "hiking": {
+  "s": [
+   "hik",
+   "ing"
+  ],
+  "st": 0
+ },
+ "him": {
+  "s": [
+   "him"
+  ],
+  "st": 0
+ },
+ "his": {
+  "s": [
+   "his"
+  ],
+  "st": 0
+ },
+ "hobby": {
+  "s": [
+   "hob",
+   "by"
+  ],
+  "st": 0
+ },
+ "holiday": {
+  "s": [
+   "hol",
+   "i",
+   "day"
+  ],
+  "st": 0
+ },
+ "home": {
+  "s": [
+   "home"
+  ],
+  "st": 0
+ },
+ "hope": {
+  "s": [
+   "hope"
+  ],
+  "st": 0
+ },
+ "hot": {
+  "s": [
+   "hot"
+  ],
+  "st": 0
+ },
+ "hour": {
+  "s": [
+   "hour"
+  ],
+  "st": 0
+ },
+ "house": {
+  "s": [
+   "house"
+  ],
+  "st": 0
+ },
+ "how": {
+  "s": [
+   "how"
+  ],
+  "st": 0
+ },
+ "hurry": {
+  "s": [
+   "hur",
+   "ry"
+  ],
+  "st": 0
+ },
+ "idea": {
+  "s": [
+   "i",
+   "de",
+   "a"
+  ],
+  "st": 1
+ },
+ "important": {
+  "s": [
+   "im",
+   "por",
+   "tant"
+  ],
+  "st": 1
+ },
+ "intersection": {
+  "s": [
+   "in",
+   "ter",
+   "sec",
+   "tion"
+  ],
+  "st": 2
+ },
+ "job": {
+  "s": [
+   "job"
+  ],
+  "st": 0
+ },
+ "just": {
+  "s": [
+   "just"
+  ],
+  "st": 0
+ },
+ "keep": {
+  "s": [
+   "keep"
+  ],
+  "st": 0
+ },
+ "know": {
+  "s": [
+   "know"
+  ],
+  "st": 0
+ },
+ "landmark": {
+  "s": [
+   "land",
+   "mark"
+  ],
+  "st": 0
+ },
+ "last": {
+  "s": [
+   "last"
+  ],
+  "st": 0
+ },
+ "late": {
+  "s": [
+   "late"
+  ],
+  "st": 0
+ },
+ "learn": {
+  "s": [
+   "learn"
+  ],
+  "st": 0
+ },
+ "leave": {
+  "s": [
+   "leave"
+  ],
+  "st": 0
+ },
+ "let": {
+  "s": [
+   "let"
+  ],
+  "st": 0
+ },
+ "like": {
+  "s": [
+   "like"
+  ],
+  "st": 0
+ },
+ "listen": {
+  "s": [
+   "lis",
+   "ten"
+  ],
+  "st": 0
+ },
+ "little": {
+  "s": [
+   "lit",
+   "tle"
+  ],
+  "st": 0
+ },
+ "live": {
+  "s": [
+   "live"
+  ],
+  "st": 0
+ },
+ "long": {
+  "s": [
+   "long"
+  ],
+  "st": 0
+ },
+ "look": {
+  "s": [
+   "look"
+  ],
+  "st": 0
+ },
+ "love": {
+  "s": [
+   "love"
+  ],
+  "st": 0
+ },
+ "make": {
+  "s": [
+   "make"
+  ],
+  "st": 0
+ },
+ "man": {
+  "s": [
+   "man"
+  ],
+  "st": 0
+ },
+ "may": {
+  "s": [
+   "may"
+  ],
+  "st": 0
+ },
+ "maybe": {
+  "s": [
+   "may",
+   "be"
+  ],
+  "st": 0
+ },
+ "meet": {
+  "s": [
+   "meet"
+  ],
+  "st": 0
+ },
+ "meeting": {
+  "s": [
+   "meet",
+   "ing"
+  ],
+  "st": 0
+ },
+ "menu": {
+  "s": [
+   "men",
+   "u"
+  ],
+  "st": 0
+ },
+ "milestone": {
+  "s": [
+   "mile",
+   "stone"
+  ],
+  "st": 0
+ },
+ "miss": {
+  "s": [
+   "miss"
+  ],
+  "st": 0
+ },
+ "money": {
+  "s": [
+   "mon",
+   "ey"
+  ],
+  "st": 0
+ },
+ "month": {
+  "s": [
+   "month"
+  ],
+  "st": 0
+ },
+ "more": {
+  "s": [
+   "more"
+  ],
+  "st": 0
+ },
+ "morning": {
+  "s": [
+   "morn",
+   "ing"
+  ],
+  "st": 0
+ },
+ "mother": {
+  "s": [
+   "moth",
+   "er"
+  ],
+  "st": 0
+ },
+ "movie": {
+  "s": [
+   "mov",
+   "ie"
+  ],
+  "st": 0
+ },
+ "much": {
+  "s": [
+   "much"
+  ],
+  "st": 0
+ },
+ "music": {
+  "s": [
+   "mu",
+   "sic"
+  ],
+  "st": 0
+ },
+ "must": {
+  "s": [
+   "must"
+  ],
+  "st": 0
+ },
+ "my": {
+  "s": [
+   "my"
+  ],
+  "st": 0
+ },
+ "name": {
+  "s": [
+   "name"
+  ],
+  "st": 0
+ },
+ "near": {
+  "s": [
+   "near"
+  ],
+  "st": 0
+ },
+ "nearby": {
+  "s": [
+   "near",
+   "by"
+  ],
+  "st": 0
+ },
+ "need": {
+  "s": [
+   "need"
+  ],
+  "st": 0
+ },
+ "never": {
+  "s": [
+   "nev",
+   "er"
+  ],
+  "st": 0
+ },
+ "new": {
+  "s": [
+   "new"
+  ],
+  "st": 0
+ },
+ "about": {
+  "s": [
+   "a",
+   "bout"
+  ],
+  "st": 1
+ },
+ "after": {
+  "s": [
+   "af",
+   "ter"
+  ],
+  "st": 0
+ },
+ "again": {
+  "s": [
+   "a",
+   "gain"
+  ],
+  "st": 1
+ },
+ "all": {
+  "s": [
+   "all"
+  ],
+  "st": 0
+ },
+ "always": {
+  "s": [
+   "al",
+   "ways"
+  ],
+  "st": 0
+ },
+ "and": {
+  "s": [
+   "and"
+  ],
+  "st": 0
+ },
+ "answer": {
+  "s": [
+   "an",
+   "swer"
+  ],
+  "st": 0
+ },
+ "any": {
+  "s": [
+   "an",
+   "y"
+  ],
+  "st": 0
+ },
+ "apologize": {
+  "s": [
+   "a",
+   "pol",
+   "o",
+   "gize"
+  ],
+  "st": 1
+ },
+ "ask": {
+  "s": [
+   "ask"
+  ],
+  "st": 0
+ },
+ "away": {
+  "s": [
+   "a",
+   "way"
+  ],
+  "st": 1
+ },
+ "bad": {
+  "s": [
+   "bad"
+  ],
+  "st": 0
+ },
+ "bag": {
+  "s": [
+   "bag"
+  ],
+  "st": 0
+ },
+ "barbecue": {
+  "s": [
+   "bar",
+   "be",
+   "cue"
+  ],
+  "st": 0
+ },
+ "beautiful": {
+  "s": [
+   "beau",
+   "ti",
+   "ful"
+  ],
+  "st": 0
+ },
+ "because": {
+  "s": [
+   "be",
+   "cause"
+  ],
+  "st": 1
+ },
+ "bed": {
+  "s": [
+   "bed"
+  ],
+  "st": 0
+ },
+ "before": {
+  "s": [
+   "be",
+   "fore"
+  ],
+  "st": 1
+ },
+ "begin": {
+  "s": [
+   "be",
+   "gin"
+  ],
+  "st": 1
+ },
+ "behind": {
+  "s": [
+   "be",
+   "hind"
+  ],
+  "st": 1
+ },
+ "believe": {
+  "s": [
+   "be",
+   "lieve"
+  ],
+  "st": 1
+ },
+ "best": {
+  "s": [
+   "best"
+  ],
+  "st": 0
+ },
+ "better": {
+  "s": [
+   "bet",
+   "ter"
+  ],
+  "st": 0
+ },
+ "big": {
+  "s": [
+   "big"
+  ],
+  "st": 0
+ },
+ "bill": {
+  "s": [
+   "bill"
+  ],
+  "st": 0
+ },
+ "block": {
+  "s": [
+   "block"
+  ],
+  "st": 0
+ },
+ "book": {
+  "s": [
+   "book"
+  ],
+  "st": 0
+ },
+ "both": {
+  "s": [
+   "both"
+  ],
+  "st": 0
+ },
+ "boy": {
+  "s": [
+   "boy"
+  ],
+  "st": 0
+ },
+ "bring": {
+  "s": [
+   "bring"
+  ],
+  "st": 0
+ },
+ "brother": {
+  "s": [
+   "broth",
+   "er"
+  ],
+  "st": 0
+ },
+ "burger": {
+  "s": [
+   "bur",
+   "ger"
+  ],
+  "st": 0
+ },
+ "but": {
+  "s": [
+   "but"
+  ],
+  "st": 0
+ },
+ "buy": {
+  "s": [
+   "buy"
+  ],
+  "st": 0
+ },
+ "call": {
+  "s": [
+   "call"
+  ],
+  "st": 0
+ },
+ "can": {
+  "s": [
+   "can"
+  ],
+  "st": 0
+ },
+ "car": {
+  "s": [
+   "car"
+  ],
+  "st": 0
+ },
+ "careful": {
+  "s": [
+   "care",
+   "ful"
+  ],
+  "st": 0
+ },
+ "change": {
+  "s": [
+   "change"
+  ],
+  "st": 0
+ },
+ "cheese": {
+  "s": [
+   "cheese"
+  ],
+  "st": 0
+ },
+ "child": {
+  "s": [
+   "child"
+  ],
+  "st": 0
+ },
+ "city": {
+  "s": [
+   "cit",
+   "y"
+  ],
+  "st": 0
+ },
+ "class": {
+  "s": [
+   "class"
+  ],
+  "st": 0
+ },
+ "clean": {
+  "s": [
+   "clean"
+  ],
+  "st": 0
+ },
+ "close": {
+  "s": [
+   "close"
+  ],
+  "st": 0
+ },
+ "coffee": {
+  "s": [
+   "cof",
+   "fee"
+  ],
+  "st": 0
+ },
+ "cold": {
+  "s": [
+   "cold"
+  ],
+  "st": 0
+ },
+ "colleague": {
+  "s": [
+   "col",
+   "league"
+  ],
+  "st": 0
+ },
+ "come": {
+  "s": [
+   "come"
+  ],
+  "st": 0
+ },
+ "corner": {
+  "s": [
+   "cor",
+   "ner"
+  ],
+  "st": 0
+ },
+ "could": {
+  "s": [
+   "could"
+  ],
+  "st": 0
+ },
+ "crossroads": {
+  "s": [
+   "cross",
+   "roads"
+  ],
+  "st": 0
+ },
+ "dance": {
+  "s": [
+   "dance"
+  ],
+  "st": 0
+ },
+ "daughter": {
+  "s": [
+   "daugh",
+   "ter"
+  ],
+  "st": 0
+ },
+ "day": {
+  "s": [
+   "day"
+  ],
+  "st": 0
+ },
+ "deadline": {
+  "s": [
+   "dead",
+   "line"
+  ],
+  "st": 0
+ },
+ "dear": {
+  "s": [
+   "dear"
+  ],
+  "st": 0
+ },
+ "delicious": {
+  "s": [
+   "de",
+   "li",
+   "cious"
+  ],
+  "st": 1
+ },
+ "different": {
+  "s": [
+   "dif",
+   "fer",
+   "ent"
+  ],
+  "st": 0
+ },
+ "dinner": {
+  "s": [
+   "din",
+   "ner"
+  ],
+  "st": 0
+ },
+ "distance": {
+  "s": [
+   "dis",
+   "tance"
+  ],
+  "st": 0
+ },
+ "do": {
+  "s": [
+   "do"
+  ],
+  "st": 0
+ },
+ "doctor": {
+  "s": [
+   "doc",
+   "tor"
+  ],
+  "st": 0
+ },
+ "door": {
+  "s": [
+   "door"
+  ],
+  "st": 0
+ },
+ "down": {
+  "s": [
+   "down"
+  ],
+  "st": 0
+ },
+ "drink": {
+  "s": [
+   "drink"
+  ],
+  "st": 0
+ },
+ "early": {
+  "s": [
+   "ear",
+   "ly"
+  ],
+  "st": 0
+ },
+ "eat": {
+  "s": [
+   "eat"
+  ],
+  "st": 0
+ },
+ "eight": {
+  "s": [
+   "eight"
+  ],
+  "st": 0
+ },
+ "enjoy": {
+  "s": [
+   "en",
+   "joy"
+  ],
+  "st": 1
+ },
+ "evening": {
+  "s": [
+   "eve",
+   "ning"
+  ],
+  "st": 0
+ },
+ "every": {
+  "s": [
+   "ev",
+   "er",
+   "y"
+  ],
+  "st": 0
+ },
+ "family": {
+  "s": [
+   "fam",
+   "i",
+   "ly"
+  ],
+  "st": 0
+ },
+ "fantastic": {
+  "s": [
+   "fan",
+   "tas",
+   "tic"
+  ],
+  "st": 1
+ },
+ "far": {
+  "s": [
+   "far"
+  ],
+  "st": 0
+ },
+ "fast": {
+  "s": [
+   "fast"
+  ],
+  "st": 0
+ },
+ "father": {
+  "s": [
+   "fa",
+   "ther"
+  ],
+  "st": 0
+ },
+ "favorite": {
+  "s": [
+   "fa",
+   "vor",
+   "ite"
+  ],
+  "st": 0
+ },
+ "feedback": {
+  "s": [
+   "feed",
+   "back"
+  ],
+  "st": 0
+ },
+ "find": {
+  "s": [
+   "find"
+  ],
+  "st": 0
+ },
+ "beside": {
+  "s": [
+   "be",
+   "side"
+  ],
+  "st": 1
+ },
+ "bet": {
+  "s": [
+   "bet"
+  ],
+  "st": 0
+ },
+ "between": {
+  "s": [
+   "be",
+   "tween"
+  ],
+  "st": 1
+ },
+ "beyond": {
+  "s": [
+   "be",
+   "yond"
+  ],
+  "st": 1
+ },
+ "bicycle": {
+  "s": [
+   "bi",
+   "cy",
+   "cle"
+  ],
+  "st": 0
+ },
+ "bind": {
+  "s": [
+   "bind"
+  ],
+  "st": 0
+ },
+ "bird": {
+  "s": [
+   "bird"
+  ],
+  "st": 0
+ },
+ "birth": {
+  "s": [
+   "birth"
+  ],
+  "st": 0
+ },
+ "birthday": {
+  "s": [
+   "birth",
+   "day"
+  ],
+  "st": 0
+ },
+ "biscuit": {
+  "s": [
+   "bis",
+   "cuit"
+  ],
+  "st": 0
+ },
+ "bit": {
+  "s": [
+   "bit"
+  ],
+  "st": 0
+ },
+ "bite": {
+  "s": [
+   "bite"
+  ],
+  "st": 0
+ },
+ "bitter": {
+  "s": [
+   "bit",
+   "ter"
+  ],
+  "st": 0
+ },
+ "black": {
+  "s": [
+   "black"
+  ],
+  "st": 0
+ },
+ "blade": {
+  "s": [
+   "blade"
+  ],
+  "st": 0
+ },
+ "blame": {
+  "s": [
+   "blame"
+  ],
+  "st": 0
+ },
+ "blanket": {
+  "s": [
+   "blan",
+   "ket"
+  ],
+  "st": 0
+ },
+ "bless": {
+  "s": [
+   "bless"
+  ],
+  "st": 0
+ },
+ "blind": {
+  "s": [
+   "blind"
+  ],
+  "st": 0
+ },
+ "blood": {
+  "s": [
+   "blood"
+  ],
+  "st": 0
+ },
+ "blow": {
+  "s": [
+   "blow"
+  ],
+  "st": 0
+ },
+ "blue": {
+  "s": [
+   "blue"
+  ],
+  "st": 0
+ },
+ "board": {
+  "s": [
+   "board"
+  ],
+  "st": 0
+ },
+ "boat": {
+  "s": [
+   "boat"
+  ],
+  "st": 0
+ },
+ "body": {
+  "s": [
+   "bod",
+   "y"
+  ],
+  "st": 0
+ },
+ "boil": {
+  "s": [
+   "boil"
+  ],
+  "st": 0
+ },
+ "bold": {
+  "s": [
+   "bold"
+  ],
+  "st": 0
+ },
+ "bomb": {
+  "s": [
+   "bomb"
+  ],
+  "st": 0
+ },
+ "bone": {
+  "s": [
+   "bone"
+  ],
+  "st": 0
+ },
+ "boot": {
+  "s": [
+   "boot"
+  ],
+  "st": 0
+ },
+ "border": {
+  "s": [
+   "bor",
+   "der"
+  ],
+  "st": 0
+ },
+ "bore": {
+  "s": [
+   "bore"
+  ],
+  "st": 0
+ },
+ "born": {
+  "s": [
+   "born"
+  ],
+  "st": 0
+ },
+ "borrow": {
+  "s": [
+   "bor",
+   "row"
+  ],
+  "st": 0
+ },
+ "boss": {
+  "s": [
+   "boss"
+  ],
+  "st": 0
+ },
+ "bother": {
+  "s": [
+   "both",
+   "er"
+  ],
+  "st": 0
+ },
+ "bottle": {
+  "s": [
+   "bot",
+   "tle"
+  ],
+  "st": 0
+ },
+ "bottom": {
+  "s": [
+   "bot",
+   "tom"
+  ],
+  "st": 0
+ },
+ "bounce": {
+  "s": [
+   "bounce"
+  ],
+  "st": 0
+ },
+ "bowl": {
+  "s": [
+   "bowl"
+  ],
+  "st": 0
+ },
+ "box": {
+  "s": [
+   "box"
+  ],
+  "st": 0
+ },
+ "brain": {
+  "s": [
+   "brain"
+  ],
+  "st": 0
+ },
+ "brake": {
+  "s": [
+   "brake"
+  ],
+  "st": 0
+ },
+ "branch": {
+  "s": [
+   "branch"
+  ],
+  "st": 0
+ },
+ "brave": {
+  "s": [
+   "brave"
+  ],
+  "st": 0
+ },
+ "bread": {
+  "s": [
+   "bread"
+  ],
+  "st": 0
+ },
+ "break": {
+  "s": [
+   "break"
+  ],
+  "st": 0
+ },
+ "breakfast": {
+  "s": [
+   "break",
+   "fast"
+  ],
+  "st": 0
+ },
+ "breath": {
+  "s": [
+   "breath"
+  ],
+  "st": 0
+ },
+ "breathe": {
+  "s": [
+   "breathe"
+  ],
+  "st": 0
+ },
+ "breeze": {
+  "s": [
+   "breeze"
+  ],
+  "st": 0
+ },
+ "brick": {
+  "s": [
+   "brick"
+  ],
+  "st": 0
+ },
+ "bride": {
+  "s": [
+   "bride"
+  ],
+  "st": 0
+ },
+ "bridge": {
+  "s": [
+   "bridge"
+  ],
+  "st": 0
+ },
+ "brief": {
+  "s": [
+   "brief"
+  ],
+  "st": 0
+ },
+ "bright": {
+  "s": [
+   "bright"
+  ],
+  "st": 0
+ },
+ "brilliant": {
+  "s": [
+   "bril",
+   "liant"
+  ],
+  "st": 0
+ },
+ "broad": {
+  "s": [
+   "broad"
+  ],
+  "st": 0
+ },
+ "broken": {
+  "s": [
+   "bro",
+   "ken"
+  ],
+  "st": 0
+ },
+ "broom": {
+  "s": [
+   "broom"
+  ],
+  "st": 0
+ },
+ "brown": {
+  "s": [
+   "brown"
+  ],
+  "st": 0
+ },
+ "brush": {
+  "s": [
+   "brush"
+  ],
+  "st": 0
+ },
+ "bubble": {
+  "s": [
+   "bub",
+   "ble"
+  ],
+  "st": 0
+ },
+ "bucket": {
+  "s": [
+   "buck",
+   "et"
+  ],
+  "st": 0
+ },
+ "budget": {
+  "s": [
+   "bud",
+   "get"
+  ],
+  "st": 0
+ },
+ "build": {
+  "s": [
+   "build"
+  ],
+  "st": 0
+ },
+ "building": {
+  "s": [
+   "build",
+   "ing"
+  ],
+  "st": 0
+ },
+ "bulb": {
+  "s": [
+   "bulb"
+  ],
+  "st": 0
+ },
+ "bull": {
+  "s": [
+   "bull"
+  ],
+  "st": 0
+ },
+ "burn": {
+  "s": [
+   "burn"
+  ],
+  "st": 0
+ },
+ "burst": {
+  "s": [
+   "burst"
+  ],
+  "st": 0
+ },
+ "bury": {
+  "s": [
+   "bur",
+   "y"
+  ],
+  "st": 0
+ },
+ "bus": {
+  "s": [
+   "bus"
+  ],
+  "st": 0
+ },
+ "business": {
+  "s": [
+   "busi",
+   "ness"
+  ],
+  "st": 0
+ },
+ "busy": {
+  "s": [
+   "bus",
+   "y"
+  ],
+  "st": 0
+ },
+ "butter": {
+  "s": [
+   "but",
+   "ter"
+  ],
+  "st": 0
+ },
+ "butterfly": {
+  "s": [
+   "but",
+   "ter",
+   "fly"
+  ],
+  "st": 0
+ },
+ "button": {
+  "s": [
+   "but",
+   "ton"
+  ],
+  "st": 0
+ },
+ "cabinet": {
+  "s": [
+   "cab",
+   "i",
+   "net"
+  ],
+  "st": 0
+ },
+ "cage": {
+  "s": [
+   "cage"
+  ],
+  "st": 0
+ },
+ "article": {
+  "s": [
+   "ar",
+   "ti",
+   "cle"
+  ],
+  "st": 1
+ },
+ "artist": {
+  "s": [
+   "art",
+   "ist"
+  ],
+  "st": 0
+ },
+ "ashamed": {
+  "s": [
+   "a",
+   "shamed"
+  ],
+  "st": 1
+ },
+ "aside": {
+  "s": [
+   "a",
+   "side"
+  ],
+  "st": 1
+ },
+ "asleep": {
+  "s": [
+   "a",
+   "sleep"
+  ],
+  "st": 1
+ },
+ "aspect": {
+  "s": [
+   "as",
+   "pect"
+  ],
+  "st": 0
+ },
+ "assist": {
+  "s": [
+   "as",
+   "sist"
+  ],
+  "st": 1
+ },
+ "assume": {
+  "s": [
+   "as",
+   "sume"
+  ],
+  "st": 1
+ },
+ "attach": {
+  "s": [
+   "at",
+   "tach"
+  ],
+  "st": 1
+ },
+ "attack": {
+  "s": [
+   "at",
+   "tack"
+  ],
+  "st": 1
+ },
+ "attempt": {
+  "s": [
+   "at",
+   "tempt"
+  ],
+  "st": 1
+ },
+ "attend": {
+  "s": [
+   "at",
+   "tend"
+  ],
+  "st": 1
+ },
+ "attention": {
+  "s": [
+   "at",
+   "ten",
+   "tion"
+  ],
+  "st": 1
+ },
+ "attitude": {
+  "s": [
+   "at",
+   "ti",
+   "tude"
+  ],
+  "st": 0
+ },
+ "attorney": {
+  "s": [
+   "at",
+   "tor",
+   "ney"
+  ],
+  "st": 1
+ },
+ "attract": {
+  "s": [
+   "at",
+   "tract"
+  ],
+  "st": 1
+ },
+ "auction": {
+  "s": [
+   "auc",
+   "tion"
+  ],
+  "st": 0
+ },
+ "audience": {
+  "s": [
+   "au",
+   "di",
+   "ence"
+  ],
+  "st": 0
+ },
+ "aunt": {
+  "s": [
+   "aunt"
+  ],
+  "st": 0
+ },
+ "author": {
+  "s": [
+   "au",
+   "thor"
+  ],
+  "st": 0
+ },
+ "auto": {
+  "s": [
+   "au",
+   "to"
+  ],
+  "st": 0
+ },
+ "autumn": {
+  "s": [
+   "au",
+   "tumn"
+  ],
+  "st": 0
+ },
+ "available": {
+  "s": [
+   "a",
+   "vail",
+   "a",
+   "ble"
+  ],
+  "st": 1
+ },
+ "average": {
+  "s": [
+   "av",
+   "er",
+   "age"
+  ],
+  "st": 0
+ },
+ "avoid": {
+  "s": [
+   "a",
+   "void"
+  ],
+  "st": 1
+ },
+ "awake": {
+  "s": [
+   "a",
+   "wake"
+  ],
+  "st": 1
+ },
+ "award": {
+  "s": [
+   "a",
+   "ward"
+  ],
+  "st": 1
+ },
+ "aware": {
+  "s": [
+   "a",
+   "ware"
+  ],
+  "st": 1
+ },
+ "awful": {
+  "s": [
+   "aw",
+   "ful"
+  ],
+  "st": 0
+ },
+ "baby": {
+  "s": [
+   "ba",
+   "by"
+  ],
+  "st": 0
+ },
+ "back": {
+  "s": [
+   "back"
+  ],
+  "st": 0
+ },
+ "background": {
+  "s": [
+   "back",
+   "ground"
+  ],
+  "st": 0
+ },
+ "backward": {
+  "s": [
+   "back",
+   "ward"
+  ],
+  "st": 0
+ },
+ "bacon": {
+  "s": [
+   "ba",
+   "con"
+  ],
+  "st": 0
+ },
+ "badly": {
+  "s": [
+   "bad",
+   "ly"
+  ],
+  "st": 0
+ },
+ "bake": {
+  "s": [
+   "bake"
+  ],
+  "st": 0
+ },
+ "balance": {
+  "s": [
+   "bal",
+   "ance"
+  ],
+  "st": 0
+ },
+ "balcony": {
+  "s": [
+   "bal",
+   "co",
+   "ny"
+  ],
+  "st": 0
+ },
+ "ball": {
+  "s": [
+   "ball"
+  ],
+  "st": 0
+ },
+ "balloon": {
+  "s": [
+   "bal",
+   "loon"
+  ],
+  "st": 1
+ },
+ "bamboo": {
+  "s": [
+   "bam",
+   "boo"
+  ],
+  "st": 1
+ },
+ "banana": {
+  "s": [
+   "ba",
+   "na",
+   "na"
+  ],
+  "st": 1
+ },
+ "band": {
+  "s": [
+   "band"
+  ],
+  "st": 0
+ },
+ "bank": {
+  "s": [
+   "bank"
+  ],
+  "st": 0
+ },
+ "bar": {
+  "s": [
+   "bar"
+  ],
+  "st": 0
+ },
+ "barely": {
+  "s": [
+   "bare",
+   "ly"
+  ],
+  "st": 0
+ },
+ "bark": {
+  "s": [
+   "bark"
+  ],
+  "st": 0
+ },
+ "barrier": {
+  "s": [
+   "bar",
+   "ri",
+   "er"
+  ],
+  "st": 0
+ },
+ "base": {
+  "s": [
+   "base"
+  ],
+  "st": 0
+ },
+ "baseball": {
+  "s": [
+   "base",
+   "ball"
+  ],
+  "st": 0
+ },
+ "basement": {
+  "s": [
+   "base",
+   "ment"
+  ],
+  "st": 0
+ },
+ "basic": {
+  "s": [
+   "ba",
+   "sic"
+  ],
+  "st": 0
+ },
+ "basket": {
+  "s": [
+   "bas",
+   "ket"
+  ],
+  "st": 0
+ },
+ "basketball": {
+  "s": [
+   "bas",
+   "ket",
+   "ball"
+  ],
+  "st": 0
+ },
+ "bat": {
+  "s": [
+   "bat"
+  ],
+  "st": 0
+ },
+ "bath": {
+  "s": [
+   "bath"
+  ],
+  "st": 0
+ },
+ "bathroom": {
+  "s": [
+   "bath",
+   "room"
+  ],
+  "st": 0
+ },
+ "battery": {
+  "s": [
+   "bat",
+   "ter",
+   "y"
+  ],
+  "st": 0
+ },
+ "battle": {
+  "s": [
+   "bat",
+   "tle"
+  ],
+  "st": 0
+ },
+ "beach": {
+  "s": [
+   "beach"
+  ],
+  "st": 0
+ },
+ "bean": {
+  "s": [
+   "bean"
+  ],
+  "st": 0
+ },
+ "bear": {
+  "s": [
+   "bear"
+  ],
+  "st": 0
+ },
+ "beat": {
+  "s": [
+   "beat"
+  ],
+  "st": 0
+ },
+ "beauty": {
+  "s": [
+   "beau",
+   "ty"
+  ],
+  "st": 0
+ },
+ "become": {
+  "s": [
+   "be",
+   "come"
+  ],
+  "st": 1
+ },
+ "beef": {
+  "s": [
+   "beef"
+  ],
+  "st": 0
+ },
+ "beer": {
+  "s": [
+   "beer"
+  ],
+  "st": 0
+ },
+ "beg": {
+  "s": [
+   "beg"
+  ],
+  "st": 0
+ },
+ "behavior": {
+  "s": [
+   "be",
+   "ha",
+   "vior"
+  ],
+  "st": 1
+ },
+ "belief": {
+  "s": [
+   "be",
+   "lief"
+  ],
+  "st": 1
+ },
+ "bell": {
+  "s": [
+   "bell"
+  ],
+  "st": 0
+ },
+ "belong": {
+  "s": [
+   "be",
+   "long"
+  ],
+  "st": 1
+ },
+ "below": {
+  "s": [
+   "be",
+   "low"
+  ],
+  "st": 1
+ },
+ "belt": {
+  "s": [
+   "belt"
+  ],
+  "st": 0
+ },
+ "bench": {
+  "s": [
+   "bench"
+  ],
+  "st": 0
+ },
+ "bend": {
+  "s": [
+   "bend"
+  ],
+  "st": 0
+ },
+ "beneath": {
+  "s": [
+   "be",
+   "neath"
+  ],
+  "st": 1
+ },
+ "benefit": {
+  "s": [
+   "ben",
+   "e",
+   "fit"
+  ],
+  "st": 0
+ },
+ "berry": {
+  "s": [
+   "ber",
+   "ry"
+  ],
+  "st": 0
+ },
+ "cake": {
+  "s": [
+   "cake"
+  ],
+  "st": 0
+ },
+ "calendar": {
+  "s": [
+   "cal",
+   "en",
+   "dar"
+  ],
+  "st": 0
+ },
+ "calm": {
+  "s": [
+   "calm"
+  ],
+  "st": 0
+ },
+ "camera": {
+  "s": [
+   "cam",
+   "er",
+   "a"
+  ],
+  "st": 0
+ },
+ "camp": {
+  "s": [
+   "camp"
+  ],
+  "st": 0
+ },
+ "campus": {
+  "s": [
+   "cam",
+   "pus"
+  ],
+  "st": 0
+ },
+ "cancel": {
+  "s": [
+   "can",
+   "cel"
+  ],
+  "st": 0
+ },
+ "cancer": {
+  "s": [
+   "can",
+   "cer"
+  ],
+  "st": 0
+ },
+ "candle": {
+  "s": [
+   "can",
+   "dle"
+  ],
+  "st": 0
+ },
+ "cap": {
+  "s": [
+   "cap"
+  ],
+  "st": 0
+ },
+ "capable": {
+  "s": [
+   "ca",
+   "pa",
+   "ble"
+  ],
+  "st": 0
+ },
+ "capital": {
+  "s": [
+   "cap",
+   "i",
+   "tal"
+  ],
+  "st": 0
+ },
+ "captain": {
+  "s": [
+   "cap",
+   "tain"
+  ],
+  "st": 0
+ },
+ "capture": {
+  "s": [
+   "cap",
+   "ture"
+  ],
+  "st": 0
+ },
+ "carbon": {
+  "s": [
+   "car",
+   "bon"
+  ],
+  "st": 0
+ },
+ "card": {
+  "s": [
+   "card"
+  ],
+  "st": 0
+ },
+ "care": {
+  "s": [
+   "care"
+  ],
+  "st": 0
+ },
+ "career": {
+  "s": [
+   "ca",
+   "reer"
+  ],
+  "st": 1
+ },
+ "careless": {
+  "s": [
+   "care",
+   "less"
+  ],
+  "st": 0
+ },
+ "cargo": {
+  "s": [
+   "car",
+   "go"
+  ],
+  "st": 0
+ },
+ "carpet": {
+  "s": [
+   "car",
+   "pet"
+  ],
+  "st": 0
+ },
+ "carrot": {
+  "s": [
+   "car",
+   "rot"
+  ],
+  "st": 0
+ },
+ "carry": {
+  "s": [
+   "car",
+   "ry"
+  ],
+  "st": 0
+ },
+ "cart": {
+  "s": [
+   "cart"
+  ],
+  "st": 0
+ },
+ "case": {
+  "s": [
+   "case"
+  ],
+  "st": 0
+ },
+ "cash": {
+  "s": [
+   "cash"
+  ],
+  "st": 0
+ },
+ "cast": {
+  "s": [
+   "cast"
+  ],
+  "st": 0
+ },
+ "castle": {
+  "s": [
+   "cas",
+   "tle"
+  ],
+  "st": 0
+ },
+ "cat": {
+  "s": [
+   "cat"
+  ],
+  "st": 0
+ },
+ "catch": {
+  "s": [
+   "catch"
+  ],
+  "st": 0
+ },
+ "category": {
+  "s": [
+   "cat",
+   "e",
+   "go",
+   "ry"
+  ],
+  "st": 0
+ },
+ "cause": {
+  "s": [
+   "cause"
+  ],
+  "st": 0
+ },
+ "ceiling": {
+  "s": [
+   "ceil",
+   "ing"
+  ],
+  "st": 0
+ },
+ "celebrate": {
+  "s": [
+   "cel",
+   "e",
+   "brate"
+  ],
+  "st": 0
+ },
+ "cell": {
+  "s": [
+   "cell"
+  ],
+  "st": 0
+ },
+ "cent": {
+  "s": [
+   "cent"
+  ],
+  "st": 0
+ },
+ "center": {
+  "s": [
+   "cen",
+   "ter"
+  ],
+  "st": 0
+ },
+ "central": {
+  "s": [
+   "cen",
+   "tral"
+  ],
+  "st": 0
+ },
+ "century": {
+  "s": [
+   "cen",
+   "tu",
+   "ry"
+  ],
+  "st": 0
+ },
+ "ceremony": {
+  "s": [
+   "cer",
+   "e",
+   "mo",
+   "ny"
+  ],
+  "st": 0
+ },
+ "certain": {
+  "s": [
+   "cer",
+   "tain"
+  ],
+  "st": 0
+ },
+ "chain": {
+  "s": [
+   "chain"
+  ],
+  "st": 0
+ },
+ "chair": {
+  "s": [
+   "chair"
+  ],
+  "st": 0
+ },
+ "chalk": {
+  "s": [
+   "chalk"
+  ],
+  "st": 0
+ },
+ "challenge": {
+  "s": [
+   "chal",
+   "lenge"
+  ],
+  "st": 0
+ },
+ "champion": {
+  "s": [
+   "cham",
+   "pi",
+   "on"
+  ],
+  "st": 0
+ },
+ "chance": {
+  "s": [
+   "chance"
+  ],
+  "st": 0
+ },
+ "channel": {
+  "s": [
+   "chan",
+   "nel"
+  ],
+  "st": 0
+ },
+ "chapter": {
+  "s": [
+   "chap",
+   "ter"
+  ],
+  "st": 0
+ },
+ "character": {
+  "s": [
+   "char",
+   "ac",
+   "ter"
+  ],
+  "st": 0
+ },
+ "charge": {
+  "s": [
+   "charge"
+  ],
+  "st": 0
+ },
+ "charm": {
+  "s": [
+   "charm"
+  ],
+  "st": 0
+ },
+ "chart": {
+  "s": [
+   "chart"
+  ],
+  "st": 0
+ },
+ "chase": {
+  "s": [
+   "chase"
+  ],
+  "st": 0
+ },
+ "cheap": {
+  "s": [
+   "cheap"
+  ],
+  "st": 0
+ },
+ "check": {
+  "s": [
+   "check"
+  ],
+  "st": 0
+ },
+ "cheek": {
+  "s": [
+   "cheek"
+  ],
+  "st": 0
+ },
+ "cheer": {
+  "s": [
+   "cheer"
+  ],
+  "st": 0
+ },
+ "chef": {
+  "s": [
+   "chef"
+  ],
+  "st": 0
+ },
+ "chemical": {
+  "s": [
+   "chem",
+   "i",
+   "cal"
+  ],
+  "st": 0
+ },
+ "chest": {
+  "s": [
+   "chest"
+  ],
+  "st": 0
+ },
+ "chicken": {
+  "s": [
+   "chick",
+   "en"
+  ],
+  "st": 0
+ },
+ "chief": {
+  "s": [
+   "chief"
+  ],
+  "st": 0
+ },
+ "childhood": {
+  "s": [
+   "child",
+   "hood"
+  ],
+  "st": 0
+ },
+ "chill": {
+  "s": [
+   "chill"
+  ],
+  "st": 0
+ },
+ "chimney": {
+  "s": [
+   "chim",
+   "ney"
+  ],
+  "st": 0
+ },
+ "chin": {
+  "s": [
+   "chin"
+  ],
+  "st": 0
+ },
+ "chip": {
+  "s": [
+   "chip"
+  ],
+  "st": 0
+ },
+ "chocolate": {
+  "s": [
+   "choc",
+   "o",
+   "late"
+  ],
+  "st": 0
+ },
+ "choice": {
+  "s": [
+   "choice"
+  ],
+  "st": 0
+ },
+ "choose": {
+  "s": [
+   "choose"
+  ],
+  "st": 0
+ },
+ "chop": {
+  "s": [
+   "chop"
+  ],
+  "st": 0
+ },
+ "church": {
+  "s": [
+   "church"
+  ],
+  "st": 0
+ },
+ "cigar": {
+  "s": [
+   "ci",
+   "gar"
+  ],
+  "st": 1
+ },
+ "circle": {
+  "s": [
+   "cir",
+   "cle"
+  ],
+  "st": 0
+ },
+ "circumstance": {
+  "s": [
+   "cir",
+   "cum",
+   "stance"
+  ],
+  "st": 0
+ },
+ "citizen": {
+  "s": [
+   "cit",
+   "i",
+   "zen"
+  ],
+  "st": 0
+ },
+ "civil": {
+  "s": [
+   "civ",
+   "il"
+  ],
+  "st": 0
+ },
+ "claim": {
+  "s": [
+   "claim"
+  ],
+  "st": 0
+ },
+ "classic": {
+  "s": [
+   "clas",
+   "sic"
+  ],
+  "st": 0
+ },
+ "ability": {
+  "s": [
+   "a",
+   "bil",
+   "i",
+   "ty"
+  ],
+  "st": 1
+ },
+ "able": {
+  "s": [
+   "a",
+   "ble"
+  ],
+  "st": 0
+ },
+ "above": {
+  "s": [
+   "a",
+   "bove"
+  ],
+  "st": 1
+ },
+ "accept": {
+  "s": [
+   "ac",
+   "cept"
+  ],
+  "st": 1
+ },
+ "accident": {
+  "s": [
+   "ac",
+   "ci",
+   "dent"
+  ],
+  "st": 1
+ },
+ "account": {
+  "s": [
+   "ac",
+   "count"
+  ],
+  "st": 1
+ },
+ "ache": {
+  "s": [
+   "ache"
+  ],
+  "st": 0
+ },
+ "achieve": {
+  "s": [
+   "a",
+   "chieve"
+  ],
+  "st": 1
+ },
+ "across": {
+  "s": [
+   "a",
+   "cross"
+  ],
+  "st": 1
+ },
+ "act": {
+  "s": [
+   "act"
+  ],
+  "st": 0
+ },
+ "action": {
+  "s": [
+   "ac",
+   "tion"
+  ],
+  "st": 1
+ },
+ "active": {
+  "s": [
+   "ac",
+   "tive"
+  ],
+  "st": 0
+ },
+ "actually": {
+  "s": [
+   "ac",
+   "tu",
+   "al",
+   "ly"
+  ],
+  "st": 1
+ },
+ "add": {
+  "s": [
+   "add"
+  ],
+  "st": 0
+ },
+ "address": {
+  "s": [
+   "ad",
+   "dress"
+  ],
+  "st": 1
+ },
+ "admit": {
+  "s": [
+   "ad",
+   "mit"
+  ],
+  "st": 1
+ },
+ "adult": {
+  "s": [
+   "ad",
+   "ult"
+  ],
+  "st": 0
+ },
+ "advance": {
+  "s": [
+   "ad",
+   "vance"
+  ],
+  "st": 1
+ },
+ "advantage": {
+  "s": [
+   "ad",
+   "van",
+   "tage"
+  ],
+  "st": 1
+ },
+ "adventure": {
+  "s": [
+   "ad",
+   "ven",
+   "ture"
+  ],
+  "st": 1
+ },
+ "advice": {
+  "s": [
+   "ad",
+   "vice"
+  ],
+  "st": 1
+ },
+ "advise": {
+  "s": [
+   "ad",
+   "vise"
+  ],
+  "st": 1
+ },
+ "afford": {
+  "s": [
+   "af",
+   "ford"
+  ],
+  "st": 1
+ },
+ "afraid": {
+  "s": [
+   "a",
+   "fraid"
+  ],
+  "st": 1
+ },
+ "afternoon": {
+  "s": [
+   "af",
+   "ter",
+   "noon"
+  ],
+  "st": 2
+ },
+ "against": {
+  "s": [
+   "a",
+   "gainst"
+  ],
+  "st": 1
+ },
+ "age": {
+  "s": [
+   "age"
+  ],
+  "st": 0
+ },
+ "agent": {
+  "s": [
+   "a",
+   "gent"
+  ],
+  "st": 1
+ },
+ "ago": {
+  "s": [
+   "a",
+   "go"
+  ],
+  "st": 1
+ },
+ "agree": {
+  "s": [
+   "a",
+   "gree"
+  ],
+  "st": 1
+ },
+ "ahead": {
+  "s": [
+   "a",
+   "head"
+  ],
+  "st": 1
+ },
+ "aim": {
+  "s": [
+   "aim"
+  ],
+  "st": 0
+ },
+ "air": {
+  "s": [
+   "air"
+  ],
+  "st": 0
+ },
+ "airplane": {
+  "s": [
+   "air",
+   "plane"
+  ],
+  "st": 0
+ },
+ "airport": {
+  "s": [
+   "air",
+   "port"
+  ],
+  "st": 0
+ },
+ "alarm": {
+  "s": [
+   "a",
+   "larm"
+  ],
+  "st": 1
+ },
+ "alive": {
+  "s": [
+   "a",
+   "live"
+  ],
+  "st": 1
+ },
+ "allow": {
+  "s": [
+   "al",
+   "low"
+  ],
+  "st": 1
+ },
+ "almost": {
+  "s": [
+   "al",
+   "most"
+  ],
+  "st": 0
+ },
+ "alone": {
+  "s": [
+   "a",
+   "lone"
+  ],
+  "st": 1
+ },
+ "along": {
+  "s": [
+   "a",
+   "long"
+  ],
+  "st": 1
+ },
+ "already": {
+  "s": [
+   "al",
+   "rea",
+   "dy"
+  ],
+  "st": 1
+ },
+ "also": {
+  "s": [
+   "al",
+   "so"
+  ],
+  "st": 0
+ },
+ "although": {
+  "s": [
+   "al",
+   "though"
+  ],
+  "st": 1
+ },
+ "amazing": {
+  "s": [
+   "a",
+   "maz",
+   "ing"
+  ],
+  "st": 1
+ },
+ "ambition": {
+  "s": [
+   "am",
+   "bi",
+   "tion"
+  ],
+  "st": 1
+ },
+ "amount": {
+  "s": [
+   "a",
+   "mount"
+  ],
+  "st": 1
+ },
+ "ancient": {
+  "s": [
+   "an",
+   "cient"
+  ],
+  "st": 0
+ },
+ "anger": {
+  "s": [
+   "an",
+   "ger"
+  ],
+  "st": 0
+ },
+ "angle": {
+  "s": [
+   "an",
+   "gle"
+  ],
+  "st": 0
+ },
+ "angry": {
+  "s": [
+   "an",
+   "gry"
+  ],
+  "st": 0
+ },
+ "animal": {
+  "s": [
+   "an",
+   "i",
+   "mal"
+  ],
+  "st": 0
+ },
+ "ankle": {
+  "s": [
+   "an",
+   "kle"
+  ],
+  "st": 0
+ },
+ "announce": {
+  "s": [
+   "an",
+   "nounce"
+  ],
+  "st": 1
+ },
+ "annoying": {
+  "s": [
+   "an",
+   "noy",
+   "ing"
+  ],
+  "st": 1
+ },
+ "another": {
+  "s": [
+   "a",
+   "noth",
+   "er"
+  ],
+  "st": 1
+ },
+ "ant": {
+  "s": [
+   "ant"
+  ],
+  "st": 0
+ },
+ "anxiety": {
+  "s": [
+   "anx",
+   "i",
+   "e",
+   "ty"
+  ],
+  "st": 1
+ },
+ "anxious": {
+  "s": [
+   "anx",
+   "ious"
+  ],
+  "st": 0
+ },
+ "anybody": {
+  "s": [
+   "an",
+   "y",
+   "bod",
+   "y"
+  ],
+  "st": 2
+ },
+ "anymore": {
+  "s": [
+   "an",
+   "y",
+   "more"
+  ],
+  "st": 2
+ },
+ "anyone": {
+  "s": [
+   "an",
+   "y",
+   "one"
+  ],
+  "st": 0
+ },
+ "anything": {
+  "s": [
+   "an",
+   "y",
+   "thing"
+  ],
+  "st": 0
+ },
+ "anyway": {
+  "s": [
+   "an",
+   "y",
+   "way"
+  ],
+  "st": 0
+ },
+ "appear": {
+  "s": [
+   "ap",
+   "pear"
+  ],
+  "st": 1
+ },
+ "apple": {
+  "s": [
+   "ap",
+   "ple"
+  ],
+  "st": 0
+ },
+ "application": {
+  "s": [
+   "ap",
+   "pli",
+   "ca",
+   "tion"
+  ],
+  "st": 2
+ },
+ "apply": {
+  "s": [
+   "ap",
+   "ply"
+  ],
+  "st": 1
+ },
+ "appreciate": {
+  "s": [
+   "ap",
+   "pre",
+   "ci",
+   "ate"
+  ],
+  "st": 2
+ },
+ "approach": {
+  "s": [
+   "ap",
+   "proach"
+  ],
+  "st": 1
+ },
+ "archive": {
+  "s": [
+   "ar",
+   "chive"
+  ],
+  "st": 0
+ },
+ "argue": {
+  "s": [
+   "ar",
+   "gue"
+  ],
+  "st": 0
+ },
+ "argument": {
+  "s": [
+   "ar",
+   "gu",
+   "ment"
+  ],
+  "st": 1
+ },
+ "arm": {
+  "s": [
+   "arm"
+  ],
+  "st": 0
+ },
+ "army": {
+  "s": [
+   "ar",
+   "my"
+  ],
+  "st": 0
+ },
+ "around": {
+  "s": [
+   "a",
+   "round"
+  ],
+  "st": 1
+ },
+ "arrange": {
+  "s": [
+   "ar",
+   "range"
+  ],
+  "st": 1
+ },
+ "arrest": {
+  "s": [
+   "ar",
+   "rest"
+  ],
+  "st": 1
+ },
+ "arrive": {
+  "s": [
+   "ar",
+   "rive"
+  ],
+  "st": 1
+ },
+ "art": {
+  "s": [
+   "art"
+  ],
+  "st": 0
+ },
+ "depart": {
+  "s": [
+   "de",
+   "part"
+  ],
+  "st": 1
+ },
+ "department": {
+  "s": [
+   "de",
+   "part",
+   "ment"
+  ],
+  "st": 1
+ },
+ "depend": {
+  "s": [
+   "de",
+   "pend"
+  ],
+  "st": 1
+ },
+ "deposit": {
+  "s": [
+   "de",
+   "pos",
+   "it"
+  ],
+  "st": 1
+ },
+ "describe": {
+  "s": [
+   "de",
+   "scribe"
+  ],
+  "st": 1
+ },
+ "desert": {
+  "s": [
+   "des",
+   "ert"
+  ],
+  "st": 0
+ },
+ "deserve": {
+  "s": [
+   "de",
+   "serve"
+  ],
+  "st": 1
+ },
+ "design": {
+  "s": [
+   "de",
+   "sign"
+  ],
+  "st": 1
+ },
+ "desire": {
+  "s": [
+   "de",
+   "sire"
+  ],
+  "st": 1
+ },
+ "desk": {
+  "s": [
+   "desk"
+  ],
+  "st": 0
+ },
+ "desperate": {
+  "s": [
+   "des",
+   "per",
+   "ate"
+  ],
+  "st": 0
+ },
+ "despite": {
+  "s": [
+   "de",
+   "spite"
+  ],
+  "st": 1
+ },
+ "dessert": {
+  "s": [
+   "des",
+   "sert"
+  ],
+  "st": 1
+ },
+ "destroy": {
+  "s": [
+   "de",
+   "stroy"
+  ],
+  "st": 1
+ },
+ "detail": {
+  "s": [
+   "de",
+   "tail"
+  ],
+  "st": 1
+ },
+ "detect": {
+  "s": [
+   "de",
+   "tect"
+  ],
+  "st": 1
+ },
+ "determine": {
+  "s": [
+   "de",
+   "ter",
+   "mine"
+  ],
+  "st": 1
+ },
+ "develop": {
+  "s": [
+   "de",
+   "vel",
+   "op"
+  ],
+  "st": 1
+ },
+ "device": {
+  "s": [
+   "de",
+   "vice"
+  ],
+  "st": 1
+ },
+ "devil": {
+  "s": [
+   "dev",
+   "il"
+  ],
+  "st": 0
+ },
+ "diagram": {
+  "s": [
+   "di",
+   "a",
+   "gram"
+  ],
+  "st": 0
+ },
+ "dial": {
+  "s": [
+   "di",
+   "al"
+  ],
+  "st": 0
+ },
+ "dialogue": {
+  "s": [
+   "di",
+   "a",
+   "logue"
+  ],
+  "st": 0
+ },
+ "diamond": {
+  "s": [
+   "dia",
+   "mond"
+  ],
+  "st": 0
+ },
+ "diary": {
+  "s": [
+   "di",
+   "a",
+   "ry"
+  ],
+  "st": 0
+ },
+ "dictation": {
+  "s": [
+   "dic",
+   "ta",
+   "tion"
+  ],
+  "st": 1
+ },
+ "dictionary": {
+  "s": [
+   "dic",
+   "tion",
+   "ar",
+   "y"
+  ],
+  "st": 0
+ },
+ "die": {
+  "s": [
+   "die"
+  ],
+  "st": 0
+ },
+ "differ": {
+  "s": [
+   "dif",
+   "fer"
+  ],
+  "st": 0
+ },
+ "difficult": {
+  "s": [
+   "dif",
+   "fi",
+   "cult"
+  ],
+  "st": 0
+ },
+ "dig": {
+  "s": [
+   "dig"
+  ],
+  "st": 0
+ },
+ "digital": {
+  "s": [
+   "dig",
+   "i",
+   "tal"
+  ],
+  "st": 0
+ },
+ "direct": {
+  "s": [
+   "di",
+   "rect"
+  ],
+  "st": 1
+ },
+ "direction": {
+  "s": [
+   "di",
+   "rec",
+   "tion"
+  ],
+  "st": 1
+ },
+ "dirt": {
+  "s": [
+   "dirt"
+  ],
+  "st": 0
+ },
+ "disappear": {
+  "s": [
+   "dis",
+   "ap",
+   "pear"
+  ],
+  "st": 2
+ },
+ "disappoint": {
+  "s": [
+   "dis",
+   "ap",
+   "point"
+  ],
+  "st": 2
+ },
+ "disaster": {
+  "s": [
+   "di",
+   "sas",
+   "ter"
+  ],
+  "st": 1
+ },
+ "discount": {
+  "s": [
+   "dis",
+   "count"
+  ],
+  "st": 0
+ },
+ "discover": {
+  "s": [
+   "dis",
+   "cov",
+   "er"
+  ],
+  "st": 1
+ },
+ "discuss": {
+  "s": [
+   "dis",
+   "cuss"
+  ],
+  "st": 1
+ },
+ "disease": {
+  "s": [
+   "di",
+   "sease"
+  ],
+  "st": 1
+ },
+ "dish": {
+  "s": [
+   "dish"
+  ],
+  "st": 0
+ },
+ "dismiss": {
+  "s": [
+   "dis",
+   "miss"
+  ],
+  "st": 1
+ },
+ "disorder": {
+  "s": [
+   "dis",
+   "or",
+   "der"
+  ],
+  "st": 1
+ },
+ "display": {
+  "s": [
+   "dis",
+   "play"
+  ],
+  "st": 1
+ },
+ "distant": {
+  "s": [
+   "dis",
+   "tant"
+  ],
+  "st": 0
+ },
+ "divide": {
+  "s": [
+   "di",
+   "vide"
+  ],
+  "st": 1
+ },
+ "dizzy": {
+  "s": [
+   "diz",
+   "zy"
+  ],
+  "st": 0
+ },
+ "document": {
+  "s": [
+   "doc",
+   "u",
+   "ment"
+  ],
+  "st": 0
+ },
+ "dog": {
+  "s": [
+   "dog"
+  ],
+  "st": 0
+ },
+ "doll": {
+  "s": [
+   "doll"
+  ],
+  "st": 0
+ },
+ "dollar": {
+  "s": [
+   "dol",
+   "lar"
+  ],
+  "st": 0
+ },
+ "dolphin": {
+  "s": [
+   "dol",
+   "phin"
+  ],
+  "st": 0
+ },
+ "dome": {
+  "s": [
+   "dome"
+  ],
+  "st": 0
+ },
+ "donate": {
+  "s": [
+   "do",
+   "nate"
+  ],
+  "st": 0
+ },
+ "done": {
+  "s": [
+   "done"
+  ],
+  "st": 0
+ },
+ "double": {
+  "s": [
+   "dou",
+   "ble"
+  ],
+  "st": 0
+ },
+ "doubt": {
+  "s": [
+   "doubt"
+  ],
+  "st": 0
+ },
+ "dough": {
+  "s": [
+   "dough"
+  ],
+  "st": 0
+ },
+ "downtown": {
+  "s": [
+   "down",
+   "town"
+  ],
+  "st": 0
+ },
+ "dozen": {
+  "s": [
+   "doz",
+   "en"
+  ],
+  "st": 0
+ },
+ "drag": {
+  "s": [
+   "drag"
+  ],
+  "st": 0
+ },
+ "dragon": {
+  "s": [
+   "drag",
+   "on"
+  ],
+  "st": 0
+ },
+ "drama": {
+  "s": [
+   "dra",
+   "ma"
+  ],
+  "st": 0
+ },
+ "draw": {
+  "s": [
+   "draw"
+  ],
+  "st": 0
+ },
+ "drawer": {
+  "s": [
+   "draw",
+   "er"
+  ],
+  "st": 0
+ },
+ "dream": {
+  "s": [
+   "dream"
+  ],
+  "st": 0
+ },
+ "dress": {
+  "s": [
+   "dress"
+  ],
+  "st": 0
+ },
+ "drift": {
+  "s": [
+   "drift"
+  ],
+  "st": 0
+ },
+ "drive": {
+  "s": [
+   "drive"
+  ],
+  "st": 0
+ },
+ "driver": {
+  "s": [
+   "driv",
+   "er"
+  ],
+  "st": 0
+ },
+ "drop": {
+  "s": [
+   "drop"
+  ],
+  "st": 0
+ },
+ "drown": {
+  "s": [
+   "drown"
+  ],
+  "st": 0
+ },
+ "drug": {
+  "s": [
+   "drug"
+  ],
+  "st": 0
+ },
+ "drum": {
+  "s": [
+   "drum"
+  ],
+  "st": 0
+ },
+ "dry": {
+  "s": [
+   "dry"
+  ],
+  "st": 0
+ },
+ "duck": {
+  "s": [
+   "duck"
+  ],
+  "st": 0
+ },
+ "due": {
+  "s": [
+   "due"
+  ],
+  "st": 0
+ },
+ "dull": {
+  "s": [
+   "dull"
+  ],
+  "st": 0
+ },
+ "cost": {
+  "s": [
+   "cost"
+  ],
+  "st": 0
+ },
+ "cottage": {
+  "s": [
+   "cot",
+   "tage"
+  ],
+  "st": 0
+ },
+ "cotton": {
+  "s": [
+   "cot",
+   "ton"
+  ],
+  "st": 0
+ },
+ "cough": {
+  "s": [
+   "cough"
+  ],
+  "st": 0
+ },
+ "council": {
+  "s": [
+   "coun",
+   "cil"
+  ],
+  "st": 0
+ },
+ "count": {
+  "s": [
+   "count"
+  ],
+  "st": 0
+ },
+ "counter": {
+  "s": [
+   "coun",
+   "ter"
+  ],
+  "st": 0
+ },
+ "country": {
+  "s": [
+   "coun",
+   "try"
+  ],
+  "st": 0
+ },
+ "couple": {
+  "s": [
+   "cou",
+   "ple"
+  ],
+  "st": 0
+ },
+ "courage": {
+  "s": [
+   "cour",
+   "age"
+  ],
+  "st": 0
+ },
+ "course": {
+  "s": [
+   "course"
+  ],
+  "st": 0
+ },
+ "court": {
+  "s": [
+   "court"
+  ],
+  "st": 0
+ },
+ "cousin": {
+  "s": [
+   "cou",
+   "sin"
+  ],
+  "st": 0
+ },
+ "cover": {
+  "s": [
+   "cov",
+   "er"
+  ],
+  "st": 0
+ },
+ "cow": {
+  "s": [
+   "cow"
+  ],
+  "st": 0
+ },
+ "crack": {
+  "s": [
+   "crack"
+  ],
+  "st": 0
+ },
+ "crash": {
+  "s": [
+   "crash"
+  ],
+  "st": 0
+ },
+ "cream": {
+  "s": [
+   "cream"
+  ],
+  "st": 0
+ },
+ "create": {
+  "s": [
+   "cre",
+   "ate"
+  ],
+  "st": 1
+ },
+ "creature": {
+  "s": [
+   "crea",
+   "ture"
+  ],
+  "st": 0
+ },
+ "credit": {
+  "s": [
+   "cred",
+   "it"
+  ],
+  "st": 0
+ },
+ "crew": {
+  "s": [
+   "crew"
+  ],
+  "st": 0
+ },
+ "crime": {
+  "s": [
+   "crime"
+  ],
+  "st": 0
+ },
+ "crisis": {
+  "s": [
+   "cri",
+   "sis"
+  ],
+  "st": 0
+ },
+ "critic": {
+  "s": [
+   "crit",
+   "ic"
+  ],
+  "st": 0
+ },
+ "crop": {
+  "s": [
+   "crop"
+  ],
+  "st": 0
+ },
+ "cross": {
+  "s": [
+   "cross"
+  ],
+  "st": 0
+ },
+ "crowd": {
+  "s": [
+   "crowd"
+  ],
+  "st": 0
+ },
+ "crown": {
+  "s": [
+   "crown"
+  ],
+  "st": 0
+ },
+ "cruel": {
+  "s": [
+   "cru",
+   "el"
+  ],
+  "st": 0
+ },
+ "crush": {
+  "s": [
+   "crush"
+  ],
+  "st": 0
+ },
+ "cry": {
+  "s": [
+   "cry"
+  ],
+  "st": 0
+ },
+ "culture": {
+  "s": [
+   "cul",
+   "ture"
+  ],
+  "st": 0
+ },
+ "cup": {
+  "s": [
+   "cup"
+  ],
+  "st": 0
+ },
+ "cupboard": {
+  "s": [
+   "cup",
+   "board"
+  ],
+  "st": 0
+ },
+ "cure": {
+  "s": [
+   "cure"
+  ],
+  "st": 0
+ },
+ "curious": {
+  "s": [
+   "cu",
+   "ri",
+   "ous"
+  ],
+  "st": 1
+ },
+ "curl": {
+  "s": [
+   "curl"
+  ],
+  "st": 0
+ },
+ "current": {
+  "s": [
+   "cur",
+   "rent"
+  ],
+  "st": 0
+ },
+ "curtain": {
+  "s": [
+   "cur",
+   "tain"
+  ],
+  "st": 0
+ },
+ "curve": {
+  "s": [
+   "curve"
+  ],
+  "st": 0
+ },
+ "custom": {
+  "s": [
+   "cus",
+   "tom"
+  ],
+  "st": 0
+ },
+ "customer": {
+  "s": [
+   "cus",
+   "tom",
+   "er"
+  ],
+  "st": 0
+ },
+ "cut": {
+  "s": [
+   "cut"
+  ],
+  "st": 0
+ },
+ "cute": {
+  "s": [
+   "cute"
+  ],
+  "st": 0
+ },
+ "cycle": {
+  "s": [
+   "cy",
+   "cle"
+  ],
+  "st": 0
+ },
+ "dad": {
+  "s": [
+   "dad"
+  ],
+  "st": 0
+ },
+ "daily": {
+  "s": [
+   "dai",
+   "ly"
+  ],
+  "st": 0
+ },
+ "damage": {
+  "s": [
+   "dam",
+   "age"
+  ],
+  "st": 0
+ },
+ "damp": {
+  "s": [
+   "damp"
+  ],
+  "st": 0
+ },
+ "danger": {
+  "s": [
+   "dan",
+   "ger"
+  ],
+  "st": 0
+ },
+ "dangerous": {
+  "s": [
+   "dan",
+   "ger",
+   "ous"
+  ],
+  "st": 0
+ },
+ "dare": {
+  "s": [
+   "dare"
+  ],
+  "st": 0
+ },
+ "dark": {
+  "s": [
+   "dark"
+  ],
+  "st": 0
+ },
+ "dash": {
+  "s": [
+   "dash"
+  ],
+  "st": 0
+ },
+ "data": {
+  "s": [
+   "da",
+   "ta"
+  ],
+  "st": 0
+ },
+ "date": {
+  "s": [
+   "date"
+  ],
+  "st": 0
+ },
+ "dawn": {
+  "s": [
+   "dawn"
+  ],
+  "st": 0
+ },
+ "dead": {
+  "s": [
+   "dead"
+  ],
+  "st": 0
+ },
+ "deaf": {
+  "s": [
+   "deaf"
+  ],
+  "st": 0
+ },
+ "deal": {
+  "s": [
+   "deal"
+  ],
+  "st": 0
+ },
+ "death": {
+  "s": [
+   "death"
+  ],
+  "st": 0
+ },
+ "debate": {
+  "s": [
+   "de",
+   "bate"
+  ],
+  "st": 1
+ },
+ "debt": {
+  "s": [
+   "debt"
+  ],
+  "st": 0
+ },
+ "decade": {
+  "s": [
+   "dec",
+   "ade"
+  ],
+  "st": 0
+ },
+ "decide": {
+  "s": [
+   "de",
+   "cide"
+  ],
+  "st": 1
+ },
+ "decision": {
+  "s": [
+   "de",
+   "ci",
+   "sion"
+  ],
+  "st": 1
+ },
+ "declare": {
+  "s": [
+   "de",
+   "clare"
+  ],
+  "st": 1
+ },
+ "decorate": {
+  "s": [
+   "dec",
+   "o",
+   "rate"
+  ],
+  "st": 0
+ },
+ "decrease": {
+  "s": [
+   "de",
+   "crease"
+  ],
+  "st": 1
+ },
+ "deep": {
+  "s": [
+   "deep"
+  ],
+  "st": 0
+ },
+ "deer": {
+  "s": [
+   "deer"
+  ],
+  "st": 0
+ },
+ "defeat": {
+  "s": [
+   "de",
+   "feat"
+  ],
+  "st": 1
+ },
+ "defend": {
+  "s": [
+   "de",
+   "fend"
+  ],
+  "st": 1
+ },
+ "delay": {
+  "s": [
+   "de",
+   "lay"
+  ],
+  "st": 1
+ },
+ "delicate": {
+  "s": [
+   "del",
+   "i",
+   "cate"
+  ],
+  "st": 0
+ },
+ "deliver": {
+  "s": [
+   "de",
+   "liv",
+   "er"
+  ],
+  "st": 1
+ },
+ "demand": {
+  "s": [
+   "de",
+   "mand"
+  ],
+  "st": 1
+ },
+ "dental": {
+  "s": [
+   "den",
+   "tal"
+  ],
+  "st": 0
+ },
+ "dentist": {
+  "s": [
+   "den",
+   "tist"
+  ],
+  "st": 0
+ },
+ "clear": {
+  "s": [
+   "clear"
+  ],
+  "st": 0
+ },
+ "clerk": {
+  "s": [
+   "clerk"
+  ],
+  "st": 0
+ },
+ "clever": {
+  "s": [
+   "cle",
+   "ver"
+  ],
+  "st": 0
+ },
+ "click": {
+  "s": [
+   "click"
+  ],
+  "st": 0
+ },
+ "client": {
+  "s": [
+   "cli",
+   "ent"
+  ],
+  "st": 0
+ },
+ "cliff": {
+  "s": [
+   "cliff"
+  ],
+  "st": 0
+ },
+ "climate": {
+  "s": [
+   "cli",
+   "mate"
+  ],
+  "st": 0
+ },
+ "climb": {
+  "s": [
+   "climb"
+  ],
+  "st": 0
+ },
+ "clinic": {
+  "s": [
+   "clin",
+   "ic"
+  ],
+  "st": 0
+ },
+ "clip": {
+  "s": [
+   "clip"
+  ],
+  "st": 0
+ },
+ "clock": {
+  "s": [
+   "clock"
+  ],
+  "st": 0
+ },
+ "cloth": {
+  "s": [
+   "cloth"
+  ],
+  "st": 0
+ },
+ "clothes": {
+  "s": [
+   "clothes"
+  ],
+  "st": 0
+ },
+ "cloud": {
+  "s": [
+   "cloud"
+  ],
+  "st": 0
+ },
+ "club": {
+  "s": [
+   "club"
+  ],
+  "st": 0
+ },
+ "clue": {
+  "s": [
+   "clue"
+  ],
+  "st": 0
+ },
+ "cluster": {
+  "s": [
+   "clus",
+   "ter"
+  ],
+  "st": 0
+ },
+ "coach": {
+  "s": [
+   "coach"
+  ],
+  "st": 0
+ },
+ "coal": {
+  "s": [
+   "coal"
+  ],
+  "st": 0
+ },
+ "coast": {
+  "s": [
+   "coast"
+  ],
+  "st": 0
+ },
+ "coat": {
+  "s": [
+   "coat"
+  ],
+  "st": 0
+ },
+ "code": {
+  "s": [
+   "code"
+  ],
+  "st": 0
+ },
+ "coin": {
+  "s": [
+   "coin"
+  ],
+  "st": 0
+ },
+ "collapse": {
+  "s": [
+   "col",
+   "lapse"
+  ],
+  "st": 1
+ },
+ "collar": {
+  "s": [
+   "col",
+   "lar"
+  ],
+  "st": 0
+ },
+ "collect": {
+  "s": [
+   "col",
+   "lect"
+  ],
+  "st": 1
+ },
+ "college": {
+  "s": [
+   "col",
+   "lege"
+  ],
+  "st": 0
+ },
+ "column": {
+  "s": [
+   "col",
+   "umn"
+  ],
+  "st": 0
+ },
+ "comb": {
+  "s": [
+   "comb"
+  ],
+  "st": 0
+ },
+ "combine": {
+  "s": [
+   "com",
+   "bine"
+  ],
+  "st": 1
+ },
+ "comedy": {
+  "s": [
+   "com",
+   "e",
+   "dy"
+  ],
+  "st": 0
+ },
+ "comfort": {
+  "s": [
+   "com",
+   "fort"
+  ],
+  "st": 0
+ },
+ "comfortable": {
+  "s": [
+   "com",
+   "fort",
+   "a",
+   "ble"
+  ],
+  "st": 0
+ },
+ "comic": {
+  "s": [
+   "com",
+   "ic"
+  ],
+  "st": 0
+ },
+ "command": {
+  "s": [
+   "com",
+   "mand"
+  ],
+  "st": 1
+ },
+ "comment": {
+  "s": [
+   "com",
+   "ment"
+  ],
+  "st": 0
+ },
+ "common": {
+  "s": [
+   "com",
+   "mon"
+  ],
+  "st": 0
+ },
+ "communicate": {
+  "s": [
+   "com",
+   "mu",
+   "ni",
+   "cate"
+  ],
+  "st": 1
+ },
+ "community": {
+  "s": [
+   "com",
+   "mu",
+   "ni",
+   "ty"
+  ],
+  "st": 1
+ },
+ "company": {
+  "s": [
+   "com",
+   "pa",
+   "ny"
+  ],
+  "st": 0
+ },
+ "compare": {
+  "s": [
+   "com",
+   "pare"
+  ],
+  "st": 1
+ },
+ "compete": {
+  "s": [
+   "com",
+   "pete"
+  ],
+  "st": 1
+ },
+ "complain": {
+  "s": [
+   "com",
+   "plain"
+  ],
+  "st": 1
+ },
+ "complete": {
+  "s": [
+   "com",
+   "plete"
+  ],
+  "st": 1
+ },
+ "complex": {
+  "s": [
+   "com",
+   "plex"
+  ],
+  "st": 1
+ },
+ "composer": {
+  "s": [
+   "com",
+   "po",
+   "ser"
+  ],
+  "st": 1
+ },
+ "computer": {
+  "s": [
+   "com",
+   "pu",
+   "ter"
+  ],
+  "st": 1
+ },
+ "concern": {
+  "s": [
+   "con",
+   "cern"
+  ],
+  "st": 1
+ },
+ "concert": {
+  "s": [
+   "con",
+   "cert"
+  ],
+  "st": 0
+ },
+ "conclude": {
+  "s": [
+   "con",
+   "clude"
+  ],
+  "st": 1
+ },
+ "condition": {
+  "s": [
+   "con",
+   "di",
+   "tion"
+  ],
+  "st": 1
+ },
+ "conduct": {
+  "s": [
+   "con",
+   "duct"
+  ],
+  "st": 0
+ },
+ "confess": {
+  "s": [
+   "con",
+   "fess"
+  ],
+  "st": 1
+ },
+ "confirm": {
+  "s": [
+   "con",
+   "firm"
+  ],
+  "st": 1
+ },
+ "conflict": {
+  "s": [
+   "con",
+   "flict"
+  ],
+  "st": 0
+ },
+ "confuse": {
+  "s": [
+   "con",
+   "fuse"
+  ],
+  "st": 1
+ },
+ "congratulate": {
+  "s": [
+   "con",
+   "grat",
+   "u",
+   "late"
+  ],
+  "st": 1
+ },
+ "connect": {
+  "s": [
+   "con",
+   "nect"
+  ],
+  "st": 1
+ },
+ "consider": {
+  "s": [
+   "con",
+   "sid",
+   "er"
+  ],
+  "st": 1
+ },
+ "consist": {
+  "s": [
+   "con",
+   "sist"
+  ],
+  "st": 1
+ },
+ "constant": {
+  "s": [
+   "con",
+   "stant"
+  ],
+  "st": 0
+ },
+ "contact": {
+  "s": [
+   "con",
+   "tact"
+  ],
+  "st": 0
+ },
+ "contain": {
+  "s": [
+   "con",
+   "tain"
+  ],
+  "st": 1
+ },
+ "content": {
+  "s": [
+   "con",
+   "tent"
+  ],
+  "st": 0
+ },
+ "contest": {
+  "s": [
+   "con",
+   "test"
+  ],
+  "st": 0
+ },
+ "context": {
+  "s": [
+   "con",
+   "text"
+  ],
+  "st": 0
+ },
+ "continue": {
+  "s": [
+   "con",
+   "tin",
+   "ue"
+  ],
+  "st": 1
+ },
+ "contract": {
+  "s": [
+   "con",
+   "tract"
+  ],
+  "st": 0
+ },
+ "contrast": {
+  "s": [
+   "con",
+   "trast"
+  ],
+  "st": 0
+ },
+ "contribute": {
+  "s": [
+   "con",
+   "trib",
+   "ute"
+  ],
+  "st": 1
+ },
+ "control": {
+  "s": [
+   "con",
+   "trol"
+  ],
+  "st": 1
+ },
+ "conversation": {
+  "s": [
+   "con",
+   "ver",
+   "sa",
+   "tion"
+  ],
+  "st": 2
+ },
+ "convince": {
+  "s": [
+   "con",
+   "vince"
+  ],
+  "st": 1
+ },
+ "cook": {
+  "s": [
+   "cook"
+  ],
+  "st": 0
+ },
+ "cookie": {
+  "s": [
+   "cook",
+   "ie"
+  ],
+  "st": 0
+ },
+ "cool": {
+  "s": [
+   "cool"
+  ],
+  "st": 0
+ },
+ "copy": {
+  "s": [
+   "cop",
+   "y"
+  ],
+  "st": 0
+ },
+ "core": {
+  "s": [
+   "core"
+  ],
+  "st": 0
+ },
+ "corn": {
+  "s": [
+   "corn"
+  ],
+  "st": 0
+ },
+ "correct": {
+  "s": [
+   "cor",
+   "rect"
+  ],
+  "st": 1
+ },
+ "finish": {
+  "s": [
+   "fin",
+   "ish"
+  ],
+  "st": 0
+ },
+ "fire": {
+  "s": [
+   "fire"
+  ],
+  "st": 0
+ },
+ "firm": {
+  "s": [
+   "firm"
+  ],
+  "st": 0
+ },
+ "fish": {
+  "s": [
+   "fish"
+  ],
+  "st": 0
+ },
+ "fist": {
+  "s": [
+   "fist"
+  ],
+  "st": 0
+ },
+ "fit": {
+  "s": [
+   "fit"
+  ],
+  "st": 0
+ },
+ "fix": {
+  "s": [
+   "fix"
+  ],
+  "st": 0
+ },
+ "flag": {
+  "s": [
+   "flag"
+  ],
+  "st": 0
+ },
+ "flame": {
+  "s": [
+   "flame"
+  ],
+  "st": 0
+ },
+ "flash": {
+  "s": [
+   "flash"
+  ],
+  "st": 0
+ },
+ "flat": {
+  "s": [
+   "flat"
+  ],
+  "st": 0
+ },
+ "flavor": {
+  "s": [
+   "fla",
+   "vor"
+  ],
+  "st": 0
+ },
+ "fleet": {
+  "s": [
+   "fleet"
+  ],
+  "st": 0
+ },
+ "flesh": {
+  "s": [
+   "flesh"
+  ],
+  "st": 0
+ },
+ "flexible": {
+  "s": [
+   "flex",
+   "i",
+   "ble"
+  ],
+  "st": 0
+ },
+ "flight": {
+  "s": [
+   "flight"
+  ],
+  "st": 0
+ },
+ "float": {
+  "s": [
+   "float"
+  ],
+  "st": 0
+ },
+ "flood": {
+  "s": [
+   "flood"
+  ],
+  "st": 0
+ },
+ "floor": {
+  "s": [
+   "floor"
+  ],
+  "st": 0
+ },
+ "flour": {
+  "s": [
+   "flour"
+  ],
+  "st": 0
+ },
+ "flow": {
+  "s": [
+   "flow"
+  ],
+  "st": 0
+ },
+ "flower": {
+  "s": [
+   "flow",
+   "er"
+  ],
+  "st": 0
+ },
+ "fly": {
+  "s": [
+   "fly"
+  ],
+  "st": 0
+ },
+ "focus": {
+  "s": [
+   "fo",
+   "cus"
+  ],
+  "st": 0
+ },
+ "fold": {
+  "s": [
+   "fold"
+  ],
+  "st": 0
+ },
+ "folk": {
+  "s": [
+   "folk"
+  ],
+  "st": 0
+ },
+ "follow": {
+  "s": [
+   "fol",
+   "low"
+  ],
+  "st": 0
+ },
+ "fond": {
+  "s": [
+   "fond"
+  ],
+  "st": 0
+ },
+ "fool": {
+  "s": [
+   "fool"
+  ],
+  "st": 0
+ },
+ "foot": {
+  "s": [
+   "foot"
+  ],
+  "st": 0
+ },
+ "football": {
+  "s": [
+   "foot",
+   "ball"
+  ],
+  "st": 0
+ },
+ "forbid": {
+  "s": [
+   "for",
+   "bid"
+  ],
+  "st": 1
+ },
+ "force": {
+  "s": [
+   "force"
+  ],
+  "st": 0
+ },
+ "forecast": {
+  "s": [
+   "fore",
+   "cast"
+  ],
+  "st": 0
+ },
+ "forehead": {
+  "s": [
+   "fore",
+   "head"
+  ],
+  "st": 0
+ },
+ "foreign": {
+  "s": [
+   "for",
+   "eign"
+  ],
+  "st": 0
+ },
+ "forest": {
+  "s": [
+   "for",
+   "est"
+  ],
+  "st": 0
+ },
+ "forever": {
+  "s": [
+   "for",
+   "ev",
+   "er"
+  ],
+  "st": 1
+ },
+ "forget": {
+  "s": [
+   "for",
+   "get"
+  ],
+  "st": 1
+ },
+ "forgive": {
+  "s": [
+   "for",
+   "give"
+  ],
+  "st": 1
+ },
+ "fork": {
+  "s": [
+   "fork"
+  ],
+  "st": 0
+ },
+ "form": {
+  "s": [
+   "form"
+  ],
+  "st": 0
+ },
+ "formal": {
+  "s": [
+   "for",
+   "mal"
+  ],
+  "st": 0
+ },
+ "former": {
+  "s": [
+   "for",
+   "mer"
+  ],
+  "st": 0
+ },
+ "fortune": {
+  "s": [
+   "for",
+   "tune"
+  ],
+  "st": 0
+ },
+ "forty": {
+  "s": [
+   "for",
+   "ty"
+  ],
+  "st": 0
+ },
+ "forward": {
+  "s": [
+   "for",
+   "ward"
+  ],
+  "st": 0
+ },
+ "fossil": {
+  "s": [
+   "fos",
+   "sil"
+  ],
+  "st": 0
+ },
+ "foster": {
+  "s": [
+   "fos",
+   "ter"
+  ],
+  "st": 0
+ },
+ "found": {
+  "s": [
+   "found"
+  ],
+  "st": 0
+ },
+ "fountain": {
+  "s": [
+   "foun",
+   "tain"
+  ],
+  "st": 0
+ },
+ "four": {
+  "s": [
+   "four"
+  ],
+  "st": 0
+ },
+ "fourth": {
+  "s": [
+   "fourth"
+  ],
+  "st": 0
+ },
+ "fraction": {
+  "s": [
+   "frac",
+   "tion"
+  ],
+  "st": 0
+ },
+ "fragile": {
+  "s": [
+   "frag",
+   "ile"
+  ],
+  "st": 0
+ },
+ "frame": {
+  "s": [
+   "frame"
+  ],
+  "st": 0
+ },
+ "free": {
+  "s": [
+   "free"
+  ],
+  "st": 0
+ },
+ "freeze": {
+  "s": [
+   "freeze"
+  ],
+  "st": 0
+ },
+ "frequent": {
+  "s": [
+   "fre",
+   "quent"
+  ],
+  "st": 0
+ },
+ "fresh": {
+  "s": [
+   "fresh"
+  ],
+  "st": 0
+ },
+ "fright": {
+  "s": [
+   "fright"
+  ],
+  "st": 0
+ },
+ "frighten": {
+  "s": [
+   "fright",
+   "en"
+  ],
+  "st": 0
+ },
+ "frog": {
+  "s": [
+   "frog"
+  ],
+  "st": 0
+ },
+ "front": {
+  "s": [
+   "front"
+  ],
+  "st": 0
+ },
+ "frost": {
+  "s": [
+   "frost"
+  ],
+  "st": 0
+ },
+ "frown": {
+  "s": [
+   "frown"
+  ],
+  "st": 0
+ },
+ "fruit": {
+  "s": [
+   "fruit"
+  ],
+  "st": 0
+ },
+ "fry": {
+  "s": [
+   "fry"
+  ],
+  "st": 0
+ },
+ "fuel": {
+  "s": [
+   "fu",
+   "el"
+  ],
+  "st": 0
+ },
+ "full": {
+  "s": [
+   "full"
+  ],
+  "st": 0
+ },
+ "fun": {
+  "s": [
+   "fun"
+  ],
+  "st": 0
+ },
+ "function": {
+  "s": [
+   "func",
+   "tion"
+  ],
+  "st": 0
+ },
+ "fund": {
+  "s": [
+   "fund"
+  ],
+  "st": 0
+ },
+ "funeral": {
+  "s": [
+   "fu",
+   "ner",
+   "al"
+  ],
+  "st": 0
+ },
+ "funny": {
+  "s": [
+   "fun",
+   "ny"
+  ],
+  "st": 0
+ },
+ "fur": {
+  "s": [
+   "fur"
+  ],
+  "st": 0
+ },
+ "furniture": {
+  "s": [
+   "fur",
+   "ni",
+   "ture"
+  ],
+  "st": 0
+ },
+ "further": {
+  "s": [
+   "fur",
+   "ther"
+  ],
+  "st": 0
+ },
+ "future": {
+  "s": [
+   "fu",
+   "ture"
+  ],
+  "st": 0
+ },
+ "gain": {
+  "s": [
+   "gain"
+  ],
+  "st": 0
+ },
+ "gallon": {
+  "s": [
+   "gal",
+   "lon"
+  ],
+  "st": 0
+ },
+ "game": {
+  "s": [
+   "game"
+  ],
+  "st": 0
+ },
+ "gang": {
+  "s": [
+   "gang"
+  ],
+  "st": 0
+ },
+ "gap": {
+  "s": [
+   "gap"
+  ],
+  "st": 0
+ },
+ "garage": {
+  "s": [
+   "ga",
+   "rage"
+  ],
+  "st": 1
+ },
+ "garbage": {
+  "s": [
+   "gar",
+   "bage"
+  ],
+  "st": 0
+ },
+ "garden": {
+  "s": [
+   "gar",
+   "den"
+  ],
+  "st": 0
+ },
+ "garlic": {
+  "s": [
+   "gar",
+   "lic"
+  ],
+  "st": 0
+ },
+ "gas": {
+  "s": [
+   "gas"
+  ],
+  "st": 0
+ },
+ "gate": {
+  "s": [
+   "gate"
+  ],
+  "st": 0
+ },
+ "gather": {
+  "s": [
+   "gath",
+   "er"
+  ],
+  "st": 0
+ },
+ "gay": {
+  "s": [
+   "gay"
+  ],
+  "st": 0
+ },
+ "gaze": {
+  "s": [
+   "gaze"
+  ],
+  "st": 0
+ },
+ "gear": {
+  "s": [
+   "gear"
+  ],
+  "st": 0
+ },
+ "general": {
+  "s": [
+   "gen",
+   "er",
+   "al"
+  ],
+  "st": 0
+ },
+ "generous": {
+  "s": [
+   "gen",
+   "er",
+   "ous"
+  ],
+  "st": 0
+ },
+ "gentle": {
+  "s": [
+   "gen",
+   "tle"
+  ],
+  "st": 0
+ },
+ "genuine": {
+  "s": [
+   "gen",
+   "u",
+   "ine"
+  ],
+  "st": 0
+ },
+ "gesture": {
+  "s": [
+   "ges",
+   "ture"
+  ],
+  "st": 0
+ },
+ "ghost": {
+  "s": [
+   "ghost"
+  ],
+  "st": 0
+ },
+ "giant": {
+  "s": [
+   "gi",
+   "ant"
+  ],
+  "st": 0
+ },
+ "gift": {
+  "s": [
+   "gift"
+  ],
+  "st": 0
+ },
+ "giggle": {
+  "s": [
+   "gig",
+   "gle"
+  ],
+  "st": 0
+ },
+ "ginger": {
+  "s": [
+   "gin",
+   "ger"
+  ],
+  "st": 0
+ },
+ "giraffe": {
+  "s": [
+   "gi",
+   "raffe"
+  ],
+  "st": 1
+ },
+ "glad": {
+  "s": [
+   "glad"
+  ],
+  "st": 0
+ },
+ "glance": {
+  "s": [
+   "glance"
+  ],
+  "st": 0
+ },
+ "glass": {
+  "s": [
+   "glass"
+  ],
+  "st": 0
+ },
+ "glide": {
+  "s": [
+   "glide"
+  ],
+  "st": 0
+ },
+ "globe": {
+  "s": [
+   "globe"
+  ],
+  "st": 0
+ },
+ "glory": {
+  "s": [
+   "glo",
+   "ry"
+  ],
+  "st": 0
+ },
+ "glove": {
+  "s": [
+   "glove"
+  ],
+  "st": 0
+ },
+ "glow": {
+  "s": [
+   "glow"
+  ],
+  "st": 0
+ },
+ "glue": {
+  "s": [
+   "glue"
+  ],
+  "st": 0
+ },
+ "goal": {
+  "s": [
+   "goal"
+  ],
+  "st": 0
+ },
+ "goat": {
+  "s": [
+   "goat"
+  ],
+  "st": 0
+ },
+ "gold": {
+  "s": [
+   "gold"
+  ],
+  "st": 0
+ },
+ "golden": {
+  "s": [
+   "gold",
+   "en"
+  ],
+  "st": 0
+ },
+ "golf": {
+  "s": [
+   "golf"
+  ],
+  "st": 0
+ },
+ "goods": {
+  "s": [
+   "goods"
+  ],
+  "st": 0
+ },
+ "goose": {
+  "s": [
+   "goose"
+  ],
+  "st": 0
+ },
+ "govern": {
+  "s": [
+   "gov",
+   "ern"
+  ],
+  "st": 0
+ },
+ "government": {
+  "s": [
+   "gov",
+   "ern",
+   "ment"
+  ],
+  "st": 0
+ },
+ "grab": {
+  "s": [
+   "grab"
+  ],
+  "st": 0
+ },
+ "grace": {
+  "s": [
+   "grace"
+  ],
+  "st": 0
+ },
+ "grade": {
+  "s": [
+   "grade"
+  ],
+  "st": 0
+ },
+ "gradual": {
+  "s": [
+   "grad",
+   "u",
+   "al"
+  ],
+  "st": 0
+ },
+ "graduate": {
+  "s": [
+   "grad",
+   "u",
+   "ate"
+  ],
+  "st": 0
+ },
+ "grain": {
+  "s": [
+   "grain"
+  ],
+  "st": 0
+ },
+ "grand": {
+  "s": [
+   "grand"
+  ],
+  "st": 0
+ },
+ "grant": {
+  "s": [
+   "grant"
+  ],
+  "st": 0
+ },
+ "grape": {
+  "s": [
+   "grape"
+  ],
+  "st": 0
+ },
+ "grasp": {
+  "s": [
+   "grasp"
+  ],
+  "st": 0
+ },
+ "grass": {
+  "s": [
+   "grass"
+  ],
+  "st": 0
+ },
+ "grateful": {
+  "s": [
+   "grate",
+   "ful"
+  ],
+  "st": 0
+ },
+ "grave": {
+  "s": [
+   "grave"
+  ],
+  "st": 0
+ },
+ "gravity": {
+  "s": [
+   "grav",
+   "i",
+   "ty"
+  ],
+  "st": 0
+ },
+ "gray": {
+  "s": [
+   "gray"
+  ],
+  "st": 0
+ },
+ "greedy": {
+  "s": [
+   "greed",
+   "y"
+  ],
+  "st": 0
+ },
+ "green": {
+  "s": [
+   "green"
+  ],
+  "st": 0
+ },
+ "greet": {
+  "s": [
+   "greet"
+  ],
+  "st": 0
+ },
+ "grid": {
+  "s": [
+   "grid"
+  ],
+  "st": 0
+ },
+ "grief": {
+  "s": [
+   "grief"
+  ],
+  "st": 0
+ },
+ "grocery": {
+  "s": [
+   "gro",
+   "cer",
+   "y"
+  ],
+  "st": 0
+ },
+ "ground": {
+  "s": [
+   "ground"
+  ],
+  "st": 0
+ },
+ "group": {
+  "s": [
+   "group"
+  ],
+  "st": 0
+ },
+ "grow": {
+  "s": [
+   "grow"
+  ],
+  "st": 0
+ },
+ "guard": {
+  "s": [
+   "guard"
+  ],
+  "st": 0
+ },
+ "guess": {
+  "s": [
+   "guess"
+  ],
+  "st": 0
+ },
+ "guest": {
+  "s": [
+   "guest"
+  ],
+  "st": 0
+ },
+ "guide": {
+  "s": [
+   "guide"
+  ],
+  "st": 0
+ },
+ "guilt": {
+  "s": [
+   "guilt"
+  ],
+  "st": 0
+ },
+ "guitar": {
+  "s": [
+   "gui",
+   "tar"
+  ],
+  "st": 1
+ },
+ "gun": {
+  "s": [
+   "gun"
+  ],
+  "st": 0
+ },
+ "guy": {
+  "s": [
+   "guy"
+  ],
+  "st": 0
+ },
+ "gym": {
+  "s": [
+   "gym"
+  ],
+  "st": 0
+ },
+ "habit": {
+  "s": [
+   "hab",
+   "it"
+  ],
+  "st": 0
+ },
+ "hair": {
+  "s": [
+   "hair"
+  ],
+  "st": 0
+ },
+ "half": {
+  "s": [
+   "half"
+  ],
+  "st": 0
+ },
+ "hall": {
+  "s": [
+   "hall"
+  ],
+  "st": 0
+ },
+ "dumb": {
+  "s": [
+   "dumb"
+  ],
+  "st": 0
+ },
+ "during": {
+  "s": [
+   "dur",
+   "ing"
+  ],
+  "st": 0
+ },
+ "dust": {
+  "s": [
+   "dust"
+  ],
+  "st": 0
+ },
+ "duty": {
+  "s": [
+   "du",
+   "ty"
+  ],
+  "st": 0
+ },
+ "eager": {
+  "s": [
+   "ea",
+   "ger"
+  ],
+  "st": 0
+ },
+ "eagle": {
+  "s": [
+   "ea",
+   "gle"
+  ],
+  "st": 0
+ },
+ "ear": {
+  "s": [
+   "ear"
+  ],
+  "st": 0
+ },
+ "earn": {
+  "s": [
+   "earn"
+  ],
+  "st": 0
+ },
+ "earth": {
+  "s": [
+   "earth"
+  ],
+  "st": 0
+ },
+ "ease": {
+  "s": [
+   "ease"
+  ],
+  "st": 0
+ },
+ "easily": {
+  "s": [
+   "eas",
+   "i",
+   "ly"
+  ],
+  "st": 0
+ },
+ "east": {
+  "s": [
+   "east"
+  ],
+  "st": 0
+ },
+ "easy": {
+  "s": [
+   "ea",
+   "sy"
+  ],
+  "st": 0
+ },
+ "economy": {
+  "s": [
+   "e",
+   "con",
+   "o",
+   "my"
+  ],
+  "st": 1
+ },
+ "edge": {
+  "s": [
+   "edge"
+  ],
+  "st": 0
+ },
+ "edition": {
+  "s": [
+   "e",
+   "di",
+   "tion"
+  ],
+  "st": 1
+ },
+ "editor": {
+  "s": [
+   "ed",
+   "i",
+   "tor"
+  ],
+  "st": 0
+ },
+ "educate": {
+  "s": [
+   "ed",
+   "u",
+   "cate"
+  ],
+  "st": 0
+ },
+ "education": {
+  "s": [
+   "ed",
+   "u",
+   "ca",
+   "tion"
+  ],
+  "st": 2
+ },
+ "effect": {
+  "s": [
+   "ef",
+   "fect"
+  ],
+  "st": 1
+ },
+ "effort": {
+  "s": [
+   "ef",
+   "fort"
+  ],
+  "st": 0
+ },
+ "egg": {
+  "s": [
+   "egg"
+  ],
+  "st": 0
+ },
+ "either": {
+  "s": [
+   "ei",
+   "ther"
+  ],
+  "st": 0
+ },
+ "elbow": {
+  "s": [
+   "el",
+   "bow"
+  ],
+  "st": 0
+ },
+ "elder": {
+  "s": [
+   "el",
+   "der"
+  ],
+  "st": 0
+ },
+ "elect": {
+  "s": [
+   "e",
+   "lect"
+  ],
+  "st": 1
+ },
+ "electric": {
+  "s": [
+   "e",
+   "lec",
+   "tric"
+  ],
+  "st": 1
+ },
+ "elegant": {
+  "s": [
+   "el",
+   "e",
+   "gant"
+  ],
+  "st": 0
+ },
+ "element": {
+  "s": [
+   "el",
+   "e",
+   "ment"
+  ],
+  "st": 0
+ },
+ "elephant": {
+  "s": [
+   "el",
+   "e",
+   "phant"
+  ],
+  "st": 0
+ },
+ "eleven": {
+  "s": [
+   "e",
+   "lev",
+   "en"
+  ],
+  "st": 1
+ },
+ "eligible": {
+  "s": [
+   "el",
+   "i",
+   "gi",
+   "ble"
+  ],
+  "st": 0
+ },
+ "else": {
+  "s": [
+   "else"
+  ],
+  "st": 0
+ },
+ "elsewhere": {
+  "s": [
+   "else",
+   "where"
+  ],
+  "st": 0
+ },
+ "embarrass": {
+  "s": [
+   "em",
+   "bar",
+   "rass"
+  ],
+  "st": 1
+ },
+ "embrace": {
+  "s": [
+   "em",
+   "brace"
+  ],
+  "st": 1
+ },
+ "emergency": {
+  "s": [
+   "e",
+   "mer",
+   "gen",
+   "cy"
+  ],
+  "st": 1
+ },
+ "emotion": {
+  "s": [
+   "e",
+   "mo",
+   "tion"
+  ],
+  "st": 1
+ },
+ "emphasize": {
+  "s": [
+   "em",
+   "pha",
+   "size"
+  ],
+  "st": 0
+ },
+ "employ": {
+  "s": [
+   "em",
+   "ploy"
+  ],
+  "st": 1
+ },
+ "empty": {
+  "s": [
+   "emp",
+   "ty"
+  ],
+  "st": 0
+ },
+ "enable": {
+  "s": [
+   "en",
+   "a",
+   "ble"
+  ],
+  "st": 1
+ },
+ "encounter": {
+  "s": [
+   "en",
+   "coun",
+   "ter"
+  ],
+  "st": 1
+ },
+ "encourage": {
+  "s": [
+   "en",
+   "cour",
+   "age"
+  ],
+  "st": 1
+ },
+ "endless": {
+  "s": [
+   "end",
+   "less"
+  ],
+  "st": 0
+ },
+ "enemy": {
+  "s": [
+   "en",
+   "e",
+   "my"
+  ],
+  "st": 0
+ },
+ "energy": {
+  "s": [
+   "en",
+   "er",
+   "gy"
+  ],
+  "st": 0
+ },
+ "engage": {
+  "s": [
+   "en",
+   "gage"
+  ],
+  "st": 1
+ },
+ "engine": {
+  "s": [
+   "en",
+   "gine"
+  ],
+  "st": 0
+ },
+ "engineer": {
+  "s": [
+   "en",
+   "gi",
+   "neer"
+  ],
+  "st": 2
+ },
+ "enough": {
+  "s": [
+   "e",
+   "nough"
+  ],
+  "st": 1
+ },
+ "enter": {
+  "s": [
+   "en",
+   "ter"
+  ],
+  "st": 0
+ },
+ "entertain": {
+  "s": [
+   "en",
+   "ter",
+   "tain"
+  ],
+  "st": 2
+ },
+ "entire": {
+  "s": [
+   "en",
+   "tire"
+  ],
+  "st": 1
+ },
+ "entrance": {
+  "s": [
+   "en",
+   "trance"
+  ],
+  "st": 0
+ },
+ "envelope": {
+  "s": [
+   "en",
+   "ve",
+   "lope"
+  ],
+  "st": 0
+ },
+ "environment": {
+  "s": [
+   "en",
+   "vi",
+   "ron",
+   "ment"
+  ],
+  "st": 1
+ },
+ "envy": {
+  "s": [
+   "en",
+   "vy"
+  ],
+  "st": 0
+ },
+ "equal": {
+  "s": [
+   "e",
+   "qual"
+  ],
+  "st": 0
+ },
+ "equipment": {
+  "s": [
+   "e",
+   "quip",
+   "ment"
+  ],
+  "st": 1
+ },
+ "error": {
+  "s": [
+   "er",
+   "ror"
+  ],
+  "st": 0
+ },
+ "escape": {
+  "s": [
+   "es",
+   "cape"
+  ],
+  "st": 1
+ },
+ "especially": {
+  "s": [
+   "es",
+   "pe",
+   "cial",
+   "ly"
+  ],
+  "st": 2
+ },
+ "essay": {
+  "s": [
+   "es",
+   "say"
+  ],
+  "st": 0
+ },
+ "essential": {
+  "s": [
+   "es",
+   "sen",
+   "tial"
+  ],
+  "st": 1
+ },
+ "establish": {
+  "s": [
+   "es",
+   "tab",
+   "lish"
+  ],
+  "st": 1
+ },
+ "estate": {
+  "s": [
+   "es",
+   "tate"
+  ],
+  "st": 1
+ },
+ "estimate": {
+  "s": [
+   "es",
+   "ti",
+   "mate"
+  ],
+  "st": 0
+ },
+ "even": {
+  "s": [
+   "e",
+   "ven"
+  ],
+  "st": 0
+ },
+ "event": {
+  "s": [
+   "e",
+   "vent"
+  ],
+  "st": 1
+ },
+ "eventually": {
+  "s": [
+   "e",
+   "ven",
+   "tu",
+   "al",
+   "ly"
+  ],
+  "st": 1
+ },
+ "ever": {
+  "s": [
+   "ev",
+   "er"
+  ],
+  "st": 0
+ },
+ "everybody": {
+  "s": [
+   "ev",
+   "ery",
+   "bod",
+   "y"
+  ],
+  "st": 0
+ },
+ "everyday": {
+  "s": [
+   "ev",
+   "ery",
+   "day"
+  ],
+  "st": 0
+ },
+ "everyone": {
+  "s": [
+   "ev",
+   "ery",
+   "one"
+  ],
+  "st": 0
+ },
+ "everything": {
+  "s": [
+   "ev",
+   "ery",
+   "thing"
+  ],
+  "st": 0
+ },
+ "everywhere": {
+  "s": [
+   "ev",
+   "ery",
+   "where"
+  ],
+  "st": 0
+ },
+ "evidence": {
+  "s": [
+   "ev",
+   "i",
+   "dence"
+  ],
+  "st": 0
+ },
+ "evil": {
+  "s": [
+   "e",
+   "vil"
+  ],
+  "st": 0
+ },
+ "exact": {
+  "s": [
+   "ex",
+   "act"
+  ],
+  "st": 1
+ },
+ "exam": {
+  "s": [
+   "ex",
+   "am"
+  ],
+  "st": 1
+ },
+ "examine": {
+  "s": [
+   "ex",
+   "am",
+   "ine"
+  ],
+  "st": 1
+ },
+ "example": {
+  "s": [
+   "ex",
+   "am",
+   "ple"
+  ],
+  "st": 1
+ },
+ "excellent": {
+  "s": [
+   "ex",
+   "cel",
+   "lent"
+  ],
+  "st": 1
+ },
+ "except": {
+  "s": [
+   "ex",
+   "cept"
+  ],
+  "st": 1
+ },
+ "exchange": {
+  "s": [
+   "ex",
+   "change"
+  ],
+  "st": 1
+ },
+ "excite": {
+  "s": [
+   "ex",
+   "cite"
+  ],
+  "st": 1
+ },
+ "excuse": {
+  "s": [
+   "ex",
+   "cuse"
+  ],
+  "st": 1
+ },
+ "exercise": {
+  "s": [
+   "ex",
+   "er",
+   "cise"
+  ],
+  "st": 1
+ },
+ "exhaust": {
+  "s": [
+   "ex",
+   "haust"
+  ],
+  "st": 1
+ },
+ "exhibit": {
+  "s": [
+   "ex",
+   "hib",
+   "it"
+  ],
+  "st": 1
+ },
+ "exist": {
+  "s": [
+   "ex",
+   "ist"
+  ],
+  "st": 1
+ },
+ "exit": {
+  "s": [
+   "ex",
+   "it"
+  ],
+  "st": 0
+ },
+ "expand": {
+  "s": [
+   "ex",
+   "pand"
+  ],
+  "st": 1
+ },
+ "expect": {
+  "s": [
+   "ex",
+   "pect"
+  ],
+  "st": 1
+ },
+ "expensive": {
+  "s": [
+   "ex",
+   "pen",
+   "sive"
+  ],
+  "st": 1
+ },
+ "experience": {
+  "s": [
+   "ex",
+   "pe",
+   "ri",
+   "ence"
+  ],
+  "st": 1
+ },
+ "experiment": {
+  "s": [
+   "ex",
+   "per",
+   "i",
+   "ment"
+  ],
+  "st": 1
+ },
+ "expert": {
+  "s": [
+   "ex",
+   "pert"
+  ],
+  "st": 1
+ },
+ "explain": {
+  "s": [
+   "ex",
+   "plain"
+  ],
+  "st": 1
+ },
+ "explode": {
+  "s": [
+   "ex",
+   "plode"
+  ],
+  "st": 1
+ },
+ "explore": {
+  "s": [
+   "ex",
+   "plore"
+  ],
+  "st": 1
+ },
+ "export": {
+  "s": [
+   "ex",
+   "port"
+  ],
+  "st": 1
+ },
+ "expose": {
+  "s": [
+   "ex",
+   "pose"
+  ],
+  "st": 1
+ },
+ "express": {
+  "s": [
+   "ex",
+   "press"
+  ],
+  "st": 1
+ },
+ "extend": {
+  "s": [
+   "ex",
+   "tend"
+  ],
+  "st": 1
+ },
+ "extra": {
+  "s": [
+   "ex",
+   "tra"
+  ],
+  "st": 0
+ },
+ "extreme": {
+  "s": [
+   "ex",
+   "treme"
+  ],
+  "st": 1
+ },
+ "eye": {
+  "s": [
+   "eye"
+  ],
+  "st": 0
+ },
+ "fabric": {
+  "s": [
+   "fab",
+   "ric"
+  ],
+  "st": 0
+ },
+ "face": {
+  "s": [
+   "face"
+  ],
+  "st": 0
+ },
+ "fact": {
+  "s": [
+   "fact"
+  ],
+  "st": 0
+ },
+ "factory": {
+  "s": [
+   "fac",
+   "to",
+   "ry"
+  ],
+  "st": 0
+ },
+ "fade": {
+  "s": [
+   "fade"
+  ],
+  "st": 0
+ },
+ "fail": {
+  "s": [
+   "fail"
+  ],
+  "st": 0
+ },
+ "faint": {
+  "s": [
+   "faint"
+  ],
+  "st": 0
+ },
+ "fair": {
+  "s": [
+   "fair"
+  ],
+  "st": 0
+ },
+ "faith": {
+  "s": [
+   "faith"
+  ],
+  "st": 0
+ },
+ "fall": {
+  "s": [
+   "fall"
+  ],
+  "st": 0
+ },
+ "false": {
+  "s": [
+   "false"
+  ],
+  "st": 0
+ },
+ "familiar": {
+  "s": [
+   "fa",
+   "mil",
+   "iar"
+  ],
+  "st": 1
+ },
+ "famous": {
+  "s": [
+   "fa",
+   "mous"
+  ],
+  "st": 0
+ },
+ "fan": {
+  "s": [
+   "fan"
+  ],
+  "st": 0
+ },
+ "fancy": {
+  "s": [
+   "fan",
+   "cy"
+  ],
+  "st": 0
+ },
+ "fare": {
+  "s": [
+   "fare"
+  ],
+  "st": 0
+ },
+ "farm": {
+  "s": [
+   "farm"
+  ],
+  "st": 0
+ },
+ "fashion": {
+  "s": [
+   "fash",
+   "ion"
+  ],
+  "st": 0
+ },
+ "fat": {
+  "s": [
+   "fat"
+  ],
+  "st": 0
+ },
+ "fate": {
+  "s": [
+   "fate"
+  ],
+  "st": 0
+ },
+ "fault": {
+  "s": [
+   "fault"
+  ],
+  "st": 0
+ },
+ "favor": {
+  "s": [
+   "fa",
+   "vor"
+  ],
+  "st": 0
+ },
+ "fear": {
+  "s": [
+   "fear"
+  ],
+  "st": 0
+ },
+ "feast": {
+  "s": [
+   "feast"
+  ],
+  "st": 0
+ },
+ "feather": {
+  "s": [
+   "feath",
+   "er"
+  ],
+  "st": 0
+ },
+ "fee": {
+  "s": [
+   "fee"
+  ],
+  "st": 0
+ },
+ "feed": {
+  "s": [
+   "feed"
+  ],
+  "st": 0
+ },
+ "feel": {
+  "s": [
+   "feel"
+  ],
+  "st": 0
+ },
+ "fellow": {
+  "s": [
+   "fel",
+   "low"
+  ],
+  "st": 0
+ },
+ "female": {
+  "s": [
+   "fe",
+   "male"
+  ],
+  "st": 0
+ },
+ "fence": {
+  "s": [
+   "fence"
+  ],
+  "st": 0
+ },
+ "festival": {
+  "s": [
+   "fes",
+   "ti",
+   "val"
+  ],
+  "st": 0
+ },
+ "fetch": {
+  "s": [
+   "fetch"
+  ],
+  "st": 0
+ },
+ "fever": {
+  "s": [
+   "fe",
+   "ver"
+  ],
+  "st": 0
+ },
+ "few": {
+  "s": [
+   "few"
+  ],
+  "st": 0
+ },
+ "fiber": {
+  "s": [
+   "fi",
+   "ber"
+  ],
+  "st": 0
+ },
+ "fiction": {
+  "s": [
+   "fic",
+   "tion"
+  ],
+  "st": 0
+ },
+ "field": {
+  "s": [
+   "field"
+  ],
+  "st": 0
+ },
+ "fierce": {
+  "s": [
+   "fierce"
+  ],
+  "st": 0
+ },
+ "fifteen": {
+  "s": [
+   "fif",
+   "teen"
+  ],
+  "st": 1
+ },
+ "fifty": {
+  "s": [
+   "fif",
+   "ty"
+  ],
+  "st": 0
+ },
+ "fight": {
+  "s": [
+   "fight"
+  ],
+  "st": 0
+ },
+ "figure": {
+  "s": [
+   "fig",
+   "ure"
+  ],
+  "st": 0
+ },
+ "file": {
+  "s": [
+   "file"
+  ],
+  "st": 0
+ },
+ "fill": {
+  "s": [
+   "fill"
+  ],
+  "st": 0
+ },
+ "film": {
+  "s": [
+   "film"
+  ],
+  "st": 0
+ },
+ "filter": {
+  "s": [
+   "fil",
+   "ter"
+  ],
+  "st": 0
+ },
+ "final": {
+  "s": [
+   "fi",
+   "nal"
+  ],
+  "st": 0
+ },
+ "finally": {
+  "s": [
+   "fi",
+   "nal",
+   "ly"
+  ],
+  "st": 0
+ },
+ "finance": {
+  "s": [
+   "fi",
+   "nance"
+  ],
+  "st": 0
+ },
+ "finger": {
+  "s": [
+   "fin",
+   "ger"
+  ],
+  "st": 0
+ },
+ "keyboard": {
+  "s": [
+   "key",
+   "board"
+  ],
+  "st": 0
+ },
+ "kick": {
+  "s": [
+   "kick"
+  ],
+  "st": 0
+ },
+ "kid": {
+  "s": [
+   "kid"
+  ],
+  "st": 0
+ },
+ "kill": {
+  "s": [
+   "kill"
+  ],
+  "st": 0
+ },
+ "kind": {
+  "s": [
+   "kind"
+  ],
+  "st": 0
+ },
+ "king": {
+  "s": [
+   "king"
+  ],
+  "st": 0
+ },
+ "kiss": {
+  "s": [
+   "kiss"
+  ],
+  "st": 0
+ },
+ "kit": {
+  "s": [
+   "kit"
+  ],
+  "st": 0
+ },
+ "kitchen": {
+  "s": [
+   "kitch",
+   "en"
+  ],
+  "st": 0
+ },
+ "kite": {
+  "s": [
+   "kite"
+  ],
+  "st": 0
+ },
+ "knee": {
+  "s": [
+   "knee"
+  ],
+  "st": 0
+ },
+ "kneel": {
+  "s": [
+   "kneel"
+  ],
+  "st": 0
+ },
+ "knife": {
+  "s": [
+   "knife"
+  ],
+  "st": 0
+ },
+ "knit": {
+  "s": [
+   "knit"
+  ],
+  "st": 0
+ },
+ "knock": {
+  "s": [
+   "knock"
+  ],
+  "st": 0
+ },
+ "knot": {
+  "s": [
+   "knot"
+  ],
+  "st": 0
+ },
+ "knowledge": {
+  "s": [
+   "knowl",
+   "edge"
+  ],
+  "st": 0
+ },
+ "lab": {
+  "s": [
+   "lab"
+  ],
+  "st": 0
+ },
+ "label": {
+  "s": [
+   "la",
+   "bel"
+  ],
+  "st": 0
+ },
+ "labor": {
+  "s": [
+   "la",
+   "bor"
+  ],
+  "st": 0
+ },
+ "lack": {
+  "s": [
+   "lack"
+  ],
+  "st": 0
+ },
+ "ladder": {
+  "s": [
+   "lad",
+   "der"
+  ],
+  "st": 0
+ },
+ "lady": {
+  "s": [
+   "la",
+   "dy"
+  ],
+  "st": 0
+ },
+ "lake": {
+  "s": [
+   "lake"
+  ],
+  "st": 0
+ },
+ "lamb": {
+  "s": [
+   "lamb"
+  ],
+  "st": 0
+ },
+ "lamp": {
+  "s": [
+   "lamp"
+  ],
+  "st": 0
+ },
+ "land": {
+  "s": [
+   "land"
+  ],
+  "st": 0
+ },
+ "landscape": {
+  "s": [
+   "land",
+   "scape"
+  ],
+  "st": 0
+ },
+ "lane": {
+  "s": [
+   "lane"
+  ],
+  "st": 0
+ },
+ "language": {
+  "s": [
+   "lan",
+   "guage"
+  ],
+  "st": 0
+ },
+ "lantern": {
+  "s": [
+   "lan",
+   "tern"
+  ],
+  "st": 0
+ },
+ "lap": {
+  "s": [
+   "lap"
+  ],
+  "st": 0
+ },
+ "large": {
+  "s": [
+   "large"
+  ],
+  "st": 0
+ },
+ "laser": {
+  "s": [
+   "la",
+   "ser"
+  ],
+  "st": 0
+ },
+ "lately": {
+  "s": [
+   "late",
+   "ly"
+  ],
+  "st": 0
+ },
+ "later": {
+  "s": [
+   "la",
+   "ter"
+  ],
+  "st": 0
+ },
+ "latest": {
+  "s": [
+   "lat",
+   "est"
+  ],
+  "st": 0
+ },
+ "laugh": {
+  "s": [
+   "laugh"
+  ],
+  "st": 0
+ },
+ "launch": {
+  "s": [
+   "launch"
+  ],
+  "st": 0
+ },
+ "laundry": {
+  "s": [
+   "laun",
+   "dry"
+  ],
+  "st": 0
+ },
+ "lawyer": {
+  "s": [
+   "law",
+   "yer"
+  ],
+  "st": 0
+ },
+ "lay": {
+  "s": [
+   "lay"
+  ],
+  "st": 0
+ },
+ "layer": {
+  "s": [
+   "lay",
+   "er"
+  ],
+  "st": 0
+ },
+ "lazy": {
+  "s": [
+   "la",
+   "zy"
+  ],
+  "st": 0
+ },
+ "lead": {
+  "s": [
+   "lead"
+  ],
+  "st": 0
+ },
+ "leader": {
+  "s": [
+   "lead",
+   "er"
+  ],
+  "st": 0
+ },
+ "leaf": {
+  "s": [
+   "leaf"
+  ],
+  "st": 0
+ },
+ "league": {
+  "s": [
+   "league"
+  ],
+  "st": 0
+ },
+ "lean": {
+  "s": [
+   "lean"
+  ],
+  "st": 0
+ },
+ "leap": {
+  "s": [
+   "leap"
+  ],
+  "st": 0
+ },
+ "least": {
+  "s": [
+   "least"
+  ],
+  "st": 0
+ },
+ "leather": {
+  "s": [
+   "leath",
+   "er"
+  ],
+  "st": 0
+ },
+ "lecture": {
+  "s": [
+   "lec",
+   "ture"
+  ],
+  "st": 0
+ },
+ "left": {
+  "s": [
+   "left"
+  ],
+  "st": 0
+ },
+ "leg": {
+  "s": [
+   "leg"
+  ],
+  "st": 0
+ },
+ "legal": {
+  "s": [
+   "le",
+   "gal"
+  ],
+  "st": 0
+ },
+ "legend": {
+  "s": [
+   "leg",
+   "end"
+  ],
+  "st": 0
+ },
+ "lend": {
+  "s": [
+   "lend"
+  ],
+  "st": 0
+ },
+ "length": {
+  "s": [
+   "length"
+  ],
+  "st": 0
+ },
+ "lens": {
+  "s": [
+   "lens"
+  ],
+  "st": 0
+ },
+ "less": {
+  "s": [
+   "less"
+  ],
+  "st": 0
+ },
+ "lesson": {
+  "s": [
+   "les",
+   "son"
+  ],
+  "st": 0
+ },
+ "letter": {
+  "s": [
+   "let",
+   "ter"
+  ],
+  "st": 0
+ },
+ "lettuce": {
+  "s": [
+   "let",
+   "tuce"
+  ],
+  "st": 0
+ },
+ "level": {
+  "s": [
+   "lev",
+   "el"
+  ],
+  "st": 0
+ },
+ "liberty": {
+  "s": [
+   "lib",
+   "er",
+   "ty"
+  ],
+  "st": 0
+ },
+ "library": {
+  "s": [
+   "li",
+   "brar",
+   "y"
+  ],
+  "st": 0
+ },
+ "license": {
+  "s": [
+   "li",
+   "cense"
+  ],
+  "st": 0
+ },
+ "lid": {
+  "s": [
+   "lid"
+  ],
+  "st": 0
+ },
+ "lie": {
+  "s": [
+   "lie"
+  ],
+  "st": 0
+ },
+ "life": {
+  "s": [
+   "life"
+  ],
+  "st": 0
+ },
+ "lift": {
+  "s": [
+   "lift"
+  ],
+  "st": 0
+ },
+ "light": {
+  "s": [
+   "light"
+  ],
+  "st": 0
+ },
+ "lightning": {
+  "s": [
+   "light",
+   "ning"
+  ],
+  "st": 0
+ },
+ "likely": {
+  "s": [
+   "like",
+   "ly"
+  ],
+  "st": 0
+ },
+ "limit": {
+  "s": [
+   "lim",
+   "it"
+  ],
+  "st": 0
+ },
+ "limp": {
+  "s": [
+   "limp"
+  ],
+  "st": 0
+ },
+ "line": {
+  "s": [
+   "line"
+  ],
+  "st": 0
+ },
+ "linen": {
+  "s": [
+   "lin",
+   "en"
+  ],
+  "st": 0
+ },
+ "link": {
+  "s": [
+   "link"
+  ],
+  "st": 0
+ },
+ "ham": {
+  "s": [
+   "ham"
+  ],
+  "st": 0
+ },
+ "hamburger": {
+  "s": [
+   "ham",
+   "bur",
+   "ger"
+  ],
+  "st": 0
+ },
+ "hammer": {
+  "s": [
+   "ham",
+   "mer"
+  ],
+  "st": 0
+ },
+ "handle": {
+  "s": [
+   "han",
+   "dle"
+  ],
+  "st": 0
+ },
+ "handsome": {
+  "s": [
+   "hand",
+   "some"
+  ],
+  "st": 0
+ },
+ "hang": {
+  "s": [
+   "hang"
+  ],
+  "st": 0
+ },
+ "happen": {
+  "s": [
+   "hap",
+   "pen"
+  ],
+  "st": 0
+ },
+ "happiness": {
+  "s": [
+   "hap",
+   "pi",
+   "ness"
+  ],
+  "st": 0
+ },
+ "harbor": {
+  "s": [
+   "har",
+   "bor"
+  ],
+  "st": 0
+ },
+ "hard": {
+  "s": [
+   "hard"
+  ],
+  "st": 0
+ },
+ "hardly": {
+  "s": [
+   "hard",
+   "ly"
+  ],
+  "st": 0
+ },
+ "harm": {
+  "s": [
+   "harm"
+  ],
+  "st": 0
+ },
+ "hat": {
+  "s": [
+   "hat"
+  ],
+  "st": 0
+ },
+ "hay": {
+  "s": [
+   "hay"
+  ],
+  "st": 0
+ },
+ "headache": {
+  "s": [
+   "head",
+   "ache"
+  ],
+  "st": 0
+ },
+ "heal": {
+  "s": [
+   "heal"
+  ],
+  "st": 0
+ },
+ "health": {
+  "s": [
+   "health"
+  ],
+  "st": 0
+ },
+ "heap": {
+  "s": [
+   "heap"
+  ],
+  "st": 0
+ },
+ "heart": {
+  "s": [
+   "heart"
+  ],
+  "st": 0
+ },
+ "heat": {
+  "s": [
+   "heat"
+  ],
+  "st": 0
+ },
+ "heaven": {
+  "s": [
+   "heav",
+   "en"
+  ],
+  "st": 0
+ },
+ "heavy": {
+  "s": [
+   "heav",
+   "y"
+  ],
+  "st": 0
+ },
+ "hedge": {
+  "s": [
+   "hedge"
+  ],
+  "st": 0
+ },
+ "height": {
+  "s": [
+   "height"
+  ],
+  "st": 0
+ },
+ "helmet": {
+  "s": [
+   "hel",
+   "met"
+  ],
+  "st": 0
+ },
+ "hen": {
+  "s": [
+   "hen"
+  ],
+  "st": 0
+ },
+ "herb": {
+  "s": [
+   "herb"
+  ],
+  "st": 0
+ },
+ "hero": {
+  "s": [
+   "he",
+   "ro"
+  ],
+  "st": 0
+ },
+ "hesitate": {
+  "s": [
+   "hes",
+   "i",
+   "tate"
+  ],
+  "st": 0
+ },
+ "hide": {
+  "s": [
+   "hide"
+  ],
+  "st": 0
+ },
+ "high": {
+  "s": [
+   "high"
+  ],
+  "st": 0
+ },
+ "hill": {
+  "s": [
+   "hill"
+  ],
+  "st": 0
+ },
+ "hint": {
+  "s": [
+   "hint"
+  ],
+  "st": 0
+ },
+ "hip": {
+  "s": [
+   "hip"
+  ],
+  "st": 0
+ },
+ "hire": {
+  "s": [
+   "hire"
+  ],
+  "st": 0
+ },
+ "history": {
+  "s": [
+   "his",
+   "to",
+   "ry"
+  ],
+  "st": 0
+ },
+ "hit": {
+  "s": [
+   "hit"
+  ],
+  "st": 0
+ },
+ "hockey": {
+  "s": [
+   "hock",
+   "ey"
+  ],
+  "st": 0
+ },
+ "hold": {
+  "s": [
+   "hold"
+  ],
+  "st": 0
+ },
+ "hole": {
+  "s": [
+   "hole"
+  ],
+  "st": 0
+ },
+ "hollow": {
+  "s": [
+   "hol",
+   "low"
+  ],
+  "st": 0
+ },
+ "holy": {
+  "s": [
+   "ho",
+   "ly"
+  ],
+  "st": 0
+ },
+ "honest": {
+  "s": [
+   "hon",
+   "est"
+  ],
+  "st": 0
+ },
+ "honey": {
+  "s": [
+   "hon",
+   "ey"
+  ],
+  "st": 0
+ },
+ "honor": {
+  "s": [
+   "hon",
+   "or"
+  ],
+  "st": 0
+ },
+ "hook": {
+  "s": [
+   "hook"
+  ],
+  "st": 0
+ },
+ "horrible": {
+  "s": [
+   "hor",
+   "ri",
+   "ble"
+  ],
+  "st": 0
+ },
+ "horse": {
+  "s": [
+   "horse"
+  ],
+  "st": 0
+ },
+ "hospital": {
+  "s": [
+   "hos",
+   "pi",
+   "tal"
+  ],
+  "st": 0
+ },
+ "host": {
+  "s": [
+   "host"
+  ],
+  "st": 0
+ },
+ "hotel": {
+  "s": [
+   "ho",
+   "tel"
+  ],
+  "st": 1
+ },
+ "household": {
+  "s": [
+   "house",
+   "hold"
+  ],
+  "st": 0
+ },
+ "however": {
+  "s": [
+   "how",
+   "ev",
+   "er"
+  ],
+  "st": 1
+ },
+ "huge": {
+  "s": [
+   "huge"
+  ],
+  "st": 0
+ },
+ "human": {
+  "s": [
+   "hu",
+   "man"
+  ],
+  "st": 0
+ },
+ "humble": {
+  "s": [
+   "hum",
+   "ble"
+  ],
+  "st": 0
+ },
+ "humor": {
+  "s": [
+   "hu",
+   "mor"
+  ],
+  "st": 0
+ },
+ "hunger": {
+  "s": [
+   "hun",
+   "ger"
+  ],
+  "st": 0
+ },
+ "hungry": {
+  "s": [
+   "hun",
+   "gry"
+  ],
+  "st": 0
+ },
+ "hunt": {
+  "s": [
+   "hunt"
+  ],
+  "st": 0
+ },
+ "hurt": {
+  "s": [
+   "hurt"
+  ],
+  "st": 0
+ },
+ "husband": {
+  "s": [
+   "hus",
+   "band"
+  ],
+  "st": 0
+ },
+ "hut": {
+  "s": [
+   "hut"
+  ],
+  "st": 0
+ },
+ "hydrogen": {
+  "s": [
+   "hy",
+   "dro",
+   "gen"
+  ],
+  "st": 0
+ },
+ "ice": {
+  "s": [
+   "ice"
+  ],
+  "st": 0
+ },
+ "ideal": {
+  "s": [
+   "i",
+   "de",
+   "al"
+  ],
+  "st": 1
+ },
+ "identify": {
+  "s": [
+   "i",
+   "den",
+   "ti",
+   "fy"
+  ],
+  "st": 1
+ },
+ "identity": {
+  "s": [
+   "i",
+   "den",
+   "ti",
+   "ty"
+  ],
+  "st": 1
+ },
+ "idle": {
+  "s": [
+   "i",
+   "dle"
+  ],
+  "st": 0
+ },
+ "ignore": {
+  "s": [
+   "ig",
+   "nore"
+  ],
+  "st": 1
+ },
+ "ill": {
+  "s": [
+   "ill"
+  ],
+  "st": 0
+ },
+ "illegal": {
+  "s": [
+   "il",
+   "le",
+   "gal"
+  ],
+  "st": 1
+ },
+ "illness": {
+  "s": [
+   "ill",
+   "ness"
+  ],
+  "st": 0
+ },
+ "image": {
+  "s": [
+   "im",
+   "age"
+  ],
+  "st": 0
+ },
+ "imagine": {
+  "s": [
+   "i",
+   "mag",
+   "ine"
+  ],
+  "st": 1
+ },
+ "imitate": {
+  "s": [
+   "im",
+   "i",
+   "tate"
+  ],
+  "st": 0
+ },
+ "immediate": {
+  "s": [
+   "im",
+   "me",
+   "di",
+   "ate"
+  ],
+  "st": 1
+ },
+ "impact": {
+  "s": [
+   "im",
+   "pact"
+  ],
+  "st": 0
+ },
+ "import": {
+  "s": [
+   "im",
+   "port"
+  ],
+  "st": 0
+ },
+ "impress": {
+  "s": [
+   "im",
+   "press"
+  ],
+  "st": 1
+ },
+ "lion": {
+  "s": [
+   "li",
+   "on"
+  ],
+  "st": 0
+ },
+ "lip": {
+  "s": [
+   "lip"
+  ],
+  "st": 0
+ },
+ "liquid": {
+  "s": [
+   "liq",
+   "uid"
+  ],
+  "st": 0
+ },
+ "list": {
+  "s": [
+   "list"
+  ],
+  "st": 0
+ },
+ "literature": {
+  "s": [
+   "lit",
+   "er",
+   "a",
+   "ture"
+  ],
+  "st": 0
+ },
+ "litter": {
+  "s": [
+   "lit",
+   "ter"
+  ],
+  "st": 0
+ },
+ "lively": {
+  "s": [
+   "live",
+   "ly"
+  ],
+  "st": 0
+ },
+ "liver": {
+  "s": [
+   "liv",
+   "er"
+  ],
+  "st": 0
+ },
+ "living": {
+  "s": [
+   "liv",
+   "ing"
+  ],
+  "st": 0
+ },
+ "load": {
+  "s": [
+   "load"
+  ],
+  "st": 0
+ },
+ "loaf": {
+  "s": [
+   "loaf"
+  ],
+  "st": 0
+ },
+ "loan": {
+  "s": [
+   "loan"
+  ],
+  "st": 0
+ },
+ "local": {
+  "s": [
+   "lo",
+   "cal"
+  ],
+  "st": 0
+ },
+ "locate": {
+  "s": [
+   "lo",
+   "cate"
+  ],
+  "st": 1
+ },
+ "lock": {
+  "s": [
+   "lock"
+  ],
+  "st": 0
+ },
+ "lodge": {
+  "s": [
+   "lodge"
+  ],
+  "st": 0
+ },
+ "log": {
+  "s": [
+   "log"
+  ],
+  "st": 0
+ },
+ "logic": {
+  "s": [
+   "lo",
+   "gic"
+  ],
+  "st": 0
+ },
+ "lonely": {
+  "s": [
+   "lone",
+   "ly"
+  ],
+  "st": 0
+ },
+ "loop": {
+  "s": [
+   "loop"
+  ],
+  "st": 0
+ },
+ "loose": {
+  "s": [
+   "loose"
+  ],
+  "st": 0
+ },
+ "lord": {
+  "s": [
+   "lord"
+  ],
+  "st": 0
+ },
+ "lose": {
+  "s": [
+   "lose"
+  ],
+  "st": 0
+ },
+ "loss": {
+  "s": [
+   "loss"
+  ],
+  "st": 0
+ },
+ "lot": {
+  "s": [
+   "lot"
+  ],
+  "st": 0
+ },
+ "loud": {
+  "s": [
+   "loud"
+  ],
+  "st": 0
+ },
+ "lovely": {
+  "s": [
+   "love",
+   "ly"
+  ],
+  "st": 0
+ },
+ "low": {
+  "s": [
+   "low"
+  ],
+  "st": 0
+ },
+ "lower": {
+  "s": [
+   "low",
+   "er"
+  ],
+  "st": 0
+ },
+ "loyal": {
+  "s": [
+   "loy",
+   "al"
+  ],
+  "st": 0
+ },
+ "luck": {
+  "s": [
+   "luck"
+  ],
+  "st": 0
+ },
+ "lucky": {
+  "s": [
+   "luck",
+   "y"
+  ],
+  "st": 0
+ },
+ "lump": {
+  "s": [
+   "lump"
+  ],
+  "st": 0
+ },
+ "lunch": {
+  "s": [
+   "lunch"
+  ],
+  "st": 0
+ },
+ "lung": {
+  "s": [
+   "lung"
+  ],
+  "st": 0
+ },
+ "luxury": {
+  "s": [
+   "lux",
+   "u",
+   "ry"
+  ],
+  "st": 0
+ },
+ "machine": {
+  "s": [
+   "ma",
+   "chine"
+  ],
+  "st": 1
+ },
+ "mad": {
+  "s": [
+   "mad"
+  ],
+  "st": 0
+ },
+ "magazine": {
+  "s": [
+   "mag",
+   "a",
+   "zine"
+  ],
+  "st": 2
+ },
+ "magic": {
+  "s": [
+   "mag",
+   "ic"
+  ],
+  "st": 0
+ },
+ "mail": {
+  "s": [
+   "mail"
+  ],
+  "st": 0
+ },
+ "main": {
+  "s": [
+   "main"
+  ],
+  "st": 0
+ },
+ "maintain": {
+  "s": [
+   "main",
+   "tain"
+  ],
+  "st": 1
+ },
+ "major": {
+  "s": [
+   "ma",
+   "jor"
+  ],
+  "st": 0
+ },
+ "male": {
+  "s": [
+   "male"
+  ],
+  "st": 0
+ },
+ "mall": {
+  "s": [
+   "mall"
+  ],
+  "st": 0
+ },
+ "manage": {
+  "s": [
+   "man",
+   "age"
+  ],
+  "st": 0
+ },
+ "manner": {
+  "s": [
+   "man",
+   "ner"
+  ],
+  "st": 0
+ },
+ "manufacture": {
+  "s": [
+   "man",
+   "u",
+   "fac",
+   "ture"
+  ],
+  "st": 3
+ },
+ "many": {
+  "s": [
+   "man",
+   "y"
+  ],
+  "st": 0
+ },
+ "map": {
+  "s": [
+   "map"
+  ],
+  "st": 0
+ },
+ "marathon": {
+  "s": [
+   "mar",
+   "a",
+   "thon"
+  ],
+  "st": 0
+ },
+ "marble": {
+  "s": [
+   "mar",
+   "ble"
+  ],
+  "st": 0
+ },
+ "march": {
+  "s": [
+   "march"
+  ],
+  "st": 0
+ },
+ "margin": {
+  "s": [
+   "mar",
+   "gin"
+  ],
+  "st": 0
+ },
+ "mark": {
+  "s": [
+   "mark"
+  ],
+  "st": 0
+ },
+ "market": {
+  "s": [
+   "mar",
+   "ket"
+  ],
+  "st": 0
+ },
+ "marriage": {
+  "s": [
+   "mar",
+   "riage"
+  ],
+  "st": 0
+ },
+ "marry": {
+  "s": [
+   "mar",
+   "ry"
+  ],
+  "st": 0
+ },
+ "mass": {
+  "s": [
+   "mass"
+  ],
+  "st": 0
+ },
+ "master": {
+  "s": [
+   "mas",
+   "ter"
+  ],
+  "st": 0
+ },
+ "match": {
+  "s": [
+   "match"
+  ],
+  "st": 0
+ },
+ "mate": {
+  "s": [
+   "mate"
+  ],
+  "st": 0
+ },
+ "material": {
+  "s": [
+   "ma",
+   "te",
+   "ri",
+   "al"
+  ],
+  "st": 1
+ },
+ "math": {
+  "s": [
+   "math"
+  ],
+  "st": 0
+ },
+ "matter": {
+  "s": [
+   "mat",
+   "ter"
+  ],
+  "st": 0
+ },
+ "mature": {
+  "s": [
+   "ma",
+   "ture"
+  ],
+  "st": 1
+ },
+ "maximum": {
+  "s": [
+   "max",
+   "i",
+   "mum"
+  ],
+  "st": 0
+ },
+ "mayor": {
+  "s": [
+   "may",
+   "or"
+  ],
+  "st": 0
+ },
+ "meal": {
+  "s": [
+   "meal"
+  ],
+  "st": 0
+ },
+ "mean": {
+  "s": [
+   "mean"
+  ],
+  "st": 0
+ },
+ "meaning": {
+  "s": [
+   "mean",
+   "ing"
+  ],
+  "st": 0
+ },
+ "measure": {
+  "s": [
+   "meas",
+   "ure"
+  ],
+  "st": 0
+ },
+ "meat": {
+  "s": [
+   "meat"
+  ],
+  "st": 0
+ },
+ "mechanic": {
+  "s": [
+   "me",
+   "chan",
+   "ic"
+  ],
+  "st": 1
+ },
+ "medal": {
+  "s": [
+   "med",
+   "al"
+  ],
+  "st": 0
+ },
+ "media": {
+  "s": [
+   "me",
+   "di",
+   "a"
+  ],
+  "st": 0
+ },
+ "medical": {
+  "s": [
+   "med",
+   "i",
+   "cal"
+  ],
+  "st": 0
+ },
+ "medicine": {
+  "s": [
+   "med",
+   "i",
+   "cine"
+  ],
+  "st": 0
+ },
+ "improve": {
+  "s": [
+   "im",
+   "prove"
+  ],
+  "st": 1
+ },
+ "impulse": {
+  "s": [
+   "im",
+   "pulse"
+  ],
+  "st": 0
+ },
+ "inch": {
+  "s": [
+   "inch"
+  ],
+  "st": 0
+ },
+ "incident": {
+  "s": [
+   "in",
+   "ci",
+   "dent"
+  ],
+  "st": 0
+ },
+ "include": {
+  "s": [
+   "in",
+   "clude"
+  ],
+  "st": 1
+ },
+ "income": {
+  "s": [
+   "in",
+   "come"
+  ],
+  "st": 0
+ },
+ "increase": {
+  "s": [
+   "in",
+   "crease"
+  ],
+  "st": 1
+ },
+ "incredible": {
+  "s": [
+   "in",
+   "cred",
+   "i",
+   "ble"
+  ],
+  "st": 1
+ },
+ "indeed": {
+  "s": [
+   "in",
+   "deed"
+  ],
+  "st": 1
+ },
+ "independent": {
+  "s": [
+   "in",
+   "de",
+   "pen",
+   "dent"
+  ],
+  "st": 2
+ },
+ "index": {
+  "s": [
+   "in",
+   "dex"
+  ],
+  "st": 0
+ },
+ "indicate": {
+  "s": [
+   "in",
+   "di",
+   "cate"
+  ],
+  "st": 1
+ },
+ "indoor": {
+  "s": [
+   "in",
+   "door"
+  ],
+  "st": 0
+ },
+ "industry": {
+  "s": [
+   "in",
+   "dus",
+   "try"
+  ],
+  "st": 0
+ },
+ "infant": {
+  "s": [
+   "in",
+   "fant"
+  ],
+  "st": 0
+ },
+ "infect": {
+  "s": [
+   "in",
+   "fect"
+  ],
+  "st": 1
+ },
+ "inform": {
+  "s": [
+   "in",
+   "form"
+  ],
+  "st": 1
+ },
+ "initial": {
+  "s": [
+   "in",
+   "i",
+   "tial"
+  ],
+  "st": 1
+ },
+ "injure": {
+  "s": [
+   "in",
+   "jure"
+  ],
+  "st": 0
+ },
+ "injury": {
+  "s": [
+   "in",
+   "ju",
+   "ry"
+  ],
+  "st": 0
+ },
+ "ink": {
+  "s": [
+   "ink"
+  ],
+  "st": 0
+ },
+ "inner": {
+  "s": [
+   "in",
+   "ner"
+  ],
+  "st": 0
+ },
+ "innocent": {
+  "s": [
+   "in",
+   "no",
+   "cent"
+  ],
+  "st": 0
+ },
+ "innovation": {
+  "s": [
+   "in",
+   "no",
+   "va",
+   "tion"
+  ],
+  "st": 2
+ },
+ "insect": {
+  "s": [
+   "in",
+   "sect"
+  ],
+  "st": 0
+ },
+ "inside": {
+  "s": [
+   "in",
+   "side"
+  ],
+  "st": 1
+ },
+ "insist": {
+  "s": [
+   "in",
+   "sist"
+  ],
+  "st": 1
+ },
+ "inspire": {
+  "s": [
+   "in",
+   "spire"
+  ],
+  "st": 1
+ },
+ "install": {
+  "s": [
+   "in",
+   "stall"
+  ],
+  "st": 1
+ },
+ "instance": {
+  "s": [
+   "in",
+   "stance"
+  ],
+  "st": 0
+ },
+ "instead": {
+  "s": [
+   "in",
+   "stead"
+  ],
+  "st": 1
+ },
+ "institute": {
+  "s": [
+   "in",
+   "sti",
+   "tute"
+  ],
+  "st": 1
+ },
+ "instruct": {
+  "s": [
+   "in",
+   "struct"
+  ],
+  "st": 1
+ },
+ "instrument": {
+  "s": [
+   "in",
+   "stru",
+   "ment"
+  ],
+  "st": 0
+ },
+ "insurance": {
+  "s": [
+   "in",
+   "sur",
+   "ance"
+  ],
+  "st": 1
+ },
+ "intend": {
+  "s": [
+   "in",
+   "tend"
+  ],
+  "st": 1
+ },
+ "interest": {
+  "s": [
+   "in",
+   "ter",
+   "est"
+  ],
+  "st": 0
+ },
+ "internal": {
+  "s": [
+   "in",
+   "ter",
+   "nal"
+  ],
+  "st": 1
+ },
+ "international": {
+  "s": [
+   "in",
+   "ter",
+   "na",
+   "tion",
+   "al"
+  ],
+  "st": 2
+ },
+ "internet": {
+  "s": [
+   "in",
+   "ter",
+   "net"
+  ],
+  "st": 0
+ },
+ "interpret": {
+  "s": [
+   "in",
+   "ter",
+   "pret"
+  ],
+  "st": 1
+ },
+ "interrupt": {
+  "s": [
+   "in",
+   "ter",
+   "rupt"
+  ],
+  "st": 2
+ },
+ "interval": {
+  "s": [
+   "in",
+   "ter",
+   "val"
+  ],
+  "st": 0
+ },
+ "interview": {
+  "s": [
+   "in",
+   "ter",
+   "view"
+  ],
+  "st": 0
+ },
+ "into": {
+  "s": [
+   "in",
+   "to"
+  ],
+  "st": 0
+ },
+ "introduce": {
+  "s": [
+   "in",
+   "tro",
+   "duce"
+  ],
+  "st": 2
+ },
+ "invent": {
+  "s": [
+   "in",
+   "vent"
+  ],
+  "st": 1
+ },
+ "invest": {
+  "s": [
+   "in",
+   "vest"
+  ],
+  "st": 1
+ },
+ "investigate": {
+  "s": [
+   "in",
+   "vest",
+   "i",
+   "gate"
+  ],
+  "st": 1
+ },
+ "invite": {
+  "s": [
+   "in",
+   "vite"
+  ],
+  "st": 1
+ },
+ "involve": {
+  "s": [
+   "in",
+   "volve"
+  ],
+  "st": 1
+ },
+ "iron": {
+  "s": [
+   "i",
+   "ron"
+  ],
+  "st": 0
+ },
+ "island": {
+  "s": [
+   "is",
+   "land"
+  ],
+  "st": 0
+ },
+ "issue": {
+  "s": [
+   "is",
+   "sue"
+  ],
+  "st": 0
+ },
+ "item": {
+  "s": [
+   "i",
+   "tem"
+  ],
+  "st": 0
+ },
+ "ivory": {
+  "s": [
+   "i",
+   "vo",
+   "ry"
+  ],
+  "st": 0
+ },
+ "jacket": {
+  "s": [
+   "jack",
+   "et"
+  ],
+  "st": 0
+ },
+ "jail": {
+  "s": [
+   "jail"
+  ],
+  "st": 0
+ },
+ "jam": {
+  "s": [
+   "jam"
+  ],
+  "st": 0
+ },
+ "jaw": {
+  "s": [
+   "jaw"
+  ],
+  "st": 0
+ },
+ "jazz": {
+  "s": [
+   "jazz"
+  ],
+  "st": 0
+ },
+ "jealous": {
+  "s": [
+   "jeal",
+   "ous"
+  ],
+  "st": 0
+ },
+ "jeans": {
+  "s": [
+   "jeans"
+  ],
+  "st": 0
+ },
+ "jet": {
+  "s": [
+   "jet"
+  ],
+  "st": 0
+ },
+ "jewel": {
+  "s": [
+   "jew",
+   "el"
+  ],
+  "st": 0
+ },
+ "jog": {
+  "s": [
+   "jog"
+  ],
+  "st": 0
+ },
+ "join": {
+  "s": [
+   "join"
+  ],
+  "st": 0
+ },
+ "joke": {
+  "s": [
+   "joke"
+  ],
+  "st": 0
+ },
+ "journal": {
+  "s": [
+   "jour",
+   "nal"
+  ],
+  "st": 0
+ },
+ "journey": {
+  "s": [
+   "jour",
+   "ney"
+  ],
+  "st": 0
+ },
+ "joy": {
+  "s": [
+   "joy"
+  ],
+  "st": 0
+ },
+ "judge": {
+  "s": [
+   "judge"
+  ],
+  "st": 0
+ },
+ "juice": {
+  "s": [
+   "juice"
+  ],
+  "st": 0
+ },
+ "jump": {
+  "s": [
+   "jump"
+  ],
+  "st": 0
+ },
+ "junior": {
+  "s": [
+   "ju",
+   "nior"
+  ],
+  "st": 0
+ },
+ "junk": {
+  "s": [
+   "junk"
+  ],
+  "st": 0
+ },
+ "justice": {
+  "s": [
+   "jus",
+   "tice"
+  ],
+  "st": 0
+ },
+ "keen": {
+  "s": [
+   "keen"
+  ],
+  "st": 0
+ },
+ "kettle": {
+  "s": [
+   "ket",
+   "tle"
+  ],
+  "st": 0
+ },
+ "key": {
+  "s": [
+   "key"
+  ],
+  "st": 0
+ },
+ "medium": {
+  "s": [
+   "me",
+   "di",
+   "um"
+  ],
+  "st": 0
+ },
+ "melt": {
+  "s": [
+   "melt"
+  ],
+  "st": 0
+ },
+ "member": {
+  "s": [
+   "mem",
+   "ber"
+  ],
+  "st": 0
+ },
+ "memory": {
+  "s": [
+   "mem",
+   "o",
+   "ry"
+  ],
+  "st": 0
+ },
+ "mental": {
+  "s": [
+   "men",
+   "tal"
+  ],
+  "st": 0
+ },
+ "mention": {
+  "s": [
+   "men",
+   "tion"
+  ],
+  "st": 0
+ },
+ "merchandise": {
+  "s": [
+   "mer",
+   "chan",
+   "dise"
+  ],
+  "st": 0
+ },
+ "mercy": {
+  "s": [
+   "mer",
+   "cy"
+  ],
+  "st": 0
+ },
+ "mere": {
+  "s": [
+   "mere"
+  ],
+  "st": 0
+ },
+ "merry": {
+  "s": [
+   "mer",
+   "ry"
+  ],
+  "st": 0
+ },
+ "message": {
+  "s": [
+   "mes",
+   "sage"
+  ],
+  "st": 0
+ },
+ "metal": {
+  "s": [
+   "met",
+   "al"
+  ],
+  "st": 0
+ },
+ "method": {
+  "s": [
+   "meth",
+   "od"
+  ],
+  "st": 0
+ },
+ "microwave": {
+  "s": [
+   "mi",
+   "cro",
+   "wave"
+  ],
+  "st": 0
+ },
+ "mid": {
+  "s": [
+   "mid"
+  ],
+  "st": 0
+ },
+ "middle": {
+  "s": [
+   "mid",
+   "dle"
+  ],
+  "st": 0
+ },
+ "midnight": {
+  "s": [
+   "mid",
+   "night"
+  ],
+  "st": 0
+ },
+ "might": {
+  "s": [
+   "might"
+  ],
+  "st": 0
+ },
+ "mild": {
+  "s": [
+   "mild"
+  ],
+  "st": 0
+ },
+ "mile": {
+  "s": [
+   "mile"
+  ],
+  "st": 0
+ },
+ "milk": {
+  "s": [
+   "milk"
+  ],
+  "st": 0
+ },
+ "mill": {
+  "s": [
+   "mill"
+  ],
+  "st": 0
+ },
+ "mind": {
+  "s": [
+   "mind"
+  ],
+  "st": 0
+ },
+ "mine": {
+  "s": [
+   "mine"
+  ],
+  "st": 0
+ },
+ "mineral": {
+  "s": [
+   "min",
+   "er",
+   "al"
+  ],
+  "st": 0
+ },
+ "minimum": {
+  "s": [
+   "min",
+   "i",
+   "mum"
+  ],
+  "st": 0
+ },
+ "minor": {
+  "s": [
+   "mi",
+   "nor"
+  ],
+  "st": 0
+ },
+ "minus": {
+  "s": [
+   "mi",
+   "nus"
+  ],
+  "st": 0
+ },
+ "minute": {
+  "s": [
+   "min",
+   "ute"
+  ],
+  "st": 0
+ },
+ "miracle": {
+  "s": [
+   "mir",
+   "a",
+   "cle"
+  ],
+  "st": 0
+ },
+ "mirror": {
+  "s": [
+   "mir",
+   "ror"
+  ],
+  "st": 0
+ },
+ "missile": {
+  "s": [
+   "mis",
+   "sile"
+  ],
+  "st": 0
+ },
+ "mist": {
+  "s": [
+   "mist"
+  ],
+  "st": 0
+ },
+ "mistake": {
+  "s": [
+   "mis",
+   "take"
+  ],
+  "st": 1
+ },
+ "mix": {
+  "s": [
+   "mix"
+  ],
+  "st": 0
+ }
+}

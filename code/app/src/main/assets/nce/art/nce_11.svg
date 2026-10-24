@@ -1,0 +1,16 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:g stroke="#000000" fill="#FFFFFF" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <ns0:line x1="92" y1="146" x2="186" y2="146" />
+    <ns0:rect x="99" y="101" width="14" height="45" />
+    <ns0:rect x="116" y="96" width="14" height="50" />
+    <ns0:rect x="133" y="106" width="14" height="40" />
+    <ns0:rect x="150" y="102" width="13" height="44" transform="rotate(-12 156.5 146)" />
+  </ns0:g>
+  <ns0:g stroke="#000000" fill="none" stroke-width="2" stroke-linecap="round">
+    <ns0:line x1="119.5" y1="110" x2="126.5" y2="110" />
+    <ns0:line x1="140" y1="120" x2="140" y2="132" />
+    <ns0:line x1="145" y1="93" x2="147.5" y2="101" />
+    <ns0:circle cx="145" cy="84" r="7" />
+  </ns0:g>
+  <ns0:line x1="100" y1="151" x2="178" y2="151" stroke="#555555" stroke-width="2" stroke-linecap="round" />
+</ns0:svg>

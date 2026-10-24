@@ -1,0 +1,13 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:rect width="200" height="200" fill="#FFFFFF" />
+  <ns0:g transform="translate(12,-14)" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    
+    <ns0:path d="M78 121 C75 112 82 103 94 100 C108 97 118 93 128 89 C138 85 148 89 152 95 L155 101 L158 122 L152 122 L148 105 C132 101 112 108 96 113 C89 115 81 119 78 121 Z" />
+    
+    <ns0:path d="M126 89 Q134 99 147 96" stroke-width="2.5" />
+    
+    <ns0:path d="M158 88 L153 80 M164 86 L164 75 M170 88 L175 80" stroke-width="2.5" />
+    
+    <ns0:line x1="70" y1="122" x2="172" y2="122" stroke="#555555" stroke-width="2.5" />
+  </ns0:g>
+</ns0:svg>

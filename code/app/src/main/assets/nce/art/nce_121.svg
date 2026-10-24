@@ -1,0 +1,15 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:g fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <ns0:circle cx="128" cy="74" r="46" stroke-dasharray="9 7" />
+    <ns0:g stroke-width="2">
+      <ns0:path d="M150 33 L142 46 L153 57 L145 70" />
+      <ns0:path d="M102 58 L102 90 M158 66 L158 90 M102 80 L158 80 M106 90 L106 103 M154 90 L149 101" />
+      <ns0:rect x="105" y="73" width="14" height="6" rx="3" />
+      <ns0:path d="M162 24 L170 18 M172 36 L180 32 M118 130 L114 138 M136 128 L134 137 M156 104 L152 111" />
+    </ns0:g>
+  </ns0:g>
+  <ns0:line x1="100" y1="105" x2="160" y2="105" stroke="#555555" stroke-width="1.5" stroke-linecap="round" />
+  <ns0:path d="M166 48 L174 44 L171 53 Z" fill="#000000" />
+  <ns0:circle cx="154" cy="14" r="1.7" fill="#000000" />
+  <ns0:circle cx="148" cy="132" r="1.7" fill="#000000" />
+</ns0:svg>

@@ -1,0 +1,16 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ns0:g fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <ns0:path d="M151 44 L147 60 L163 45" />
+    <ns0:path d="M108 88 C106 72 114 58 126 60 C132 61 133 65 135 65 C137 65 138 61 144 60 C156 58 164 72 162 88 C160 98 158 106 157 114 C156 124 154 132 148 132 C143 132 145 116 141 108 C139 103 137 102 135 102 C133 102 131 103 129 108 C125 116 127 132 122 132 C116 132 114 124 113 114 C112 106 110 98 108 88 Z" fill="#FFFFFF" />
+    <ns0:rect x="140" y="18" width="48" height="30" rx="9" fill="#FFFFFF" />
+  </ns0:g>
+  <ns0:g fill="#000000">
+    <ns0:circle cx="152" cy="33" r="2.5" />
+    <ns0:circle cx="164" cy="33" r="2.5" />
+    <ns0:circle cx="176" cy="33" r="2.5" />
+  </ns0:g>
+  <ns0:g stroke="#555555" stroke-width="2.5" stroke-linecap="round">
+    <ns0:line x1="94" y1="45" x2="104" y2="55" />
+    <ns0:line x1="104" y1="45" x2="94" y2="55" />
+  </ns0:g>
+</ns0:svg>

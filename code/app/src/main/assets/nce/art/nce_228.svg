@@ -1,0 +1,37 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  
+  <ns0:path d="M 76.8 60.3 A 56 56 0 0 1 104 21.5" fill="none" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 7" />
+  <ns0:polygon points="104,21.5 97.6,22.3 100,26.7" fill="#555555" />
+
+  
+  <ns0:line x1="158" y1="110" x2="190" y2="110" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  <ns0:line x1="158" y1="150" x2="190" y2="150" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  <ns0:path d="M 161 112 L 174 129 L 161 148" fill="none" stroke="#000000" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+  <ns0:path d="M 187 112 L 174 129 L 187 148" fill="none" stroke="#000000" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+  <ns0:polygon points="169,122 179,122 174,129" fill="#555555" />
+  <ns0:polygon points="174,132 168,147 180,147" fill="#555555" />
+
+  
+  <ns0:circle cx="132" cy="70" r="46" fill="#FFFFFF" stroke="#000000" stroke-width="3" />
+
+  
+  <ns0:line x1="132" y1="27" x2="132" y2="35" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  <ns0:line x1="175" y1="70" x2="167" y2="70" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  <ns0:line x1="132" y1="113" x2="132" y2="105" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  <ns0:line x1="89" y1="70" x2="97" y2="70" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+
+  
+  <ns0:line x1="153.5" y1="32.8" x2="151.8" y2="35.8" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:line x1="169.2" y1="48.5" x2="166.2" y2="50.3" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:line x1="169.2" y1="91.5" x2="166.2" y2="89.8" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:line x1="153.5" y1="107.2" x2="151.8" y2="104.2" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:line x1="110.5" y1="107.2" x2="112.2" y2="104.2" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:line x1="94.8" y1="91.5" x2="97.8" y2="89.8" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:line x1="94.8" y1="48.5" x2="97.8" y2="50.3" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+  <ns0:line x1="110.5" y1="32.8" x2="112.2" y2="35.8" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+
+  
+  <ns0:line x1="132" y1="70" x2="111.2" y2="58" stroke="#000000" stroke-width="4" stroke-linecap="round" />
+  <ns0:line x1="132" y1="70" x2="160.6" y2="53.5" stroke="#000000" stroke-width="3" stroke-linecap="round" />
+  <ns0:circle cx="132" cy="70" r="3.5" fill="#000000" />
+</ns0:svg>
