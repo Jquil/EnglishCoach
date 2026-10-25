@@ -961,13 +961,6 @@ private fun HomeWordCard(
             )
             .padding(horizontal = 16.dp, vertical = 14.dp)
     ) {
-                    Modifier.border(1.dp, Color(0xFFE2E7EF), RoundedCornerShape(20.dp))
-                } else {
-                    Modifier
-                }
-            )
-            .padding(horizontal = 16.dp, vertical = 14.dp)
-    ) {
         Column {
             // v11.11 1a：标签行提升为跨全宽首行——右组（词位+星标）右缘 = 内容右缘 = 播放钮右缘，
             // 三者同一基线。原布局标签行嵌在 Column(weight 1f) 内，右缘比播放钮右缘短
