@@ -369,17 +369,9 @@ fun HomeScreen(
                         words = state.words,
                         index = state.wordIndex,
                         app = app,
-                        practiceWord = practiceWord,
-                        practiceWordSetter = { practiceWord = it },
-                        practiceResultSetter = { practiceResult = it },
-                        practiceResult = practiceResult,
-                        dome = dome,
                         onMeaning = { meaningWord = it },
-                        // P2-1：切词即清旧结果，避免显示与屏显词不符的上一次识别
-                        onSelect = {
-                            viewModel.setWordIndex(it)
-                            practiceResult = null
-                        }
+                        // 切词即清旧结果
+                        onSelect = { viewModel.setWordIndex(it) }
                     )
                 }
             }
@@ -525,48 +517,43 @@ fun HomeScreen(
  * - 右滑：切换到上一个单词（上一张卡从左侧滑入）
  * - 单击：播放发音
  * - 双击：查看释义
- * - 按住：开始跟读
  */
 @Composable
 private fun HomeWordDeck(
     words: List<WordItem>,
     index: Int,
     app: EnglishCoachApp,
-    practiceWord: String?,
-    practiceWordSetter: (String?) -> Unit,
-    practiceResultSetter: (String?) -> Unit,
-    practiceResult: String?,
-    dome: com.englishcoach.ui.common.VoiceDomeState,
     onMeaning: (String) -> Unit,
     onSelect: (Int) -> Unit
 ) {
     // ========== 布局参数 ==========
     val density = LocalDensity.current
     val screenWidthDp = LocalConfiguration.current.screenWidthDp
-    val cardWidthDp = (screenWidthDp - 40).dp
+    // 与关卡卡片对齐：contentPadding 16dp，所以卡宽 = 屏宽 - 32dp
+    val cardWidthDp = (screenWidthDp - 32).dp
     val cardWidthPx = with(density) { cardWidthDp.toPx() }
     val screenWidthPx = with(density) { screenWidthDp.dp.toPx() }
 
-    // 堆叠效果参数（参考堆叠卡片.png）
-    val stepX = with(density) { 20.dp.toPx() }    // 每层右移20dp
-    val stepY = with(density) { 8.dp.toPx() }     // 每层下移8dp
-    val scaleStep = 0.04f                          // 每层缩小4%
-    val rotationStep = -2f                         // 每层逆时针2度
+    // 堆叠效果参数
+    val stepX = with(density) { 16.dp.toPx() }    // 每层右移16dp
+    val stepY = with(density) { 6.dp.toPx() }     // 每层下移6dp
+    val scaleStep = 0.035f                         // 每层缩小3.5%
+    val rotationStep = -1.5f                       // 每层逆时针1.5度
 
     val scope = rememberCoroutineScope()
-    val view = androidx.compose.ui.platform.LocalView.current
     val total = words.size
 
     // ========== 动画状态 ==========
     var dragX by remember { mutableFloatStateOf(0f) }
-    val flyOutAnim = remember { Animatable(0f) }   // 左滑：旧卡飞出
-    val moveUpAnim = remember { Animatable(0f) }   // 左滑：后续卡前移
-    val slideInAnim = remember { Animatable(0f) }  // 右滑：新卡滑入
+    val flyOutAnim = remember { Animatable(0f) }
+    val moveUpAnim = remember { Animatable(0f) }
+    val slideInAnim = remember { Animatable(0f) }
     var animating by remember { mutableStateOf(false) }
 
     // ========== 手势状态 ==========
-    var isDragging by remember { mutableStateOf(false) }
-    val practiceWordState = androidx.compose.runtime.rememberUpdatedState(practiceWord)
+    var gestureStartTime by remember { mutableStateOf(0L) }
+    var hasMoved by remember { mutableStateOf(false) }
+    val minDragDistance = with(density) { 10.dp.toPx() } // 最小拖拽距离
 
     // ========== 发音播放 ==========
     var loadingWord by remember { mutableStateOf<String?>(null) }
@@ -583,8 +570,6 @@ private fun HomeWordDeck(
             loadingWord = null
             if (audio != null) {
                 runCatching { app.audioPlayer.play(audio) {} }
-            } else {
-                practiceResultSetter("发音加载失败，请稍后重试")
             }
         }
     }
@@ -607,7 +592,6 @@ private fun HomeWordDeck(
             collecting = true
             if (collected) {
                 val removed = runCatching { app.vocabStore.remove(item.word) }.getOrDefault(false)
-                practiceResultSetter(if (removed) "已移出生词本" else "移出失败，请重试")
                 if (removed && words.getOrNull(index)?.word == item.word) {
                     collected = false
                 }
@@ -624,7 +608,6 @@ private fun HomeWordDeck(
                     )
                 }.getOrDefault(false)
                 if (added) collectPulse++
-                practiceResultSetter(if (added) "✓ 已收进生词本" else "该词已在生词本")
                 if (words.getOrNull(index)?.word == item.word) {
                     collected = collected || added
                 }
@@ -633,53 +616,46 @@ private fun HomeWordDeck(
         }
     }
 
-    val currentWord by androidx.compose.runtime.rememberUpdatedState(words.getOrNull(index)?.word)
-
     // ========== 手势处理 ==========
     val cardGestures: Modifier = Modifier
         .pointerInput(Unit) {
-            // 手势仲裁：检测是否为拖拽手势
             awaitEachGesture {
-                awaitFirstDown(requireUnconsumed = false)
-                isDragging = false
-                var totalX = 0f
-                var totalY = 0f
+                val down = awaitFirstDown(requireUnconsumed = false)
+                gestureStartTime = System.currentTimeMillis()
+                hasMoved = false
+                var totalDrag = 0f
+
                 while (true) {
                     val event = awaitPointerEvent()
                     val change = event.changes.firstOrNull() ?: break
-                    totalX += change.positionChange().x
-                    totalY += change.positionChange().y
-                    // 水平或垂直超过触摸阈值，判定为拖拽
-                    if (kotlin.math.abs(totalX) > viewConfiguration.touchSlop ||
-                        kotlin.math.abs(totalY) > viewConfiguration.touchSlop) {
-                        isDragging = true
+                    val delta = change.positionChange().x
+                    totalDrag += kotlin.math.abs(delta)
+
+                    // 累计移动超过阈值，标记为拖拽
+                    if (totalDrag > minDragDistance) {
+                        hasMoved = true
                     }
+
                     if (event.changes.none { it.pressed }) break
                 }
             }
         }
         .draggable(
             orientation = Orientation.Horizontal,
-            enabled = practiceWord == null && !animating,
+            enabled = !animating,
             state = rememberDraggableState { delta ->
-                if (practiceWord != null || animating) return@rememberDraggableState
+                if (animating) return@rememberDraggableState
                 val atStart = index == 0
                 val atEnd = index == total - 1
-                // 边界阻尼：首词右滑/末词左滑 位移×0.3
+                // 边界阻尼
                 val damped = (atStart && delta > 0f) || (atEnd && delta < 0f)
                 dragX += if (damped) delta * 0.3f else delta
             },
             onDragStopped = { velocity ->
                 scope.launch {
-                    // 跟读中不切词
-                    if (practiceWordState.value != null) {
-                        dragX = 0f
-                        return@launch
-                    }
-
-                    // 判断是否切换单词
-                    val velocityThreshold = 800f
-                    val distanceThreshold = cardWidthPx * 0.2f
+                    // 判断是否切换
+                    val velocityThreshold = 600f
+                    val distanceThreshold = cardWidthPx * 0.18f
                     val swipeLeft = dragX < 0f
                     val targetIndex = if (swipeLeft) index + 1 else index - 1
                     val canMove = targetIndex in 0 until total
@@ -693,22 +669,22 @@ private fun HomeWordDeck(
                         animating = true
                         if (swipeLeft) {
                             // 左滑：下一个单词
-                            onSelect(index + 1)
                             flyOutAnim.snapTo(dragX)
                             moveUpAnim.snapTo(0f)
                             dragX = 0f
+                            onSelect(index + 1)
                             coroutineScope {
                                 launch {
                                     flyOutAnim.animateTo(
-                                        -screenWidthPx * 1.5f,
-                                        spring(dampingRatio = 0.8f, stiffness = 450f),
-                                        initialVelocity = velocity * 0.7f
+                                        -screenWidthPx * 1.2f,
+                                        spring(dampingRatio = 0.85f, stiffness = 500f),
+                                        initialVelocity = velocity * 0.6f
                                     )
                                 }
                                 launch {
                                     moveUpAnim.animateTo(
                                         1f,
-                                        spring(dampingRatio = 0.8f, stiffness = 450f)
+                                        spring(dampingRatio = 0.85f, stiffness = 500f)
                                     )
                                 }
                             }
@@ -716,99 +692,61 @@ private fun HomeWordDeck(
                             moveUpAnim.snapTo(0f)
                         } else {
                             // 右滑：上一个单词
-                            onSelect(index - 1)
                             slideInAnim.snapTo(0f)
                             dragX = 0f
+                            onSelect(index - 1)
                             slideInAnim.animateTo(
                                 1f,
-                                spring(dampingRatio = 0.8f, stiffness = 450f)
+                                spring(dampingRatio = 0.85f, stiffness = 500f)
                             )
                             slideInAnim.snapTo(0f)
                         }
                         animating = false
                     } else {
-                        // 未达到阈值，弹回
-                        val startX = dragX
+                        // 弹回
+                        val bounceAnim = Animatable(dragX)
                         dragX = 0f
-                        val bounceAnim = Animatable(startX)
                         bounceAnim.animateTo(
                             0f,
-                            spring(dampingRatio = 0.75f, stiffness = 380f),
+                            spring(dampingRatio = 0.8f, stiffness = 400f),
                             initialVelocity = velocity
                         )
                     }
                 }
             }
         )
-        .voiceDomeGesture(
-            state = dome,
-            enabled = true,
-            holdThresholdMs = 250L,
-            onPressStart = {
-                if (animating) return@voiceDomeGesture
-                if (app.asrEngine.isListening.value) {
-                    practiceResultSetter("麦克风正忙，稍候一秒再按住")
-                    dome.phase = com.englishcoach.ui.common.DomePhase.HIDDEN
-                    return@voiceDomeGesture
-                }
-                runCatching { app.audioPlayer.stop() }
-                dragX = 0f
-                val started = app.asrEngine.startListening()
-                if (!started) {
-                    practiceResultSetter("启动录音失败，稍候一秒再按住")
-                    dome.phase = com.englishcoach.ui.common.DomePhase.HIDDEN
-                    return@voiceDomeGesture
-                }
-                practiceResultSetter(null)
-                practiceWordSetter(currentWord)
-            },
-            onPressCancel = {
-                app.asrEngine.cancelListening()
-                practiceWordSetter(null)
-            },
-            onPressRelease = {
-                app.asrEngine.stopListening()
-            },
-            onEnterCancel = {
-                app.asrEngine.cancelListening()
-            },
-            onExitCancel = {
-                scope.launch {
-                    kotlinx.coroutines.delay(100)
-                    if (app.asrEngine.isListening.value) return@launch
-                    val ok = app.asrEngine.startListening()
-                    if (!ok) {
-                        practiceResultSetter("录音中断，请重新按住")
-                        dome.phase = com.englishcoach.ui.common.DomePhase.HIDDEN
-                    }
-                }
-            },
-            hapticFeedback = {
-                view.performHapticFeedback(android.view.HapticFeedbackConstants.KEYBOARD_TAP)
-            }
-        )
         .pointerInput(Unit) {
             detectTapGestures(
                 onTap = {
-                    if (!isDragging && practiceWordState.value == null) {
-                        currentWord?.let { speakWord(it) }
+                    // 只有未发生拖拽且不在动画中才响应点击
+                    if (!hasMoved && !animating) {
+                        val clickDuration = System.currentTimeMillis() - gestureStartTime
+                        // 快速点击才算，避免长按后触发
+                        if (clickDuration < 300) {
+                            words.getOrNull(index)?.word?.let { speakWord(it) }
+                        }
                     }
                 },
                 onDoubleTap = {
-                    if (!isDragging && practiceWordState.value == null) {
-                        currentWord?.let { onMeaning(it) }
+                    if (!hasMoved && !animating) {
+                        words.getOrNull(index)?.word?.let { onMeaning(it) }
                     }
                 }
             )
         }
 
     // ========== 卡片渲染 ==========
-    Box(
+    Column(
         modifier = Modifier
             .fillMaxWidth()
-            .height(220.dp),
-        contentAlignment = Alignment.CenterStart
+            .padding(horizontal = 16.dp)
     ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp),
+            contentAlignment = Alignment.CenterStart
+        ) {
         // 计算需要渲染的卡片
         val isSwipingLeft = animating && flyOutAnim.value != 0f
         val isSwipingRight = animating && slideInAnim.value != 0f
@@ -829,7 +767,7 @@ private fun HomeWordDeck(
 
         when {
             isSwipingLeft -> {
-                // 左滑动画：旧卡飞出，后续卡前移
+                // 左滑动画
                 val oldIndex = index - 1
                 if (oldIndex >= 0) {
                     val fade = (1f - kotlin.math.abs(flyOutAnim.value) / (screenWidthPx * 0.7f)).coerceIn(0f, 1f)
@@ -856,13 +794,13 @@ private fun HomeWordDeck(
                 }
             }
             isSwipingRight -> {
-                // 右滑动画：新卡从左侧滑入
+                // 右滑动画
                 val newIndex = index
                 val progress = slideInAnim.value
                 slots.add(
                     CardSlot(
                         wordIndex = newIndex,
-                        x = (progress - 1f) * cardWidthPx + progress * 0f,
+                        x = (progress - 1f) * cardWidthPx,
                         y = 0f,
                         scale = 1f,
                         rotation = 0f,
@@ -889,7 +827,7 @@ private fun HomeWordDeck(
                 }
             }
             isDraggingRight -> {
-                // 右拖拽：显示上一张卡
+                // 右拖拽
                 val prevIndex = index - 1
                 if (prevIndex >= 0) {
                     val progress = (dragX / cardWidthPx).coerceIn(0f, 1f)
@@ -905,7 +843,7 @@ private fun HomeWordDeck(
                         )
                     )
                 }
-                // 当前卡及后续卡
+                // 当前卡及后续
                 for (i in 0..3) {
                     val wordIdx = index + i
                     if (wordIdx >= total) break
@@ -918,13 +856,13 @@ private fun HomeWordDeck(
                             scale = 1f - depth * scaleStep,
                             rotation = if (i == 0) 0f else depth * rotationStep,
                             alpha = 1f,
-                            depth = depth.toFloat()
+                            depth = depth
                         )
                     )
                 }
             }
             else -> {
-                // 静止或左拖拽：正常堆叠
+                // 静止或左拖拽
                 for (i in 0..3) {
                     val wordIdx = index + i
                     if (wordIdx >= total) break
@@ -944,7 +882,6 @@ private fun HomeWordDeck(
             }
         }
 
-        // 按深度排序：深的先画
         slots.sortByDescending { it.depth }
 
         // 渲染卡片
@@ -960,7 +897,7 @@ private fun HomeWordDeck(
                 collectPulse = if (isCurrent) collectPulse else 0,
                 onCollect = if (isCurrent) ::toggleCollect else null,
                 modifier = Modifier
-                    .width(cardWidthDp)
+                    .fillMaxWidth()
                     .graphicsLayer {
                         scaleX = slot.scale
                         scaleY = slot.scale
@@ -973,56 +910,21 @@ private fun HomeWordDeck(
                     .then(if (isCurrent) cardGestures else Modifier)
             )
         }
-
-        // 按住跟读进度环
-        val confirmArc = remember { androidx.compose.animation.core.Animatable(0f) }
-        LaunchedEffect(dome.confirmProgress) {
-            if (dome.confirmProgress == 0f) {
-                confirmArc.snapTo(0f)
-                confirmArc.animateTo(
-                    1f,
-                    androidx.compose.animation.core.tween(250, easing = androidx.compose.animation.core.LinearEasing)
-                )
-            } else {
-                confirmArc.snapTo(0f)
-            }
-        }
-        if (dome.confirmProgress == 0f && confirmArc.value > 0f) {
-            androidx.compose.foundation.Canvas(modifier = Modifier.size(36.dp)) {
-                drawArc(
-                    color = HyperBlue,
-                    startAngle = -90f,
-                    sweepAngle = confirmArc.value * 360f,
-                    useCenter = false,
-                    style = androidx.compose.ui.graphics.drawscope.Stroke(
-                        width = 2.5.dp.toPx(),
-                        cap = androidx.compose.ui.graphics.StrokeCap.Round
-                    )
-                )
-            }
-        }
     }
+
+    Spacer(modifier = Modifier.height(8.dp))
 
     // 提示文字
     Text(
-        text = when {
-            loadingWord != null -> "发音加载中…"
-            practiceResult != null -> practiceResult!!
-            else -> "单击听发音 · 双击看释义 · 按住跟读 · 左右滑动切词"
-        },
+        text = if (loadingWord != null) "发音加载中…" else "单击听发音 · 双击看释义 · 左右滑动切词",
         fontSize = 12.sp,
-        color = if (practiceResult?.startsWith("✓") == true) {
-            com.englishcoach.ui.theme.CorrectGreen
-        } else {
-            TextSecondary
-        },
+        color = TextSecondary,
         textAlign = androidx.compose.ui.text.style.TextAlign.Center,
         maxLines = 1,
         overflow = TextOverflow.Ellipsis,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp)
+        modifier = Modifier.fillMaxWidth()
     )
+    }
 }
 
 /**
@@ -1044,18 +946,21 @@ private fun HomeWordCard(
 ) {
     Box(
         modifier = modifier
-            .height(168.dp) // v11.15：恢复固定高（用户不要高度跳动）——TTS 加载行已移出卡片到
-            // deck 末尾卡外提示行，卡内内容（两行结构）恒约 159dp，任何状态零裁切高度恒定
+            .height(168.dp)
             .clip(RoundedCornerShape(20.dp))
             .background(
-                // v11.22 牌堆可见性：侧卡 #F1F4F9 底 + 1dp #E2E7EF 描边（屏幕边缘 14dp peek
-                // 在浅色页面上可辨；无阴影——用户明确否过阴影）。当前卡保持原白底浅蓝渐变
-                // 无描边，滑回当前位自动恢复
                 if (isCurrent) Brush.verticalGradient(listOf(Color(0xFFEAF2FF), Color(0xFFF8FAFF)))
                 else Brush.verticalGradient(listOf(Color(0xFFF1F4F9), Color(0xFFF1F4F9)))
             )
             .then(
                 if (!isCurrent) {
+                    Modifier.border(1.dp, Color(0xFFE2E7EF), RoundedCornerShape(20.dp))
+                } else {
+                    Modifier
+                }
+            )
+            .padding(horizontal = 16.dp, vertical = 14.dp)
+    ) {
                     Modifier.border(1.dp, Color(0xFFE2E7EF), RoundedCornerShape(20.dp))
                 } else {
                     Modifier
