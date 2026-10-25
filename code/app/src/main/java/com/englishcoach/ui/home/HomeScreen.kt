@@ -544,11 +544,11 @@ private fun HomeWordDeck(
     val cardWidthDp = (screenWidthDp - 40).dp
     val cardWidthPx = with(density) { cardWidthDp.toPx() }
     val screenWidthPx = with(density) { screenWidthDp.dp.toPx() }
-    // v11.28 优化堆叠效果（参考堆叠卡片.png）：垂直堆叠 + 明显缩放 + 右偏移
-    val stepXDp = 16.dp      // 水平偏移：右侧露出彩色边缘
-    val stepYDp = 8.dp       // 垂直偏移：向下堆叠，增强层次感
-    val scaleStep = 0.04f    // scale 步进：每层缩小4%，更明显的深度
-    val rotationStep = -2f   // 旋转步进：减小到2度，更自然
+    // v11.28 重新设计堆叠效果：参考堆叠卡片.png
+    val stepXDp = 12.dp      // 水平偏移：每层向右12dp
+    val stepYDp = 6.dp       // 垂直偏移：每层向下6dp
+    val scaleStep = 0.035f   // scale 步进：每层缩小3.5%
+    val rotationStep = -1.5f // 旋转步进：每层逆时针1.5度（左下角为轴）
     val stepXPx = with(density) { stepXDp.toPx() }
     val stepYPx = with(density) { stepYDp.toPx() }
     val scope = rememberCoroutineScope()
@@ -772,15 +772,15 @@ private fun HomeWordDeck(
                             coroutineScope {
                                 launch {
                                     flightAnim.animateTo(
-                                        -screenWidthPx * 1.2f,  // 飞出更远，动画更明显
-                                        spring(dampingRatio = 0.9f, stiffness = 350f),
-                                        initialVelocity = velocity * 0.6f
+                                        -screenWidthPx * 1.5f,
+                                        spring(dampingRatio = 0.75f, stiffness = 400f),
+                                        initialVelocity = velocity * 0.8f
                                     )
                                 }
                                 launch {
                                     commitAnim.animateTo(
                                         1f,
-                                        spring(dampingRatio = 0.85f, stiffness = 350f),
+                                        spring(dampingRatio = 0.75f, stiffness = 400f),
                                         initialVelocity = 0f
                                     )
                                 }
@@ -806,7 +806,7 @@ private fun HomeWordDeck(
                         try {
                             swapAnim.animateTo(
                                 1f,
-                                spring(dampingRatio = 0.85f, stiffness = 350f),
+                                spring(dampingRatio = 0.75f, stiffness = 400f),
                                 initialVelocity = velocity / (cardWidthPx * 0.5f)
                             )
                         } finally {
@@ -1018,14 +1018,28 @@ private fun HomeWordDeck(
                 modifier = Modifier
                     .width(cardWidthDp)
                     .graphicsLayer {
-                        // v11.28 优化堆叠效果：水平偏移 + 垂直偏移 + 左下角旋转 + 缩放
-                        translationX = slot.x
-                        translationY = slot.y
+                        // v11.28 堆叠卡片效果优化：左下角为旋转中心
+                        // 先应用缩放和旋转（基于左下角原点），再应用位移
+                        val scale = 1f - scaleStep * slot.effDepth
+                        scaleX = scale
+                        scaleY = scale
+
+                        // 设置旋转中心为左下角
+                        transformOrigin = androidx.compose.ui.graphics.TransformOrigin(0f, 1f)
                         rotationZ = slot.rotation
-                        scaleX = 1f - scaleStep * slot.effDepth
-                        scaleY = 1f - scaleStep * slot.effDepth
+
+                        // 由于旋转中心在左下角，旋转会导致卡片位置偏移
+                        // 需要额外补偿Y轴位移，使堆叠效果更自然
+                        val cardHeightPx = with(density) { 168.dp.toPx() }
+                        val rotationRad = slot.rotation * kotlin.math.PI / 180f
+
+                        // 计算旋转导致的偏移
+                        val rotationOffsetX = cardHeightPx * kotlin.math.sin(rotationRad.toFloat()) * (1f - scale)
+                        val rotationOffsetY = cardHeightPx * (1f - kotlin.math.cos(rotationRad.toFloat())) * (1f - scale)
+
+                        translationX = slot.x + rotationOffsetX
+                        translationY = slot.y + rotationOffsetY
                         alpha = slot.alpha
-                        transformOrigin = androidx.compose.ui.graphics.TransformOrigin(0f, 1f) // 左下角为旋转轴
                     }
                     // 侧层卡不可交互、不响应点击：手势链只挂当前卡
                     .then(if (isCurrent) currentGestures else Modifier)
