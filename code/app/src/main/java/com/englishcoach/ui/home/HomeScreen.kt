@@ -741,42 +741,46 @@ private fun HomeWordDeck(
                         settleBounceBack(0f)
                         return@launch
                     }
-                    // v11.26 堆叠卡片提交判定：方向 sign(x+vx)，快甩速度主导
-                    val byVelocity = kotlin.math.abs(velocity) >= 1200f
-                    val dir = if (dragX + velocity < 0f) 1 else -1 // 左滑（负）= 切下一词
-                    val canMove = if (dir == 1) index < total - 1 else index > 0
-                    val overThreshold = if (dir == 1) {
-                        // 左滑判定：距离阈值 30% 卡宽 或 速度 ≥1200px/s
-                        kotlin.math.abs(dragX) >= cardWidthPx * 0.3f || byVelocity
+                    // v11.28 重写手势逻辑：左滑=下一词，右滑=上一词
+                    val byVelocity = kotlin.math.abs(velocity) >= 1000f  // 降低速度阈值到1000，更容易触发
+                    val swipeDirection = if (dragX + velocity * 0.1f < 0f) -1 else 1  // 负=左滑，正=右滑
+
+                    // 左滑=下一词，右滑=上一词
+                    val targetIndex = if (swipeDirection < 0) index + 1 else index - 1
+                    val canMove = targetIndex >= 0 && targetIndex < total
+
+                    val overThreshold = if (swipeDirection < 0) {
+                        // 左滑判定：距离阈值 25% 卡宽 或 速度 ≥1000px/s
+                        kotlin.math.abs(dragX) >= cardWidthPx * 0.25f || byVelocity
                     } else {
-                        // 右滑判定：距离阈值 30% 卡宽（dragT≥0.6）或 速度 ≥1200px/s
-                        dragT >= 0.6f || byVelocity
+                        // 右滑判定：距离阈值 25% 卡宽 或 速度 ≥1000px/s
+                        dragT >= 0.5f || byVelocity
                     }
+
                     val commit = overThreshold && canMove && (dragX != 0f || velocity != 0f)
-                    if (commit && dir == 1) {
-                        // —— 左滑提交（v11.26 垂直堆叠）——
-                        // 顶卡独立通道 spring 飞出屏外，后层卡通过 commitAnim 0→1 上移到新位置
-                        // spring(320/ζ1.0)，初速 vx×0.5
+
+                    if (commit && swipeDirection < 0) {
+                        // —— 左滑=下一词：当前卡飞出左侧，后面的卡片前移 ——
                         val gen = ++commitGen
                         committing = true
                         commitDir = 1
-                        onSelect(index + 1) // flip-first：翻层先行
-                        flightAnim.snapTo(dragX) // 飞出通道从拖拽位置接力
+                        onSelect(index + 1)
+                        flightAnim.snapTo(dragX)
                         commitAnim.snapTo(0f)
                         dragX = 0f
                         try {
                             coroutineScope {
                                 launch {
                                     flightAnim.animateTo(
-                                        -screenWidthPx,
-                                        spring(dampingRatio = 1f, stiffness = 320f),
-                                        initialVelocity = velocity * 0.5f
+                                        -screenWidthPx * 1.2f,  // 飞出更远，动画更明显
+                                        spring(dampingRatio = 0.9f, stiffness = 350f),
+                                        initialVelocity = velocity * 0.6f
                                     )
                                 }
                                 launch {
                                     commitAnim.animateTo(
                                         1f,
-                                        spring(dampingRatio = 1f, stiffness = 320f),
+                                        spring(dampingRatio = 0.85f, stiffness = 350f),
                                         initialVelocity = 0f
                                     )
                                 }
@@ -789,14 +793,12 @@ private fun HomeWordDeck(
                                 committing = false
                             }
                         }
-                    } else if (commit && dir == -1) {
-                        // —— 右滑提交（v11.27 优化）——
-                        // 上一词卡从左侧 spring 滑到居中，其他卡下沉一层
-                        // 修复：确保动画状态正确清理，避免卡顿
+                    } else if (commit && swipeDirection > 0) {
+                        // —— 右滑=上一词：上一张卡从左侧滑入到顶部 ——
                         val gen = ++commitGen
                         committing = true
                         commitDir = -1
-                        onSelect(index - 1) // flip-first：翻层先行
+                        onSelect(index - 1)
                         swapAnim.snapTo(dragT)
                         dragX = 0f
                         bounceX.snapTo(0f)
@@ -804,7 +806,7 @@ private fun HomeWordDeck(
                         try {
                             swapAnim.animateTo(
                                 1f,
-                                spring(dampingRatio = 0.88f, stiffness = 320f),
+                                spring(dampingRatio = 0.85f, stiffness = 350f),
                                 initialVelocity = velocity / (cardWidthPx * 0.5f)
                             )
                         } finally {
@@ -1016,14 +1018,14 @@ private fun HomeWordDeck(
                 modifier = Modifier
                     .width(cardWidthDp)
                     .graphicsLayer {
-                        // v11.27 右侧扇形堆叠：水平偏移 + 左中心旋转 + 缩放
+                        // v11.28 优化堆叠效果：水平偏移 + 垂直偏移 + 左下角旋转 + 缩放
                         translationX = slot.x
                         translationY = slot.y
                         rotationZ = slot.rotation
                         scaleX = 1f - scaleStep * slot.effDepth
                         scaleY = 1f - scaleStep * slot.effDepth
                         alpha = slot.alpha
-                        transformOrigin = TransformOrigin(0f, 0.5f) // 左中心为旋转轴
+                        transformOrigin = androidx.compose.ui.graphics.TransformOrigin(0f, 1f) // 左下角为旋转轴
                     }
                     // 侧层卡不可交互、不响应点击：手势链只挂当前卡
                     .then(if (isCurrent) currentGestures else Modifier)
