@@ -543,11 +543,11 @@ private fun HomeWordDeck(
     val cardWidthDp = (screenWidthDp - 40).dp
     val cardWidthPx = with(density) { cardWidthDp.toPx() }
     val screenWidthPx = with(density) { screenWidthDp.dp.toPx() }
-    // v11.27 右侧扇形堆叠参数（高保真还原设计稿）
-    val stepXDp = 20.dp      // 水平偏移：右侧露边
-    val stepYDp = 0.dp       // 垂直偏移：保持水平对齐
-    val scaleStep = 0.03f    // scale 步进：缩放更细腻
-    val rotationStep = -3f   // 旋转步进：每层逆时针旋转3度（扇形效果）
+    // v11.28 优化堆叠效果（参考堆叠卡片.png）：垂直堆叠 + 明显缩放 + 右偏移
+    val stepXDp = 16.dp      // 水平偏移：右侧露出彩色边缘
+    val stepYDp = 8.dp       // 垂直偏移：向下堆叠，增强层次感
+    val scaleStep = 0.04f    // scale 步进：每层缩小4%，更明显的深度
+    val rotationStep = -2f   // 旋转步进：减小到2度，更自然
     val stepXPx = with(density) { stepXDp.toPx() }
     val stepYPx = with(density) { stepYDp.toPx() }
     val scope = rememberCoroutineScope()
@@ -955,7 +955,7 @@ private fun HomeWordDeck(
                     // 后层卡前移：effDepth = rel+1−cp 收敛到 rel
                     effDepth = rel + (1f - commitV)
                     x = effDepth * stepXPx
-                    y = 0f
+                    y = effDepth * stepYPx  // v11.28: 添加垂直偏移
                     rotation = effDepth * rotationStep
                 }
                 rightCommit -> if (rel == 0) {
@@ -968,7 +968,7 @@ private fun HomeWordDeck(
                     // 其他卡后移一层
                     effDepth = (rel - 1) + swapV
                     x = effDepth * stepXPx
-                    y = 0f
+                    y = effDepth * stepYPx  // v11.28: 添加垂直偏移
                     rotation = effDepth * rotationStep
                 } else {
                     continue
@@ -983,7 +983,7 @@ private fun HomeWordDeck(
                     // 其他卡后移
                     effDepth = rel + swapT
                     x = effDepth * stepXPx
-                    y = 0f
+                    y = effDepth * stepYPx  // v11.28: 添加垂直偏移
                     rotation = effDepth * rotationStep
                 }
                 else -> {
@@ -991,7 +991,7 @@ private fun HomeWordDeck(
                     if (rel < 0) continue
                     effDepth = rel.toFloat()
                     x = if (rel == 0) leftDx else rel * stepXPx // 只有顶卡响应拖拽
-                    y = 0f
+                    y = if (rel == 0) 0f else rel * stepYPx  // v11.28: 垂直堆叠效果
                     rotation = if (rel == 0 && leftDx != 0f) 0f else rel * rotationStep
                 }
             }
