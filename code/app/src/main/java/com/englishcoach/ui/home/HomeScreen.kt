@@ -545,10 +545,11 @@ private fun HomeWordDeck(
     val cardWidthPx = with(density) { cardWidthDp.toPx() }
     val screenWidthPx = with(density) { screenWidthDp.dp.toPx() }
     // v11.28 重新设计堆叠效果：参考堆叠卡片.png
-    val stepXDp = 12.dp      // 水平偏移：每层向右12dp
-    val stepYDp = 6.dp       // 垂直偏移：每层向下6dp
-    val scaleStep = 0.035f   // scale 步进：每层缩小3.5%
-    val rotationStep = -1.5f // 旋转步进：每层逆时针1.5度（左下角为轴）
+    // 右侧堆叠：每层向右偏移，形成扇形效果
+    val stepXDp = 20.dp      // 水平偏移：每层向右20dp（更明显的堆叠效果）
+    val stepYDp = 8.dp       // 垂直偏移：每层向下8dp（增强纵深感）
+    val scaleStep = 0.04f    // scale 步进：每层缩小4%
+    val rotationStep = -2f   // 旋转步进：每层逆时针2度（左中心为轴，形成扇形）
     val stepXPx = with(density) { stepXDp.toPx() }
     val stepYPx = with(density) { stepYDp.toPx() }
     val scope = rememberCoroutineScope()
@@ -741,84 +742,81 @@ private fun HomeWordDeck(
                         settleBounceBack(0f)
                         return@launch
                     }
-                    // v11.28 重写手势逻辑：左滑=下一词，右滑=上一词
-                    val byVelocity = kotlin.math.abs(velocity) >= 1000f  // 降低速度阈值到1000，更容易触发
-                    val swipeDirection = if (dragX + velocity * 0.1f < 0f) -1 else 1  // 负=左滑，正=右滑
+                    // v11.29 优化手势逻辑：左滑=下一词，右滑=上一词
+                    // 速度阈值降低到800px/s，距离阈值20%卡宽，更流畅的切换体验
+                    val velocityThreshold = 800f
+                    val distanceThreshold = cardWidthPx * 0.2f
 
-                    // 左滑=下一词，右滑=上一词
+                    val swipeDirection = if (dragX < 0f) -1 else 1  // 负=左滑（下一词），正=右滑（上一词）
                     val targetIndex = if (swipeDirection < 0) index + 1 else index - 1
                     val canMove = targetIndex >= 0 && targetIndex < total
 
-                    val overThreshold = if (swipeDirection < 0) {
-                        // 左滑判定：距离阈值 25% 卡宽 或 速度 ≥1000px/s
-                        kotlin.math.abs(dragX) >= cardWidthPx * 0.25f || byVelocity
-                    } else {
-                        // 右滑判定：距离阈值 25% 卡宽 或 速度 ≥1000px/s
-                        dragT >= 0.5f || byVelocity
-                    }
+                    // 判定：速度或距离达到阈值即可切换
+                    val byVelocity = kotlin.math.abs(velocity) >= velocityThreshold &&
+                        ((velocity < 0f && dragX < 0f) || (velocity > 0f && dragX > 0f))
+                    val byDistance = kotlin.math.abs(dragX) >= distanceThreshold
 
-                    val commit = overThreshold && canMove && (dragX != 0f || velocity != 0f)
+                    val commit = canMove && (byVelocity || byDistance)
 
-                    if (commit && swipeDirection < 0) {
-                        // —— 左滑=下一词：当前卡飞出左侧，后面的卡片前移 ——
+                    if (commit) {
                         val gen = ++commitGen
                         committing = true
-                        commitDir = 1
-                        onSelect(index + 1)
-                        flightAnim.snapTo(dragX)
-                        commitAnim.snapTo(0f)
-                        dragX = 0f
-                        try {
-                            coroutineScope {
-                                launch {
-                                    flightAnim.animateTo(
-                                        -screenWidthPx * 1.5f,
-                                        spring(dampingRatio = 0.75f, stiffness = 400f),
-                                        initialVelocity = velocity * 0.8f
-                                    )
+
+                        if (swipeDirection < 0) {
+                            // —— 左滑=下一词：当前卡飞出左侧，后面的卡片依次前移 ——
+                            commitDir = 1
+                            onSelect(index + 1)
+                            flightAnim.snapTo(dragX)
+                            commitAnim.snapTo(0f)
+                            dragX = 0f
+                            try {
+                                coroutineScope {
+                                    launch {
+                                        flightAnim.animateTo(
+                                            -screenWidthPx * 1.5f,
+                                            spring(dampingRatio = 0.8f, stiffness = 450f),
+                                            initialVelocity = velocity * 0.7f
+                                        )
+                                    }
+                                    launch {
+                                        commitAnim.animateTo(
+                                            1f,
+                                            spring(dampingRatio = 0.8f, stiffness = 450f)
+                                        )
+                                    }
                                 }
-                                launch {
-                                    commitAnim.animateTo(
-                                        1f,
-                                        spring(dampingRatio = 0.75f, stiffness = 400f),
-                                        initialVelocity = 0f
-                                    )
+                            } finally {
+                                if (!flightAnim.isRunning) flightAnim.snapTo(0f)
+                                if (!commitAnim.isRunning) commitAnim.snapTo(0f)
+                                if (commitGen == gen) {
+                                    commitDir = 0
+                                    committing = false
                                 }
                             }
-                        } finally {
-                            if (!flightAnim.isRunning) flightAnim.snapTo(0f)
-                            if (!commitAnim.isRunning) commitAnim.snapTo(0f)
-                            if (commitGen == gen) {
-                                commitDir = 0
-                                committing = false
-                            }
-                        }
-                    } else if (commit && swipeDirection > 0) {
-                        // —— 右滑=上一词：上一张卡从左侧滑入到顶部 ——
-                        val gen = ++commitGen
-                        committing = true
-                        commitDir = -1
-                        onSelect(index - 1)
-                        swapAnim.snapTo(dragT)
-                        dragX = 0f
-                        bounceX.snapTo(0f)
-                        bounceT.snapTo(0f)
-                        try {
-                            swapAnim.animateTo(
-                                1f,
-                                spring(dampingRatio = 0.75f, stiffness = 400f),
-                                initialVelocity = velocity / (cardWidthPx * 0.5f)
-                            )
-                        } finally {
-                            if (!swapAnim.isRunning) swapAnim.snapTo(0f)
-                            if (commitGen == gen) {
-                                commitDir = 0
-                                committing = false
+                        } else {
+                            // —— 右滑=上一词：上一张卡从左侧滑入到顶部，其他卡后移一层 ——
+                            commitDir = -1
+                            onSelect(index - 1)
+                            swapAnim.snapTo(dragT)
+                            dragX = 0f
+                            bounceX.snapTo(0f)
+                            bounceT.snapTo(0f)
+                            try {
+                                swapAnim.animateTo(
+                                    1f,
+                                    spring(dampingRatio = 0.8f, stiffness = 450f),
+                                    initialVelocity = velocity / (cardWidthPx * 0.5f)
+                                )
+                            } finally {
+                                if (!swapAnim.isRunning) swapAnim.snapTo(0f)
+                                if (commitGen == gen) {
+                                    commitDir = 0
+                                    committing = false
+                                }
                             }
                         }
                     } else {
-                        // 未过阈值 / 边界 / 手势被父级抢走（velocity=0）：spring(380/ζ0.88)
-                        // 弹回原位，初速继承
+                        // 未过阈值/边界：弹回原位
                         settleBounceBack(velocity)
                     }
                 }
