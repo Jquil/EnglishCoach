@@ -672,7 +672,7 @@ private fun HomeWordDeck(
                             flyOutAnim.snapTo(dragX)
                             moveUpAnim.snapTo(0f)
                             dragX = 0f
-                            onSelect(index + 1)
+                            // 先完成动画，再更新 index
                             coroutineScope {
                                 launch {
                                     flyOutAnim.animateTo(
@@ -688,20 +688,26 @@ private fun HomeWordDeck(
                                     )
                                 }
                             }
+                            // 动画完成后立即更新状态
+                            onSelect(index + 1)
+                            // 等待一帧让 recomposition 完成
+                            kotlinx.coroutines.delay(16)
                             flyOutAnim.snapTo(0f)
                             moveUpAnim.snapTo(0f)
+                            animating = false
                         } else {
                             // 右滑：上一个单词
                             slideInAnim.snapTo(0f)
                             dragX = 0f
-                            onSelect(index - 1)
                             slideInAnim.animateTo(
                                 1f,
                                 spring(dampingRatio = 0.85f, stiffness = 500f)
                             )
+                            onSelect(index - 1)
+                            kotlinx.coroutines.delay(16)
                             slideInAnim.snapTo(0f)
+                            animating = false
                         }
-                        animating = false
                     } else {
                         // 弹回
                         val bounceAnim = Animatable(dragX)
