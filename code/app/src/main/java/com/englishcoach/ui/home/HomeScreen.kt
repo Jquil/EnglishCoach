@@ -513,17 +513,19 @@ fun HomeScreen(
 }
 
 /**
- * 首页快捷跟读卡（v11.27 右侧扇形堆叠效果）：
- * - 静止态：当前卡居中（depth 0：x 0 / y 0 / scale 1 / rot 0° / alpha 1.0 / 白底渐变无描边）；
- *   后层卡在右侧扇形堆叠——depth d=1,2,3... → x=+20dp×d、y=0、scale=1−0.03d、
- *   rot=−3°×d（逆时针扇形）、alpha=1.0（不透明，靠 #F1F4F9 + 1dp #E2E7EF 描边区隔）；
- *   depth>3 不渲染（最多显示4张卡）。旋转中心为左中心点
- * - 左滑（下一词）＝顶卡飞出：拖动顶卡 x 1:1 跟手（后层卡静止不动）；
- *   松手过阈值（|vx|≥1200px/s 或 |dx|≥30%卡宽）→ 顶卡 spring 飞出屏外 + 后层卡依次
- *   前移到新位置（flip-first：onSelect 先行）；未过阈值 spring 弹回
- * - 右滑（上一词）＝上一词卡从左侧屏外滑入到顶部，其他卡后移一层
- * - 边界：首词右滑 / 末词左滑 0.3 阻尼拖出、松手必弹回
- * - 卡宽 = 屏宽 − 40dp；高 168dp 冻结；Box 高 220dp（168 + 旋转余量）
+ * 首页快捷跟读卡片（堆叠卡片效果）
+ *
+ * 视觉效果：
+ * - 当前卡在最前（完整显示）
+ * - 后续卡片向右堆叠（每层向右+向下偏移，逐渐缩小，形成扇形）
+ * - 最多显示4张卡片
+ *
+ * 交互：
+ * - 左滑：切换到下一个单词（当前卡飞出，后面的卡片前移）
+ * - 右滑：切换到上一个单词（上一张卡从左侧滑入）
+ * - 单击：播放发音
+ * - 双击：查看释义
+ * - 按住：开始跟读
  */
 @Composable
 private fun HomeWordDeck(
@@ -538,88 +540,44 @@ private fun HomeWordDeck(
     onMeaning: (String) -> Unit,
     onSelect: (Int) -> Unit
 ) {
+    // ========== 布局参数 ==========
     val density = LocalDensity.current
     val screenWidthDp = LocalConfiguration.current.screenWidthDp
-    // v11.26 垂直堆叠几何：卡宽 = 屏宽 − 40dp，高 168dp 冻结
     val cardWidthDp = (screenWidthDp - 40).dp
     val cardWidthPx = with(density) { cardWidthDp.toPx() }
     val screenWidthPx = with(density) { screenWidthDp.dp.toPx() }
-    // v11.28 重新设计堆叠效果：参考堆叠卡片.png
-    // 右侧堆叠：每层向右偏移，形成扇形效果
-    val stepXDp = 20.dp      // 水平偏移：每层向右20dp（更明显的堆叠效果）
-    val stepYDp = 8.dp       // 垂直偏移：每层向下8dp（增强纵深感）
-    val scaleStep = 0.04f    // scale 步进：每层缩小4%
-    val rotationStep = -2f   // 旋转步进：每层逆时针2度（左中心为轴，形成扇形）
-    val stepXPx = with(density) { stepXDp.toPx() }
-    val stepYPx = with(density) { stepYDp.toPx() }
-    val scope = rememberCoroutineScope()
-    // v11.6 P1-2：取消态触感宿主
-    val view = androidx.compose.ui.platform.LocalView.current
 
-    // —— v11.26 扇形牌堆动画通道（垂直堆叠适配）——
-    var dragX by remember { mutableFloatStateOf(0f) }
-    val bounceX = remember { Animatable(0f) }             // 左滑弹回通道（x 口径）
-    val bounceT = remember { Animatable(0f) }             // 右滑弹回通道（交换进度口径）
-    val commitAnim = remember { Animatable(0f) }          // 左滑提交：后层卡上移进度 0→1
-    val flightAnim = remember { Animatable(0f) }          // 左滑提交：旧顶卡飞出 x（→−屏宽）
-    val swapAnim = remember { Animatable(0f) }            // 右滑交换进度（提交相 t₀ → 1）
-    var committing by remember { mutableStateOf(false) }  // 提交动画中（锁拖拽/锁按住跟读）
-    var commitDir by remember { mutableStateOf(0) }       // 1=左滑飞出 / -1=右滑交换 / 0=无
-    var commitGen by remember { mutableStateOf(0) }       // 提交代际（并发提交接管时旧 finally 不误清锁）
-    // v11.20 手势仲裁标志沿用：本次手势水平位移越过 touch slop 即判拖拽 → 全程禁 tap
-    var dragArbitration by remember { mutableStateOf(false) }
+    // 堆叠效果参数（参考堆叠卡片.png）
+    val stepX = with(density) { 20.dp.toPx() }    // 每层右移20dp
+    val stepY = with(density) { 8.dp.toPx() }     // 每层下移8dp
+    val scaleStep = 0.04f                          // 每层缩小4%
+    val rotationStep = -2f                         // 每层逆时针2度
+
+    val scope = rememberCoroutineScope()
+    val view = androidx.compose.ui.platform.LocalView.current
     val total = words.size
-    // v11.25 手势修复：tap 检测器 key 由 index 改为 Unit 后，闭包内 practiceWord 必须
-    // 走 rememberUpdatedState 才能读到最新值（否则捕获重组时的旧值）
+
+    // ========== 动画状态 ==========
+    var dragX by remember { mutableFloatStateOf(0f) }
+    val flyOutAnim = remember { Animatable(0f) }   // 左滑：旧卡飞出
+    val moveUpAnim = remember { Animatable(0f) }   // 左滑：后续卡前移
+    val slideInAnim = remember { Animatable(0f) }  // 右滑：新卡滑入
+    var animating by remember { mutableStateOf(false) }
+
+    // ========== 手势状态 ==========
+    var isDragging by remember { mutableStateOf(false) }
     val practiceWordState = androidx.compose.runtime.rememberUpdatedState(practiceWord)
 
-    // v11.25 手势修复：未过阈值 / 边界 / 跟读中松手 / 手势被父级抢走（foundation 1.7 对
-    // cancel 路径统一回调 onDragStopped(velocity=0)，已核验 Draggable.kt processDragCancel）
-    // 共用的弹回路径——从当前 dragX 位 spring 回静止态，初速继承，结束防御归零
-    suspend fun settleBounceBack(initialVx: Float) {
-        val t = (dragX / (cardWidthPx * 0.5f)).coerceIn(0f, 1f)
-        val bx = if (dragX < 0f) dragX else 0f
-        val bt = if (dragX > 0f) t else 0f
-        dragX = 0f
-        bounceX.snapTo(bx)
-        bounceT.snapTo(bt)
-        try {
-            coroutineScope {
-                if (bx != 0f) {
-                    launch {
-                        bounceX.animateTo(
-                            0f,
-                            spring(dampingRatio = 0.88f, stiffness = 380f),
-                            initialVelocity = initialVx
-                        )
-                    }
-                }
-                if (bt != 0f) {
-                    launch {
-                        bounceT.animateTo(
-                            0f,
-                            spring(dampingRatio = 0.88f, stiffness = 380f),
-                            initialVelocity = initialVx / (cardWidthPx * 0.5f)
-                        )
-                    }
-                }
-            }
-        } finally {
-            if (!bounceX.isRunning) bounceX.snapTo(0f)
-            if (!bounceT.isRunning) bounceT.snapTo(0f)
-        }
-    }
-
-    // 发音 loading（300ms 延迟出现，缓存命中不闪；v11.27 增加延迟避免卡顿感）
+    // ========== 发音播放 ==========
     var loadingWord by remember { mutableStateOf<String?>(null) }
-    val speakWord: (String) -> Unit = { w ->
+    fun speakWord(word: String) {
         scope.launch {
             val loadingJob = launch {
-                kotlinx.coroutines.delay(300) // 增加到300ms
-                loadingWord = w
+                kotlinx.coroutines.delay(300)
+                loadingWord = word
             }
             val audio = withTimeoutOrNull(8000) {
-                runCatching { app.ttsClient.synthesize(w) }.getOrNull()
+                runCatching { app.ttsClient.synthesize(word) }.getOrNull()
             }
             loadingJob.cancel()
             loadingWord = null
@@ -631,91 +589,70 @@ private fun HomeWordDeck(
         }
     }
 
-    // —— 收进生词本（v11.5 需求2）：与对话纠错/点词释义同一 VocabStore，来源标记 home_deck ——
-    // v11.12：星标双向 toggle——未收藏点击收词，已收藏再点移出生词本（remove）
+    // ========== 生词收藏 ==========
     var collected by remember { mutableStateOf(false) }
     var collecting by remember { mutableStateOf(false) }
-    // v11.7：收藏成功脉冲计数（added 时递增，钮上播放一次性 1.06 缩放）
     var collectPulse by remember { androidx.compose.runtime.mutableIntStateOf(0) }
-    // 切词后按当前词刷新收藏态（已收藏显示 tint 完成态，重复点击不写库）
+
     LaunchedEffect(index, words) {
         val w = words.getOrNull(index)?.word ?: return@LaunchedEffect
         collected = runCatching { app.vocabStore.contains(w) }.getOrDefault(false)
     }
-    val toggleCollect: () -> Unit = {
-        val item = words.getOrNull(index)
-        if (item != null && !collecting) {
+
+    fun toggleCollect() {
+        val item = words.getOrNull(index) ?: return
+        if (collecting) return
+
+        scope.launch {
+            collecting = true
             if (collected) {
-                // 已收藏 → 移出生词本（取消成功不加脉冲，保持简单；处理中复用 collecting 禁点）
-                collecting = true
-                scope.launch {
-                    val removed = runCatching { app.vocabStore.remove(item.word) }.getOrDefault(false)
-                    collecting = false
-                    practiceResultSetter(if (removed) "已移出生词本" else "移出失败，请重试")
-                    // v11.11 竞态口径：仅仍停留该词时更新（切词后由 LaunchedEffect 按真实库态刷新）
-                    if (removed && words.getOrNull(index)?.word == item.word) {
-                        collected = false
-                    }
+                val removed = runCatching { app.vocabStore.remove(item.word) }.getOrDefault(false)
+                practiceResultSetter(if (removed) "已移出生词本" else "移出失败，请重试")
+                if (removed && words.getOrNull(index)?.word == item.word) {
+                    collected = false
                 }
             } else {
-                collecting = true
-                scope.launch {
-                    val added = runCatching {
-                        app.vocabStore.add(
-                            com.englishcoach.core.model.NotableWord(
-                                word = item.word,
-                                phonetic = item.phonetic,
-                                meaning = item.meaning,
-                                example = item.chinese
-                            ),
-                            "home_deck"
-                        )
-                    }.getOrDefault(false)
-                    collecting = false
-                    if (added) collectPulse++ // 仅真实新增触发成功脉冲（切词刷新不触发）
-                    // 轻量反馈：走现有结果提示行（✓ 前缀 = 绿色）
-                    practiceResultSetter(if (added) "✓ 已收进生词本" else "该词已在生词本")
-                    // v11.11 竞态修复：仅当收词完成后仍停留在这一个词时才更新 collected。
-                    // 否则 add 的完成回调会把旧词的收藏结果写到已切到的新词上（新词误亮星标，
-                    // 再次切回时 contains 刷新又熄灭 → "已收藏又回未收藏"的真机现象）
-                    if (words.getOrNull(index)?.word == item.word) {
-                        collected = collected || added
-                    }
+                val added = runCatching {
+                    app.vocabStore.add(
+                        com.englishcoach.core.model.NotableWord(
+                            word = item.word,
+                            phonetic = item.phonetic,
+                            meaning = item.meaning,
+                            example = item.chinese
+                        ),
+                        "home_deck"
+                    )
+                }.getOrDefault(false)
+                if (added) collectPulse++
+                practiceResultSetter(if (added) "✓ 已收进生词本" else "该词已在生词本")
+                if (words.getOrNull(index)?.word == item.word) {
+                    collected = collected || added
                 }
             }
+            collecting = false
         }
     }
 
-    // 跟读中标志 = practiceWord != null（QA P1-3：跟读期间冻结切词手势，
-    // 识别词与屏显词不再错位）
-
-    // 当前词（rememberUpdatedState：手势回调跨重组始终读到最新词，避免闭包捕获旧词）
     val currentWord by androidx.compose.runtime.rememberUpdatedState(words.getOrNull(index)?.word)
 
-    // 当前卡手势链（仅 isCurrent 卡挂载；侧卡不可交互、不响应点击）。
-    // v11.27 手势仲裁优化：增强拖拽检测，减少误触发点击
-    // - pointerInput 必须位于 draggable / detectTapGestures 之前
-    // - 判定口径与 draggable 一致（viewConfiguration.touchSlop）
-    // - 一旦判拖拽，本次手势（含松手瞬间）不再触发单击发音/双击释义
-    // - 增加垂直滑动检测，垂直滑动也会标记为拖拽（避免上下滑误触点击）
-    val currentGestures: Modifier = Modifier
+    // ========== 手势处理 ==========
+    val cardGestures: Modifier = Modifier
         .pointerInput(Unit) {
+            // 手势仲裁：检测是否为拖拽手势
             awaitEachGesture {
                 awaitFirstDown(requireUnconsumed = false)
-                dragArbitration = false
+                isDragging = false
                 var totalX = 0f
                 var totalY = 0f
                 while (true) {
                     val event = awaitPointerEvent()
                     val change = event.changes.firstOrNull() ?: break
-                    val deltaX = change.positionChange().x
-                    val deltaY = change.positionChange().y
-                    totalX += deltaX
-                    totalY += deltaY
-                    // 水平或垂直超过 slop 即判定为拖拽
+                    totalX += change.positionChange().x
+                    totalY += change.positionChange().y
+                    // 水平或垂直超过触摸阈值，判定为拖拽
                     if (kotlin.math.abs(totalX) > viewConfiguration.touchSlop ||
                         kotlin.math.abs(totalY) > viewConfiguration.touchSlop) {
-                        dragArbitration = true
+                        isDragging = true
                     }
                     if (event.changes.none { it.pressed }) break
                 }
@@ -723,101 +660,82 @@ private fun HomeWordDeck(
         }
         .draggable(
             orientation = Orientation.Horizontal,
-            enabled = practiceWord == null && !committing, // P1-3 跟读互斥；提交动画中锁拖拽
+            enabled = practiceWord == null && !animating,
             state = rememberDraggableState { delta ->
-                // v11.26 堆叠卡片：只拖动顶卡，后层卡静止不动
-                if (practiceWord != null || committing) return@rememberDraggableState
+                if (practiceWord != null || animating) return@rememberDraggableState
                 val atStart = index == 0
                 val atEnd = index == total - 1
-                // 边界阻尼：首词右滑 / 末词左滑位移 ×0.3（可拖出，松手必弹回）
+                // 边界阻尼：首词右滑/末词左滑 位移×0.3
                 val damped = (atStart && delta > 0f) || (atEnd && delta < 0f)
-                dragX += if (damped) delta * 0.3f else delta // 1:1 跟手，无软限位
+                dragX += if (damped) delta * 0.3f else delta
             },
             onDragStopped = { velocity ->
                 scope.launch {
-                    // 右滑交换进度（0..1）：满程 = 0.5 卡宽，dragT 0.6 ≈ 30% 卡宽阈值口径
-                    val dragT = (dragX / (cardWidthPx * 0.5f)).coerceIn(0f, 1f)
+                    // 跟读中不切词
                     if (practiceWordState.value != null) {
-                        // 跟读中松手：不切词，仅归位（两通道一并归零）
-                        settleBounceBack(0f)
+                        dragX = 0f
                         return@launch
                     }
-                    // v11.29 优化手势逻辑：左滑=下一词，右滑=上一词
-                    // 速度阈值降低到800px/s，距离阈值20%卡宽，更流畅的切换体验
+
+                    // 判断是否切换单词
                     val velocityThreshold = 800f
                     val distanceThreshold = cardWidthPx * 0.2f
+                    val swipeLeft = dragX < 0f
+                    val targetIndex = if (swipeLeft) index + 1 else index - 1
+                    val canMove = targetIndex in 0 until total
 
-                    val swipeDirection = if (dragX < 0f) -1 else 1  // 负=左滑（下一词），正=右滑（上一词）
-                    val targetIndex = if (swipeDirection < 0) index + 1 else index - 1
-                    val canMove = targetIndex >= 0 && targetIndex < total
-
-                    // 判定：速度或距离达到阈值即可切换
                     val byVelocity = kotlin.math.abs(velocity) >= velocityThreshold &&
-                        ((velocity < 0f && dragX < 0f) || (velocity > 0f && dragX > 0f))
+                        ((velocity < 0f && swipeLeft) || (velocity > 0f && !swipeLeft))
                     val byDistance = kotlin.math.abs(dragX) >= distanceThreshold
+                    val shouldSwitch = canMove && (byVelocity || byDistance)
 
-                    val commit = canMove && (byVelocity || byDistance)
-
-                    if (commit) {
-                        val gen = ++commitGen
-                        committing = true
-
-                        if (swipeDirection < 0) {
-                            // —— 左滑=下一词：当前卡飞出左侧，后面的卡片依次前移 ——
-                            commitDir = 1
+                    if (shouldSwitch) {
+                        animating = true
+                        if (swipeLeft) {
+                            // 左滑：下一个单词
                             onSelect(index + 1)
-                            flightAnim.snapTo(dragX)
-                            commitAnim.snapTo(0f)
+                            flyOutAnim.snapTo(dragX)
+                            moveUpAnim.snapTo(0f)
                             dragX = 0f
-                            try {
-                                coroutineScope {
-                                    launch {
-                                        flightAnim.animateTo(
-                                            -screenWidthPx * 1.5f,
-                                            spring(dampingRatio = 0.8f, stiffness = 450f),
-                                            initialVelocity = velocity * 0.7f
-                                        )
-                                    }
-                                    launch {
-                                        commitAnim.animateTo(
-                                            1f,
-                                            spring(dampingRatio = 0.8f, stiffness = 450f)
-                                        )
-                                    }
+                            coroutineScope {
+                                launch {
+                                    flyOutAnim.animateTo(
+                                        -screenWidthPx * 1.5f,
+                                        spring(dampingRatio = 0.8f, stiffness = 450f),
+                                        initialVelocity = velocity * 0.7f
+                                    )
                                 }
-                            } finally {
-                                if (!flightAnim.isRunning) flightAnim.snapTo(0f)
-                                if (!commitAnim.isRunning) commitAnim.snapTo(0f)
-                                if (commitGen == gen) {
-                                    commitDir = 0
-                                    committing = false
+                                launch {
+                                    moveUpAnim.animateTo(
+                                        1f,
+                                        spring(dampingRatio = 0.8f, stiffness = 450f)
+                                    )
                                 }
                             }
+                            flyOutAnim.snapTo(0f)
+                            moveUpAnim.snapTo(0f)
                         } else {
-                            // —— 右滑=上一词：上一张卡从左侧滑入到顶部，其他卡后移一层 ——
-                            commitDir = -1
+                            // 右滑：上一个单词
                             onSelect(index - 1)
-                            swapAnim.snapTo(dragT)
+                            slideInAnim.snapTo(0f)
                             dragX = 0f
-                            bounceX.snapTo(0f)
-                            bounceT.snapTo(0f)
-                            try {
-                                swapAnim.animateTo(
-                                    1f,
-                                    spring(dampingRatio = 0.8f, stiffness = 450f),
-                                    initialVelocity = velocity / (cardWidthPx * 0.5f)
-                                )
-                            } finally {
-                                if (!swapAnim.isRunning) swapAnim.snapTo(0f)
-                                if (commitGen == gen) {
-                                    commitDir = 0
-                                    committing = false
-                                }
-                            }
+                            slideInAnim.animateTo(
+                                1f,
+                                spring(dampingRatio = 0.8f, stiffness = 450f)
+                            )
+                            slideInAnim.snapTo(0f)
                         }
+                        animating = false
                     } else {
-                        // 未过阈值/边界：弹回原位
-                        settleBounceBack(velocity)
+                        // 未达到阈值，弹回
+                        val startX = dragX
+                        dragX = 0f
+                        val bounceAnim = Animatable(startX)
+                        bounceAnim.animateTo(
+                            0f,
+                            spring(dampingRatio = 0.75f, stiffness = 380f),
+                            initialVelocity = velocity
+                        )
                     }
                 }
             }
@@ -825,24 +743,16 @@ private fun HomeWordDeck(
         .voiceDomeGesture(
             state = dome,
             enabled = true,
-            holdThresholdMs = 250L, // 按住 ≥250ms 确认跟读；期间松手/横滑放手
+            holdThresholdMs = 250L,
             onPressStart = {
-                // v11.21：提交动画滑行中不接受新的按住跟读（此时 snap 归零会打断 spring 滑行）
-                if (committing) return@voiceDomeGesture
-                // P1-4：引擎忙前置检查（忙时圆顶复位并提示，不弹空圆顶）
+                if (animating) return@voiceDomeGesture
                 if (app.asrEngine.isListening.value) {
                     practiceResultSetter("麦克风正忙，稍候一秒再按住")
                     dome.phase = com.englishcoach.ui.common.DomePhase.HIDDEN
                     return@voiceDomeGesture
                 }
-                // P2-3：打断在播的 TTS 发音，避免扬声器声音混进麦克风
                 runCatching { app.audioPlayer.stop() }
-                // P1-3：跟读确认瞬间清掉残留拖拽偏移，卡片归位
-                scope.launch {
-                    bounceX.snapTo(0f)
-                    bounceT.snapTo(0f)
-                    dragX = 0f
-                }
+                dragX = 0f
                 val started = app.asrEngine.startListening()
                 if (!started) {
                     practiceResultSetter("启动录音失败，稍候一秒再按住")
@@ -853,21 +763,17 @@ private fun HomeWordDeck(
                 practiceWordSetter(currentWord)
             },
             onPressCancel = {
-                // 极短按 / 上滑取消：等价丢弃（事件隔离，不出结果不残留）
                 app.asrEngine.cancelListening()
                 practiceWordSetter(null)
             },
             onPressRelease = {
-                app.asrEngine.stopListening() // 圆顶已 RECOGNIZING，Final/Error 到达后收起
+                app.asrEngine.stopListening()
             },
             onEnterCancel = {
-                // 微信同款：滑入取消区瞬间隔离已积累的识别结果
                 app.asrEngine.cancelListening()
             },
             onExitCancel = {
                 scope.launch {
-                    // v11.3 B 方案：cancel 已销毁实例，start 用全新实例——无冷却需求，
-                    // 100ms 仅作事件落定缓冲；D4 检查保留（缓冲期内新会话接管则跳过）
                     kotlinx.coroutines.delay(100)
                     if (app.asrEngine.isListening.value) return@launch
                     val ok = app.asrEngine.startListening()
@@ -877,193 +783,212 @@ private fun HomeWordDeck(
                     }
                 }
             },
-            // v11.6 P1-2：滑入取消区触感一下
             hapticFeedback = {
                 view.performHapticFeedback(android.view.HapticFeedbackConstants.KEYBOARD_TAP)
             }
         )
-        // v11.25 手势修复（真机"与点击事件冲突"根因②）：tap 检测器 key 由 index 改为
-        // Unit——原 key=index 时每次 flip-first 切词（含提交动画窗口）都会销毁重建
-        // detectTapGestures，重建窗口内的点击事件被整只吞掉（点击没反应），双击状态也被
-        // 意外清零。闭包内 practiceWord 经 practiceWordState 读最新值，currentWord 本就走
-        // rememberUpdatedState，故 key 恒定不重启是安全的
         .pointerInput(Unit) {
             detectTapGestures(
                 onTap = {
-                    // P2-2：跟读确认后事件已被 consume，tap 不会触发；这里只处理短按播发音
-                    // v11.20：手势仲裁——本手势发生过拖拽（越过 slop）则禁 tap，
-                    // 杜绝"滑动了还播放"
-                    if (!dragArbitration) {
-                        currentWord?.takeIf { practiceWordState.value == null }?.let { speakWord(it) }
+                    if (!isDragging && practiceWordState.value == null) {
+                        currentWord?.let { speakWord(it) }
                     }
                 },
                 onDoubleTap = {
-                    // v11.20：双击释义同样受仲裁保护，滑动不触发
-                    if (!dragArbitration && practiceWordState.value == null) {
+                    if (!isDragging && practiceWordState.value == null) {
                         currentWord?.let { onMeaning(it) }
                     }
                 }
             )
         }
 
+    // ========== 卡片渲染 ==========
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(220.dp), // 卡 168dp 固定 + 旋转余量
-        contentAlignment = Alignment.CenterStart // 改为左对齐，卡片向右展开
+            .height(220.dp),
+        contentAlignment = Alignment.CenterStart
     ) {
-        // —— v11.27 右侧扇形堆叠卡片渲染 ——
-        // 静止：卡 j 的 depth d=(j−index)，位置 x=+20dp×d、y=0，scale=1−0.03d、
-        // rot=−3°×d（扇形）、alpha=1.0（侧卡靠 #F1F4F9+#E2E7EF 描边区隔）；depth>3 不渲染（最多4张）。
-        // 左滑提交：顶卡飞出屏外，后层卡前移到新位置（flip-first）。
-        // 右滑：上一词卡从左侧屏外滑入到顶部，其他卡后移一层。
-        // 绘制顺序按 effDepth 降序（最深的先画，顶层最后画）
-        val commitV = commitAnim.value
-        val swapV = swapAnim.value
-        val bounceXv = bounceX.value
-        val bounceTv = bounceT.value
-        val dragTv = (dragX / (cardWidthPx * 0.5f)).coerceIn(0f, 1f)
-        val leftCommit = committing && commitDir == 1
-        val rightCommit = committing && commitDir == -1
-        val rightDragActive = !committing && (dragX > 0f || bounceTv > 0f)
-        val swapT = (dragTv + bounceTv).coerceIn(0f, 1f)
-        val leftDx = if (!committing && (dragX < 0f || bounceXv != 0f)) dragX + bounceXv else 0f
-        val windowStart = (index - 1).coerceAtLeast(0)
-        val windowEnd = (index + 3).coerceAtMost(total - 1) // 最多显示4张卡
+        // 计算需要渲染的卡片
+        val isSwipingLeft = animating && flyOutAnim.value != 0f
+        val isSwipingRight = animating && slideInAnim.value != 0f
+        val isDraggingRight = !animating && dragX > 0f
 
-        class DeckSlot(
-            val j: Int, val x: Float, val y: Float, val effDepth: Float,
-            val alpha: Float, val rotation: Float, val isFlight: Boolean
+        // 定义卡片槽位
+        data class CardSlot(
+            val wordIndex: Int,
+            val x: Float,
+            val y: Float,
+            val scale: Float,
+            val rotation: Float,
+            val alpha: Float,
+            val depth: Float
         )
-        val slots = mutableListOf<DeckSlot>()
-        for (j in windowStart..windowEnd) {
-            val rel = j - index
-            if (leftCommit && rel == -1) {
-                // 旧顶卡：飞出屏外，alpha 渐变归零
-                val fade = (1f - kotlin.math.abs(flightAnim.value) / (screenWidthPx * 0.7f))
-                    .coerceIn(0f, 1f)
-                if (fade > 0.02f) {
-                    slots.add(DeckSlot(j, flightAnim.value, 0f, 0f, fade, 0f, true))
+
+        val slots = mutableListOf<CardSlot>()
+
+        when {
+            isSwipingLeft -> {
+                // 左滑动画：旧卡飞出，后续卡前移
+                val oldIndex = index - 1
+                if (oldIndex >= 0) {
+                    val fade = (1f - kotlin.math.abs(flyOutAnim.value) / (screenWidthPx * 0.7f)).coerceIn(0f, 1f)
+                    if (fade > 0.02f) {
+                        slots.add(CardSlot(oldIndex, flyOutAnim.value, 0f, 1f, 0f, fade, -1f))
+                    }
                 }
-                continue
-            }
-            val x: Float
-            val y: Float
-            val effDepth: Float
-            val rotation: Float
-            when {
-                leftCommit -> {
-                    // 后层卡前移：effDepth = rel+1−cp 收敛到 rel
-                    effDepth = rel + (1f - commitV)
-                    x = effDepth * stepXPx
-                    y = effDepth * stepYPx  // v11.28: 添加垂直偏移
-                    rotation = effDepth * rotationStep
-                }
-                rightCommit -> if (rel == 0) {
-                    // 上一词卡从左侧滑入到顶部
-                    effDepth = 1f - swapV
-                    x = (swapV - 1f) * cardWidthPx
-                    y = 0f
-                    rotation = 0f
-                } else if (rel >= 1) {
-                    // 其他卡后移一层
-                    effDepth = (rel - 1) + swapV
-                    x = effDepth * stepXPx
-                    y = effDepth * stepYPx  // v11.28: 添加垂直偏移
-                    rotation = effDepth * rotationStep
-                } else {
-                    continue
-                }
-                rightDragActive -> if (rel == -1) {
-                    // 上一词卡从左侧拖动进入
-                    effDepth = 1f - swapT
-                    x = (swapT - 1f) * cardWidthPx
-                    y = 0f
-                    rotation = 0f
-                } else {
-                    // 其他卡后移
-                    effDepth = rel + swapT
-                    x = effDepth * stepXPx
-                    y = effDepth * stepYPx  // v11.28: 添加垂直偏移
-                    rotation = effDepth * rotationStep
-                }
-                else -> {
-                    // 静止 / 左滑拖动（只拖顶卡，后层卡静止）
-                    if (rel < 0) continue
-                    effDepth = rel.toFloat()
-                    x = if (rel == 0) leftDx else rel * stepXPx // 只有顶卡响应拖拽
-                    y = if (rel == 0) 0f else rel * stepYPx  // v11.28: 垂直堆叠效果
-                    rotation = if (rel == 0 && leftDx != 0f) 0f else rel * rotationStep
+                // 后续卡片前移
+                for (i in 0..3) {
+                    val wordIdx = index + i
+                    if (wordIdx >= total) break
+                    val depth = i.toFloat() + (1f - moveUpAnim.value)
+                    slots.add(
+                        CardSlot(
+                            wordIndex = wordIdx,
+                            x = depth * stepX,
+                            y = depth * stepY,
+                            scale = 1f - depth * scaleStep,
+                            rotation = depth * rotationStep,
+                            alpha = 1f,
+                            depth = depth
+                        )
+                    )
                 }
             }
-            val alpha = if (effDepth <= 3f) 1f else (1f - (effDepth - 3f)).coerceIn(0f, 1f)
-            if (alpha <= 0.02f) continue
-            slots.add(DeckSlot(j, x, y, effDepth, alpha, rotation, false))
+            isSwipingRight -> {
+                // 右滑动画：新卡从左侧滑入
+                val newIndex = index
+                val progress = slideInAnim.value
+                slots.add(
+                    CardSlot(
+                        wordIndex = newIndex,
+                        x = (progress - 1f) * cardWidthPx + progress * 0f,
+                        y = 0f,
+                        scale = 1f,
+                        rotation = 0f,
+                        alpha = 1f,
+                        depth = 0f
+                    )
+                )
+                // 其他卡后移
+                for (i in 1..3) {
+                    val wordIdx = index + i
+                    if (wordIdx >= total) break
+                    val depth = (i - 1).toFloat() + progress
+                    slots.add(
+                        CardSlot(
+                            wordIndex = wordIdx,
+                            x = depth * stepX,
+                            y = depth * stepY,
+                            scale = 1f - depth * scaleStep,
+                            rotation = depth * rotationStep,
+                            alpha = 1f,
+                            depth = depth
+                        )
+                    )
+                }
+            }
+            isDraggingRight -> {
+                // 右拖拽：显示上一张卡
+                val prevIndex = index - 1
+                if (prevIndex >= 0) {
+                    val progress = (dragX / cardWidthPx).coerceIn(0f, 1f)
+                    slots.add(
+                        CardSlot(
+                            wordIndex = prevIndex,
+                            x = (progress - 1f) * cardWidthPx,
+                            y = 0f,
+                            scale = 1f,
+                            rotation = 0f,
+                            alpha = progress,
+                            depth = -0.5f
+                        )
+                    )
+                }
+                // 当前卡及后续卡
+                for (i in 0..3) {
+                    val wordIdx = index + i
+                    if (wordIdx >= total) break
+                    val depth = i.toFloat()
+                    slots.add(
+                        CardSlot(
+                            wordIndex = wordIdx,
+                            x = if (i == 0) dragX else depth * stepX,
+                            y = depth * stepY,
+                            scale = 1f - depth * scaleStep,
+                            rotation = if (i == 0) 0f else depth * rotationStep,
+                            alpha = 1f,
+                            depth = depth.toFloat()
+                        )
+                    )
+                }
+            }
+            else -> {
+                // 静止或左拖拽：正常堆叠
+                for (i in 0..3) {
+                    val wordIdx = index + i
+                    if (wordIdx >= total) break
+                    val depth = i.toFloat()
+                    slots.add(
+                        CardSlot(
+                            wordIndex = wordIdx,
+                            x = if (i == 0) dragX else depth * stepX,
+                            y = depth * stepY,
+                            scale = 1f - depth * scaleStep,
+                            rotation = if (i == 0 && dragX < 0f) 0f else depth * rotationStep,
+                            alpha = 1f,
+                            depth = depth
+                        )
+                    )
+                }
+            }
         }
-        slots.sortByDescending { it.effDepth }
+
+        // 按深度排序：深的先画
+        slots.sortByDescending { it.depth }
+
+        // 渲染卡片
         for (slot in slots) {
-            val j = slot.j
-            val isCurrent = j == index && !slot.isFlight
+            val isCurrent = slot.wordIndex == index && slot.depth >= 0f
             HomeWordCard(
-                item = words[j],
-                index = j,
+                item = words[slot.wordIndex],
+                index = slot.wordIndex,
                 total = total,
                 isCurrent = isCurrent,
                 collected = if (isCurrent) collected else false,
                 collecting = if (isCurrent) collecting else false,
                 collectPulse = if (isCurrent) collectPulse else 0,
-                onCollect = if (isCurrent) toggleCollect else null,
+                onCollect = if (isCurrent) ::toggleCollect else null,
                 modifier = Modifier
                     .width(cardWidthDp)
                     .graphicsLayer {
-                        // v11.28 堆叠卡片效果优化：左下角为旋转中心
-                        // 先应用缩放和旋转（基于左下角原点），再应用位移
-                        val scale = 1f - scaleStep * slot.effDepth
-                        scaleX = scale
-                        scaleY = scale
-
-                        // 设置旋转中心为左下角
-                        transformOrigin = androidx.compose.ui.graphics.TransformOrigin(0f, 1f)
+                        scaleX = slot.scale
+                        scaleY = slot.scale
+                        transformOrigin = TransformOrigin(0f, 0.5f)
                         rotationZ = slot.rotation
-
-                        // 由于旋转中心在左下角，旋转会导致卡片位置偏移
-                        // 需要额外补偿Y轴位移，使堆叠效果更自然
-                        val cardHeightPx = with(density) { 168.dp.toPx() }
-                        val rotationRad = slot.rotation * kotlin.math.PI / 180f
-
-                        // 计算旋转导致的偏移
-                        val rotationOffsetX = cardHeightPx * kotlin.math.sin(rotationRad.toFloat()) * (1f - scale)
-                        val rotationOffsetY = cardHeightPx * (1f - kotlin.math.cos(rotationRad.toFloat())) * (1f - scale)
-
-                        translationX = slot.x + rotationOffsetX
-                        translationY = slot.y + rotationOffsetY
+                        translationX = slot.x
+                        translationY = slot.y
                         alpha = slot.alpha
                     }
-                    // 侧层卡不可交互、不响应点击：手势链只挂当前卡
-                    .then(if (isCurrent) currentGestures else Modifier)
+                    .then(if (isCurrent) cardGestures else Modifier)
             )
         }
-        // v11.6 P1-1：首页 250ms 按住确认进度环（确认空窗反馈，确认/放手即消失，
-        // 与圆顶升起形成视觉接力）。手势侧只置状态位（0=确认中 / -1=结束），
-        // 环的 0→360° 逐帧由这里 Animatable 用满 250ms 驱动
+
+        // 按住跟读进度环
         val confirmArc = remember { androidx.compose.animation.core.Animatable(0f) }
         LaunchedEffect(dome.confirmProgress) {
             if (dome.confirmProgress == 0f) {
                 confirmArc.snapTo(0f)
                 confirmArc.animateTo(
                     1f,
-                    androidx.compose.animation.core.tween(
-                        250, easing = androidx.compose.animation.core.LinearEasing
-                    )
+                    androidx.compose.animation.core.tween(250, easing = androidx.compose.animation.core.LinearEasing)
                 )
             } else {
                 confirmArc.snapTo(0f)
             }
         }
         if (dome.confirmProgress == 0f && confirmArc.value > 0f) {
-            androidx.compose.foundation.Canvas(
-                modifier = Modifier.size(36.dp)
-            ) {
+            androidx.compose.foundation.Canvas(modifier = Modifier.size(36.dp)) {
                 drawArc(
                     color = HyperBlue,
                     startAngle = -90f,
@@ -1078,8 +1003,7 @@ private fun HomeWordDeck(
         }
     }
 
-    // 练习结果 / 操作提示行（跟读结果优先展示）；v11.15：TTS「发音加载中…」状态行并入此行
-    // （原卡内状态行因 168dp 固定预算裁切移出——本行在卡外从未裁切），加载态优先于结果提示
+    // 提示文字
     Text(
         text = when {
             loadingWord != null -> "发音加载中…"
